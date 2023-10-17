@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/TC-marketplace-07-09-2023-drone/static/css/main.7acaea2f.css",
-    "main.js": "/TC-marketplace-07-09-2023-drone/static/js/main.62d61bbc.js",
+    "main.css": "/TC-marketplace-07-09-2023-drone/static/css/main.fc02226a.css",
+    "main.js": "/TC-marketplace-07-09-2023-drone/static/js/main.21fda5f0.js",
     "index.html": "/TC-marketplace-07-09-2023-drone/index.html",
-    "main.7acaea2f.css.map": "/TC-marketplace-07-09-2023-drone/static/css/main.7acaea2f.css.map",
-    "main.62d61bbc.js.map": "/TC-marketplace-07-09-2023-drone/static/js/main.62d61bbc.js.map"
+    "main.fc02226a.css.map": "/TC-marketplace-07-09-2023-drone/static/css/main.fc02226a.css.map",
+    "main.21fda5f0.js.map": "/TC-marketplace-07-09-2023-drone/static/js/main.21fda5f0.js.map"
   },
   "entrypoints": [
-    "static/css/main.7acaea2f.css",
-    "static/js/main.62d61bbc.js"
+    "static/css/main.fc02226a.css",
+    "static/js/main.21fda5f0.js"
   ]
 }
