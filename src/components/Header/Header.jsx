@@ -10,7 +10,16 @@ const Header = () => {
             <Link to={'/'}>Home</Link>
           </NavItem>
           <NavItem>
-            <Link to={'/movies'}>Movies</Link>
+            <Link to={'/products'}>Products</Link>
+          </NavItem>
+          <NavItem>
+            <Link to={'/news'}>News</Link>
+          </NavItem>
+          <NavItem>
+            <Link to={'/contacts'}>Contacts</Link>
+          </NavItem>
+          <NavItem>
+            <Link to={'/about'}>About Us</Link>
           </NavItem>
         </NavList>
       </Nav>
