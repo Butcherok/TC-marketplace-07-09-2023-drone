@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logoPng from '../../../assets/logo.png';
+import logoPng from '../../../../assets/logo.png';
 import StyledLogo from './Logo.styled';
 
 const Logo = () => {
