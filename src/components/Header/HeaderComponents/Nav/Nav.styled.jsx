@@ -10,13 +10,13 @@ export const NavList = styled.ul`
   display: flex;
   justify-content: flex-start;
   align-items: start;
-  width: 100%;
+  width: fit-content;
   margin: 0 auto;
+  padding: 12px;
   gap: 28px;
 `;
 
 export const NavItem = styled.li`
-  padding: 24px;
   font-size: 12px;
   font-weight: 600;
   color: #212121;

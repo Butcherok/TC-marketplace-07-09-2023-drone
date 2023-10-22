@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const StyledHeader = styled.header`
   width: 100%;
   margin: 0 auto;
-  padding: 20px 20px 0;
 
   @media ${(props) => props.theme.media.tablet} {
     width: 768px;
@@ -21,4 +20,5 @@ export const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 0 auto;
 `;

@@ -12,8 +12,8 @@ const Header = () => {
         <Logo />
         <NavBar />
         <SearchBar />
+        <UserNav />
       </HeaderContainer>
-      <UserNav />
     </StyledHeader>
   );
 };
