@@ -4,14 +4,14 @@ export const GlobalStyles = createGlobalStyle`
 * {
     box-sizing: border-box;
   }
-  
+
   #root {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   
-    background-color: lightgray;
+    background-color: ${props => props.theme.colors.white};
   }
 
   body { 
