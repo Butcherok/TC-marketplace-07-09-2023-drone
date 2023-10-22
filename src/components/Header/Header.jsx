@@ -17,9 +17,6 @@ const Header = () => {
         <Nav>
           <NavList>
             <NavItem>
-              <Link to={'/'}>Home</Link>
-            </NavItem>
-            <NavItem>
               <Link to={'/products'}>Products</Link>
             </NavItem>
             <NavItem>
