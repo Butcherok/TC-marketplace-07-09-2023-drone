@@ -2,6 +2,7 @@ import { Suspense } from 'react';
 import Header from '../Header/Header';
 import { Container } from 'styles';
 import { Outlet } from 'react-router-dom';
+import Footer from 'components/Footer/Footer';
 
 const Layout = () => {
   return (
@@ -14,7 +15,7 @@ const Layout = () => {
           </Container>
         </Suspense>
       </main>
-      <footer />
+      <Footer />
     </>
   );
 };
