@@ -1,15 +1,13 @@
 import React from 'react';
 import { Copyright } from './FooterCopyright.styled';
+import Contacts from './Contacts/Contacts';
+import Socials from './Socials/Socials';
 
 const FooterCopyright = () => {
   return (
     <Copyright>
-      <ul>
-      <li><mail>asd</mail></li>
-      <li><phone>123</phone></li>
-      </ul>
-      <div> Socials
-      </div>
+      <Contacts />
+      <Socials />
     </Copyright>
   );
 };
