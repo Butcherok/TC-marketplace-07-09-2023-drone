@@ -3,6 +3,6 @@ import styled from 'styled-components';
 export const FooterContentStyled = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: start;
   gap: 48px;
 `;

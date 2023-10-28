@@ -21,6 +21,7 @@ export const FooterContainer = styled.div`
   flex-direction: column;
   gap: 20px;
   margin: 0 auto;
+  padding: 60px 80px;
   width: 100%;
 `;
 // 123
