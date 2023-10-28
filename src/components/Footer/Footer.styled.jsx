@@ -6,13 +6,11 @@ export const StyledFooter = styled.footer`
   background-color: ${props => props.theme.colors.background};
 
   @media ${props => props.theme.media.tablet} {
-    padding: 24px;
   }
 
   @media ${props => props.theme.media.desktop} {
     min-width: 1280px;
     max-width: 1440px;
-    padding: 24px;
   }
 `;
 
@@ -21,5 +19,6 @@ export const FooterContainer = styled.div`
   flex-direction: column;
   gap: 20px;
   margin: 0 auto;
+  padding: 60px 80px;
   width: 100%;
 `;
