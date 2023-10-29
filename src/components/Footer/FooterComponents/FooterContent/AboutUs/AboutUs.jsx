@@ -1,13 +1,13 @@
 import React from 'react';
-import { AboutContainer, AboutItem, AboutList, Link } from './AboutUs.styled';
+import { AboutContainer, AboutItem, AboutList, AboutTitle, Link } from './AboutUs.styled';
 
 const AboutUs = () => {
   return (
     <AboutContainer>
-      <h4>Інформація</h4>
+      <AboutTitle>Інформація</AboutTitle>
       <AboutList>
         <AboutItem>
-          <Link to={'/about'}>Про нас</Link>
+          <Link to={'/about-us'}>Про нас</Link>
         </AboutItem>
         <AboutItem>
           <Link to={'/delivery'}>Доставка і оплата</Link>

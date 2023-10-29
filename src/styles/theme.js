@@ -5,6 +5,7 @@ export const theme = {
     white: '#FFFFFF',
     background: '#F2F2F2',
     active: '#0052CC',
+    focus: 'tomato',
   },
 
   fonts: {
@@ -12,7 +13,7 @@ export const theme = {
     //   secondary: "Inter, sans-serif",
   },
 
-  fontSize: {
+  fontSizes: {
     xxs: '8px',
     xs: '12px',
     s: '14px',
@@ -26,6 +27,14 @@ export const theme = {
   fontWeights: {
     normal: 400,
     bold: 600,
+  },
+
+  lineHeights: {
+    normal: 'normal',
+    section: 1.2,
+    title: 1.3,
+    button: 1.33,
+    price: 1.4,
   },
 
   shadow: {
