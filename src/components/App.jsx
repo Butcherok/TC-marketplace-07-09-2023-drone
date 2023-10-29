@@ -27,7 +27,16 @@ export const App = () => {
           <Route path="agreement" element={<div>Угода користувача</div>} />
           <Route path="begin" element={<div>Стати продавцем</div>} />
 
-          
+          <Route path="faq" element={<div>Найчастіші запитання</div>} />
+          <Route path="support" element={<div>Підтримка</div>} />
+          <Route path="contact-us" element={<div>Зв'язатися з нами</div>} />
+
+          <Route path="faq" element={<div>Найчастіші запитання</div>} />
+          <Route path="support" element={<div>Підтримка</div>} />
+          <Route path="contact-us" element={<div>Зв'язатися з нами</div>} />
+
+          <Route path="legal" element={<div>Політика конфіденційності</div>} />
+          <Route path="offer" element={<div>Офетра</div>} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
