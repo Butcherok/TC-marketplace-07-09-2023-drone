@@ -1,16 +1,26 @@
 import React from 'react';
-import { AboutContainer, AboutItem, AboutList } from './AboutUs.styled';
+import { AboutContainer, AboutItem, AboutList, Link } from './AboutUs.styled';
 
 const AboutUs = () => {
   return (
     <AboutContainer>
       <h4>Інформація</h4>
       <AboutList>
-        <AboutItem>Про нас</AboutItem>
-        <AboutItem>Доставка і оплата</AboutItem>
-        <AboutItem>Повернення та обмін</AboutItem>
-        <AboutItem>Контакти</AboutItem>
-        <AboutItem>Статті</AboutItem>
+        <AboutItem>
+          <Link to={'/about'}>Про нас</Link>
+        </AboutItem>
+        <AboutItem>
+          <Link to={'/delivery'}>Доставка і оплата</Link>
+        </AboutItem>
+        <AboutItem>
+          <Link to={'/returns'}>Повернення та обмін</Link>
+        </AboutItem>
+        <AboutItem>
+          <Link to={'/contacts'}>Контакти</Link>
+        </AboutItem>
+        <AboutItem>
+          <Link to={'/articles'}>Статті</Link>
+        </AboutItem>
       </AboutList>
     </AboutContainer>
   );

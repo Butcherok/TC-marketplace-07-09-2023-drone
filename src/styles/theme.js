@@ -12,6 +12,17 @@ export const theme = {
     //   secondary: "Inter, sans-serif",
   },
 
+  fontSize: {
+    xxs: '8px',
+    xs: '12px',
+    s: '14px',
+    m: '18px',
+    l: '24px',
+    xl: '32px',
+    xxl: '48px',
+    xxxl: '56px',
+  },
+
   fontWeights: {
     normal: 400,
     bold: 600,
