@@ -16,17 +16,17 @@ const UserNav = () => {
       <NavList>
         <NavItem>
           <Link to={'/user'}>
-            <StyledUserNavIcon src={user} alt="logo" />
+            <StyledUserNavIcon src={user} alt="user-logo" />
           </Link>
         </NavItem>
         <NavItem>
           <Link to={'/favorites'}>
-            <StyledUserNavIcon src={favorite} alt="logo" />
+            <StyledUserNavIcon src={favorite} alt="favorites-user" />
           </Link>
         </NavItem>
         <NavItem>
           <Link to={'/cart'}>
-            <StyledUserNavIcon src={cart} alt="logo" />
+            <StyledUserNavIcon src={cart} alt="cart" />
           </Link>
         </NavItem>
       </NavList>

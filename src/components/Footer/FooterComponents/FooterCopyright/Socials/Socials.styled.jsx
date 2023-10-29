@@ -13,8 +13,14 @@ export const SocialsList = styled.ul`
   gap: 10px;
 `;
 
-export const SocialsItem = styled.li`
+export const SocialsItem = styled.li``;
+
+export const LogoSocial = styled.img`
+  display: inline-block;
+  width: 24px;
+  height: 24px;
 `;
+
 
 export const SocialsReserved = styled.p`
   font-size: ${props => props.theme.fontSizes.xs};

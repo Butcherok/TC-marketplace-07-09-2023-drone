@@ -3,18 +3,22 @@ export const theme = {
     primary: '#151725',
     secondary: '#AAABB9',
     white: '#FFFFFF',
-    background: '#F2F2F2',
+    background: '#FAFCFF',
     active: '#0052CC',
     focus: 'tomato',
+    logo: '#1D1F36',
+    logospan: '#1D1F36',
+    logonote: '#1D1F36',
   },
 
   fonts: {
     main: 'Inter, sans-serif',
-    //   secondary: "Inter, sans-serif",
+    logo: 'Red Hat Display, sans-serif',
   },
 
   fontSizes: {
     xxs: '8px',
+    logonote: '9px',
     xs: '12px',
     s: '14px',
     m: '18px',
@@ -38,7 +42,7 @@ export const theme = {
   },
 
   shadow: {
-    normal: '3px 8px 14px rgba(136, 198, 253, 0.19)',
+    normal: '3px 1px 40px 0px rgba(187, 194, 221, 0.10)',
     medium: '7px 13px 14px rgba(116, 177, 232, 0.24)',
   },
 

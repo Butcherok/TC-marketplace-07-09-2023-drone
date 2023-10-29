@@ -22,3 +22,4 @@ export const FooterContainer = styled.div`
   padding: 60px 80px;
   width: 100%;
 `;
+// 132
