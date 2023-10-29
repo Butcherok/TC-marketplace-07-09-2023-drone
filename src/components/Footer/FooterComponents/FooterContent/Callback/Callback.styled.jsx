@@ -5,5 +5,4 @@ export const CallbackContainer = styled.div`
   flex-direction: column;
   align-items: start;
   gap: 16px;
-  min-width: 128px;
 `;

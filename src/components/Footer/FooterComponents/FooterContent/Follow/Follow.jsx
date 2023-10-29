@@ -1,16 +1,29 @@
 import React from 'react';
-import { FollowContainer } from './Follow.styled';
+import {
+  FollowContainer,
+  FollowForm,
+  FollowInput,
+  FollowLabel,
+  FollowSubmit,
+  FollowSubmitText,
+  FollowTitle,
+} from './Follow.styled';
 
 const Follow = () => {
   return (
     <FollowContainer>
-      <h4>Підпишись на наші новини та отримай знижку</h4>
-      <form>
-        <label>
-          <input type="email" placeholder="E-mail" />
-        </label>
-        <button type="submit">Підписатися</button>
-      </form>
+      <FollowTitle>Підпишись на наші новини та отримай знижку</FollowTitle>
+      <FollowForm>
+        <FollowLabel>
+          <FollowInput type="email" placeholder="example@email.com" />
+        </FollowLabel>
+        <FollowSubmit>
+          <button type="submit">Підписатись</button>
+          <FollowSubmitText>
+            *На пошту прийде промокод на знижку в 10% на наступну покупку
+          </FollowSubmitText>
+        </FollowSubmit>
+      </FollowForm>
     </FollowContainer>
   );
 };

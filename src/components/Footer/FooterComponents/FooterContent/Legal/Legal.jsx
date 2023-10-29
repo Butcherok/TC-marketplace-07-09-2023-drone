@@ -1,14 +1,24 @@
 import React from 'react';
 import { LegalContainer } from './Legal.styled';
+import {
+  AboutItem,
+  AboutList,
+  AboutTitle,
+  Link,
+} from '../AboutUs/AboutUs.styled';
 
 const Legal = () => {
   return (
     <LegalContainer>
-      <h4>Юридична інформація</h4>
-      <ul>
-        <li>Політика конфіденційності</li>
-        <li>Офетра</li>
-      </ul>
+      <AboutTitle>Юридична інформація</AboutTitle>
+      <AboutList>
+        <AboutItem>
+          <Link to={'/legal'}>Політика конфіденційності</Link>
+        </AboutItem>
+        <AboutItem>
+          <Link to={'/offer'}>Офетра</Link>
+        </AboutItem>
+      </AboutList>
     </LegalContainer>
   );
 };
