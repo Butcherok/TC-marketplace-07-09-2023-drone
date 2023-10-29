@@ -18,11 +18,9 @@ const Socials = () => {
           <LogoSocial src={instagram} alt="instagram" />
         </SocialsItem>
         <SocialsItem>
-          {' '}
           <LogoSocial src={tweeter} alt="instagram" />
         </SocialsItem>
         <SocialsItem>
-          {' '}
           <LogoSocial src={facebook} alt="instagram" />
         </SocialsItem>
       </SocialsList>
