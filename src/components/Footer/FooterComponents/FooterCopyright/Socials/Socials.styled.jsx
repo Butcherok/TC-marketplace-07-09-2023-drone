@@ -14,9 +14,12 @@ export const SocialsList = styled.ul`
 `;
 
 export const SocialsItem = styled.li`
-
 `;
 
 export const SocialsReserved = styled.p`
+  font-size: ${props => props.theme.fontSizes.xs};
+  font-weight: ${props => props.theme.fontWeights.normal};
+  line-height: ${props => props.theme.lineHeights.button};
 
+  color: ${props => props.theme.colors.secondary};
 `;

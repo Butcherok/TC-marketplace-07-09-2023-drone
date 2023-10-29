@@ -1,15 +1,22 @@
 import React from 'react';
-import { ContactsContainer, ContactsItem, ContactsList } from './Contacts.styled';
+import {
+  ContactsContainer,
+  ContactsItem,
+  ContactsLink,
+  ContactsList,
+} from './Contacts.styled';
 
 const Contacts = () => {
   return (
     <ContactsContainer>
       <ContactsList>
         <ContactsItem>
-          <a href="mailto:poshta@gmail.com">poshta@gmail.com</a>
+          <ContactsLink href="mailto:poshta@gmail.com">
+            poshta@gmail.com
+          </ContactsLink>
         </ContactsItem>
         <ContactsItem>
-          <a href="tel:++380961111111">0 800 746 53 88</a>
+          <ContactsLink href="tel:+3808007465388">0 800 746 53 88</ContactsLink>
         </ContactsItem>
       </ContactsList>
     </ContactsContainer>
