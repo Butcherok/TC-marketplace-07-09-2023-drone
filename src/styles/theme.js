@@ -6,6 +6,9 @@ export const theme = {
     background: '#FAFCFF',
     active: '#0052CC',
     focus: 'tomato',
+    logo: '#1D1F36',
+    logospan: '#1D1F36',
+    logonote: '#1D1F36',
   },
 
   fonts: {
@@ -15,6 +18,7 @@ export const theme = {
 
   fontSizes: {
     xxs: '8px',
+    logonote: '9px',
     xs: '12px',
     s: '14px',
     m: '18px',
