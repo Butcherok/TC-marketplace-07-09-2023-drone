@@ -4,6 +4,7 @@ export const StyledHeader = styled.header`
   width: 100%;
   margin: 0 auto;
   background-color: ${props => props.theme.colors.background};
+  box-shadow: ${props => props.theme.shadow.normal};
 
   @media ${props => props.theme.media.tablet} {
     padding: 24px;
