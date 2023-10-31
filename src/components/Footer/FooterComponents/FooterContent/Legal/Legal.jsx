@@ -16,7 +16,7 @@ const Legal = () => {
           <Link to={'/legal'}>Політика конфіденційності</Link>
         </AboutItem>
         <AboutItem>
-          <Link to={'/offer'}>Офетра</Link>
+          <Link to={'/offer'}>Оферта</Link>
         </AboutItem>
       </AboutList>
     </LegalContainer>
