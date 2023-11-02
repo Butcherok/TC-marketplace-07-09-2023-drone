@@ -6,3 +6,4 @@ export const LegalContainer = styled.div`
   align-items: start;
   gap: 16px;
 `;
+// 123
