@@ -1,4 +1,5 @@
 import React from 'react';
+import { Btn } from '../FooterContent.styled';
 import { SellersContainer } from './Sellers.styled';
 import {
   AboutItem,
@@ -26,7 +27,7 @@ const Sellers = () => {
         </AboutItem>
         <AboutItem>
           <Link to={'/begin'}>
-            <button>Стати продавцем</button>
+            <Btn variant="primary">Стати продавцем</Btn>
           </Link>
         </AboutItem>
       </AboutList>

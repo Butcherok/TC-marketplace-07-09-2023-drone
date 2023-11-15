@@ -1,4 +1,5 @@
 import React from 'react';
+import { Btn } from '../FooterContent.styled';
 import {
   FollowContainer,
   FollowForm,
@@ -18,7 +19,7 @@ const Follow = () => {
           <FollowInput type="email" placeholder="example@email.com" />
         </FollowLabel>
         <FollowSubmit>
-          <button type="submit">Підписатись</button>
+          <Btn variant='primary'>Підписатись</Btn>
           <FollowSubmitText>
             *На пошту прийде промокод на знижку в 10% на наступну покупку
           </FollowSubmitText>

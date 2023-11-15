@@ -1,12 +1,14 @@
 import styled from 'styled-components';
 
-export const StyledHeader = styled.main`
-  width: 100%;
-  margin: 0 auto;
-
+export const StyledSlider = styled.section`
   @media ${props => props.theme.media.desktop} {
     min-width: 1280px;
     max-width: 1440px;
     padding: 24px;
   }
+`;
+
+export const SliderContainer = styled.div`
+  margin: 0 auto;
+  width: 100%;
 `;

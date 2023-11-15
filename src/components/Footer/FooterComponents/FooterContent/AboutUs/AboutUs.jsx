@@ -1,5 +1,11 @@
 import React from 'react';
-import { AboutContainer, AboutItem, AboutList, AboutTitle, Link } from './AboutUs.styled';
+import {
+  AboutContainer,
+  AboutItem,
+  AboutList,
+  AboutTitle,
+  Link,
+} from './AboutUs.styled';
 
 const AboutUs = () => {
   return (
