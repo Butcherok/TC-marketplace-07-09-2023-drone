@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/TC-marketplace-07-09-2023-drone/static/css/main.dd42c7dc.css",
-    "main.js": "/TC-marketplace-07-09-2023-drone/static/js/main.6226ced8.js",
+    "main.css": "/TC-marketplace-07-09-2023-drone/static/css/main.e503233e.css",
+    "main.js": "/TC-marketplace-07-09-2023-drone/static/js/main.266ccc31.js",
     "static/media/instagram.svg": "/TC-marketplace-07-09-2023-drone/static/media/instagram.3f94f7019899305dc967767dcd740489.svg",
     "static/media/facebook.svg": "/TC-marketplace-07-09-2023-drone/static/media/facebook.1b354f9578ebb4763bedb9c43a85434a.svg",
     "static/media/twitter.svg": "/TC-marketplace-07-09-2023-drone/static/media/twitter.78056004c94245d98641786a4f9b4af9.svg",
@@ -12,11 +12,11 @@
     "index.html": "/TC-marketplace-07-09-2023-drone/index.html",
     "static/media/favorite.svg": "/TC-marketplace-07-09-2023-drone/static/media/favorite.f5b4e69ac1192e3c18967286a5d6dc96.svg",
     "static/media/search.svg": "/TC-marketplace-07-09-2023-drone/static/media/search.6300b719fcbfece5c99a8de3f2e1ac01.svg",
-    "main.dd42c7dc.css.map": "/TC-marketplace-07-09-2023-drone/static/css/main.dd42c7dc.css.map",
-    "main.6226ced8.js.map": "/TC-marketplace-07-09-2023-drone/static/js/main.6226ced8.js.map"
+    "main.e503233e.css.map": "/TC-marketplace-07-09-2023-drone/static/css/main.e503233e.css.map",
+    "main.266ccc31.js.map": "/TC-marketplace-07-09-2023-drone/static/js/main.266ccc31.js.map"
   },
   "entrypoints": [
-    "static/css/main.dd42c7dc.css",
-    "static/js/main.6226ced8.js"
+    "static/css/main.e503233e.css",
+    "static/js/main.266ccc31.js"
   ]
 }
