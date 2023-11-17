@@ -57,29 +57,32 @@ export const BtnsWrap = styled.div`
 export const SubmitBtn = styled.button`
   width: 24px;
   height: 24px;
-
+  stroke: #1D1F36;
   border: none;
-  /* background-color: #fff; */
+  background-color: #fff;
   padding: 0;
 
-  &:hover svg use,
-  &:focus svg use {
-    fill: #377ac8;
+  &:hover svg {
+    stroke: #3385FF;
     transform: scale(1.05);
+  }
+
+  &:focus svg {
+    stroke: #1656b6;
   }
 `;
 
-export const ResetBtn = styled.button`
-  width: 24px;
-  height: 24px;
+// export const ResetBtn = styled.button`
+//   width: 24px;
+//   height: 24px;
 
-  border: none;
-  /* background-color: #fff; */
-  padding: 0;
+//   border: none;
+//   background-color: #fff;
+//   padding: 0;
 
-  &:hover svg use,
-  &:focus svg use {
-    stroke: red;
-    transform: scale(1.05);
-  }
-`;
+//   &:hover svg use,
+//   &:focus svg use {
+//     stroke: red;
+//     transform: scale(1.05);
+//   }
+// `;
