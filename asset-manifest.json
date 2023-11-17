@@ -1,23 +1,19 @@
 {
   "files": {
     "main.css": "/TC-marketplace-07-09-2023-drone/static/css/main.e503233e.css",
-    "main.js": "/TC-marketplace-07-09-2023-drone/static/js/main.e7097d11.js",
+    "main.js": "/TC-marketplace-07-09-2023-drone/static/js/main.c6b56883.js",
     "static/media/BattleBorn.jpg": "/TC-marketplace-07-09-2023-drone/static/media/BattleBorn.8c7d98a451265e7bf087.jpg",
     "static/media/instagram.svg": "/TC-marketplace-07-09-2023-drone/static/media/instagram.3f94f7019899305dc967767dcd740489.svg",
     "static/media/facebook.svg": "/TC-marketplace-07-09-2023-drone/static/media/facebook.1b354f9578ebb4763bedb9c43a85434a.svg",
     "static/media/twitter.svg": "/TC-marketplace-07-09-2023-drone/static/media/twitter.78056004c94245d98641786a4f9b4af9.svg",
+    "static/media/sprite.svg": "/TC-marketplace-07-09-2023-drone/static/media/sprite.ba6b23dcbfc402060d723e0501cf6f8e.svg",
     "static/media/logo-icon.svg": "/TC-marketplace-07-09-2023-drone/static/media/logo-icon.3d4c3fab721f9f42e2312d70575297fe.svg",
-    "static/media/cross.svg": "/TC-marketplace-07-09-2023-drone/static/media/cross.b13b3fccda52965f8b6c4e5b35567cd4.svg",
-    "static/media/cart.svg": "/TC-marketplace-07-09-2023-drone/static/media/cart.a394b4cedf8fd2e440ea3083989ca684.svg",
-    "static/media/user.svg": "/TC-marketplace-07-09-2023-drone/static/media/user.c6aa2d9897a5fa008a84ca387ca23fb9.svg",
     "index.html": "/TC-marketplace-07-09-2023-drone/index.html",
-    "static/media/favorite.svg": "/TC-marketplace-07-09-2023-drone/static/media/favorite.f5b4e69ac1192e3c18967286a5d6dc96.svg",
-    "static/media/search.svg": "/TC-marketplace-07-09-2023-drone/static/media/search.6300b719fcbfece5c99a8de3f2e1ac01.svg",
     "main.e503233e.css.map": "/TC-marketplace-07-09-2023-drone/static/css/main.e503233e.css.map",
-    "main.e7097d11.js.map": "/TC-marketplace-07-09-2023-drone/static/js/main.e7097d11.js.map"
+    "main.c6b56883.js.map": "/TC-marketplace-07-09-2023-drone/static/js/main.c6b56883.js.map"
   },
   "entrypoints": [
     "static/css/main.e503233e.css",
-    "static/js/main.e7097d11.js"
+    "static/js/main.c6b56883.js"
   ]
 }
