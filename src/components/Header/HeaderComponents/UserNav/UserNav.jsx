@@ -4,11 +4,12 @@ import {
   Nav,
   NavItem,
   NavList,
-  StyledUserNavIcon,
+  // StyledUserNavIcon,
 } from './UserNav.styled';
-import user from '../../../../assets/icons/UserNav/user.svg';
-import favorite from '../../../../assets/icons/UserNav/favorite.svg';
-import cart from '../../../../assets/icons/UserNav/cart.svg';
+import Icon from 'components/UI/Icon/Icon';
+// import user from '../../../../assets/icons/UserNav/user.svg';
+// import favorite from '../../../../assets/icons/UserNav/favorite.svg';
+// import cart from '../../../../assets/icons/UserNav/cart.svg';
 
 const UserNav = () => {
   return (
@@ -16,17 +17,20 @@ const UserNav = () => {
       <NavList>
         <NavItem>
           <Link to={'/user'}>
-            <StyledUserNavIcon src={user} alt="user-logo" />
+            <Icon id="user" />
+            {/* <StyledUserNavIcon src={user} alt="user-logo" /> */}
           </Link>
         </NavItem>
         <NavItem>
           <Link to={'/favorites'}>
-            <StyledUserNavIcon src={favorite} alt="favorites-user" />
+          <Icon id="favorite" />
+            {/* <StyledUserNavIcon src={favorite} alt="favorites-user" /> */}
           </Link>
         </NavItem>
         <NavItem>
           <Link to={'/cart'}>
-            <StyledUserNavIcon src={cart} alt="cart" />
+            <Icon id="cart" />
+            {/* <StyledUserNavIcon src={cart} alt="cart" /> */}
           </Link>
         </NavItem>
       </NavList>
