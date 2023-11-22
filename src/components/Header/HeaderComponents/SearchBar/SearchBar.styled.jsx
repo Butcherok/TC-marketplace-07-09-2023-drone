@@ -35,7 +35,7 @@ export const Input = styled.input`
     border: ${props => props.theme.borders.normal}
       ${props => props.theme.colors.secondary};
     outline: transparent;
-    background: #fff;
+    background: transparent;
     // box-shadow: 3px 8px 14px 0px rgba(136, 198, 253, 0.19);
     box-shadow: 3px 1px 40px 0px rgba(187, 194, 221, 0.1);
     color: ${props => props.theme.colors.logospan};

@@ -10,11 +10,11 @@ export const Container = styled.div`
   // padding: 20px 20px 0; 
 
   @media ${props => props.theme.media.mobile} {
-    max-width: 480px;
+    //max-width: 480px;
   }
 
   @media ${props => props.theme.media.tablet} {
-    width: 768px;
+    //width: 768px;
     /* padding: 24px 32px 0; */
   }
 

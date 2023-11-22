@@ -3,7 +3,7 @@ export const theme = {
     primary: '#151725',
     secondary: '#AAABB9',
     white: '#FFFFFF',
-    background: '#FAFCFF',
+    background: '#F5F6FA',
     active: '#0052CC',
     focus: 'tomato',
     logo: '#1D1F36',
@@ -54,6 +54,7 @@ export const theme = {
 
   media: {
     mobile: '(min-width: 320px)',
+    bigMobile: '(min-width: 480px)',
     tablet: '(min-width: 768px)',
     desktop: '(min-width: 1280px)',
   },
