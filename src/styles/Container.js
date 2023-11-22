@@ -7,7 +7,7 @@ export const Container = styled.div`
   width: 100%;
   min-height: 100vh;
   margin: 0 auto;
-  /* padding: 20px 20px 0; */
+  // padding: 20px 20px 0; 
 
   @media ${props => props.theme.media.mobile} {
     max-width: 480px;
@@ -19,7 +19,7 @@ export const Container = styled.div`
   }
 
   @media ${props => props.theme.media.desktop} {
-    width: 1280px;
+    max-width: 1280px;
     /* padding: 20px 16px 0; */
   }
 `;
