@@ -6,7 +6,7 @@ const NavBar = () => {
     <Nav>
       <NavList>
         <NavItem>
-          <Link to={'/products'}>Каталог</Link>
+          <Link to={'/products'}>Магазин</Link>
         </NavItem>
         <NavItem>
           <Link to={'/articles'}>Статті</Link>

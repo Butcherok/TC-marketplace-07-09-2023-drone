@@ -1,5 +1,11 @@
 import React from 'react';
-import { BtnsWrap, ContainerNoticesSearch, Form, Input, SubmitBtn } from './SearchBar.styled';
+import {
+  BtnsWrap,
+  ContainerNoticesSearch,
+  Form,
+  Input,
+  SearchBtn,
+} from './SearchBar.styled';
 import Icon from 'components/UI/Icon/Icon';
 
 // import search from '../../../../assets/icons/SearchBar/search.svg'
@@ -8,28 +14,33 @@ import Icon from 'components/UI/Icon/Icon';
 const SearchBar = () => {
   return (
     <ContainerNoticesSearch>
+      {/* <SearchBtn type="button">
+        <Icon id="search" />
+      </SearchBtn> */}
+
       <Form>
-        <Input
-          type="text"
-          placeholder="Пошук"
-        />
+        <Input type="text" placeholder="Пошук" />
         <BtnsWrap>
-          <SubmitBtn type="submit">
+          <SearchBtn type="button">
             <Icon id="search" />
-            {/* <svg viewBox="0 0 24 24">
+          </SearchBtn>
+        </BtnsWrap>
+        {/* <BtnsWrap> */}
+
+        {/* <svg viewBox="0 0 24 24">
               <use xlinkHref={search}  fill="#AAABB9" />
             </svg> */}
-          </SubmitBtn>
-          {/* {search && (
+        {/* {search && (
             <ResetBtn>
               <svg viewBox="0 0 24 24">
                 <use xlinkHref={cross}/>
               </svg>
             </ResetBtn>
           )} */}
-        </BtnsWrap>
+        {/* </BtnsWrap> */}
       </Form>
-    </ContainerNoticesSearch>  );
+    </ContainerNoticesSearch>
+  );
 };
 
 export default SearchBar;
