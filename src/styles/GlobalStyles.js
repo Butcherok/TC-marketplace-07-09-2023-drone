@@ -11,7 +11,6 @@ export const GlobalStyles = createGlobalStyle`
     justify-content: center;
     align-items: center;
   
-    background-color: ${props => props.theme.colors.white};
   }
 
   body { 

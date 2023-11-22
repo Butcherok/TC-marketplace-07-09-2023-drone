@@ -6,7 +6,9 @@ import {
 import { Slider } from './Banner.styled';
 import Slide1 from '../../../assets/BattleBorn.jpg';
 
-const Banner = () => {
+const Banner = (props) => {
+  
+   console.log( props.theme);
   const items = [
     { src: Slide1, alt: 'Slide 1' },
     { src: Slide1, alt: 'Slide 2' },
@@ -19,7 +21,7 @@ const Banner = () => {
     <Slider indicators={true} controls={false} interval={6000}>
       {items.map((item, index) => (
         <CarouselItem key={index}>
-          <Image className="d-block w-100" src={item.src} alt={item.alt} />
+          <Image className="slide-image d-block w-100" src={item.src} alt={item.alt} />
         </CarouselItem>
       ))}
     </Slider>
