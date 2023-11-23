@@ -1,14 +1,13 @@
 <svg style="display: none">
-  <symbol id="icon-search" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="icon-search" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g id="heroicons-outline/magnifying-glass">
       <path id="Vector" d="M21 21L15.8033 15.8033M15.8033 15.8033C17.1605 14.4461 18 12.5711 18 10.5C18 6.35786 14.6421 3 10.5 3C6.35786 3 3 6.35786 3 10.5C3 14.6421 6.35786 18 10.5 18C12.5711 18 14.4461 17.1605 15.8033 15.8033Z" stroke="inherit" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
     </g>
   </symbol>
 
-  <symbol id="icon-user" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect width="24" height="24" fill="inherit"/>
+  <symbol id="icon-user" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g id="Home page" clip-path="url(#clip0_0_1)">
-      <rect width="1440" height="2840" transform="translate(-1190 -32)" fill="white"/>
+      <rect width="1440" height="2840" transform="translate(-1190 -32)" fill="inherit"/>
       <g id="Header">
         <rect width="1276" height="88" transform="translate(-1108 -32)" fill="none"/>
         <g id="Frame 310">
@@ -30,16 +29,20 @@
     </defs>
 </symbol>
 
-<symbol id="icon-favorite" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<symbol id="icon-favorite" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
   <g id="heroicons-outline/heart">
     <path id="Vector" d="M21 8.25C21 5.76472 18.9013 3.75 16.3125 3.75C14.3769 3.75 12.7153 4.87628 12 6.48342C11.2847 4.87628 9.62312 3.75 7.6875 3.75C5.09867 3.75 3 5.76472 3 8.25C3 15.4706 12 20.25 12 20.25C12 20.25 21 15.4706 21 8.25Z" stroke="inherit" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
   </g>
 </symbol>
 
-<symbol id="icon-cart" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="24" height="24" fill="#F5F5F5"/>
+<!-- <symbol id="icon-cart" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M10.75 11.1904H12.1357C12.6454 11.1904 13.0914 11.5331 13.2227 12.0256L13.6059 13.4625M16 22.4404C14.3431 22.4404 13 23.7836 13 25.4404H28.75M16 22.4404H27.2183C28.3394 20.1398 29.3177 17.7568 30.1417 15.3029C25.38 14.0869 20.3905 13.4404 15.25 13.4404C14.7002 13.4404 14.1521 13.4478 13.6059 13.4625M16 22.4404L13.6059 13.4625M14.5 28.4404C14.5 28.8546 14.1642 29.1904 13.75 29.1904C13.3358 29.1904 13 28.8546 13 28.4404C13 28.0262 13.3358 27.6904 13.75 27.6904C14.1642 27.6904 14.5 28.0262 14.5 28.4404ZM27.25 28.4404C27.25 28.8546 26.9142 29.1904 26.5 29.1904C26.0858 29.1904 25.75 28.8546 25.75 28.4404C25.75 28.0262 26.0858 27.6904 26.5 27.6904C26.9142 27.6904 27.25 28.0262 27.25 28.4404Z" stroke="#1D1F36" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol> -->
+
+
+<symbol id="icon-cart" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
   <g id="Home page" clip-path="url(#clip0_0_1)">
-    <rect width="1440" height="2840" transform="translate(-1302 -32)" fill="white"/>
+    <rect width="1440" height="2840" transform="translate(-1302 -32)" fill="inherit"/>
     <g id="Header">
       <rect width="1276" height="88" transform="translate(-1220 -32)" fill="inherit"/>
       <g id="Frame 310">
@@ -53,7 +56,7 @@
   </g>
   <defs>
   <clipPath id="clip0_0_1">
-    <rect width="1440" height="2840" fill="white" transform="translate(-1302 -32)"/>
+    <rect width="1440" height="2840" fill="inherit" transform="translate(-1302 -32)"/>
   </clipPath>
   </defs>
 </symbol>
@@ -88,6 +91,13 @@
 <symbol id="icon-burger" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path d="M5 9H27M5 16H27M5 23H27" stroke="#1D1F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </symbol>
+
+<symbol id="icon-home" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M10 20.6424L12.1953 18.4165M30 20.4512L27.866 18.2787M27.866 18.2787L20.2479 10.8189C20.0904 10.6647 19.838 10.6669 19.6832 10.8238L12.1953 18.4165M27.866 18.2787V29.0594C27.866 29.2803 27.687 29.4594 27.466 29.4594H12.5953C12.3744 29.4594 12.1953 29.2803 12.1953 29.0594V18.4165" stroke="inherit" stroke-width="1.4" stroke-linecap="round"/>
+</symbol>
+
+
+
 
 
 
