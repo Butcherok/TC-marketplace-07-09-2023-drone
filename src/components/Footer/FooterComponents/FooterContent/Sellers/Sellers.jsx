@@ -27,7 +27,7 @@ const Sellers = () => {
         </AboutItem>
         <AboutItem>
           <Link to={'/begin'}>
-            <Btn variant="primary">Стати продавцем</Btn>
+            <Btn className='footer-btn'>Стати продавцем</Btn>
           </Link>
         </AboutItem>
       </AboutList>

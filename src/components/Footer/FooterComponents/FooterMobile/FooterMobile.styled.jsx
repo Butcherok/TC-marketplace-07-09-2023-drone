@@ -2,18 +2,22 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Nav = styled.nav`
-  display: none;
-  margin: 0 auto;
-
+  // display: flex;
+  // justify-content: space-between;
+  // align-items: center;
+  padding: 0 20px;
+  width: 100%;
+  
   @media ${props => props.theme.media.desktop} {
-    display: block;
+    display: none;
   }
+  }
+  
 `;
 
 export const NavList = styled.ul`
   display: flex;
-  width: fit-content;
-  gap: 16px;
+  justify-content: space-between;
 `;
 
 export const NavItem = styled.li`
@@ -22,21 +26,11 @@ export const NavItem = styled.li`
 
 export const Link = styled(NavLink)`
   list-style: none;
-  text-decoration: none;
-  cursor: pointer;
-  stroke: #1d1f36;
-
+  background-color: transparent;
+  
   & svg {
+    stroke: ${props => props.theme.colors.logo};
     width: 24px;
     height: 24px;
-  }
-
-  &:hover svg use {
-    stroke: #3385ff;
-    transform: scale(1.05);
-  }
-
-  &:active svg use {
-    stroke: #1656b6;
   }
 `;

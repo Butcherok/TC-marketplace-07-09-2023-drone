@@ -10,14 +10,14 @@ export const GlobalStyles = createGlobalStyle`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  
+    min-height: 100vh;  
   }
 
   body { 
     font-family: ${props => props.theme.fonts.main};
       background-color: ${props => props.theme.colors.background};
     margin: 0 ;
-    padding: 0;  
+    padding: 0; 
   }
 
   ul, li, ol {  
