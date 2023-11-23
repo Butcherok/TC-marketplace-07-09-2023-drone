@@ -5,4 +5,7 @@ export const SellersContainer = styled.div`
   flex-direction: column;
   align-items: start;
   gap: 16px;
+
+  
 `;
+

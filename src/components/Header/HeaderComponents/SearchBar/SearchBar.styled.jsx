@@ -53,11 +53,11 @@ export const Input = styled.input`
     }
 
     &:hover {
-      border-color: #3385FF;
+      border-color: #3385ff;
     }
 
     &:focus {
-      border-color: #1656B6;
+      border-color: #1656b6;
     }
   }
 `;
@@ -87,16 +87,17 @@ export const SearchBtn = styled.button`
   align-items: center;
 
   & svg {
-    transform: scale(1.3);
+    //transform: scale(1.3);
 
     @media ${props => props.theme.media.desktop} {
-      transform: scale(1);
+      width: 24px;
+      height: 24px;
     }
   }
 
   &:hover svg {
     stroke: #3385ff;
-    transform: scale(1.05);
+    //transform: scale(1.05);
   }
 
   &:focus svg {
