@@ -8,16 +8,9 @@ import {
 } from './SearchBar.styled';
 import Icon from 'components/UI/Icon/Icon';
 
-// import search from '../../../../assets/icons/SearchBar/search.svg'
-// import cross from '../../../../assets/icons/SearchBar/cross.svg'
-
 const SearchBar = () => {
   return (
     <ContainerNoticesSearch>
-      {/* <SearchBtn type="button">
-        <Icon id="search" />
-      </SearchBtn> */}
-
       <Form>
         <Input type="text" placeholder="Пошук" />
         <BtnsWrap>
