@@ -3,6 +3,10 @@ import styled from 'styled-components';
 export const StyledFooter = styled.footer`
   width: 100%;
   margin: 0 auto;
+  position: fixed;
+  bottom: 0;
+  z-index: 100;
+  background-color: ${props => props.theme.colors.background};
 
   @media ${props => props.theme.media.tablet} {
   }
@@ -10,6 +14,7 @@ export const StyledFooter = styled.footer`
   @media ${props => props.theme.media.desktop} {
     min-width: 1280px;
     max-width: 1440px;
+    position: relative;
   }
 `;
 

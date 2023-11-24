@@ -16,6 +16,11 @@ export const App = () => {
           <Route path="favorites" element={<div>Перелік улюбленних</div>} />
           <Route path="cart" element={<div>Кошик</div>} />
 
+          <Route path="drons" element={<div>Дрони</div>} />
+          <Route path="accessories" element={<div>Аксесуари</div>} />
+          <Route path="spare-parts" element={<div>Запчастини</div>} />
+          <Route path="sets" element={<div>Набори</div>} />
+
           <Route path="about-us" element={<div>Про нас</div>} />
           <Route path="delivery" element={<div>Доставка і оплата</div>} />
           <Route path="returns" element={<div>Повернення та обмін</div>} />
