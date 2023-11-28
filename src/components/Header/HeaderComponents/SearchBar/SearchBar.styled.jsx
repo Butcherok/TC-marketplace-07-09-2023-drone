@@ -25,7 +25,7 @@ export const Input = styled.input`
     width: 100%;
     height: 100%;
 
-    padding: 14px 12px 13px 12px;
+    padding: 14px 80px 13px 12px;
 
     // @media (min-width: 768px) {
     //   padding: 10px 20px;
@@ -87,8 +87,6 @@ export const SearchBtn = styled.button`
   align-items: center;
 
   & svg {
-    //transform: scale(1.3);
-
     @media ${props => props.theme.media.desktop} {
       width: 24px;
       height: 24px;
@@ -105,35 +103,47 @@ export const SearchBtn = styled.button`
   }
 `;
 
-export const SubmitBtn = styled.button`
-  width: 24px;
-  height: 24px;
+// export const SubmitBtn = styled.button`
+//   width: 24px;
+//   height: 24px;
+//   stroke: #1d1f36;
+//   border: none;
+//   background-color: transparent;
+//   padding: 0;
+
+//   &:hover svg {
+//     stroke: #3385ff;
+//     transform: scale(1.05);
+//   }
+
+//   &:focus svg {
+//     stroke: #1656b6;
+//   }
+// `;
+
+export const ResetBtn = styled.button`
+  width: 32px;
+  height: 32px;
   stroke: #1d1f36;
   border: none;
-  background-color: #fff;
+  background-color: transparent;
   padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & svg {
+    @media ${props => props.theme.media.desktop} {
+      width: 24px;
+      height: 24px;
+    }
+  }
 
   &:hover svg {
     stroke: #3385ff;
-    transform: scale(1.05);
   }
 
   &:focus svg {
     stroke: #1656b6;
   }
 `;
-
-// export const ResetBtn = styled.button`
-//   width: 24px;
-//   height: 24px;
-
-//   border: none;
-//   background-color: #fff;
-//   padding: 0;
-
-//   &:hover svg use,
-//   &:focus svg use {
-//     stroke: red;
-//     transform: scale(1.05);
-//   }
-// `;
