@@ -98,7 +98,7 @@ export const SearchBtn = styled.button`
     //transform: scale(1.05);
   }
 
-  &:focus svg {
+  &:active svg {
     stroke: #1656b6;
   }
 `;
@@ -122,8 +122,6 @@ export const SearchBtn = styled.button`
 // `;
 
 export const ResetBtn = styled.button`
-  width: 32px;
-  height: 32px;
   stroke: #1d1f36;
   border: none;
   background-color: transparent;
@@ -137,13 +135,17 @@ export const ResetBtn = styled.button`
       width: 24px;
       height: 24px;
     }
+
+    @media (max-width: 1439px) {
+      display: none;
+    }
   }
 
   &:hover svg {
     stroke: #3385ff;
   }
 
-  &:focus svg {
+  &:active svg {
     stroke: #1656b6;
   }
 `;
