@@ -1,5 +1,11 @@
 import styled from 'styled-components';
 
+export const LogoWrapper = styled.div`
+  &.logo-burger {
+    margin-bottom: 48px;
+  }
+`;
+
 export const LogoContainer = styled.div`
   display: flex;
   justify-content: center;

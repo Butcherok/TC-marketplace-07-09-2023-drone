@@ -26,7 +26,7 @@ const Socials = () => {
           <LogoSocial src={facebook} alt="instagram" />
         </SocialsItem>
       </SocialsList>
-      <SocialsReserved>© Quadro 2023</SocialsReserved>
+      <SocialsReserved>© Dr.one 2023</SocialsReserved>
     </SocialsContainer>
   );
 };
