@@ -6,6 +6,7 @@ export const StyledMain = styled.main`
   dispaly: flex;
   flex-direction: column;
   flex-grow: 1;
+  padding: 16px;
 
   @media ${props => props.theme.media.desktop} {
     min-width: 1280px;
