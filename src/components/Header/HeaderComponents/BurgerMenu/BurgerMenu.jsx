@@ -28,7 +28,7 @@ const BurgerMenu = ({ isOpen, onClose }) => {
   };
 
   const handleTouchEnd = () => {
-    if (endX - startX > 50) {
+    if ( startX - endX > 50) {
       // Якщо рух пальця вліво більше 50 пікселів, закриваємо меню
       onClose();
     }
