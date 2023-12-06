@@ -15,8 +15,25 @@ export const StyledBurgerMenu = styled.div`
   z-index: 999;
   transition: left 0.8s ease;
 
+  @media ${props => props.theme.media.tablet} {
+    width: 70%;
+  }
+
   @media ${props => props.theme.media.desktop} {
     display: none;
+  }
+
+  & .logo-block {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 4px;
+
+    & svg {
+      width: 32px;
+      height: 32px;
+      stroke: ${props => props.theme.colors.logo};
+    }
   }
 `;
 
