@@ -4,13 +4,12 @@ import {
   StyledAccordion,
   StyledAccordionHeader,
   StyledAccordionBody,
-  AccordionLink
+  AccordionLink,
 } from './Accordion.styled';
 
 import Icon from '../Icon/Icon';
 
 const Accordion = ({ title, items, showIcons = true }) => {
-  console.log(JSON.stringify(items));
   const [isAccordionOpen, setIsAccordionOpen] = useState(false);
 
   const toggleAccordion = () => {
@@ -29,7 +28,11 @@ const Accordion = ({ title, items, showIcons = true }) => {
       {isAccordionOpen && (
         <StyledAccordionBody>
           {items.map((item, index) => (
-            <AccordionLink to={item.link} key={index} className="accordion-item">
+            <AccordionLink
+              to={item.link}
+              key={index}
+              className="accordion-item"
+            >
               {showIcons && <Icon className="catalog-icon" id={item.icon} />}
               {item.title}
             </AccordionLink>
