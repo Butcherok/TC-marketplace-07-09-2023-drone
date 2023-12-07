@@ -1,18 +1,16 @@
-import React, { useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 import {
-  BtnsWrap,
-  ContainerNoticesSearch,
+  SearchBarContainer,
   Form,
+  BtnsWrap,
   Input,
-  SearchBtn,
-  ResetBtn,
-} from './SearchBar.styled';
-import Icon from 'components/UI/Icon/Icon';
+} from '../SearchBarMobile/SearchBarMobile.styled';
 
-const SearchBar = ({ onClick }) => {
+import Icon from '../../../UI/Icon/Icon';
+
+const SearchBarMobile = () => {
   const [searchText, setSearchText] = useState('');
   const [placeholder, setPlaceholder] = useState('Пошук');
-  // const [isShowInput, setIsShowInput] = useState(false);
   const initialPlaceholder = 'Пошук';
   const inputRef = useRef(null);
 
@@ -33,12 +31,8 @@ const SearchBar = ({ onClick }) => {
   const handleInputBlur = () => {
     setPlaceholder(initialPlaceholder);
   };
-
-  // const onShowSearchInput = () => {
-  //   setIsShowInput(!isShowInput);
-  // };
   return (
-    <ContainerNoticesSearch>
+    <SearchBarContainer>
       <Form>
         <Input
           type="text"
@@ -50,18 +44,12 @@ const SearchBar = ({ onClick }) => {
           ref={inputRef}
         />
         <BtnsWrap>
-          {searchText && (
-            <ResetBtn type="button" onClick={handleResetClick}>
-              <Icon id="reset" />
-            </ResetBtn>
-          )}
-          <SearchBtn type="button" onClick={onClick}>
-            <Icon id="search" />
-          </SearchBtn>
+          <Icon id="reset" onClick={handleResetClick} />
+          <Icon id="arrow-right" />
         </BtnsWrap>
       </Form>
-    </ContainerNoticesSearch>
+    </SearchBarContainer>
   );
 };
 
-export default SearchBar;
+export default SearchBarMobile;
