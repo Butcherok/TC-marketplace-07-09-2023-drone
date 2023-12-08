@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 export const Menu = styled.div`
   display: flex;
@@ -19,10 +20,20 @@ export const Menu = styled.div`
 export const MenuItem = styled.div`
   position: relative;
   display: flex;
-  // max-height: 148px;
+  height: 160px;
+  // background-size: cover;
+  // background-position: center center;
   transition: all 0.6s ease;
-  display: ${props => (props.isMenuOpen || props.isFirstItem ? 'flex' : 'none')};
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 5px;
+  display: ${props =>
+    props.isMenuOpen || props.isFirstItem ? 'flex' : 'none'};
   opacity: ${props => (props.isMenuOpen || props.isFirstItem ? '1' : '0')};
+
+  &:hover img{
+    transform: scale(1.2);
+  }
 
   @media ${props => props.theme.media.bigMobile} {
     display: flex;
@@ -41,7 +52,8 @@ export const MenuItem = styled.div`
   }
 
   img {
-    border-radius: 5px;
+    
+    object-fit: cover;
   }
 
   .menu-item-title {
@@ -55,4 +67,10 @@ export const MenuItem = styled.div`
     color: ${props => props.theme.colors.white};
     text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.48);
   }
+`;
+
+
+export const Link = styled(NavLink)`
+  display: flex;
+  align-items: center;
 `;
