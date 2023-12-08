@@ -10,12 +10,12 @@ export const StyledBurgerMenu = styled.div`
   max-height: 100vh;
   overflow-y: auto;
   padding: 24px 16px;
-  width: 94%;
+  width: 100%;
   background-color: ${props => props.theme.colors.background};
   z-index: 999;
   transition: left 0.8s ease;
 
-  @media ${props => props.theme.media.tablet} {
+  @media (${props => props.theme.media.bigMobile}) {
     width: 70%;
   }
 
