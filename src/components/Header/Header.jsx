@@ -22,7 +22,9 @@ const Header = () => {
         <NavBar />
         <SearchBar onClick={handleSearchClick} />
         <UserNav />
-        {isShowMobileSearch && <SearchBarMobile />}
+        {isShowMobileSearch && (
+          <SearchBarMobile isShowMobileSearch={isShowMobileSearch} />
+        )}
       </HeaderContainer>
     </StyledHeader>
   );
