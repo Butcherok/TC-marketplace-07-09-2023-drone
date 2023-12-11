@@ -5,7 +5,8 @@ export const StyledHeader = styled.header`
   margin: 0 auto;
   background-color: #FAFCFF;
   box-shadow: ${props => props.theme.shadow.normal};
-  // padding: 16px 0;
+  position: relative;
+  z-index: 200;
   height: 64px;
 
   @media ${props => props.theme.media.tablet} {

@@ -8,7 +8,7 @@ import {
 
 import Icon from '../../../UI/Icon/Icon';
 
-const SearchBarMobile = () => {
+const SearchBarMobile = ({ isShowMobileSearch }) => {
   const [searchText, setSearchText] = useState('');
   const [placeholder, setPlaceholder] = useState('Пошук');
   const initialPlaceholder = 'Пошук';
@@ -32,7 +32,7 @@ const SearchBarMobile = () => {
     setPlaceholder(initialPlaceholder);
   };
   return (
-    <SearchBarContainer>
+    <SearchBarContainer isShowMobileSearch={isShowMobileSearch}>
       <Form>
         <Input
           type="text"
@@ -44,7 +44,7 @@ const SearchBarMobile = () => {
           ref={inputRef}
         />
         <BtnsWrap>
-          <Icon id="reset" onClick={handleResetClick} />
+          {searchText && <Icon id="reset" onClick={handleResetClick} />}
           <Icon id="arrow-right" />
         </BtnsWrap>
       </Form>

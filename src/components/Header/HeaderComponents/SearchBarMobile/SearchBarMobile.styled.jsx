@@ -1,8 +1,8 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const SearchBarContainer = styled.div`
-position: absolute;
-  top: 64px;
+  position: absolute;
+  top: ${props => (props.isShowMobileSearch ? '64px' : '0')};
   left: 0;
   width: 100%;
   display: flex;
@@ -11,7 +11,7 @@ position: absolute;
   height: 48px;
   align-items: center;
   padding: 0 20px;
-  // justify-content: space-between;
+  transition: all 0.15s ease-out;
 
   @media ${props => props.theme.media.desktop} {
     display: none;
@@ -20,6 +20,7 @@ position: absolute;
 
 export const Form = styled.form`
   display: flex;
+  align-items: center;
   width: 100%;
   padding: 0 2px;
 `;

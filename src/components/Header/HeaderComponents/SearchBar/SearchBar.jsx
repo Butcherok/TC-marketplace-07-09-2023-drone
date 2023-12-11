@@ -12,7 +12,6 @@ import Icon from 'components/UI/Icon/Icon';
 const SearchBar = ({ onClick }) => {
   const [searchText, setSearchText] = useState('');
   const [placeholder, setPlaceholder] = useState('Пошук');
-  // const [isShowInput, setIsShowInput] = useState(false);
   const initialPlaceholder = 'Пошук';
   const inputRef = useRef(null);
 
