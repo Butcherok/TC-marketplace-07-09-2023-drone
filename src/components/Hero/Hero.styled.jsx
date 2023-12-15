@@ -12,10 +12,10 @@ export const StyledHero = styled.section`
 
 export const HeroContainer = styled.div`
   margin: 0 auto;
-  width: 90%;
+  width: 100%;
 
   @media ${props => props.theme.media.tablet} {
-    width: 94.8%;
+    width: 100%;
   }
 
   @media ${props => props.theme.media.desktop} {
