@@ -9,6 +9,7 @@ export const theme = {
     logo: '#1D1F36',
     logospan: '#1D1F36',
     logonote: '#1D1F36',
+    red: '#F33F33'
   },
 
   fonts: {
