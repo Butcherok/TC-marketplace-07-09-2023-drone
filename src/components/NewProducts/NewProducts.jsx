@@ -34,7 +34,7 @@ const NewProducts = () => {
               img={item.img}
               price={item.price}
               _id={item._id}
-              favorite={item.favorite}
+              
             />
           ))}
         </Slider>

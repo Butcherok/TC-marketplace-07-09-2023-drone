@@ -20,34 +20,34 @@ export const ApiProvider = ({ children }) => {
     fetchData();
   }, []);
 
-  const toggleFavorite = async (_id) => {
-    const noticeToUpdate = query.find((notice) => notice._id === _id);
+  // const toggleFavorite = async (_id) => {
+  //   const noticeToUpdate = query.find((notice) => notice._id === _id);
 
-  if (!noticeToUpdate) {
-    console.error(`Notice with id ${_id} not found`);
-    return;
-  }
+  // if (!noticeToUpdate) {
+  //   console.error(`Notice with id ${_id} not found`);
+  //   return;
+  // }
 
-  // Update the local state with the updated favorite status
-  const updatedQuery = query.map((notice) =>
-    notice._id === _id ? { ...notice, favorite: !notice.favorite } : notice
-  );
+  // // Update the local state with the updated favorite status
+  // const updatedQuery = query.map((notice) =>
+  //   notice._id === _id ? { ...notice, favorite: !notice.favorite } : notice
+  // );
 
-  setQuery(updatedQuery);
+  // setQuery(updatedQuery);
 
-  // Update the server with the new data
-  try {
-    const response = await axios.put(`https://dr-one-marketplace.onrender.com/notices/${_id}`, {
-      favorite: !noticeToUpdate.favorite,
-    });
-    console.log('Server response:', response.data);
-  } catch (error) {
-    console.error('Error updating favorite:', error);
-  }
-  };
+  // // Update the server with the new data
+  // try {
+  //   const response = await axios.put(`https://dr-one-marketplace.onrender.com/notices/${_id}`, {
+  //     favorite: !noticeToUpdate.favorite,
+  //   });
+  //   console.log('Server response:', response.data);
+  // } catch (error) {
+  //   console.error('Error updating favorite:', error);
+  // }
+  // };
 
   return (
-    <ApiContext.Provider value={{ query, toggleFavorite }}>
+    <ApiContext.Provider value={{ query }}>
       {children}
     </ApiContext.Provider>
   );
