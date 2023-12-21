@@ -16,7 +16,7 @@ const UserNav = () => {
     <Nav>
       <NavList>
         <NavItem>
-          <Link to={'/user'}>
+          <Link to={'/register'}>
             <Icon id="user" />
             {/* <StyledUserNavIcon src={user} alt="user-logo" /> */}
           </Link>

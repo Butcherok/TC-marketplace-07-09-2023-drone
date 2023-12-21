@@ -1,5 +1,10 @@
+import { NavLink } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import styled from 'styled-components';
+
+export const Title = styled.h3`
+  margin-bottom: 20px;
+`;
 
 export const StyledRegisterForm = styled.form`
     display: flex;
@@ -8,5 +13,13 @@ export const StyledRegisterForm = styled.form`
 `;
 
 export const BtnSubmit = styled(Button)`
+  margin: 12px 0 18px;
+`;
+
+export const Message = styled.p`
+
+`;
+
+export const LoginLink = styled(NavLink)`
 
 `;
