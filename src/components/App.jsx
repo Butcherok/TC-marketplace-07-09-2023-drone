@@ -16,7 +16,7 @@ export const App = () => {
             <Route path="products" element={<div>Магазин</div>} />
             <Route path="articles" element={<div>Статті</div>} />
             <Route path="manufacturers" element={<div>Виробники</div>} />
-            <Route path="user" element={<div>Особистий кабінет</div>} />
+            <Route path="user" element={<RegisterPage />} />
             <Route path="favorites" element={<div>Перелік улюбленних</div>} />
             <Route path="cart" element={<div>Кошик</div>} />
   
