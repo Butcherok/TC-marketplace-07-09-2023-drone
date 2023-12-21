@@ -34,7 +34,7 @@ const BurgerMenu = ({ isOpen, onClose }) => {
       <StyledBurgerMenu isOpen={isOpen} {...handlers}>
         <div className="logo-block">
           <Logo className="logo-burger" onClick={onClose} />
-          <Close id="cross" onClick={onClose} />
+          <Close id="cross" onClick={onClose} className='close' />
         </div>
         <NavMobile />
         <Information />
