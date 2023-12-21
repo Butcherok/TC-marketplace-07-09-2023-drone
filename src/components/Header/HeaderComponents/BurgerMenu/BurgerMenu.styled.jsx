@@ -35,6 +35,10 @@ export const StyledBurgerMenu = styled.div`
       stroke: ${props => props.theme.colors.logo};
     }
   }
+
+  & .close {
+    cursor: pointer;
+  }
 `;
 
 export const Overlay = styled.div`

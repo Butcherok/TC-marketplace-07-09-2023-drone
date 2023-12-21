@@ -3,6 +3,8 @@ import { ApiProvider } from '../contexts/ApiContext/ApiContext';
 import Layout from '../components/Layout/Layout';
 import NotFound from '../pages/notFound';
 import HomePage from '../pages/home';
+import LoginPage from '../pages/login';
+import RegisterPage from '../pages/register';
 
 export const App = () => {
   return (
@@ -38,12 +40,15 @@ export const App = () => {
             <Route path="support" element={<div>Підтримка</div>} />
             <Route path="contact-us" element={<div>Зв'язатися з нами</div>} />
   
-            <Route path="faq" element={<div>Найчастіші запитання</div>} />
+            {/* <Route path="faq" element={<div>Найчастіші запитання</div>} />
             <Route path="support" element={<div>Підтримка</div>} />
-            <Route path="contact-us" element={<div>Зв'язатися з нами</div>} />
+            <Route path="contact-us" element={<div>Зв'язатися з нами</div>} /> */}
   
             <Route path="legal" element={<div>Політика конфіденційності</div>} />
             <Route path="offer" element={<div>Офетра</div>} />
+
+            <Route path="register" element={<RegisterPage />} />
+            <Route path="login" element={<LoginPage />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
