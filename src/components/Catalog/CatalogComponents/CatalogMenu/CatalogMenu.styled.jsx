@@ -21,9 +21,6 @@ export const MenuItem = styled.div`
   position: relative;
   display: flex;
   height: 160px;
-  // background-size: cover;
-  // background-position: center center;
-  transition: all 0.6s ease;
   overflow: hidden;
   cursor: pointer;
   border-radius: 5px;
@@ -31,8 +28,15 @@ export const MenuItem = styled.div`
     props.isMenuOpen || props.isFirstItem ? 'flex' : 'none'};
   opacity: ${props => (props.isMenuOpen || props.isFirstItem ? '1' : '0')};
 
-  &:hover img{
-    transform: scale(1.2);
+  img {
+    transition: transform 0.2s ease-out;
+  }
+
+  &:hover {
+    img {
+      transform: scale(1.2);
+      transition: transform 0.2s ease-out;
+    }
   }
 
   @media ${props => props.theme.media.bigMobile} {
@@ -52,7 +56,6 @@ export const MenuItem = styled.div`
   }
 
   img {
-    
     object-fit: cover;
   }
 
@@ -68,7 +71,6 @@ export const MenuItem = styled.div`
     text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.48);
   }
 `;
-
 
 export const Link = styled(NavLink)`
   display: flex;
