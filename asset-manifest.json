@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/TC-marketplace-07-09-2023-drone/static/css/main.8dad466f.css",
-    "main.js": "/TC-marketplace-07-09-2023-drone/static/js/main.9a2c5d53.js",
-    "static/media/sets.jpg": "/TC-marketplace-07-09-2023-drone/static/media/sets.aba2ad83df9a0baf7e38.jpg",
-    "static/media/spare-parts.jpeg": "/TC-marketplace-07-09-2023-drone/static/media/spare-parts.2c376bc664308e106e13.jpeg",
-    "static/media/accessories.jpg": "/TC-marketplace-07-09-2023-drone/static/media/accessories.00ba002b10d453a7bc23.jpg",
-    "static/media/drons.jpg": "/TC-marketplace-07-09-2023-drone/static/media/drons.ddc6ab0c77bf2011eb8a.jpg",
-    "static/media/BattleBorn.jpg": "/TC-marketplace-07-09-2023-drone/static/media/BattleBorn.8c7d98a451265e7bf087.jpg",
+    "main.js": "/TC-marketplace-07-09-2023-drone/static/js/main.38889852.js",
+    "static/media/sets.webp": "/TC-marketplace-07-09-2023-drone/static/media/sets.d17996106e2c5fb335ba.webp",
+    "static/media/spare-parts.webp": "/TC-marketplace-07-09-2023-drone/static/media/spare-parts.de39c0457aeca46d548f.webp",
+    "static/media/drons.webp": "/TC-marketplace-07-09-2023-drone/static/media/drons.24cd479c51bcff7ce481.webp",
+    "static/media/accessories.webp": "/TC-marketplace-07-09-2023-drone/static/media/accessories.a5f856fc3374fae11b3e.webp",
+    "static/media/BattleBorn.webp": "/TC-marketplace-07-09-2023-drone/static/media/BattleBorn.3acaa2878cb9f1955abd.webp",
     "static/media/instagram.svg": "/TC-marketplace-07-09-2023-drone/static/media/instagram.3f94f7019899305dc967767dcd740489.svg",
     "static/media/facebook.svg": "/TC-marketplace-07-09-2023-drone/static/media/facebook.1b354f9578ebb4763bedb9c43a85434a.svg",
     "static/media/twitter.svg": "/TC-marketplace-07-09-2023-drone/static/media/twitter.78056004c94245d98641786a4f9b4af9.svg",
@@ -19,10 +19,10 @@
     "static/media/slick.woff": "/TC-marketplace-07-09-2023-drone/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/TC-marketplace-07-09-2023-drone/index.html",
     "main.8dad466f.css.map": "/TC-marketplace-07-09-2023-drone/static/css/main.8dad466f.css.map",
-    "main.9a2c5d53.js.map": "/TC-marketplace-07-09-2023-drone/static/js/main.9a2c5d53.js.map"
+    "main.38889852.js.map": "/TC-marketplace-07-09-2023-drone/static/js/main.38889852.js.map"
   },
   "entrypoints": [
     "static/css/main.8dad466f.css",
-    "static/js/main.9a2c5d53.js"
+    "static/js/main.38889852.js"
   ]
 }
