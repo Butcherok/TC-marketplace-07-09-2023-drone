@@ -2,10 +2,10 @@ import { Image } from 'react-bootstrap';
 
 import { MenuItem, Menu, Link } from './CatalogMenu.styled';
 
-import Drons from './MenuImg/drons.jpg';
-import Accessories from './MenuImg/accessories.jpg';
-import SpareParts from './MenuImg/spare-parts.jpeg';
-import Sets from './MenuImg/sets.jpg';
+import Drons from './MenuImg/drons.webp';
+import Accessories from './MenuImg/accessories.webp';
+import SpareParts from './MenuImg/spare-parts.webp';
+import Sets from './MenuImg/sets.webp';
 
 const CatalogMenu = ({ isMenuOpen }) => {
   const items = [
