@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
-export const StyledNewProducts = styled.section`
+export const StyledPopular = styled.section`
   width: 100%;
   padding: 40px 0 0;
 `;
 
-export const NewProductsContainer = styled.div`
+export const PopularContainer = styled.div`
   margin: 0 auto; 
   
 
@@ -24,7 +24,7 @@ export const NewProductsContainer = styled.div`
   
 `;
 
-export const NewProductsTitle = styled.h2`
+export const PopularTitle = styled.h2`
   font-size: 20px;
   line-height: ${props => props.theme.lineHeights.section};
   font-weight: ${props => props.theme.fontWeights.bold};
