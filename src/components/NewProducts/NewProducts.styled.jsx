@@ -6,13 +6,16 @@ export const StyledNewProducts = styled.section`
 `;
 
 export const NewProductsContainer = styled.div`
-  margin: 0 auto;
-  
+  margin: 0 auto; 
   
 
   & .slick-track{
     display: flex;
     gap: 8px;
+
+    @media ${props => props.theme.desktop} {
+      gap: 20px;
+    }
   }
 
   & .slider {
