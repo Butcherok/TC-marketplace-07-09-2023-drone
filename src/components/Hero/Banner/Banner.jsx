@@ -4,7 +4,7 @@ import {
 } from 'react-bootstrap';
 
 import { Slider } from './Banner.styled';
-import Slide1 from '../../../assets/BattleBorn.jpg';
+import Slide1 from '../../../assets/BattleBorn.webp';
 
 const Banner = (props) => {
   
