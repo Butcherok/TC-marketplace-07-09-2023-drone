@@ -32,7 +32,8 @@ export const MenuItem = styled.div`
     transition: transform 0.2s ease-out;
   }
 
-  &:hover {
+  &:hover,
+  &:active {
     img {
       transform: scale(1.2);
       transition: transform 0.2s ease-out;
