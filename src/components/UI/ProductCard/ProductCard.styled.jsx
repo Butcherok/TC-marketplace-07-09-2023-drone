@@ -3,8 +3,10 @@ import styled from 'styled-components';
 export const Card = styled.div`
   padding: 0 16px 24px;
   background-color: #fafcff;
-  width: 196px;
-  height: 248px;
+  // width: 196px;
+  // height: 248px;
+  width: ${props => props.width}px;
+  height: ${props => props.height}px;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;

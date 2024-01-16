@@ -3,7 +3,7 @@ import { useApi } from '../../../contexts/ApiContext/ApiContext';
 import Heart from '../Icon/Icon';
 import Drone from './drone.png';
 
-const ProductCard = ({ title, price, img, _id, favorite }) => {
+const ProductCard = ({ width, height, title, price, img, _id, favorite }) => {
   const { toggleFavorite } = useApi();
 
   const handleFavoriteClick = () => {
@@ -11,7 +11,7 @@ const ProductCard = ({ title, price, img, _id, favorite }) => {
   };
   
   return (
-    <Card favorite={favorite}> 
+    <Card favorite={favorite} width={width} height={height}> 
       <div className="heart-wrapper" onClick={handleFavoriteClick}>
         <Heart id='heart' />
       </div>

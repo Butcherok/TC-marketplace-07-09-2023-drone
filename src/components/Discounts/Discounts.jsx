@@ -6,12 +6,12 @@ import { useApi } from '../../contexts/ApiContext/ApiContext';
 
 import ProductCard from '../UI/ProductCard/ProductCard';
 import {
-  NewProductsContainer,
-  NewProductsTitle,
-  StyledNewProducts,
-} from './NewProducts.styled';
+  DiscountsContainer,
+  DiscountsTitle,
+  StyledDiscounts,
+} from './Discounts.styled';
 
-const NewProducts = () => {
+const Discounts = () => {
   const { query } = useApi();
 
   const settings = {
@@ -26,9 +26,9 @@ const NewProducts = () => {
   const cardHeight = 248;
 
   return (
-    <StyledNewProducts className="new-products">
-      <NewProductsContainer>
-        <NewProductsTitle>Новинки</NewProductsTitle>
+    <StyledDiscounts className='new-products'>
+      <DiscountsContainer>
+        <DiscountsTitle>Акції</DiscountsTitle>
         <Slider {...settings}>
           {query.map((item, index) => (
             <ProductCard
@@ -42,9 +42,9 @@ const NewProducts = () => {
             />
           ))}
         </Slider>
-      </NewProductsContainer>
-    </StyledNewProducts>
+      </DiscountsContainer>
+    </StyledDiscounts>
   );
 };
 
-export default NewProducts;
+export default Discounts;
