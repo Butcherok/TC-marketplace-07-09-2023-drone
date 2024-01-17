@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/TC-marketplace-07-09-2023-drone/static/css/main.8dad466f.css",
-    "main.js": "/TC-marketplace-07-09-2023-drone/static/js/main.35d0eb0d.js",
+    "main.js": "/TC-marketplace-07-09-2023-drone/static/js/main.fefa828e.js",
     "static/media/sets.webp": "/TC-marketplace-07-09-2023-drone/static/media/sets.d17996106e2c5fb335ba.webp",
     "static/media/spare-parts.webp": "/TC-marketplace-07-09-2023-drone/static/media/spare-parts.de39c0457aeca46d548f.webp",
     "static/media/drons.webp": "/TC-marketplace-07-09-2023-drone/static/media/drons.24cd479c51bcff7ce481.webp",
@@ -19,10 +19,10 @@
     "static/media/slick.woff": "/TC-marketplace-07-09-2023-drone/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/TC-marketplace-07-09-2023-drone/index.html",
     "main.8dad466f.css.map": "/TC-marketplace-07-09-2023-drone/static/css/main.8dad466f.css.map",
-    "main.35d0eb0d.js.map": "/TC-marketplace-07-09-2023-drone/static/js/main.35d0eb0d.js.map"
+    "main.fefa828e.js.map": "/TC-marketplace-07-09-2023-drone/static/js/main.fefa828e.js.map"
   },
   "entrypoints": [
     "static/css/main.8dad466f.css",
-    "static/js/main.35d0eb0d.js"
+    "static/js/main.fefa828e.js"
   ]
 }
