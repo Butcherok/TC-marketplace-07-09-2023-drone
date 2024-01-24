@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { useApi } from 'contexts/ApiContext/ApiContext';
+// import { useApi } from 'contexts/ApiContext/ApiContext';
 import Accordion from '../../../UI/Accordion/Accordion';
 import {
   NavMenu,

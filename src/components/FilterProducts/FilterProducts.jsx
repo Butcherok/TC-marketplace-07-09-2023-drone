@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Dropdown, DropdownButton, DropdownItem } from 'react-bootstrap';
 import ProductCard from '../UI/ProductCard/ProductCard';
-import { useApi, filteredData } from '../../contexts/ApiContext/ApiContext';
+import { useApi } from '../../contexts/ApiContext/ApiContext';
 import {
   StyledFilterProducts,
   FilterProductsContainer,
