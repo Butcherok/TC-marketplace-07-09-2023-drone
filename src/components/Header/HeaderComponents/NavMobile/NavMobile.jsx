@@ -10,7 +10,6 @@ import {
 } from './NavMobile.styled';
 
 const NavMobile = () => {
-  const { query } = useApi();
   const [selectedCategory, setSelectedCategory] = useState('');
   const items = [
     {
