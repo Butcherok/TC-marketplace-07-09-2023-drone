@@ -20,7 +20,10 @@ const Burger = () => {
       <StyledBurger>
         <Icon id="burger" onClick={handleClickBurger} />
       </StyledBurger>
-      <BurgerMenu isOpen={isBurgerMenuOpen} onClose={handleCloseMenu} />
+      <BurgerMenu
+        isOpen={isBurgerMenuOpen}
+        onClose={handleCloseMenu}
+      />
     </>
   );
 };

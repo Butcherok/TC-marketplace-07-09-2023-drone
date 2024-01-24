@@ -1,12 +1,14 @@
 import styled from 'styled-components';
+import { Button } from 'react-bootstrap';
 
 export const Card = styled.div`
   padding: 0 16px 24px;
   background-color: #fafcff;
+  position: relative;
   // width: 196px;
   // height: 248px;
-  width: ${props => props.width}px;
-  height: ${props => props.height}px;
+  width: ${props => props.width};
+  height: ${props => props.height};
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
@@ -17,7 +19,7 @@ export const Card = styled.div`
     width: 100%;
     display: flex;
     justify-content: flex-end;
-    transform: translateX(16px);
+    background-color: ${props => props.theme.colors.white};
 
     & svg {
       width: 40px;
@@ -26,13 +28,41 @@ export const Card = styled.div`
         props.favorite ? props.theme.colors.red : props.theme.colors.logo};
       fill: ${props =>
         props.favorite ? props.theme.colors.red : 'transparent'};
+
+      @media ${props => props.theme.desktop} {
+        position: relative;
+        left: 16px;
+      }
     }
   }
+
 
   & .card-content {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    background-color: ${props => props.theme.colors.white};
+
+    & .sale-price {
+      display: flex;
+      flex-direction: column;
+
+
+      & .old-price {
+        text-decoration: line-through;
+        font-size: ${props => props.theme.fontSizes.s};
+        font-weight: ${props => props.theme.fontWeights.normal};
+        line-height; ${props => props.theme.lineHeights.title};
+        color: ${props => props.theme.colors.grey};
+      }
+
+      & .discounted-price {
+        font-size: ${props => props.theme.fontSizes.m};
+        line-height: ${props => props.theme.lineHeights.title};
+        font-weight: ${props => props.theme.fontWeights.bold};
+        color: ${props => props.theme.colors.red};
+      }
+    }
 
     & img {
       align-self: center;
@@ -54,5 +84,23 @@ export const Card = styled.div`
       font-weight: ${props => props.theme.fontWeights.bold};
       color: ${props => props.theme.colors.logo};
     }
+  }
+`;
+
+export const CartBtn = styled(Button)`
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  padding: 8px;
+  bottom: 16px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & svg {
+    width: 30px;
+    height: 30px;
+    stroke: ${props => props.theme.colors.background};
   }
 `;

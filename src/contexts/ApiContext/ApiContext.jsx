@@ -6,7 +6,7 @@ const ApiContext = createContext();
 export const ApiProvider = ({ children }) => {
   const [query, setQuery] = useState([]);
 
-  useEffect(() => {
+  
     const fetchData = async () => {
       try {
         const response = await axios.get('https://dr-one-marketplace.onrender.com/notices');
@@ -17,6 +17,7 @@ export const ApiProvider = ({ children }) => {
       }
     };
 
+    useEffect(() => {
     fetchData();
   }, []);
 
@@ -47,7 +48,7 @@ export const ApiProvider = ({ children }) => {
   // };
 
   return (
-    <ApiContext.Provider value={{ query }}>
+    <ApiContext.Provider value={{ query, fetchData }}>
       {children}
     </ApiContext.Provider>
   );

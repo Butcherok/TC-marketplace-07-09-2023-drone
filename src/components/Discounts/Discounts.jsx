@@ -20,7 +20,7 @@ const Discounts = () => {
 
   useEffect(() => {
     const updateCardWidth = () => {
-      setCardWidth(window.innerWidth > 1439 ? 206 : 146);
+      setCardWidth(window.innerWidth > 1439 ? '206px' : '146px');
     };
 
     window.addEventListener('resize', updateCardWidth);
@@ -41,7 +41,7 @@ const Discounts = () => {
   };
 
   // const cardWidth = 146;
-  const cardHeight = 250;
+  const cardHeight = '250px';
 
   const groupedQuery = [];
   for (let i = 0; i < query.length; i += 2) {
@@ -53,39 +53,39 @@ const Discounts = () => {
       <DiscountsContainer>
         <DiscountsTitle>Акції</DiscountsTitle>
         <Slider {...settings}>
-          {/* {query.map((item, index) => (
-            <ProductCard
-              key={index}
-              title={item.title}
-              img={item.img}
-              price={item.price}
-              _id={item._id}
-              width={cardWidth}
-              height={cardHeight}
-            />
-          ))} */}
-          {groupedQuery.map((group, index) => (
-            <div key={index} className="cards-group">
-              <div className="cards-group-head">
-                <span className="cards-head-title">Дрони</span>
-                <NavLink>Більше &#5171;</NavLink>
-              </div>
-              <div className="card-group-content">
-                {group.map((item, itemIndex) => (
-                  <ProductCard
-                    className="card1"
-                    key={itemIndex}
-                    title={item.title}
-                    img={item.img}
-                    price={item.price}
-                    _id={item._id}
-                    width={cardWidth}
-                    height={cardHeight}
-                  />
-                ))}
-              </div>
-            </div>
-          ))}
+          {groupedQuery.map((group, index) => {
+            const hasSaleItems = group.some(item => item.sale === true);
+            if (hasSaleItems) {
+              return (
+                <div key={index} className="cards-group">
+                  <div className="cards-group-head">
+                    <span className="cards-head-title">Дрони</span>
+                    <NavLink>Більше &#5171;</NavLink>
+                  </div>
+                  <div className="card-group-content">
+                    {group
+                      .filter(item => item.sale === true)
+                      .map((item, itemIndex) => (
+                        <ProductCard
+                          className="card-item"
+                          key={itemIndex}
+                          title={item.title}
+                          img={item.img}
+                          price={item.price}
+                          _id={item._id}
+                          width={cardWidth}
+                          height={cardHeight}
+                          showButton={false}
+                          sale={item.sale}
+                          discount={item.discount}
+                        />
+                      ))}
+                  </div>
+                </div>
+              );
+            }
+            return null;
+          })}
         </Slider>
       </DiscountsContainer>
     </StyledDiscounts>

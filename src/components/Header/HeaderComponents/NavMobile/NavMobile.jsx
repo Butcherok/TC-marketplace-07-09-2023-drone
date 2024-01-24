@@ -1,3 +1,6 @@
+import { useState } from 'react';
+
+import { useApi } from 'contexts/ApiContext/ApiContext';
 import Accordion from '../../../UI/Accordion/Accordion';
 import {
   NavMenu,
@@ -7,34 +10,49 @@ import {
 } from './NavMobile.styled';
 
 const NavMobile = () => {
+  const { query } = useApi();
+  const [selectedCategory, setSelectedCategory] = useState('');
   const items = [
     {
       title: 'Дрони',
       icon: 'drons',
       link: '/drons',
+      category: 'drone',
     },
     {
       title: 'Аксесуари',
       icon: 'accessories',
       link: '/accessories',
+      category: 'accessories',
     },
     {
       title: 'Запчастини',
       icon: 'spare-parts',
       link: '/spare-parts',
+      category: 'parts',
     },
     {
       title: 'Набори',
       icon: 'sets',
       link: '/sets',
+      category: 'sets',
     },
   ];
-  
+
+  const handleCategoryChange = category => {
+    setSelectedCategory(category);
+  };
+  console.log(selectedCategory)
+
   return (
     <NavMenu>
       <NavMobileList>
         <NavMobileItem>
-          <Accordion title="Каталог" items={items} />
+          <Accordion
+            onCategoryChange={handleCategoryChange}
+            title="Каталог"
+            items={items}
+          />
         </NavMobileItem>
         <NavMobileItem>
           <LinkNavMobile to={'/articles'}>Статті</LinkNavMobile>
