@@ -22,8 +22,8 @@ const Popular = () => {
     arrows: false,
   };
 
-  const cardWidth = 196;
-  const cardHeight = 248;
+  const cardWidth = '196px';
+  const cardHeight = '248px';
 
   return (
     <StyledPopular className='new-products'>
@@ -39,6 +39,9 @@ const Popular = () => {
               _id={item._id}
               width={cardWidth}
               height={cardHeight}
+              showButton={false}
+              sale={item.sale}
+              discount={item.discount}
             />
           ))}
         </Slider>

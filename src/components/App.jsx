@@ -5,6 +5,7 @@ import NotFound from '../pages/notFound';
 import HomePage from '../pages/home';
 import LoginPage from '../pages/login';
 import RegisterPage from '../pages/register';
+import Products from '../pages/products';
 
 export const App = () => {
   return (
@@ -13,17 +14,17 @@ export const App = () => {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<HomePage />} />
-            <Route path="products" element={<div>Магазин</div>} />
+            <Route path="drons" element={<Products />} />
             <Route path="articles" element={<div>Статті</div>} />
             <Route path="manufacturers" element={<div>Виробники</div>} />
             <Route path="user" element={<RegisterPage />} />
             <Route path="favorites" element={<div>Перелік улюбленних</div>} />
             <Route path="cart" element={<div>Кошик</div>} />
   
-            <Route path="drons" element={<div>Дрони</div>} />
-            <Route path="accessories" element={<div>Аксесуари</div>} />
-            <Route path="spare-parts" element={<div>Запчастини</div>} />
-            <Route path="sets" element={<div>Набори</div>} />
+            <Route path="drons" element={<Products />} />
+            <Route path="accessories" element={<Products />} />
+            <Route path="spare-parts" element={<Products />} />
+            <Route path="sets" element={<Products />} />
   
             <Route path="about-us" element={<div>Про нас</div>} />
             <Route path="delivery" element={<div>Доставка і оплата</div>} />

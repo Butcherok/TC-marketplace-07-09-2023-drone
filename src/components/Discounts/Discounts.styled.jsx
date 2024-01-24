@@ -10,9 +10,9 @@ export const DiscountsContainer = styled.div`
 
   & .slick-track {
     display: flex;
-    gap: 8px;
+    gap: 16px;
 
-    @media ${props => props.theme.desktop} {
+    @media ${props => props.theme.media.desktop} {
       gap: 20px;
     }
   }
@@ -40,12 +40,18 @@ export const DiscountsContainer = styled.div`
     display: flex !important;
     flex-direction: column;
     width: 100%;
+    // padding: 0 8px;
   }
 
   & .cards-group-head {
     display: flex;
     justify-content: space-between;
     padding: 20px 8px;
+
+    @media ${props => props.theme.media.desktop} {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
 
     & a {
       font-size: ${props => props.theme.fontSizes.s};
@@ -64,30 +70,40 @@ export const DiscountsContainer = styled.div`
   & .card-group-content {
     display: flex;
     width: 100%;
-    justify-content: center;
+    justify-content: start;
 
-    // & card1 {
-    //   width: 50% !important;
+    & .card-item {
+      padding: 0 8px 20px;
+
+      @media ${props => props.theme.media.desktop} {
+        padding: 0 20px 16px;
+      }
+    }
+
+    & .card-item .card-content {
+      border-radius: 0 0 8px 8px;
+      padding: 0 16px 24px;
+    }
+
+    & .card-item .heart-wrapper {
+      border-radius:  8px 8px 0 0;
+
+      & svg {
+        left: 0;
+      }
+    }
+
+    & .card-item .card-content,
+    & .card-item .heart-wrapper {
+      @media ${props => props.theme.media.bigMobile} {
+        background-color: #f5f6fa;
+        border-radius: 8px;
+      }
+    }
+
+    // @media (min-width: 1024px) {
+    //   background-color: #f5f6fa;
     // }
-  }
-
-  & .heart-wrapper {
-    transform: translateX(0);
-
-    @media ${props => props.theme.media.desktop} {
-      transform: translateX(16px);
-    }
-  }
-
-  & .card-content,
-  & .heart-wrapper {
-    @media ${props => props.theme.media.bigMobile} {
-      background-color: #f5f6fa;
-    }
-
-    @media (min-width: 1024px) {
-      background-color: ${props => props.theme.colors.white};
-    }
   }
 `;
 

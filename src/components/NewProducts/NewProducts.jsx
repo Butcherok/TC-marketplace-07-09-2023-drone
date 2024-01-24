@@ -22,8 +22,8 @@ const NewProducts = () => {
     arrows: false,
   };
 
-  const cardWidth = 196;
-  const cardHeight = 248;
+  const cardWidth = '196px';
+  const cardHeight = '248px';
 
   return (
     <StyledNewProducts className="new-products">
@@ -39,6 +39,7 @@ const NewProducts = () => {
               _id={item._id}
               width={cardWidth}
               height={cardHeight}
+              showButton={false}
             />
           ))}
         </Slider>
