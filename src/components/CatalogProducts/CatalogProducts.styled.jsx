@@ -33,6 +33,10 @@ export const MenuItem = styled.div`
   border-radius: 5px;
   overflow: hidden;
 
+  @media ${props => props.theme.media.tablet} {
+    height: 184px;
+  }
+
   img {
     transition: transform 0.2s ease-out;
     object-fit: cover;
