@@ -1,17 +1,36 @@
 import styled from 'styled-components';
 
-export const StyledFilterProducts = styled.div``;
+export const StyledFilterProducts = styled.div`
+  width: 100%;
+  padding-top: 20px;
+`;
 
 export const FilterProductsContainer = styled.div`
   padding: 0 4px;
   width: 100%;
+  display: flex;
+`;
+
+export const ProductsContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  @media ${props => props.theme.media.tablet} {
+    margin-left: 20px;
+  }
 `;
 
 export const HeadFilterProducts = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 20px 0;
+  align-items: flex-start;
+
+  & .product-filter {
+    @media ${props => props.theme.media.tablet} {
+      display: none;
+    }
+  }
 
   & svg {
     fill: ${props => props.theme.colors.logospan};
@@ -21,15 +40,45 @@ export const HeadFilterProducts = styled.div`
   }
 
   & span {
-    font-size:  ${props => props.theme.fontSizes.s};
+    font-size: ${props => props.theme.fontSizes.s};
     font-weight: ${props => props.theme.fontWeights.normal};
-    line-height:  ${props => props.theme.lineHeights.title};
+    line-height: ${props => props.theme.lineHeights.title};
     color: ${props => props.theme.colors.logospan};
   }
 
-  & .dropdown-btn button{
+  & .dropdown-btn button {
     background-color: transparent;
     border-color: transparent;
     color: ${props => props.theme.colors.logospan};
+  }
+`;
+
+export const FilterProductsContent = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 12px;
+
+  @media ${props => props.theme.media.bigMobile} {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  &>div {
+
+    & img {
+      width: 80%;
+    }
+    @media ${props => props.theme.media.bigMobile} {
+      width: calc(50% - 10px);
+
+      & img {
+        width: 100%;
+    }
+
+    @media ${props => props.theme.media.tablet} {
+      width: calc(33% - 12px);
+    }
   }
 `;
