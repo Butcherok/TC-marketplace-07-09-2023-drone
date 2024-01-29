@@ -12,7 +12,7 @@ const CatalogMenu = ({ isMenuOpen }) => {
     {
       title: 'Дрони',
       img: Drons,
-      link: '/drones',
+      link: '/drons',
     },
     {
       title: 'Аксесуари',

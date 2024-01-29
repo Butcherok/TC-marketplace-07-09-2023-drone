@@ -80,5 +80,13 @@ export const FilterProductsContent = styled.div`
     @media ${props => props.theme.media.tablet} {
       width: calc(33% - 12px);
     }
+
+    @media ${props => props.theme.media.landscapeTablet} {
+      width: calc(25% - 16px);
+    }
+
+    @media ${props => props.theme.media.desktop} {
+      width: calc(20% - 12px);
+    }
   }
 `;

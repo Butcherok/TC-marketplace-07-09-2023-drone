@@ -57,6 +57,7 @@ export const theme = {
     mobile: '(min-width: 320px)',
     bigMobile: '(min-width: 480px)',
     tablet: '(min-width: 768px)',
+    landscapeTablet: '(min-width: 1000px)',
     desktop: '(min-width: 1280px)',
   },
 };

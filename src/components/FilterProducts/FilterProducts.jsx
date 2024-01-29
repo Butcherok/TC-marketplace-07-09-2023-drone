@@ -12,6 +12,7 @@ import {
 import Filter from '../UI/Icon/Icon';
 import FilterOptions from './FilterComponents/FilterOptions/FilterOptions';
 import SelectedFilters from './FilterComponents/SelectedFilters/SelectedFilters';
+import Presentation from './FilterComponents/Presentation/Presentation';
 
 const FilterProducts = ({ selectedCategory }) => {
   const { query, fetchData } = useApi();
@@ -52,6 +53,7 @@ const FilterProducts = ({ selectedCategory }) => {
                 <DropdownItem eventKey="Від дорогих">Від дорогих</DropdownItem>
               </DropdownButton>
             </Dropdown>
+            <Presentation />
           </HeadFilterProducts>
           <FilterProductsContent>
             {query

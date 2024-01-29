@@ -12,4 +12,12 @@ export const StyledFilterOptions = styled.aside`
     border-radius: 8px;
     height: fit-content;
   }
+
+  @media ${props => props.theme.media.landscapeTablet} {
+    flex: 0 0 225px;
+  }
+
+  @media ${props => props.theme.media.desctop} {
+    flex: 0 0 196px;
+  }
 `;
