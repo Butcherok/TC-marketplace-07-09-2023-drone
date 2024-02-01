@@ -6,12 +6,13 @@ import {
 } from './Presentation.styled';
 import RadioButton from '../../../UI/Icon/Icon';
 
-const Presentation = () => {
+const Presentation = ({ onChangeDisplayMode }) => {
   const [radioValue, setRadioValue] = useState('grid');
-  const radios = [{ value: 'grid' }, { value: 'list' }, { value: 'compact' }];
+  const radios = [{ value: 'grid' }, { value: 'list' }, ];
 
   const handleRadioChange = (value) => {
     setRadioValue(value);
+    onChangeDisplayMode(value);
   };
   
 

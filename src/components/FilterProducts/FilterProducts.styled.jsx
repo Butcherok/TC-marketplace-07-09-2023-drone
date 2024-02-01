@@ -65,7 +65,7 @@ export const FilterProductsContent = styled.div`
     flex-wrap: wrap;
   }
 
-  &>div {
+  .product-card {
 
     & img {
       width: 80%;

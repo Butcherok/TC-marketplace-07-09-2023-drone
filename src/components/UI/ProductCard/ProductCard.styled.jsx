@@ -62,6 +62,7 @@ export const Card = styled.div`
         font-weight: ${props => props.theme.fontWeights.bold};
         color: ${props => props.theme.colors.red};
       }
+      
     }
 
     & img {

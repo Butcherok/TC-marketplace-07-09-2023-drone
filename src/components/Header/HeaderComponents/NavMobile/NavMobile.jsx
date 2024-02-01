@@ -40,8 +40,9 @@ const NavMobile = () => {
 
   const handleCategoryChange = category => {
     setSelectedCategory(category);
+    console.log(selectedCategory)
   };
-  console.log(selectedCategory)
+  
 
   return (
     <NavMenu>

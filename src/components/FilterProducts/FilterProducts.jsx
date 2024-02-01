@@ -13,15 +13,21 @@ import Filter from '../UI/Icon/Icon';
 import FilterOptions from './FilterComponents/FilterOptions/FilterOptions';
 import SelectedFilters from './FilterComponents/SelectedFilters/SelectedFilters';
 import Presentation from './FilterComponents/Presentation/Presentation';
+import ProductCardList from '../UI/ProductCardList/ProductCardList';
 
 const FilterProducts = ({ selectedCategory }) => {
   const { query, fetchData } = useApi();
 
   const [selectedItem, setSelectedItem] = useState('Популярні');
   const [selectedFilters, setSelectedFilters] = useState(['Очистити все']);
+  const [displayMode, setDisplayMode] = useState('grid');
 
   const handleSelect = item => {
     setSelectedItem(item);
+  };
+
+  const toggleDisplayMode = newMode => {
+    setDisplayMode(newMode);
   };
 
   useEffect(() => {
@@ -53,26 +59,45 @@ const FilterProducts = ({ selectedCategory }) => {
                 <DropdownItem eventKey="Від дорогих">Від дорогих</DropdownItem>
               </DropdownButton>
             </Dropdown>
-            <Presentation />
+            <Presentation onChangeDisplayMode={toggleDisplayMode} />
           </HeadFilterProducts>
           <FilterProductsContent>
             {query
               .filter(item => item.category === selectedCategory)
-              .map((item, index) => (
-                <ProductCard
-                  key={index}
-                  title={item.title}
-                  img={item.img}
-                  price={item.price}
-                  _id={item._id}
-                  width="100%"
-                  height="280px"
-                  showButton={true}
-                  sale={item.sale}
-                  discount={item.discount}
-                  category={item.category}
-                />
-              ))}
+              .map((item, index) =>
+                displayMode === 'list' && window.innerWidth >= 768 ? (
+                  <ProductCardList
+                    key={index}
+                    title={item.title}
+                    img={item.img}
+                    price={item.price}
+                    _id={item._id}
+                    width="100%"
+                    height="280px"
+                    showButton={true}
+                    sale={item.sale}
+                    discount={item.discount}
+                    category={item.category}
+                    properties={item.properties}
+                    stock={item.stock}
+                  />
+                ) : (
+                  <ProductCard
+                    key={index}
+                    title={item.title}
+                    img={item.img}
+                    price={item.price}
+                    _id={item._id}
+                    width="100%"
+                    height="280px"
+                    showButton={true}
+                    sale={item.sale}
+                    discount={item.discount}
+                    category={item.category}
+                    className="product-card"
+                  />
+                )
+              )}
           </FilterProductsContent>
         </ProductsContent>
       </FilterProductsContainer>
