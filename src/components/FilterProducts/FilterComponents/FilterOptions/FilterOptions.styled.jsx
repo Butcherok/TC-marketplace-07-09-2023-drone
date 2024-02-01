@@ -17,7 +17,7 @@ export const StyledFilterOptions = styled.aside`
     flex: 0 0 225px;
   }
 
-  @media ${props => props.theme.media.desctop} {
+  @media ${props => props.theme.media.desktop} {
     flex: 0 0 196px;
   }
 `;

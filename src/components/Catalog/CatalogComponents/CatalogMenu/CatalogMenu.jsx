@@ -13,21 +13,25 @@ const CatalogMenu = ({ isMenuOpen }) => {
       title: 'Дрони',
       img: Drons,
       link: '/drons',
+      category: 'drons'
     },
     {
       title: 'Аксесуари',
       img: Accessories,
       link: '/accessories',
+      category: 'accessories'
     },
     {
       title: 'Запчастини',
       img: SpareParts,
       link: '/spare-parts',
+      category: 'parts'
     },
     {
       title: 'Набори',
       img: Sets,
       link: '/sets',
+      category: 'sets'
     },
   ];
 

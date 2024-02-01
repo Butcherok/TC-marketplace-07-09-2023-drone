@@ -45,7 +45,7 @@ const ProductCard = ({
               <span className="discounted-price">{discountPrice} грн.</span>
             </>
           ) : (
-            `${price} грн.`
+            <span className="price">{price} грн.</span>
           )}
         </p>
         {showButton && (
