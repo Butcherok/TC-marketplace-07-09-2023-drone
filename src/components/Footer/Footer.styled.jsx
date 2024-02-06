@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const StyledFooter = styled.footer`
   width: 100%;
   margin: 0 auto;
-  // position: fixed;
+  position: sticky;
   bottom: 0;
   z-index: 100;
   background-color: ${props => props.theme.colors.background};

@@ -2,9 +2,6 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 export const Menu = styled.div`
-  
-  
-
   @media ${props => props.theme.media.bigMobile} {
     flex-direction: row;
     flex-wrap: wrap;
@@ -37,10 +34,12 @@ export const MenuItem = styled.div`
     height: 184px;
   }
 
+  
+
   img {
     transition: transform 0.2s ease-out;
     object-fit: cover;
-    transform: scale(1.5)
+    transform: scale(1.5);
   }
 
   &:hover,
@@ -50,6 +49,8 @@ export const MenuItem = styled.div`
       transition: transform 0.2s ease-out;
     }
   }
+
+  
 
   .menu-item-title {
     position: absolute;
@@ -61,6 +62,10 @@ export const MenuItem = styled.div`
     font-weight: ${props => props.theme.fontWeights.bold};
     color: ${props => props.theme.colors.white};
     text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.48);
+  }
+
+  @media ${props => props.theme.media.desktop} {
+    width: calc(25% - 8px);
   }
 `;
 
