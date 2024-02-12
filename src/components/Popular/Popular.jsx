@@ -10,6 +10,7 @@ import {
   PopularTitle,
   StyledPopular,
 } from './Popular.styled';
+import { Link } from 'react-router-dom';
 
 const Popular = () => {
   const { query } = useApi();
@@ -26,23 +27,25 @@ const Popular = () => {
   const cardHeight = '248px';
 
   return (
-    <StyledPopular className='new-products'>
+    <StyledPopular className="new-products">
       <PopularContainer>
         <PopularTitle>Найпопулярніші</PopularTitle>
         <Slider {...settings}>
           {query.map((item, index) => (
-            <ProductCard
-              key={index}
-              title={item.title}
-              img={item.img}
-              price={item.price}
-              _id={item._id}
-              width={cardWidth}
-              height={cardHeight}
-              showButton={false}
-              sale={item.sale}
-              discount={item.discount}
-            />
+            <Link to={`drons/${item._id}`} key={index}>
+              <ProductCard
+                key={index}
+                title={item.title}
+                img={item.img}
+                price={item.price}
+                _id={item._id}
+                width={cardWidth}
+                height={cardHeight}
+                showButton={false}
+                sale={item.sale}
+                discount={item.discount}
+              />
+            </Link>
           ))}
         </Slider>
       </PopularContainer>
