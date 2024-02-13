@@ -30,8 +30,8 @@ const BurgerMenu = ({ isOpen, onClose }) => {
 
   return (
     <>
-      <Overlay isOpen={isOpen} onClick={handleCloseMenu} />
-      <StyledBurgerMenu isOpen={isOpen} {...handlers}>
+      <Overlay $isOpen={isOpen} onClick={handleCloseMenu} />
+      <StyledBurgerMenu $isOpen={isOpen} {...handlers}>
         <div className="logo-block">
           <Logo className="logo-burger" onClick={onClose} />
           <Close id="cross" onClick={onClose} className="close" />

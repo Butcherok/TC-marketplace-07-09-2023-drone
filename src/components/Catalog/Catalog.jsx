@@ -6,7 +6,6 @@ import CatalogMenu from './CatalogComponents/CatalogMenu/CatalogMenu';
 
 const Catalog = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  
 
   return (
     <StyledCatalog>

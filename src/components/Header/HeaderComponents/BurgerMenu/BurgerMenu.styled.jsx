@@ -6,7 +6,7 @@ export const StyledBurgerMenu = styled.div`
   align-items: start;
   position: absolute;
   top: 0;
-  left: ${props => (props.isOpen ? '0' : '-100vw')};
+  left: ${props => (props.$isOpen ? '0' : '-100vw')};
   max-height: 100vh;
   overflow-y: auto;
   padding: 24px 16px;
@@ -48,9 +48,8 @@ export const Overlay = styled.div`
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
-  display: ${props => (props.isOpen ? 'block' : 'none')};
+  display: ${props => (props.$isOpen ? 'block' : 'none')};
   z-index: 998;
-  position: fixed;
 
   @media ${props => props.theme.media.desktop} {
     display: none;

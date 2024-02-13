@@ -25,8 +25,8 @@ export const MenuItem = styled.div`
   cursor: pointer;
   border-radius: 5px;
   display: ${props =>
-    props.isMenuOpen || props.isFirstItem ? 'flex' : 'none'};
-  opacity: ${props => (props.isMenuOpen || props.isFirstItem ? '1' : '0')};
+    props.$isMenuOpen || props.$isFirstItem ? 'flex' : 'none'};
+  opacity: ${props => (props.$isMenuOpen || props.$isFirstItem ? '1' : '0')};
 
   img {
     transition: transform 0.2s ease-out;

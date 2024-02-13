@@ -13,32 +13,36 @@ const CatalogMenu = ({ isMenuOpen }) => {
       title: 'Дрони',
       img: Drons,
       link: '/drons',
-      category: 'drons'
+      category: 'drons',
     },
     {
       title: 'Аксесуари',
       img: Accessories,
       link: '/accessories',
-      category: 'accessories'
+      category: 'accessories',
     },
     {
       title: 'Запчастини',
       img: SpareParts,
       link: '/spare-parts',
-      category: 'parts'
+      category: 'parts',
     },
     {
       title: 'Набори',
       img: Sets,
       link: '/sets',
-      category: 'sets'
+      category: 'sets',
     },
   ];
 
   return (
     <Menu>
       {items.map((item, index) => (
-        <MenuItem isMenuOpen={isMenuOpen} key={index} isFirstItem={index === 0}>
+        <MenuItem
+          $isMenuOpen={isMenuOpen}
+          key={index}
+          $isFirstItem={index === 0}
+        >
           <Link to={item.link}>
             <Image src={item.img} alt={item.link} />
             <h3 className="menu-item-title">{item.title}</h3>
