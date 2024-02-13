@@ -14,6 +14,7 @@ import FilterOptions from './FilterComponents/FilterOptions/FilterOptions';
 import SelectedFilters from './FilterComponents/SelectedFilters/SelectedFilters';
 import Presentation from './FilterComponents/Presentation/Presentation';
 import ProductCardList from '../UI/ProductCardList/ProductCardList';
+import { Link } from 'react-router-dom';
 
 const FilterProducts = ({ selectedCategory }) => {
   const { query, fetchData } = useApi();
@@ -21,6 +22,7 @@ const FilterProducts = ({ selectedCategory }) => {
   const [selectedItem, setSelectedItem] = useState('Популярні');
   const [selectedFilters, setSelectedFilters] = useState(['Очистити все']);
   const [displayMode, setDisplayMode] = useState('grid');
+  // const [productId, setProductId] = useState(null);
 
   const handleSelect = item => {
     setSelectedItem(item);
@@ -29,6 +31,11 @@ const FilterProducts = ({ selectedCategory }) => {
   const toggleDisplayMode = newMode => {
     setDisplayMode(newMode);
   };
+
+  // const onClick = id => {
+  // setProductId(id);
+  // console.log('id', id);
+  // };
 
   useEffect(() => {
     fetchData();
@@ -66,36 +73,41 @@ const FilterProducts = ({ selectedCategory }) => {
               .filter(item => item.category === selectedCategory)
               .map((item, index) =>
                 displayMode === 'list' && window.innerWidth >= 768 ? (
-                  <ProductCardList
-                    key={index}
-                    title={item.title}
-                    img={item.img}
-                    price={item.price}
-                    _id={item._id}
-                    width="100%"
-                    height="280px"
-                    showButton={true}
-                    sale={item.sale}
-                    discount={item.discount}
-                    category={item.category}
-                    properties={item.properties}
-                    stock={item.stock}
-                  />
+                  <Link to={`${item._id}`} key={index} style={{ flexGrow: 1 }}>
+                    <ProductCardList
+                      key={index}
+                      title={item.title}
+                      img={item.img}
+                      price={item.price}
+                      _id={item._id}
+                      width="100%"
+                      height="280px"
+                      showButton={true}
+                      sale={item.sale}
+                      discount={item.discount}
+                      category={item.category}
+                      properties={item.properties}
+                      stock={item.stock}
+                      // onClick={onClick(item._id)}
+                    />
+                  </Link>
                 ) : (
-                  <ProductCard
-                    key={index}
-                    title={item.title}
-                    img={item.img}
-                    price={item.price}
-                    _id={item._id}
-                    width="100%"
-                    height="280px"
-                    showButton={true}
-                    sale={item.sale}
-                    discount={item.discount}
-                    category={item.category}
-                    className="product-card"
-                  />
+                  <Link to={`${item._id}`} key={index} className="product-card">
+                    <ProductCard
+                      key={index}
+                      title={item.title}
+                      img={item.img}
+                      price={item.price}
+                      _id={item._id}
+                      width="100%"
+                      height="280px"
+                      showButton={true}
+                      sale={item.sale}
+                      discount={item.discount}
+                      category={item.category}
+                      // onClick={onClick(item._id)}
+                    />
+                  </Link>
                 )
               )}
           </FilterProductsContent>

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 import { useApi } from '../../contexts/ApiContext/ApiContext';
 
@@ -66,19 +66,21 @@ const Discounts = () => {
                     {group
                       .filter(item => item.sale === true)
                       .map((item, itemIndex) => (
-                        <ProductCard
-                          className="card-item"
-                          key={itemIndex}
-                          title={item.title}
-                          img={item.img}
-                          price={item.price}
-                          _id={item._id}
-                          width={cardWidth}
-                          height={cardHeight}
-                          showButton={false}
-                          sale={item.sale}
-                          discount={item.discount}
-                        />
+                        <Link to={`drons/${item._id}`} key={itemIndex}>
+                          <ProductCard
+                            className="card-item"
+                            key={itemIndex}
+                            title={item.title}
+                            img={item.img}
+                            price={item.price}
+                            _id={item._id}
+                            width={cardWidth}
+                            height={cardHeight}
+                            showButton={false}
+                            sale={item.sale}
+                            discount={item.discount}
+                          />
+                        </Link>
                       ))}
                   </div>
                 </div>

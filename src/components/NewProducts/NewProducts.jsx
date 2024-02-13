@@ -10,6 +10,7 @@ import {
   NewProductsTitle,
   StyledNewProducts,
 } from './NewProducts.styled';
+import { Link } from 'react-router-dom';
 
 const NewProducts = () => {
   const { query } = useApi();
@@ -31,16 +32,18 @@ const NewProducts = () => {
         <NewProductsTitle>Новинки</NewProductsTitle>
         <Slider {...settings}>
           {query.map((item, index) => (
-            <ProductCard
-              key={index}
-              title={item.title}
-              img={item.img}
-              price={item.price}
-              _id={item._id}
-              width={cardWidth}
-              height={cardHeight}
-              showButton={false}
-            />
+            <Link to={`drons/${item._id}`} key={index}>
+              <ProductCard
+                key={index}
+                title={item.title}
+                img={item.img}
+                price={item.price}
+                _id={item._id}
+                width={cardWidth}
+                height={cardHeight}
+                showButton={false}
+              />
+            </Link>
           ))}
         </Slider>
       </NewProductsContainer>
