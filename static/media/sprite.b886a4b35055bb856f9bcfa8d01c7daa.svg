@@ -40,7 +40,7 @@
 </symbol> -->
 
 
-<symbol id="icon-cart" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<!-- <symbol id="icon-cart" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
   <g id="Home page" clip-path="url(#clip0_0_1)">
     <rect width="1440" height="2840" transform="translate(-1302 -32)" fill="inherit"/>
     <g id="Header">
@@ -59,7 +59,11 @@
     <rect width="1440" height="2840" fill="inherit" transform="translate(-1302 -32)"/>
   </clipPath>
   </defs>
-</symbol>
+</symbol> -->
+
+<svg id="icon-cart" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  <path d="M2.25 3H3.63568C4.14537 3 4.59138 3.34265 4.7227 3.83513L5.1059 5.27209M7.5 14.25C5.84315 14.25 4.5 15.5931 4.5 17.25H20.25M7.5 14.25H18.7183C19.8394 11.9494 20.8177 9.56635 21.6417 7.1125C16.88 5.89646 11.8905 5.25 6.75 5.25C6.20021 5.25 5.65214 5.2574 5.1059 5.27209M7.5 14.25L5.1059 5.27209M6 20.25C6 20.6642 5.66421 21 5.25 21C4.83579 21 4.5 20.6642 4.5 20.25C4.5 19.8358 4.83579 19.5 5.25 19.5C5.66421 19.5 6 19.8358 6 20.25ZM18.75 20.25C18.75 20.6642 18.4142 21 18 21C17.5858 21 17.25 20.6642 17.25 20.25C17.25 19.8358 17.5858 19.5 18 19.5C18.4142 19.5 18.75 19.8358 18.75 20.25Z" stroke="inherit" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
 
 <symbol id="icon-instagram" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <rect width="24" height="24" fill="url(#pattern0)"/>
@@ -135,9 +139,13 @@
   <path d="M6 16L26 16M26 16L17 7M26 16L17 25" stroke="inherit" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 </symbol>
 
-<symbol id="icon-heart" viewBox="0 0 40 40" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+<!-- <symbol id="icon-heart" viewBox="0 0 40 40" fill="inherit" xmlns="http://www.w3.org/2000/svg">
   <path d="M29 16.25C29 13.7647 26.9013 11.75 24.3125 11.75C22.3769 11.75 20.7153 12.8763 20 14.4834C19.2847 12.8763 17.6231 11.75 15.6875 11.75C13.0987 11.75 11 13.7647 11 16.25C11 23.4706 20 28.25 20 28.25C20 28.25 29 23.4706 29 16.25Z" stroke="inherit" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-</symbol>
+</symbol> -->
+
+<svg id="icon-heart" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <path d="M28 11C28 7.68629 25.2018 5 21.75 5C19.1692 5 16.9537 6.5017 16 8.64456C15.0463 6.5017 12.8308 5 10.25 5C6.79822 5 4 7.68629 4 11C4 20.6274 16 27 16 27C16 27 28 20.6274 28 11Z" stroke="inherit" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
 
 <symbol id="icon-heart-red" viewBox="0 0 40 41" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path d="M29 16.4404C29 13.9551 26.9013 11.9404 24.3125 11.9404C22.3769 11.9404 20.7153 13.0667 20 14.6738C19.2847 13.0667 17.6231 11.9404 15.6875 11.9404C13.0987 11.9404 11 13.9551 11 16.4404C11 23.661 20 28.4404 20 28.4404C20 28.4404 29 23.661 29 16.4404Z" fill="inherit"/>
@@ -175,9 +183,17 @@
   <path d="M1 5.43914L5.0559 11.8122L9.34849 1.18848" stroke="inherit" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </symbol>
 
+<svg id="icon-check" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+<path d="M3.375 9.5625L7.875 14.0625L14.625 3.9375" stroke="inherit" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
 <symbol id="icon-star" viewBox="0 0 24 25" fill="inherit" xmlns="http://www.w3.org/2000/svg">
   <path d="M12.0003 17.7698L16.1503 20.2798C16.9103 20.7398 17.8403 20.0598 17.6403 19.1998L16.5403 14.4798L20.2103 11.2998C20.8803 10.7198 20.5203 9.61977 19.6403 9.54977L14.8103 9.13977L12.9203 4.67977C12.5803 3.86977 11.4203 3.86977 11.0803 4.67977L9.19032 9.12977L4.36032 9.53977C3.48032 9.60977 3.12032 10.7098 3.79032 11.2898L7.46032 14.4698L6.36032 19.1898C6.16032 20.0498 7.09032 20.7298 7.85032 20.2698L12.0003 17.7698Z" fill="inherit"/>
 </symbol>
+
+<svg id="icon-statistics" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+  <path d="M9 27L9 5M16 27L16 16M23 27L23 5" stroke="inherit" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
 
 <symbol id="icon-instagram" viewBox="0 0 24 24" fill="inherit" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <rect width="24" height="24" fill="inherit" stroke="inherit" />
