@@ -24,7 +24,6 @@ export const App = () => {
 
             <Route path="drons" element={<Products />} />
             <Route path="drons/:dronId" element={<ProductPage />} />
-            {/* <Route path=":dronId" element={<ProductPage />} /> */}
             <Route path="accessories" element={<Products />} />
             <Route path="spare-parts" element={<Products />} />
             <Route path="sets" element={<Products />} />

@@ -20,7 +20,7 @@ const Accordion = ({ title, items, showIcons = true }) => {
     <StyledAccordion>
       <StyledAccordionHeader
         onClick={toggleAccordion}
-        isAccordionOpen={isAccordionOpen}
+        $isAccordionOpen={isAccordionOpen}
       >
         {title}
         <Icon id="chevron-down" onClick={toggleAccordion} />

@@ -21,7 +21,7 @@ export const StyledFilterAccordionHeader = styled.div`
     cursor: pointer;
     transition: transform 0.3s ease;
     transform: ${props =>
-      props.isAccordionOpen ? 'rotate(180deg)' : 'rotate(0deg)'};
+      props.$isAccordionOpen ? 'rotate(180deg)' : 'rotate(0deg)'};
   }
 `;
 

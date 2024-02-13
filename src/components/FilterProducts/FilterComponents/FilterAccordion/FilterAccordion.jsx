@@ -22,22 +22,21 @@ const FilterAccordion = ({
   };
 
   const handleCheckboxChange = item => {
-   console.log(selectedFilters)
-      setSelectedFilters(prevFilters => {
-        if (prevFilters.includes(item)) {
-          return prevFilters.filter(filter => filter !== item);
-        } else {
-          return [item, ...prevFilters];
-        }
-      });
-    
+    console.log(selectedFilters);
+    setSelectedFilters(prevFilters => {
+      if (prevFilters.includes(item)) {
+        return prevFilters.filter(filter => filter !== item);
+      } else {
+        return [item, ...prevFilters];
+      }
+    });
   };
 
   return (
     <StyledFilterAccordion>
       <StyledFilterAccordionHeader
         onClick={toggleAccordion}
-        isAccordionOpen={isAccordionOpen}
+        $isAccordionOpen={isAccordionOpen}
       >
         {title}
         <Icon id="chevron-down" onClick={toggleAccordion} />

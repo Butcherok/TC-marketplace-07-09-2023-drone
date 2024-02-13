@@ -13,7 +13,7 @@ export const StyledAccordionHeader = styled.div`
   background-color: transparent !important;
   border: none !important;
   font-weight: ${props =>
-    props.isAccordionOpen
+    props.$isAccordionOpen
       ? props.theme.fontWeights.bold
       : props.theme.fontWeights.normal};
   color: ${props => props.theme.colors.logo} !important;

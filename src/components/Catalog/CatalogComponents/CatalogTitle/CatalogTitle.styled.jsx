@@ -25,6 +25,6 @@ export const TitleWrapper = styled.div`
     top: 3px;
     cursor: pointer;
     transition: transform 0.3s ease;
-    transform: ${props => (props.isMenuOpen ? 'rotate(180deg)' : 'rotate(0deg)')};
+    transform: ${props => (props.$isMenuOpen ? 'rotate(180deg)' : 'rotate(0deg)')};
   }
 `;

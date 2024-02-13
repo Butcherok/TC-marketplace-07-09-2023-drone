@@ -7,7 +7,7 @@ const CatalogTitle = ({ isMenuOpen, setIsMenuOpen }) => {
   };
 
   return (
-    <TitleWrapper isMenuOpen={isMenuOpen}>
+    <TitleWrapper $isMenuOpen={isMenuOpen}>
       <h2>Каталог</h2>
       <Chevron id="chevron-down" onClick={toggleMenu} />
     </TitleWrapper>
