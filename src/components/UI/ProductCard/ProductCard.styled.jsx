@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import { Button } from 'react-bootstrap';
 
 export const Card = styled.div`
-  padding: 0 0 24px;
-  background-color: #fafcff;
+  // padding: 0 0 24px;
+  background-color: #ffffff;
   position: relative;
   // width: 196px;
   // height: 248px;
@@ -42,7 +42,7 @@ export const Card = styled.div`
 
 
   & .card-content {
-    padding: 0 16px;
+    padding: 0 16px 24px;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
