@@ -17,10 +17,9 @@ const Discounts = () => {
   const { query } = useApi();
 
   const [cardWidth, setCardWidth] = useState(146);
-
   useEffect(() => {
     const updateCardWidth = () => {
-      setCardWidth(window.innerWidth > 1439 ? '206px' : '146px');
+      setCardWidth(window.innerWidth > 1439 ? '180px' : '132px');
     };
 
     window.addEventListener('resize', updateCardWidth);
@@ -41,7 +40,7 @@ const Discounts = () => {
   };
 
   // const cardWidth = 146;
-  const cardHeight = '250px';
+  const cardHeight = '264px';
 
   const groupedQuery = [];
   for (let i = 0; i < query.length; i += 2) {

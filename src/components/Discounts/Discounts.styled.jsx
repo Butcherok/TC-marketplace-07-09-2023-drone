@@ -40,19 +40,19 @@ export const DiscountsContainer = styled.div`
     display: flex !important;
     flex-direction: column;
     width: 100%;
-    // padding: 0 8px;
+    padding: 20px 16px;
   }
 
   & .cards-group-head {
     display: flex;
     justify-content: space-between;
-    padding: 20px 8px;
+    margin-bottom: 16px;
+    // padding: 20px 8px;
 
-    @media ${props => props.theme.media.desktop} {
-      padding-left: 20px;
-      padding-right: 20px;
-    }
-
+    // @media ${props => props.theme.media.desktop} {
+    //   padding-left: 20px;
+    //   padding-right: 20px;
+    // }
     & a {
       font-size: ${props => props.theme.fontSizes.s};
       font-weight: ${props => props.theme.fontWeights.normal};
@@ -69,24 +69,29 @@ export const DiscountsContainer = styled.div`
 
   & .card-group-content {
     display: flex;
+    gap: 12px;
     width: 100%;
     justify-content: start;
 
     & .card-item {
-      padding: 0 8px 20px;
-
-      @media ${props => props.theme.media.desktop} {
-        padding: 0 20px 16px;
+      @media ${props => props.theme.media.bigMobile} {
+        background-color: #f5f6fa;
       }
+      // padding: 0 8px 20px;
+      // background-color: #f5f6fa;
+
+      // @media ${props => props.theme.media.desktop} {
+      //   padding: 0 0 16px;
+      // }
     }
 
     & .card-item .card-content {
       border-radius: 0 0 8px 8px;
-      padding: 0 16px 24px;
+      // padding: 0 16px 24px;
     }
 
     & .card-item .heart-wrapper {
-      border-radius:  8px 8px 0 0;
+      border-radius: 8px 8px 0 0;
 
       & svg {
         left: 0;
