@@ -143,7 +143,7 @@
   <path d="M29 16.25C29 13.7647 26.9013 11.75 24.3125 11.75C22.3769 11.75 20.7153 12.8763 20 14.4834C19.2847 12.8763 17.6231 11.75 15.6875 11.75C13.0987 11.75 11 13.7647 11 16.25C11 23.4706 20 28.25 20 28.25C20 28.25 29 23.4706 29 16.25Z" stroke="inherit" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 </symbol> -->
 
-<svg id="icon-heart" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+<svg id="icon-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
   <path d="M28 11C28 7.68629 25.2018 5 21.75 5C19.1692 5 16.9537 6.5017 16 8.64456C15.0463 6.5017 12.8308 5 10.25 5C6.79822 5 4 7.68629 4 11C4 20.6274 16 27 16 27C16 27 28 20.6274 28 11Z" stroke="inherit" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 
