@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Button } from 'react-bootstrap';
 
 export const Card = styled.div`
-  padding: 0 16px 24px;
+  padding: 0 0 24px;
   background-color: #fafcff;
   position: relative;
   // width: 196px;
@@ -16,28 +16,33 @@ export const Card = styled.div`
   box-shadow: 3px 4px 40px 0px rgba(187, 194, 221, 0.1);
 
   & .heart-wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
+    // width: 100%;
+    // display: flex;
+    // justify-content: flex-end;
+    margin-right: 8px;
+    margin-left: auto;
+    margin-top: 8px;
+    margin-bottom: 20px;
     background-color: ${props => props.theme.colors.white};
 
     & svg {
-      width: 40px;
-      height: 40px;
+      width: 24px;
+      height: 24px;
       stroke: ${props =>
         props.favorite ? props.theme.colors.red : props.theme.colors.logo};
       fill: ${props =>
         props.favorite ? props.theme.colors.red : 'transparent'};
 
-      @media ${props => props.theme.desktop} {
-        position: relative;
-        left: 16px;
-      }
+      // @media ${props => props.theme.desktop} {
+      //   position: relative;
+      //   left: 16px;
+      // }
     }
   }
 
 
   & .card-content {
+    padding: 0 16px;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -76,6 +81,7 @@ export const Card = styled.div`
       font-weight: ${props => props.theme.fontWeights.normal};
       align-self: start;
       flex-grow: 1;
+      color: ${props => props.theme.colors.logospan};
     }
 
     & p {
