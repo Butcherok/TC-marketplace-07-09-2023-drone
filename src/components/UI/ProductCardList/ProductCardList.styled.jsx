@@ -38,8 +38,8 @@ export const CardPhotos = styled.div`
   //   justify-content: flex-end;
 
   .heart {
-    width: 40px;
-    height: 40px;
+    width: 24px;
+    height: 24px;
     position: absolute;
     right: -6px;
     top: -10px;
@@ -119,6 +119,7 @@ export const CardPrice = styled.div`
       font-size: ${props => props.theme.fontSizes.m};
       line-height: ${props => props.theme.lineHeights.title};
       font-weight: ${props => props.theme.fontWeights.bold};
+      color: ${props => props.theme.colors.logospan};
     }
   }
 

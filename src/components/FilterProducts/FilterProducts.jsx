@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Dropdown, DropdownButton, DropdownItem } from 'react-bootstrap';
 import ProductCard from '../UI/ProductCard/ProductCard';
 import { useApi } from '../../contexts/ApiContext/ApiContext';
@@ -17,7 +17,7 @@ import ProductCardList from '../UI/ProductCardList/ProductCardList';
 import { Link } from 'react-router-dom';
 
 const FilterProducts = ({ selectedCategory }) => {
-  const { query, fetchData } = useApi();
+  const { query } = useApi();
 
   const [selectedItem, setSelectedItem] = useState('Популярні');
   const [selectedFilters, setSelectedFilters] = useState(['Очистити все']);
@@ -37,9 +37,9 @@ const FilterProducts = ({ selectedCategory }) => {
   // console.log('id', id);
   // };
 
-  useEffect(() => {
-    fetchData();
-  }, [selectedCategory, fetchData]);
+  // useEffect(() => {
+  //   fetchData();
+  // }, [selectedCategory, fetchData]);
 
   return (
     <StyledFilterProducts>
