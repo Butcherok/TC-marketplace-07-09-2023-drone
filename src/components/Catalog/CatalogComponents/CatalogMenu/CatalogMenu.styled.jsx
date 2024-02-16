@@ -81,6 +81,11 @@ export const MenuItem = styled.div`
     font-weight: ${props => props.theme.fontWeights.bold};
     color: ${props => props.theme.colors.white};
     text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.48);
+
+    @media ${props => props.theme.media.bigMobile} {
+      font-size: ${props => props.theme.fontSizes.l};
+      bottom: 10%;
+      transform: ${props => !props.isHomePage && 'translate(-50%, 0%)'};
   }
 `;
 
