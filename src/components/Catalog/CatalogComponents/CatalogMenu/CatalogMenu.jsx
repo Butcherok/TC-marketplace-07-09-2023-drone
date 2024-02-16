@@ -51,6 +51,8 @@ const CatalogMenu = ({ isMenuOpen, setIsMenuOpen }) => {
           $isMenuOpen={isMenuOpen}
           key={index}
           $isFirstItem={index === 0}
+          isHomePage={isHomePage}
+          // style={{ width: !isHomePage && 'calc(50% - 4px)', height: !isHomePage && '72px'}}
         >
           <Link to={item.link}>
             <Image src={item.img} alt={item.link} />
