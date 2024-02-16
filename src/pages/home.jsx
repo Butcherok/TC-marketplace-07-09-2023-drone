@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Hero from 'components/Hero/Hero';
 import Catalog from 'components/Catalog/Catalog';
@@ -7,10 +7,18 @@ import Popular from 'components/Popular/Popular';
 import Discounts from 'components/Discounts/Discounts';
 
 const HomePage = () => {
+  const [selectedCategory, setSelectedCategory] = useState('');
+
+  const handleCategoryChange = newCategory => {
+    setSelectedCategory(newCategory);
+  };
   return (
     <>
       <Hero />
-      <Catalog />
+      <Catalog
+        selectedCategory={selectedCategory}
+        onCategoryChange={handleCategoryChange}
+      />
       <Discounts />
       <NewProducts />
       <Popular />

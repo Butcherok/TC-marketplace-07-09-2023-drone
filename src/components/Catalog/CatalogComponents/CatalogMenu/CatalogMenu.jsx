@@ -9,13 +9,13 @@ import Accessories from './MenuImg/accessories.webp';
 import SpareParts from './MenuImg/spare-parts.webp';
 import Sets from './MenuImg/sets.webp';
 
-const CatalogMenu = ({ isMenuOpen, setIsMenuOpen }) => {
+const CatalogMenu = ({ isMenuOpen, setIsMenuOpen, onCategoryChange }) => {
   const items = [
     {
       title: 'Дрони',
       img: Drons,
       link: '/drons',
-      category: 'drons',
+      category: 'drone',
     },
     {
       title: 'Аксесуари',
@@ -39,10 +39,10 @@ const CatalogMenu = ({ isMenuOpen, setIsMenuOpen }) => {
 
   const location = useLocation();
   const isHomePage = location.pathname === '/';
-  console.log(isHomePage);
+ 
   useEffect(() => {
     if (!isHomePage) setIsMenuOpen(true);
-  }, [isHomePage]);
+  });
 
   return (
     <Menu>
@@ -52,7 +52,10 @@ const CatalogMenu = ({ isMenuOpen, setIsMenuOpen }) => {
           key={index}
           $isFirstItem={index === 0}
           isHomePage={isHomePage}
-          // style={{ width: !isHomePage && 'calc(50% - 4px)', height: !isHomePage && '72px'}}
+          onClick={() => {
+            onCategoryChange(item.category)
+            setIsMenuOpen(false)
+          }}
         >
           <Link to={item.link}>
             <Image src={item.img} alt={item.link} />

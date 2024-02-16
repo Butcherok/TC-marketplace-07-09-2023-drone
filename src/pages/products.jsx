@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
 import FilterProducts from '../components/FilterProducts/FilterProducts';
-import CatalogProducts from '../components/CatalogProducts/CatalogProducts';
 import Breadcrumbs from '../components/UI/Breadcrumbs/Breadcrumbs';
 import Catalog from '../components/Catalog/Catalog';
 
@@ -18,7 +17,6 @@ const Products = () => {
         selectedCategory={selectedCategory}
         onCategoryChange={handleCategoryChange}
       />
-      {/* <CatalogProducts selectedCategory={selectedCategory} onCategoryChange={handleCategoryChange} /> */}
       <FilterProducts selectedCategory={selectedCategory} />
     </>
   );
