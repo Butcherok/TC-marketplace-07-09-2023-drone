@@ -1,13 +1,7 @@
-import {  useEffect } from 'react';
-
 import { StyledSelectedFilters } from './SelectedFilters.styled';
 import Reset from '../../../UI/Icon/Icon';
 
 const SelectedFilters = ({ selectedFilters, setSelectedFilters }) => {
-  useEffect(() => {
-    console.log('Selected Filters:', selectedFilters);
-  }, [selectedFilters]);
-
   const removeFilter = filter => {
     const updatedFilters = selectedFilters.filter(
       selectedFilter => selectedFilter !== filter

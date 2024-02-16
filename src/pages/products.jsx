@@ -1,19 +1,22 @@
 import { useState } from 'react';
 
 import FilterProducts from '../components/FilterProducts/FilterProducts';
-import CatalogProducts from '../components/CatalogProducts/CatalogProducts';
 import Breadcrumbs from '../components/UI/Breadcrumbs/Breadcrumbs';
+import Catalog from '../components/Catalog/Catalog';
 
 const Products = () => {
-  const [selectedCategory, setSelectedCategory] = useState('drone');
+  const [selectedCategory, setSelectedCategory] = useState('');
 
-  const handleCategoryChange = (newCategory) => {
+  const handleCategoryChange = newCategory => {
     setSelectedCategory(newCategory);
   };
   return (
     <>
       <Breadcrumbs />
-      <CatalogProducts selectedCategory={selectedCategory} onCategoryChange={handleCategoryChange} />
+      <Catalog
+        selectedCategory={selectedCategory}
+        onCategoryChange={handleCategoryChange}
+      />
       <FilterProducts selectedCategory={selectedCategory} />
     </>
   );

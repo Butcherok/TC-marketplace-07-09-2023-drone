@@ -1,4 +1,6 @@
+import { useLocation } from 'react-router-dom';
 import { Image } from 'react-bootstrap';
+import { useEffect } from 'react';
 
 import { MenuItem, Menu, Link } from './CatalogMenu.styled';
 
@@ -7,13 +9,13 @@ import Accessories from './MenuImg/accessories.webp';
 import SpareParts from './MenuImg/spare-parts.webp';
 import Sets from './MenuImg/sets.webp';
 
-const CatalogMenu = ({ isMenuOpen }) => {
+const CatalogMenu = ({ isMenuOpen, setIsMenuOpen, onCategoryChange }) => {
   const items = [
     {
       title: 'Дрони',
       img: Drons,
       link: '/drons',
-      category: 'drons',
+      category: 'drone',
     },
     {
       title: 'Аксесуари',
@@ -35,6 +37,13 @@ const CatalogMenu = ({ isMenuOpen }) => {
     },
   ];
 
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
+ 
+  useEffect(() => {
+    if (!isHomePage) setIsMenuOpen(true);
+  });
+
   return (
     <Menu>
       {items.map((item, index) => (
@@ -42,6 +51,11 @@ const CatalogMenu = ({ isMenuOpen }) => {
           $isMenuOpen={isMenuOpen}
           key={index}
           $isFirstItem={index === 0}
+          isHomePage={isHomePage}
+          onClick={() => {
+            onCategoryChange(item.category)
+            setIsMenuOpen(false)
+          }}
         >
           <Link to={item.link}>
             <Image src={item.img} alt={item.link} />
