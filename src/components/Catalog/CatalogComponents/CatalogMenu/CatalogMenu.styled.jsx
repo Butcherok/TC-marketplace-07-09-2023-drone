@@ -19,7 +19,8 @@ export const Menu = styled.div`
 
 export const MenuItem = styled.div`
   position: relative;
-  display: flex;
+  flex-basics: ${props => (props.$isHomePage ? '100%' : 'calc(50% - 4px)')};
+
   height: 160px;
   overflow: hidden;
   cursor: pointer;

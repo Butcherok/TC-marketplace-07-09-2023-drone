@@ -1,4 +1,6 @@
+import { useLocation } from 'react-router-dom';
 import { Image } from 'react-bootstrap';
+import { useEffect } from 'react';
 
 import { MenuItem, Menu, Link } from './CatalogMenu.styled';
 
@@ -7,7 +9,7 @@ import Accessories from './MenuImg/accessories.webp';
 import SpareParts from './MenuImg/spare-parts.webp';
 import Sets from './MenuImg/sets.webp';
 
-const CatalogMenu = ({ isMenuOpen }) => {
+const CatalogMenu = ({ isMenuOpen, setIsMenuOpen }) => {
   const items = [
     {
       title: 'Дрони',
@@ -34,6 +36,13 @@ const CatalogMenu = ({ isMenuOpen }) => {
       category: 'sets',
     },
   ];
+
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
+  console.log(isHomePage);
+  useEffect(() => {
+    if (!isHomePage) setIsMenuOpen(true);
+  }, [isHomePage]);
 
   return (
     <Menu>
