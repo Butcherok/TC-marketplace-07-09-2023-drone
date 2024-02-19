@@ -38,8 +38,8 @@ export const CardPhotos = styled.div`
   //   justify-content: flex-end;
 
   .heart {
-    width: 40px;
-    height: 40px;
+    width: 24px;
+    height: 24px;
     position: absolute;
     right: -6px;
     top: -10px;
@@ -89,6 +89,7 @@ export const CardPrice = styled.div`
         width: 164px;
         height: 40px;
         margin-left: 40px;
+        background-color:  ${props => props.theme.colors.btnColor};
       }
     }
   }
@@ -105,7 +106,7 @@ export const CardPrice = styled.div`
       font-size: ${props => props.theme.fontSizes.s};
       font-weight: ${props => props.theme.fontWeights.normal};
       line-height; ${props => props.theme.lineHeights.title};
-      color: ${props => props.theme.colors.grey};
+      color: ${props => props.theme.colors.greyLight};
     }
 
     & .discounted-price {
@@ -119,6 +120,7 @@ export const CardPrice = styled.div`
       font-size: ${props => props.theme.fontSizes.m};
       line-height: ${props => props.theme.lineHeights.title};
       font-weight: ${props => props.theme.fontWeights.bold};
+      color: ${props => props.theme.colors.logospan};
     }
   }
 
@@ -145,6 +147,11 @@ export const CardText = styled.div`
     line-height: ${props => props.theme.lineHeights.section};
     font-weight: ${props => props.theme.fontWeights.bold};
     color: ${props => props.theme.colors.logospan};
+  }
+
+  .rating-block {
+    display: flex;
+    align-items: center;
   }
 
   .in-stock {
@@ -229,7 +236,10 @@ export const CartBtn = styled(Button)`
   font-size: ${props => props.theme.fontSizes.s};
   font-weight: ${props => props.theme.fontWeights.bold};
   line-height: ${props => props.theme.lineHeights.title};
-  margin-top: 8px;
+
+  @media (max-width: 1279.98px) {
+    margin-top: 8px;
+  }
 
   & svg {
     width: 24px;

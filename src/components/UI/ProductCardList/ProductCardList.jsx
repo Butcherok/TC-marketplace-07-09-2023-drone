@@ -32,9 +32,9 @@ const ProductCardList = ({
     <Card>
       <CardPhotos>
         {/* <div className="heart-wrapper" onClick={handleFavoriteClick}> */}
-          <Heart className="heart" id="heart" onClick={handleFavoriteClick} />
+        <Heart className="heart" id="heart" onClick={handleFavoriteClick} />
         {/* </div> */}
-        <div className='photos'>
+        <div className="photos">
           <div className="main-photo">
             <img src={Drone} alt="Drone" />
           </div>
@@ -44,7 +44,7 @@ const ProductCardList = ({
           </div>
         </div>
         <CardPrice className="price-photos">
-          <p className='sale-price'>
+          <p className="sale-price">
             {sale ? (
               <>
                 <span className="old-price">{price} грн.</span>
@@ -62,22 +62,24 @@ const ProductCardList = ({
       </CardPhotos>
       <CardText>
         <h3>{title}</h3>
-        <p className="in-stock">
-          <CheckMark id="check-mark" />{' '}
-          {stock ? 'в наявності' : 'немає в наявності'}
-        </p>
-        <div className="rating">
-          <div className="stars">
-            <Star id="star" />
-            <Star id="star" />
-            <Star id="star" />
-            <Star id="star" />
-            <Star id="star" />
+        <div className="rating-block">
+          <p className="in-stock">
+            <CheckMark id="check-mark" />{' '}
+            {stock ? 'в наявності' : 'немає в наявності'}
+          </p>
+          <div className="rating">
+            <div className="stars">
+              <Star id="star" />
+              <Star id="star" />
+              <Star id="star" />
+              <Star id="star" />
+              <Star id="star" />
+            </div>
+            <span>12 відгуків</span>
           </div>
-          <span>12 відгуків</span>
         </div>
         <div className="characteristics">
-          <div className='left-block'>
+          <div className="left-block">
             <div className="row-characteristic">
               <div className="characteristic-key">Розгорнуті розміри</div>
               <div className="characteristic-value">
@@ -95,7 +97,7 @@ const ProductCardList = ({
               <div className="characteristic-value">2,4 Ггц</div>
             </div>
           </div>
-          <div className='right-block'>
+          <div className="right-block">
             <div className="row-characteristic">
               <div className="characteristic-key">Час зарядки</div>
               <div className="characteristic-value">
@@ -115,7 +117,7 @@ const ProductCardList = ({
           </div>
         </div>
         <CardPrice className="price-values">
-          <p className='sale-price'>
+          <p className="sale-price">
             {sale ? (
               <>
                 <span className="old-price">{price} грн.</span>
