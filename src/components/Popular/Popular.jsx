@@ -32,7 +32,7 @@ const Popular = () => {
         <PopularTitle>Найпопулярніші</PopularTitle>
         <Slider {...settings}>
           {query.map((item, index) => (
-            <Link to={`drons/${item._id}`} key={index}>
+            <Link to={`drones/${item._id}`} key={index}>
               <ProductCard
                 key={index}
                 title={item.title}

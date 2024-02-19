@@ -1,25 +1,35 @@
-import { createContext, useContext, useState, useEffect } from 'react';
+import { createContext, useContext, useState } from 'react';
 import axios from 'axios';
 
 const ApiContext = createContext();
 
 export const ApiProvider = ({ children }) => {
   const [query, setQuery] = useState([]);
+  // const [loginData, setLoginData] = useState({
+  //   username: 'admin',
+  //   password: '123456',
+  // });
 
-  
-    const fetchData = async () => {
-      try {
-        const response = await axios.get('https://dr-one-marketplace.onrender.com/notices');
-        setQuery(response.data.data.notices);
-        
-      } catch (error) {
-        console.error(error);
-      }
-    };
+  const fetchData = async () => {
+    try {
+      const response = await axios.get(
+        'https://dr-one-marketplace.onrender.com/notices',
+        {
+          auth: {
+            username: 'admin',
+            password: '123456',
+          },
+        }
+      );
+      setQuery(response.data.data.notices);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
-    useEffect(() => {
-    fetchData();
-  }, []);
+  // useEffect(() => {
+  //   fetchData();
+  // }, [loginData]);
 
   // const toggleFavorite = async (_id) => {
   //   const noticeToUpdate = query.find((notice) => notice._id === _id);
