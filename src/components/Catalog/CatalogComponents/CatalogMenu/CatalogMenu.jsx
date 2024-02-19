@@ -4,18 +4,18 @@ import { useEffect } from 'react';
 
 import { MenuItem, Menu, Link } from './CatalogMenu.styled';
 
-import Drons from './MenuImg/drons.webp';
+import Drones from './MenuImg/drones.webp';
 import Accessories from './MenuImg/accessories.webp';
-import SpareParts from './MenuImg/spare-parts.webp';
+import Parts from './MenuImg/parts.webp';
 import Sets from './MenuImg/sets.webp';
 
 const CatalogMenu = ({ isMenuOpen, setIsMenuOpen, onCategoryChange }) => {
   const items = [
     {
       title: 'Дрони',
-      img: Drons,
-      link: '/drons',
-      category: 'drone',
+      img: Drones,
+      link: '/drones',
+      category: 'drones',
     },
     {
       title: 'Аксесуари',
@@ -25,8 +25,8 @@ const CatalogMenu = ({ isMenuOpen, setIsMenuOpen, onCategoryChange }) => {
     },
     {
       title: 'Запчастини',
-      img: SpareParts,
-      link: '/spare-parts',
+      img: Parts,
+      link: '/parts',
       category: 'parts',
     },
     {
@@ -39,7 +39,7 @@ const CatalogMenu = ({ isMenuOpen, setIsMenuOpen, onCategoryChange }) => {
 
   const location = useLocation();
   const isHomePage = location.pathname === '/';
- 
+
   useEffect(() => {
     if (!isHomePage) setIsMenuOpen(true);
   });
@@ -53,8 +53,8 @@ const CatalogMenu = ({ isMenuOpen, setIsMenuOpen, onCategoryChange }) => {
           $isFirstItem={index === 0}
           isHomePage={isHomePage}
           onClick={() => {
-            onCategoryChange(item.category)
-            setIsMenuOpen(false)
+            onCategoryChange(item.category);
+            setIsMenuOpen(false);
           }}
         >
           <Link to={item.link}>

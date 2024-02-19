@@ -3,9 +3,9 @@ import { Image } from 'react-bootstrap';
 
 import { MenuItem, MenuContainer, Menu, Link } from './CatalogProducts.styled';
 
-import Drons from './MenuImg/drons.webp';
+import Drones from './MenuImg/drones.webp';
 import Accessories from './MenuImg/accessories.webp';
-import SpareParts from './MenuImg/spare-parts.webp';
+import Parts from './MenuImg/parts.webp';
 import Sets from './MenuImg/sets.webp';
 
 const CatalogProducts = ({ onCategoryChange }) => {
@@ -20,9 +20,9 @@ const CatalogProducts = ({ onCategoryChange }) => {
   const items = [
     {
       title: 'Дрони',
-      img: Drons,
-      link: '/drons',
-      category: 'drone',
+      img: Drones,
+      link: '/drones',
+      category: 'drones',
     },
     {
       title: 'Аксесуари',
@@ -32,8 +32,8 @@ const CatalogProducts = ({ onCategoryChange }) => {
     },
     {
       title: 'Запчастини',
-      img: SpareParts,
-      link: '/spare-parts',
+      img: Parts,
+      link: '/parts',
       category: 'parts',
     },
     {

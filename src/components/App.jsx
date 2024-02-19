@@ -18,17 +18,17 @@ export const App = () => {
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route index element={<HomePage />} />
-              {/* <Route path="drons" element={<Products />} /> */}
+              {/* <Route path="drones" element={<Products />} /> */}
               <Route path="articles" element={<div>Статті</div>} />
               <Route path="manufacturers" element={<div>Виробники</div>} />
               <Route path="user" element={<RegisterPage />} />
               <Route path="favorites" element={<div>Перелік улюбленних</div>} />
               <Route path="cart" element={<div>Кошик</div>} />
 
-              <Route path="drons" element={<Products />} />
-              <Route path="drons/:dronId" element={<ProductPage />} />
+              <Route path="drones" element={<Products />} />
+              <Route path="drones/:dronId" element={<ProductPage />} />
               <Route path="accessories" element={<Products />} />
-              <Route path="spare-parts" element={<Products />} />
+              <Route path="parts" element={<Products />} />
               <Route path="sets" element={<Products />} />
 
               <Route path="about-us" element={<div>Про нас</div>} />

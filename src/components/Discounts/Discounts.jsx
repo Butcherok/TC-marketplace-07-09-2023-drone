@@ -65,7 +65,7 @@ const Discounts = () => {
                     {group
                       .filter(item => item.sale === true)
                       .map((item, itemIndex) => (
-                        <Link to={`drons/${item._id}`} key={itemIndex}>
+                        <Link to={`drones/${item._id}`} key={itemIndex}>
                           <ProductCard
                             className="card-item"
                             key={itemIndex}

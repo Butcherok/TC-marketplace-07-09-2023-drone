@@ -14,9 +14,9 @@ const NavMobile = () => {
   const items = [
     {
       title: 'Дрони',
-      icon: 'drons',
-      link: '/drons',
-      category: 'drone',
+      icon: 'drones',
+      link: '/drones',
+      category: 'drones',
     },
     {
       title: 'Аксесуари',
@@ -26,8 +26,8 @@ const NavMobile = () => {
     },
     {
       title: 'Запчастини',
-      icon: 'spare-parts',
-      link: '/spare-parts',
+      icon: 'parts',
+      link: '/parts',
       category: 'parts',
     },
     {
@@ -40,9 +40,8 @@ const NavMobile = () => {
 
   const handleCategoryChange = category => {
     setSelectedCategory(category);
-    console.log(selectedCategory)
+    console.log(selectedCategory);
   };
-  
 
   return (
     <NavMenu>
