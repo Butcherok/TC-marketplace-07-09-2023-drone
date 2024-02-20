@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState, useEffect } from 'react';
 import axios from 'axios';
 
 const ApiContext = createContext();
@@ -27,9 +27,9 @@ export const ApiProvider = ({ children }) => {
     }
   };
 
-  // useEffect(() => {
-  //   fetchData();
-  // }, [loginData]);
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   // const toggleFavorite = async (_id) => {
   //   const noticeToUpdate = query.find((notice) => notice._id === _id);
