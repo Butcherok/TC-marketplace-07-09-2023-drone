@@ -143,15 +143,33 @@ export const CardText = styled.div`
   width: 65%;
 
   h3 {
+    margin-bottom: 4px;
     font-size: 20px;
     line-height: ${props => props.theme.lineHeights.section};
     font-weight: ${props => props.theme.fontWeights.bold};
     color: ${props => props.theme.colors.logospan};
   }
 
-  .rating-block {
-    display: flex;
-    align-items: center;
+  @media (max-width: 1279.98px) {
+    .in-stock {
+      margin-bottom: 4px;
+    }
+    .rating {
+      margin-bottom: 16px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .rating-block {
+      display: flex;
+      align-items: center;
+      margin-bottom: 24px;
+      gap: 80px;
+    }
+
+    h3 {
+      margin-bottom: 8px;
+    }
   }
 
   .in-stock {
@@ -167,7 +185,6 @@ export const CardText = styled.div`
   .rating {
     display: flex;
     align-items: center;
-    margin-bottom: 16px;
 
     .stars {
       margin-right: 12px;
@@ -239,6 +256,7 @@ export const CartBtn = styled(Button)`
 
   @media (max-width: 1279.98px) {
     margin-top: 8px;
+    background-color: ${props => props.theme.colors.btnColor};
   }
 
   & svg {
