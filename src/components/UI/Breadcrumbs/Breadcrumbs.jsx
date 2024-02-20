@@ -1,13 +1,17 @@
-import { BreadcrumbsStyled, BreadcrumbsContainer, Link } from './Breadcrumbs.styled';
+import {
+  BreadcrumbsStyled,
+  BreadcrumbsContainer,
+  Link,
+} from './Breadcrumbs.styled';
 import Right from '../Icon/Icon';
 
-const Breadcrumbs = () => {
+const Breadcrumbs = ({ currentPage }) => {
   return (
     <BreadcrumbsStyled>
       <BreadcrumbsContainer>
-        <Link to='/'>Головна сторінка</Link>
+        <Link to="/">Головна сторінка</Link>
         <Right id="chevron-right" />
-        <span>Дрони</span>
+        <span>{currentPage}</span>
       </BreadcrumbsContainer>
     </BreadcrumbsStyled>
   );

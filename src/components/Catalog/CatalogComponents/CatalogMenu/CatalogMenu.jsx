@@ -53,7 +53,7 @@ const CatalogMenu = ({ isMenuOpen, setIsMenuOpen, onCategoryChange }) => {
           $isFirstItem={index === 0}
           isHomePage={isHomePage}
           onClick={() => {
-            onCategoryChange(item.category);
+            onCategoryChange(item.category, item.title);
             setIsMenuOpen(false);
           }}
         >

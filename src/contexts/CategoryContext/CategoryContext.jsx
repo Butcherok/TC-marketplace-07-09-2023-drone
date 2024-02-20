@@ -4,14 +4,16 @@ const CategoryContext = createContext();
 
 export const CategoryProvider = ({ children }) => {
   const [selectedCategory, setSelectedCategory] = useState('');
+  const [currentPage, setCurrentPage] = useState('');
 
-  const handleCategoryChange = (newCategory) => {
+  const handleCategoryChange = (newCategory, newTitle) => {
     setSelectedCategory(newCategory);
+    setCurrentPage(newTitle)
   };
 
   return (
     <CategoryContext.Provider
-      value={{ selectedCategory, handleCategoryChange }}
+      value={{ selectedCategory, handleCategoryChange, currentPage }}
     >
       {children}
     </CategoryContext.Provider>

@@ -3,14 +3,12 @@ import Breadcrumbs from '../components/UI/Breadcrumbs/Breadcrumbs';
 import Catalog from '../components/Catalog/Catalog';
 import { useCategory } from 'contexts/CategoryContext/CategoryContext';
 
-
 const Products = () => {
-
-  const { selectedCategory, handleCategoryChange } = useCategory();
+  const { selectedCategory, handleCategoryChange, currentPage } = useCategory();
 
   return (
     <>
-      <Breadcrumbs />
+      <Breadcrumbs currentPage={currentPage} />
       <Catalog
         selectedCategory={selectedCategory}
         onCategoryChange={handleCategoryChange}
