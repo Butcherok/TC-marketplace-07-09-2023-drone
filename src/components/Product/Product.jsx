@@ -12,7 +12,7 @@ import droneImg from './drone.jpg';
 import { SellerContainer } from './ProductComponents/SellerContainer/SellerContainer';
 import { BuyContainer } from './ProductComponents/BuyContainer/BuyContainer';
 
-export const Product = () => {
+const Product = () => {
   return (
     <>
       <ProductBackground>
@@ -47,3 +47,5 @@ export const Product = () => {
     </>
   );
 };
+
+export default Product;
