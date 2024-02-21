@@ -105,6 +105,9 @@ export const CartBtn = styled(Button)`
   align-items: center;
   justify-content: center;
 
+  background-color: ${props => props.theme.colors.btnColor};
+  border-color: ${props => props.theme.colors.btnColor};
+
   & svg {
     width: 30px;
     height: 30px;

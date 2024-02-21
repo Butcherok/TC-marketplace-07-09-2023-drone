@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
-export const ProductBackground = styled.div`
+export const ProductBackground = styled.section`
+  margin-bottom: 40px;
   padding-top: 24px;
   padding-bottom: 24px;
   border-radius: ${props => props.theme.fontSizes.xxs};
@@ -9,7 +10,7 @@ export const ProductBackground = styled.div`
   box-shadow: 3px 4px 40px 0px rgba(187, 194, 221, 0.3);
 `;
 
-export const ProductTitle = styled.h1`
+export const ProductTitle = styled.h2`
   margin-bottom: 8px;
   padding-right: 12px;
   padding-left: 12px;

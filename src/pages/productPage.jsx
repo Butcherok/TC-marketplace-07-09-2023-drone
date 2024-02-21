@@ -1,6 +1,7 @@
-// import { useEffect } from 'react';
-import { Product } from 'components/Product/Product';
 import Breadcrumbs from '../components/UI/Breadcrumbs/Breadcrumbs';
+import Product from 'components/Product/Product';
+import Characteristics from 'components/Characteristics/Characteristics';
+import OtherProducts from 'components/OtherProducts/OtherProducts';
 // import { useApi } from '../contexts/ApiContext/ApiContext';
 
 const ProductPage = () => {
@@ -16,7 +17,9 @@ const ProductPage = () => {
   return (
     <>
       <Breadcrumbs />
-      <Product></Product>
+      <Product />
+      <Characteristics />
+      <OtherProducts />
     </>
   );
 };
