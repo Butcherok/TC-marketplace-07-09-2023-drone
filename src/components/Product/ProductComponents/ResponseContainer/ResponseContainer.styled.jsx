@@ -22,9 +22,15 @@ export const AvailableText = styled.p`
 
 export const FlexWraper = styled.div`
   display: flex;
-  flex-wrap: wrap;
+  // flex-wrap: wrap;
 
-  margin-bottom: 36px;
+  @media screen and (max-width: 767.98px) {
+    margin-bottom: 36px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    margin-bottom: 36px;
+  }
 
   @media (max-width: 479.98px) {
     flex-direction: column;

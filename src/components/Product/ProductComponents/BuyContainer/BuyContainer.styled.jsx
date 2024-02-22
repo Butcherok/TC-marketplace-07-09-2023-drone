@@ -1,9 +1,30 @@
 import styled from 'styled-components';
 
-export const FlexWrapper = styled.div``;
+export const FlexWrapper = styled.div`
+  @media screen and (min-width: 1440px) {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+  }
+`;
+
+export const FlexContainer = styled.div`
+  @media screen and (min-width: 480px) {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 40px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    gap: 64px;
+  }
+`;
 
 export const Prices = styled.div`
-  margin-bottom: 20px;
+  @media screen and (max-width: 1439.98px) {
+    margin-bottom: 30px;
+  }
 `;
 
 export const InititalPrice = styled.p`
@@ -26,10 +47,13 @@ export const CurrentPrice = styled.h2`
 `;
 
 export const CountContainer = styled.div`
-  margin-bottom: 30px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 16px;
+
+  @media screen and (max-width: 1439.98px) {
+    margin-bottom: 24px;
+  }
 `;
 
 export const Icon = styled.button`
@@ -66,6 +90,10 @@ export const ButtonBuy = styled.button`
   line-height: ${props => props.theme.lineHeights.title};
 
   color: ${props => props.theme.colors.background};
+
+  @media screen and (min-width: 1440px) {
+    width: 164px;
+  }
 `;
 export const CartIcon = styled.svg`
   width: 24px;

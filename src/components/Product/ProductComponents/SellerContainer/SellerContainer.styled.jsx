@@ -1,20 +1,25 @@
 import styled from 'styled-components';
 
 export const FlexWrapper = styled.div`
-  margin-bottom: 36px;
-
   @media ${props => props.theme.media.bigMobile} {
     display: flex;
+    gap: 16px;
+  }
+  @media screen and (max-width: 1439.98px) {
+    margin-bottom: 36px;
   }
 `;
 
 export const SellerImg = styled.img`
   width: 58px;
   height: 54px;
-  margin-bottom: 16px;
+
+  @media screen and (max-width: 480px) {
+    margin-bottom: 16px;
+  }
 `;
 
-export const SellerTitle = styled.h2`
+export const SellerTitle = styled.h3`
   margin-bottom: 8px;
   font-family: ${props => props.theme.fonts.main};
   font-size: ${props => props.theme.fontSizes.m};
@@ -24,7 +29,7 @@ export const SellerTitle = styled.h2`
   color: ${props => props.theme.colors.logo};
 `;
 
-export const SellerResponse = styled.h2`
+export const SellerResponse = styled.p`
   font-family: ${props => props.theme.fonts.main};
   font-size: ${props => props.theme.fontSizes.m};
   font-weight: ${props => props.theme.fontWeights.normal};

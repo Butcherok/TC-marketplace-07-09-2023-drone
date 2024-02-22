@@ -4,7 +4,10 @@ export const FlexWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 16px;
-  margin-bottom: 36px;
+
+  @media screen and (max-width: 767.98px) {
+    margin-bottom: 36px;
+  }
 `;
 
 export const AddToComparingContainer = styled.div`
