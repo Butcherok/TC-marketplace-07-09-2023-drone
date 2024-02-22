@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+
+import { useCategory } from '../../contexts/CategoryContext/CategoryContext';
 import { HeaderContainer, StyledHeader } from './Header.styled';
 import Logo from './HeaderComponents/Logo/Logo';
 import SearchBar from './HeaderComponents/SearchBar/SearchBar';
@@ -9,6 +11,7 @@ import SearchBarMobile from './HeaderComponents/SearchBarMobile/SearchBarMobile'
 
 const Header = () => {
   const [isShowMobileSearch, setIsShowMobileSearch] = useState(false);
+  const { selectedCategory, handleCategoryChange } = useCategory();
 
   const handleSearchClick = () => {
     setIsShowMobileSearch(!isShowMobileSearch);
@@ -19,7 +22,10 @@ const Header = () => {
       <HeaderContainer>
         <Burger />
         <Logo />
-        <NavBar />
+        <NavBar
+          selectedCategory={selectedCategory}
+          onCategoryChange={handleCategoryChange}
+        />
         <SearchBar onClick={handleSearchClick} />
         <UserNav />
         {isShowMobileSearch && (
