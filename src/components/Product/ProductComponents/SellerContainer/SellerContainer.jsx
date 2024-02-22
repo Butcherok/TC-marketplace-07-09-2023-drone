@@ -10,8 +10,10 @@ export const SellerContainer = () => {
   return (
     <FlexWrapper>
       <SellerImg src={sellerImg} alt="Drone"></SellerImg>
-      <SellerTitle>Продавець BuyQuadro</SellerTitle>
-      <SellerResponse>100% позитивних відгуків</SellerResponse>
+      <div>
+        <SellerTitle>Продавець BuyQuadro</SellerTitle>
+        <SellerResponse>100% позитивних відгуків</SellerResponse>
+      </div>
     </FlexWrapper>
   );
 };
