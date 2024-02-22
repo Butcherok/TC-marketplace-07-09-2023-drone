@@ -28,8 +28,11 @@ export const App = () => {
               <Route path="drones" element={<Products />} />
               <Route path="drones/:dronId" element={<ProductPage />} />
               <Route path="accessories" element={<Products />} />
+              <Route path="accessories/:accessoryId" element={<ProductPage />} />
               <Route path="parts" element={<Products />} />
+              <Route path="parts/:partId" element={<ProductPage />} />
               <Route path="sets" element={<Products />} />
+              <Route path="sets/:setId" element={<ProductPage />} />
 
               <Route path="about-us" element={<div>Про нас</div>} />
               <Route path="delivery" element={<div>Доставка і оплата</div>} />
