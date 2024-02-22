@@ -1,6 +1,4 @@
-import { useState } from 'react';
-
-// import { useApi } from 'contexts/ApiContext/ApiContext';
+import { useCategory } from 'contexts/CategoryContext/CategoryContext';
 import Accordion from '../../../UI/Accordion/Accordion';
 import {
   NavMenu,
@@ -10,7 +8,8 @@ import {
 } from './NavMobile.styled';
 
 const NavMobile = () => {
-  const [selectedCategory, setSelectedCategory] = useState('');
+  const { selectedCategory, handleCategoryChange } = useCategory();
+
   const items = [
     {
       title: 'Дрони',
@@ -38,16 +37,12 @@ const NavMobile = () => {
     },
   ];
 
-  const handleCategoryChange = category => {
-    setSelectedCategory(category);
-    console.log(selectedCategory);
-  };
-
   return (
     <NavMenu>
       <NavMobileList>
         <NavMobileItem>
           <Accordion
+            selectedCategory={selectedCategory}
             onCategoryChange={handleCategoryChange}
             title="Каталог"
             items={items}

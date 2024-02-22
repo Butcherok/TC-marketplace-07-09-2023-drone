@@ -9,7 +9,7 @@ import {
 
 import Icon from '../Icon/Icon';
 
-const Accordion = ({ title, items, showIcons = true }) => {
+const Accordion = ({ title, items, showIcons = true, onCategoryChange }) => {
   const [isAccordionOpen, setIsAccordionOpen] = useState(false);
 
   const toggleAccordion = () => {
@@ -32,6 +32,9 @@ const Accordion = ({ title, items, showIcons = true }) => {
               to={item.link}
               key={index}
               className="accordion-item"
+              onClick={() => {
+                onCategoryChange(item.category, item.title);
+              }}
             >
               {showIcons && <Icon className="catalog-icon" id={item.icon} />}
               {item.title}
