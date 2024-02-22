@@ -1,12 +1,19 @@
 import React from 'react';
 import { Link, Nav, NavItem, NavList } from './Nav.styled';
 
-const NavBar = () => {
+const NavBar = ({ onCategoryChange }) => {
   return (
     <Nav>
       <NavList>
         <NavItem>
-          <Link to={'/drones'}>Магазин</Link>
+          <Link
+            onClick={() => {
+              onCategoryChange('drones', 'Дрони');
+            }}
+            to={'/drones'}
+          >
+            Магазин
+          </Link>
         </NavItem>
         <NavItem>
           <Link to={'/articles'}>Статті</Link>
