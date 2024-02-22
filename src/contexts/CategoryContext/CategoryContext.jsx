@@ -1,4 +1,4 @@
-import { useState, createContext, useContext } from 'react';
+import { useState, useEffect, createContext, useContext } from 'react';
 
 const CategoryContext = createContext();
 
@@ -6,9 +6,25 @@ export const CategoryProvider = ({ children }) => {
   const [selectedCategory, setSelectedCategory] = useState('');
   const [currentPage, setCurrentPage] = useState('');
 
+  useEffect(() => {
+    const storedCategory = localStorage.getItem('selectedCategory');
+    const storedPage = localStorage.getItem('currentPage');
+
+    if (storedCategory) {
+      setSelectedCategory(storedCategory);
+    }
+
+    if (storedPage) {
+      setCurrentPage(storedPage);
+    }
+  }, []);
+
   const handleCategoryChange = (newCategory, newTitle) => {
     setSelectedCategory(newCategory);
-    setCurrentPage(newTitle)
+    setCurrentPage(newTitle);
+
+    localStorage.setItem('selectedCategory', newCategory);
+    localStorage.setItem('currentPage', newTitle);
   };
 
   return (
