@@ -58,7 +58,7 @@ export const Card = styled.div`
         font-size: ${props => props.theme.fontSizes.s};
         font-weight: ${props => props.theme.fontWeights.normal};
         line-height; ${props => props.theme.lineHeights.title};
-        color: ${props => props.theme.colors.greyLight};
+        color: ${props => props.theme.colors.secondary};
       }
 
       & .discounted-price {

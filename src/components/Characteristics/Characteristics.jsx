@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   CharacteristicsBackground,
   Title,
@@ -10,15 +11,21 @@ import {
   FlexWrapper,
 } from './Characteristics.styled';
 
+import AllCharacteristics from './AllCharacteristics/AllCharacteristics';
 
 const Characteristics = () => {
+  const [open, setOpen] = useState(false);
 
+  function toggle() {
+    open === false ? setOpen(true) : setOpen(false);
+
+    console.log(open);
+  }
 
   return (
     <>
       <CharacteristicsBackground>
         <Title>Характеристики та опис</Title>
-
         <FlexWrapper>
           <CharacteristicsList>
             <CharacteristicsItem>
@@ -57,8 +64,11 @@ const Characteristics = () => {
             подарунок!
           </Description>
         </FlexWrapper>
-        <BtnMore type="button">Детальніше</BtnMore>
+        <BtnMore type="button" onClick={() => toggle()}>
+          Детальніше
+        </BtnMore>
       </CharacteristicsBackground>
+      {open === true ? <AllCharacteristics /> : <></>}
     </>
   );
 };
