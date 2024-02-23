@@ -100,7 +100,7 @@ export const BtnMore = styled.button`
   height: 40px;
   padding: 10px;
   border-radius: 4px;
-  border: 1px solid ${props => props.theme.colors.greyLight};
+  border: 1px solid ${props => props.theme.colors.secondary};
 
   font-family: ${props => props.theme.fonts.main};
   font-size: ${props => props.theme.fontSizes.s};
