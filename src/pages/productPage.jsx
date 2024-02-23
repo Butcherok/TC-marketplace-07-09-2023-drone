@@ -2,6 +2,8 @@ import Breadcrumbs from '../components/UI/Breadcrumbs/Breadcrumbs';
 import Product from 'components/Product/Product';
 import Characteristics from 'components/Characteristics/Characteristics';
 import OtherProducts from 'components/OtherProducts/OtherProducts';
+import Payment from 'components/Payment/Payment';
+import Delivery from 'components/Delivery/Delivery';
 // import { useApi } from '../contexts/ApiContext/ApiContext';
 
 const ProductPage = () => {
@@ -18,6 +20,8 @@ const ProductPage = () => {
     <>
       <Breadcrumbs />
       <Product />
+      <Payment />
+      <Delivery/>
       <Characteristics />
       <OtherProducts />
     </>
