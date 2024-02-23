@@ -31,6 +31,10 @@ export const MenuItem = styled.div`
     props.$isMenuOpen || props.$isFirstItem ? 'flex' : 'none'};
   opacity: ${props => (props.$isMenuOpen || props.$isFirstItem ? '1' : '0')};
 
+    a {
+      width: 100%;
+    }
+
   img {
     transition: transform 0.2s ease-out;
   }
