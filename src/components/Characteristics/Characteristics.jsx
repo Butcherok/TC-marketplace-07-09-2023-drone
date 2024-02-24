@@ -16,10 +16,9 @@ import AllCharacteristics from './AllCharacteristics/AllCharacteristics';
 const Characteristics = () => {
   const [open, setOpen] = useState(false);
 
-  function toggle() {
-    open === false ? setOpen(true) : setOpen(false);
-
-    console.log(open);
+  function onOpen() {
+    setOpen(true);
+    document.body.style.overflow = 'hidden';
   }
 
   return (
@@ -64,11 +63,11 @@ const Characteristics = () => {
             подарунок!
           </Description>
         </FlexWrapper>
-        <BtnMore type="button" onClick={() => toggle()}>
+        <BtnMore type="button" onClick={() => onOpen()}>
           Детальніше
         </BtnMore>
       </CharacteristicsBackground>
-      {open === true ? <AllCharacteristics /> : <></>}
+      {open === true && <AllCharacteristics open={open} setOpen={setOpen} />}
     </>
   );
 };
