@@ -1,11 +1,17 @@
 import styled from 'styled-components';
 
 export const AllCharacteristicsBackground = styled.div`
+  position: fixed;
+  top: 0;
   width: 100vw;
+  height: 100%;
   padding: 24px;
   margin-bottom: 40px;
   background: ${props => props.theme.colors.white};
   border-radius: ${props => props.theme.fontSizes.xxs};
+
+  overflow-y: scroll;
+  z-index: 1000;
 
   @media screen and (min-width: 1440px) {
     padding: 50px 24px;

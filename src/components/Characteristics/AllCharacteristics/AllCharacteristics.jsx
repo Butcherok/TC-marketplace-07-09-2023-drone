@@ -13,11 +13,17 @@ import UsefulInformation from './UsefulInformation/UsefulInformation';
 import icon from '../../../assets/icons/sprite.svg';
 import Comments from './Comments/Comments';
 
-const AllCharacteristics = () => {
+const AllCharacteristics = ({ open, setOpen }) => {
+  function onClose() {
+    setOpen(false);
+    document.body.style.overflow = 'auto';
+  }
+  
   return (
     <>
+      {open === false && <></>}
       <AllCharacteristicsBackground>
-        <IconCross>
+        <IconCross onClick={() => onClose()}>
           <use href={`${icon}#icon-cross`}></use>
         </IconCross>
         <Title>Характеристики та опис</Title>
