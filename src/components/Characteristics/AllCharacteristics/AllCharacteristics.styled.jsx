@@ -1,4 +1,14 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const moveUp = keyframes`
+0% {transform: translateY(100%);}
+100% {transform: translateY(0%);}
+`;
+
+// const moveDown = keyframes`
+// 0% {transform: translateY(0%);}
+// 100% {transform: translateY(100%);}
+// `;
 
 export const AllCharacteristicsBackground = styled.div`
   position: fixed;
@@ -6,17 +16,20 @@ export const AllCharacteristicsBackground = styled.div`
   width: 100vw;
   height: 100%;
   padding: 24px;
-  margin-bottom: 40px;
   background: ${props => props.theme.colors.white};
   border-radius: ${props => props.theme.fontSizes.xxs};
 
   overflow-y: scroll;
   z-index: 1000;
 
+  animation-name: ${props => props.open && moveUp};
+  animation-duration: 0.4s;
+
   @media screen and (min-width: 1440px) {
     padding: 50px 24px;
   }
 `;
+
 export const IconCross = styled.svg`
   display: block;
   margin-right: 0;

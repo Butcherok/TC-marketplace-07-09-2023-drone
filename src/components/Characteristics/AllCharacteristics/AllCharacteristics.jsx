@@ -18,11 +18,11 @@ const AllCharacteristics = ({ open, setOpen }) => {
     setOpen(false);
     document.body.style.overflow = 'auto';
   }
-  
+
   return (
     <>
-      {open === false && <></>}
-      <AllCharacteristicsBackground>
+      {open === false && null}
+      <AllCharacteristicsBackground open={open}>
         <IconCross onClick={() => onClose()}>
           <use href={`${icon}#icon-cross`}></use>
         </IconCross>
