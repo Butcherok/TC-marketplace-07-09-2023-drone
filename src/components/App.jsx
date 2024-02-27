@@ -9,6 +9,11 @@ import LoginPage from '../pages/login';
 import RegisterPage from '../pages/register';
 import Products from '../pages/products';
 import ProductPage from 'pages/productPage';
+import DescriptionCharacteristics from './Characteristics/AllCharacteristics/DescriptionCharacteristics/DescriptionCharacteristics';
+import UsefulInformation from './Characteristics/AllCharacteristics/UsefulInformation/UsefulInformation';
+import Payment from './Payment/Payment';
+import Delivery from './Delivery/Delivery';
+import Comments from './Characteristics/AllCharacteristics/Comments/Comments';
 
 export const App = () => {
   return (
@@ -26,13 +31,49 @@ export const App = () => {
               <Route path="cart" element={<div>Кошик</div>} />
 
               <Route path="drones" element={<Products />} />
-              <Route path="drones/:dronId" element={<ProductPage />} />
+              <Route path="drones/:dronId" element={<ProductPage />}>
+                <Route
+                  path="characteristics"
+                  element={<DescriptionCharacteristics />}
+                />
+                <Route path="useful" element={<UsefulInformation />} />
+                <Route path="payment" element={<Payment />} />
+                <Route path="delivery" element={<Delivery />} />
+                <Route path="comments" element={<Comments />} />
+              </Route>
               <Route path="accessories" element={<Products />} />
-              <Route path="accessories/:accessoryId" element={<ProductPage />} />
+              <Route path="accessories/:accessoryId" element={<ProductPage />}>
+                <Route
+                  path="characteristics"
+                  element={<DescriptionCharacteristics />}
+                />
+                <Route path="useful" element={<UsefulInformation />} />
+                <Route path="payment" element={<Payment />} />
+                <Route path="delivery" element={<Delivery />} />
+                <Route path="comments" element={<Comments />} />
+              </Route>
               <Route path="parts" element={<Products />} />
-              <Route path="parts/:partId" element={<ProductPage />} />
+              <Route path="parts/:partId" element={<ProductPage />}>
+                <Route
+                  path="characteristics"
+                  element={<DescriptionCharacteristics />}
+                />
+                <Route path="useful" element={<UsefulInformation />} />
+                <Route path="payment" element={<Payment />} />
+                <Route path="delivery" element={<Delivery />} />
+                <Route path="comments" element={<Comments />} />
+              </Route>
               <Route path="sets" element={<Products />} />
-              <Route path="sets/:setId" element={<ProductPage />} />
+              <Route path="sets/:setId" element={<ProductPage />}>
+                <Route
+                  path="characteristics"
+                  element={<DescriptionCharacteristics />}
+                />
+                <Route path="useful" element={<UsefulInformation />} />
+                <Route path="payment" element={<Payment />} />
+                <Route path="delivery" element={<Delivery />} />
+                <Route path="comments" element={<Comments />} />
+              </Route>
 
               <Route path="about-us" element={<div>Про нас</div>} />
               <Route path="delivery" element={<div>Доставка і оплата</div>} />

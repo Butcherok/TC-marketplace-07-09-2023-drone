@@ -9,6 +9,15 @@ export const PaymentBackground = styled.section`
   //   background: ${props => props.theme.colors.background};
 
   box-shadow: 3px 4px 40px 0px rgba(187, 194, 221, 0.3);
+
+  @media screen and (min-width: 1440px) {
+    // width: 100%;
+    padding: 50px 24px;
+    // margin-bottom: 40px;
+    // background: #fafcff;
+    border-radius: 0px 0px 8px 8px;
+    // box-shadow: 3px 4px 40px 0px rgba(187, 194, 221, 0.3);
+  }
 `;
 
 export const PaymentTitle = styled.h2`

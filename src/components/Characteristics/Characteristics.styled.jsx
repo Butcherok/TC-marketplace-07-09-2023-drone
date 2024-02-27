@@ -1,14 +1,66 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+
+export const CategoryList = styled.ul`
+  width: 100%;
+  display: flex;
+
+  @media screen and (max-width: 1439.98px) {
+    display: none;
+  }
+`;
+
+export const CategoryItem = styled.li`
+  // padding: 10px 24px;
+  // border-radius: 4px 4px 0px 0px;
+
+  // font-family: ${props => props.theme.fonts.main};
+  // font-size: ${props => props.theme.fontSizes.m};
+  // font-weight: ${props => props.theme.fontWeights.normal};
+  // line-height: ${props => props.theme.lineHeights.title};
+
+  // color: ${props => props.theme.colors.greyDark};
+
+  // box-shadow: 3px 4px 40px 0px rgba(187, 194, 221, 0.3);
+
+  // &.is-active {
+  //   background-color: #fafcff;
+  // }
+
+  cursor: pointer;
+`;
+
+export const Category = styled(Link)`
+  padding: 10px 24px;
+  border-radius: 4px 4px 0px 0px;
+
+  font-family: ${props => props.theme.fonts.main};
+  font-size: ${props => props.theme.fontSizes.m};
+  font-weight: ${props => props.theme.fontWeights.normal};
+  line-height: ${props => props.theme.lineHeights.title};
+
+  color: ${props => props.theme.colors.greyDark};
+
+  box-shadow: 3px 4px 40px 0px rgba(187, 194, 221, 0.3);
+
+  &.active {
+    background-color: #fafcff;
+  }
+`;
 
 export const CharacteristicsBackground = styled.section`
   width: 100%;
   padding: 24px 12px;
   margin-bottom: 40px;
-  background: ${props => props.theme.colors.white};
+  background: #fafcff;
   border-radius: ${props => props.theme.fontSizes.xxs};
+  // box-shadow: 3px 4px 40px 0px rgba(187, 194, 221, 0.3);
 
   @media screen and (min-width: 1440px) {
     padding: 50px 24px;
+    border-radius: 0px 0px 8px 8px;
+
+    display: none;
   }
 `;
 
