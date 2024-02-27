@@ -2,6 +2,7 @@ import { useState } from 'react';
 import axios from 'axios';
 
 import Input from '../Input/Input';
+import { useAuth } from '../../../contexts/AuthContext/AuthContext';
 import {
   StyledRegisterForm,
   BtnSubmit,
@@ -11,6 +12,7 @@ import {
 } from './RegisterForm.styled';
 
 const RegisterForm = () => {
+  const { dispatch } = useAuth();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -43,6 +45,14 @@ const RegisterForm = () => {
         }
       );
       console.log(response.data);
+
+      dispatch({
+        type: 'LOGIN',
+        payload: {
+          user: response.data.user,
+          token: response.data.token,
+        },
+      });
     } catch (error) {
       if (error.response) {
         console.error(
