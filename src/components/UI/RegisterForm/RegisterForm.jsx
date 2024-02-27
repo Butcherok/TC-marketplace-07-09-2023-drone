@@ -44,7 +44,7 @@ const RegisterForm = () => {
           },
         }
       );
-      console.log(response.data);
+      
 
       dispatch({
         type: 'LOGIN',

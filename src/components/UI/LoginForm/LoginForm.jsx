@@ -51,12 +51,13 @@ const LoginForm = () => {
       dispatch({
         type: 'LOGIN',
         payload: {
+          isAuthenticated: true,
           user: userData,
           token: token,
         },
       });
       console.log('Ви авторизувались');
-      console.log('Token:', token);
+      // console.log(state.isAuthenticated);
     } catch (error) {
       console.error('Помилка авторизації', error);
     }
