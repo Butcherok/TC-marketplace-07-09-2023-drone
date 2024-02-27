@@ -1,4 +1,14 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const moveUp = keyframes`
+0% {transform: translateY(100%);}
+100% {transform: translateY(0%);}
+`;
+
+const moveDown = keyframes`
+0% {transform: translateY(0%);}
+100% {transform: translateY(100%);}
+`;
 
 export const AllCharacteristicsBackground = styled.div`
   position: fixed;
@@ -6,17 +16,25 @@ export const AllCharacteristicsBackground = styled.div`
   width: 100vw;
   height: 100%;
   padding: 24px;
-  margin-bottom: 40px;
   background: ${props => props.theme.colors.white};
   border-radius: ${props => props.theme.fontSizes.xxs};
 
   overflow-y: scroll;
   z-index: 1000;
 
+  &.modal-move-up {
+    animation: ${moveUp} 0.7s ease-out forwards;
+  }
+
+  &.modal-move-down {
+    animation: ${moveDown} 0.7s ease-out forwards;
+  }
+
   @media screen and (min-width: 1440px) {
     padding: 50px 24px;
   }
 `;
+
 export const IconCross = styled.svg`
   display: block;
   margin-right: 0;
@@ -40,76 +58,6 @@ export const Title = styled.h2`
   @media screen and (min-width: 1440px) {
     display: none;
   }
-`;
-
-export const AllCharacteristicsList = styled.ul`
-  @media screen and (max-width: 1439.98px) {
-    margin-bottom: 40px;
-  }
-
-  //   @media screen and (min-width: 992px) {
-  //     width: 456px;
-  //   }
-
-  //   @media screen and (min-width: 1440px) {
-  //     width: 560px;
-  //   }
-`;
-
-export const AllCharacteristicsItem = styled.li`
-  //   display: flex;
-  //   justify-content: space-between;
-
-  //   &:not(:last-child) {
-  //     margin-bottom: 10px;
-  //   }
-
-  @media screen and (max-width: 1439.98px) {
-    &:not(:last-child) {
-      margin-bottom: 24px;
-    }
-  }
-`;
-
-export const AllCharacteristicsTitle = styled.p`
-  margin-bottom: 8px;
-
-  font-family: ${props => props.theme.fonts.main};
-  font-size: 16px;
-  font-weight: ${props => props.theme.fontWeights.normal};
-  line-height: ${props => props.theme.lineHeights.title};
-
-  color: ${props => props.theme.colors.greyDark};
-`;
-
-export const AllCharacteristicsValue = styled.p`
-  font-family: ${props => props.theme.fonts.main};
-  font-size: 16px;
-  font-weight: ${props => props.theme.fontWeights.normal};
-  line-height: ${props => props.theme.lineHeights.title};
-
-  color: ${props => props.theme.colors.logospan};
-`;
-
-export const Description = styled.p`
-  font-family: ${props => props.theme.fonts.main};
-  font-size: 16px;
-  font-weight: ${props => props.theme.fontWeights.normal};
-  line-height: ${props => props.theme.lineHeights.title};
-
-  color: ${props => props.theme.colors.logospan};
-
-  //   @media screen and (max-width: 1439.98px) {
-  margin-bottom: 32px;
-  //   }
-
-  //   @media screen and (min-width: 992px) {
-  //     width: 456px;
-  //   }
-
-  //   @media screen and (min-width: 1440px) {
-  //     width: 560px;
-  //   }
 `;
 
 // export const FlexWrapper = styled.div`
