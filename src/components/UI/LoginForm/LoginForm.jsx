@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import Input from '../Input/Input';
 import {
@@ -17,6 +18,8 @@ const LoginForm = () => {
     email: '',
     password: '',
   });
+
+  const navigate = useNavigate();
 
   const handleInputChange = e => {
     setFormData({
@@ -56,6 +59,7 @@ const LoginForm = () => {
           token: token,
         },
       });
+      navigate('/user');
       console.log('Ви авторизувались');
       // console.log(state.isAuthenticated);
     } catch (error) {
