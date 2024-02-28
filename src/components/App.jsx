@@ -2,11 +2,13 @@ import { Route, Routes } from 'react-router-dom';
 
 import { ApiProvider } from '../contexts/ApiContext/ApiContext';
 import { CategoryProvider } from '../contexts/CategoryContext/CategoryContext';
+import { useAuth } from '../contexts/AuthContext/AuthContext';
 import Layout from '../components/Layout/Layout';
 import NotFound from '../pages/notFound';
 import HomePage from '../pages/home';
 import LoginPage from '../pages/login';
 import RegisterPage from '../pages/register';
+import UserPage from '../pages/user';
 import Products from '../pages/products';
 import ProductPage from 'pages/productPage';
 import DescriptionCharacteristics from './Characteristics/AllCharacteristics/DescriptionCharacteristics/DescriptionCharacteristics';
@@ -16,6 +18,7 @@ import Delivery from './Delivery/Delivery';
 import Comments from './Characteristics/AllCharacteristics/Comments/Comments';
 
 export const App = () => {
+  const { state } = useAuth();
   return (
     <>
       <ApiProvider>
@@ -26,7 +29,10 @@ export const App = () => {
               {/* <Route path="drones" element={<Products />} /> */}
               <Route path="articles" element={<div>Статті</div>} />
               <Route path="manufacturers" element={<div>Виробники</div>} />
-              <Route path="user" element={<RegisterPage />} />
+              <Route
+                path="user"
+                element={state.isAuthenticated ? <UserPage /> : <LoginPage />}
+              />
               <Route path="favorites" element={<div>Перелік улюбленних</div>} />
               <Route path="cart" element={<div>Кошик</div>} />
 
