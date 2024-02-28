@@ -20,8 +20,8 @@ const ProductPage = () => {
     <>
       <Breadcrumbs />
       <Product />
-      <Payment />
-      <Delivery/>
+      {window.innerWidth < 1440 && <Payment />}
+      {window.innerWidth < 1440 && <Delivery />}
       <Characteristics />
       <OtherProducts />
     </>

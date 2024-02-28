@@ -19,46 +19,34 @@ import { Outlet } from 'react-router-dom';
 
 const Characteristics = () => {
   const [open, setOpen] = useState(false);
-  // const [active, setActive] = useState(false);
 
   function onOpen() {
     setOpen(true);
     document.body.style.overflow = 'hidden';
   }
 
-  // function addActiveClass() {
-  // setActive(active => !active);
-  // if (active) {
-  //   e.target.classList.add('is-active');
-  // } else {
-  // }
-  // active ? e.currentTarget.classList.add('is-active') : 'none';
-  // e.target.classList.toggle('is-active');
-  // className={active ? 'is-active' : null}
-  // }
-
   return (
     <>
       {window.innerWidth >= 1440 && (
         <CategoryList>
           <CategoryItem>
-            <Category to="characteristics">Характеристики та опис</Category>
+            <Category to="">Характеристики та опис</Category>
           </CategoryItem>
 
           <CategoryItem>
-            <Category to="useful">Корисна інформація</Category>
+            <Category to="useful/">Корисна інформація</Category>
           </CategoryItem>
 
           <CategoryItem>
-            <Category to="payment">Оплата</Category>
+            <Category to="payment/">Оплата</Category>
           </CategoryItem>
 
           <CategoryItem>
-            <Category to="delivery">Доставка</Category>
+            <Category to="delivery/">Доставка</Category>
           </CategoryItem>
 
           <CategoryItem>
-            <Category to="comments">Коментарі</Category>
+            <Category to="comments/">Коментарі</Category>
           </CategoryItem>
         </CategoryList>
       )}
@@ -112,7 +100,9 @@ const Characteristics = () => {
         </BtnMore>
       </CharacteristicsBackground>
 
-      {open === true && <AllCharacteristics open={open} setOpen={setOpen} />}
+      {window.innerWidth < 1440 && (
+        <AllCharacteristics open={open} setOpen={setOpen} />
+      )}
     </>
   );
 };

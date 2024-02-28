@@ -15,6 +15,7 @@ const DescriptionCharacteristics = () => {
           <AllCharacteristicsTitle>Пульт управління</AllCharacteristicsTitle>
           <AllCharacteristicsValue>2,4 ГГц</AllCharacteristicsValue>
         </AllCharacteristicsItem>
+
         <AllCharacteristicsItem>
           <AllCharacteristicsTitle>
             Вхід (зарядний пристрій)
@@ -23,19 +24,97 @@ const DescriptionCharacteristics = () => {
             100-240 В / 50-60 Гц
           </AllCharacteristicsValue>
         </AllCharacteristicsItem>
+
+        <AllCharacteristicsItem>
+          <AllCharacteristicsTitle>
+            Затримка сигналу трансляції
+          </AllCharacteristicsTitle>
+          <AllCharacteristicsValue>≤200 мс</AllCharacteristicsValue>
+        </AllCharacteristicsItem>
+
+        <AllCharacteristicsItem>
+          <AllCharacteristicsTitle>Макс. кут нахилу</AllCharacteristicsTitle>
+          <AllCharacteristicsValue>
+            33 ° (рух), 25 ° (стабільний)
+          </AllCharacteristicsValue>
+        </AllCharacteristicsItem>
+
         <AllCharacteristicsItem>
           <AllCharacteristicsTitle>Наявність камери</AllCharacteristicsTitle>
           <AllCharacteristicsValue>Так</AllCharacteristicsValue>
         </AllCharacteristicsItem>
+
+        <AllCharacteristicsItem>
+          <AllCharacteristicsTitle>
+            Діапазон температур зарядки
+          </AllCharacteristicsTitle>
+          <AllCharacteristicsValue>5 ~ 45 ℃</AllCharacteristicsValue>
+        </AllCharacteristicsItem>
+
+        <AllCharacteristicsItem>
+          <AllCharacteristicsTitle>
+            Захист від запотівання об'єктива
+          </AllCharacteristicsTitle>
+          <AllCharacteristicsValue>Підтримується</AllCharacteristicsValue>
+        </AllCharacteristicsItem>
+
+        <AllCharacteristicsItem>
+          <AllCharacteristicsTitle>
+            Макс. кутова швидкість
+          </AllCharacteristicsTitle>
+          <AllCharacteristicsValue>30 ° / с</AllCharacteristicsValue>
+        </AllCharacteristicsItem>
+
+        <AllCharacteristicsItem>
+          <AllCharacteristicsTitle>Час зарядки</AllCharacteristicsTitle>
+          <AllCharacteristicsValue>100 хвилин</AllCharacteristicsValue>
+        </AllCharacteristicsItem>
+
         <AllCharacteristicsItem>
           <AllCharacteristicsTitle>
             Дальність передачі сигналу пульта
           </AllCharacteristicsTitle>
           <AllCharacteristicsValue>FCC：12 км</AllCharacteristicsValue>
         </AllCharacteristicsItem>
+
+        <AllCharacteristicsItem>
+          <AllCharacteristicsTitle>
+            Контрольований діапазон підвісу
+          </AllCharacteristicsTitle>
+          <AllCharacteristicsValue>
+            -90 °~ + 30 ° -80 °~ + 80 °
+          </AllCharacteristicsValue>
+        </AllCharacteristicsItem>
+
+        <AllCharacteristicsItem>
+          <AllCharacteristicsTitle>Дальність польоту</AllCharacteristicsTitle>
+          <AllCharacteristicsValue>24 км</AllCharacteristicsValue>
+        </AllCharacteristicsItem>
+
         <AllCharacteristicsItem>
           <AllCharacteristicsTitle>Розгорнуті розміри</AllCharacteristicsTitle>
           <AllCharacteristicsValue>250х250х55 мм</AllCharacteristicsValue>
+        </AllCharacteristicsItem>
+
+        <AllCharacteristicsItem>
+          <AllCharacteristicsTitle>
+            Вихід (зарядний пристрій)
+          </AllCharacteristicsTitle>
+          <AllCharacteristicsValue>12,75В-5А</AllCharacteristicsValue>
+        </AllCharacteristicsItem>
+
+        <AllCharacteristicsItem>
+          <AllCharacteristicsTitle>
+            Енергія батареї квадрокоптера
+          </AllCharacteristicsTitle>
+          <AllCharacteristicsValue>68,7 Вт/год</AllCharacteristicsValue>
+        </AllCharacteristicsItem>
+
+        <AllCharacteristicsItem>
+          <AllCharacteristicsTitle>
+            Макс. допустима швидкість вітру
+          </AllCharacteristicsTitle>
+          <AllCharacteristicsValue>7 рівень</AllCharacteristicsValue>
         </AllCharacteristicsItem>
       </AllCharacteristicsList>
 

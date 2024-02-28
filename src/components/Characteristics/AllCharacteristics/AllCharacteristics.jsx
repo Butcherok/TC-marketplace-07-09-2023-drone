@@ -2,8 +2,6 @@ import {
   AllCharacteristicsBackground,
   IconCross,
   Title,
-
-  // FlexWrapper,
 } from './AllCharacteristics.styled';
 import UsefulInformation from './UsefulInformation/UsefulInformation';
 import icon from '../../../assets/icons/sprite.svg';
