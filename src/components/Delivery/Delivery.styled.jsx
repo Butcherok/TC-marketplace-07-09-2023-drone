@@ -8,7 +8,7 @@ export const DeliveryBackground = styled.section`
   background: #fafcff;
   //   background: ${props => props.theme.colors.background};
 
-  box-shadow: 3px 4px 40px 0px rgba(187, 194, 221, 0.3);
+  // box-shadow: 3px 4px 40px 0px rgba(187, 194, 221, 0.3);
 
   @media screen and (min-width: 1440px) {
     // width: 100%;

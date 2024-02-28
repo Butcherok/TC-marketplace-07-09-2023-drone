@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export const CategoryList = styled.ul`
   width: 100%;
@@ -11,6 +11,7 @@ export const CategoryList = styled.ul`
 `;
 
 export const CategoryItem = styled.li`
+  // height: 35px;
   // padding: 10px 24px;
   // border-radius: 4px 4px 0px 0px;
 
@@ -30,7 +31,8 @@ export const CategoryItem = styled.li`
   cursor: pointer;
 `;
 
-export const Category = styled(Link)`
+export const Category = styled(NavLink)`
+  display: block;
   padding: 10px 24px;
   border-radius: 4px 4px 0px 0px;
 
@@ -41,10 +43,9 @@ export const Category = styled(Link)`
 
   color: ${props => props.theme.colors.greyDark};
 
-  box-shadow: 3px 4px 40px 0px rgba(187, 194, 221, 0.3);
-
   &.active {
     background-color: #fafcff;
+    box-shadow: 3px 4px 40px 0px rgba(187, 194, 221, 0.3);
   }
 `;
 

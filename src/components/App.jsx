@@ -38,10 +38,7 @@ export const App = () => {
 
               <Route path="drones" element={<Products />} />
               <Route path="drones/:dronId" element={<ProductPage />}>
-                <Route
-                  path="characteristics"
-                  element={<DescriptionCharacteristics />}
-                />
+                <Route index element={<DescriptionCharacteristics />} />
                 <Route path="useful" element={<UsefulInformation />} />
                 <Route path="payment" element={<Payment />} />
                 <Route path="delivery" element={<Delivery />} />
