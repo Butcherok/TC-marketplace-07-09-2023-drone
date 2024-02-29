@@ -46,10 +46,7 @@ export const App = () => {
               </Route>
               <Route path="accessories" element={<Products />} />
               <Route path="accessories/:accessoryId" element={<ProductPage />}>
-                <Route
-                  path="characteristics"
-                  element={<DescriptionCharacteristics />}
-                />
+                <Route index element={<DescriptionCharacteristics />} />
                 <Route path="useful" element={<UsefulInformation />} />
                 <Route path="payment" element={<Payment />} />
                 <Route path="delivery" element={<Delivery />} />
@@ -57,10 +54,7 @@ export const App = () => {
               </Route>
               <Route path="parts" element={<Products />} />
               <Route path="parts/:partId" element={<ProductPage />}>
-                <Route
-                  path="characteristics"
-                  element={<DescriptionCharacteristics />}
-                />
+                <Route index element={<DescriptionCharacteristics />} />
                 <Route path="useful" element={<UsefulInformation />} />
                 <Route path="payment" element={<Payment />} />
                 <Route path="delivery" element={<Delivery />} />
@@ -68,10 +62,7 @@ export const App = () => {
               </Route>
               <Route path="sets" element={<Products />} />
               <Route path="sets/:setId" element={<ProductPage />}>
-                <Route
-                  path="characteristics"
-                  element={<DescriptionCharacteristics />}
-                />
+                <Route index element={<DescriptionCharacteristics />} />
                 <Route path="useful" element={<UsefulInformation />} />
                 <Route path="payment" element={<Payment />} />
                 <Route path="delivery" element={<Delivery />} />

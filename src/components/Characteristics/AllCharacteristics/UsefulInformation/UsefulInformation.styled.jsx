@@ -37,14 +37,25 @@ export const List = styled.ul`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 auto;
-`;
+  gap: 62px 16px;
 
-export const Item = styled.li`
-  &:not(:last-child) {
-    margin-bottom: 62px;
+  margin: 0 auto;
+
+  @media screen and (min-width: 480px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  @media screen and (min-width: 768px) {
+    gap: 62px 32px;
+  }
+
+  @media screen and (min-width: 1000px) {
+    gap: 62px 48px;
   }
 `;
+
+export const Item = styled.li``;
 
 export const File = styled.div`
   position: relative;

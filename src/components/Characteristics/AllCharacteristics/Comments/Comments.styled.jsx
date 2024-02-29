@@ -17,18 +17,28 @@ export const Background = styled.section`
   }
 `;
 
+export const FlexConrainer2 = styled.div`
+  @media screen and (min-width: 480px) {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+`;
+
 export const Title = styled.h2`
-  margin-bottom: 16px;
   font-family: ${props => props.theme.fonts.main};
   font-size: ${props => props.theme.fontSizes.l};
   font-weight: ${props => props.theme.fontWeights.bold};
   line-height: ${props => props.theme.lineHeights.section};
 
   color: ${props => props.theme.colors.logospan};
+
+  @media screen and (max-width: 479.98px) {
+    margin-bottom: 16px;
+  }
 `;
 
 export const ViewAllBtn = styled.button`
-  margin-bottom: 24px;
   padding: 0;
   border: none;
   font-family: ${props => props.theme.fonts.main};
@@ -38,6 +48,10 @@ export const ViewAllBtn = styled.button`
 
   background-color: transparent;
   color: ${props => props.theme.colors.greyDark};
+
+  @media screen and (max-width: 479.98px) {
+    margin-bottom: 24px;
+  }
 `;
 export const CommentList = styled.ul`
   margin-bottom: 24px;
@@ -59,7 +73,19 @@ export const CommentItem = styled.li`
 export const FlexConrainer = styled.div`
   display: flex;
   gap: 12px;
-  margin-bottom: 10px;
+
+  @media screen and (max-width: 479.98px) {
+    margin-bottom: 10px;
+  }
+`;
+
+export const FlexConrainer3 = styled.div`
+  @media screen and (min-width: 480px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
 `;
 
 export const LogoBackground = styled.div`
@@ -100,7 +126,6 @@ export const Star = styled.svg`
 `;
 
 export const CommentResponse = styled.button`
-  margin-bottom: 12px;
   border: none;
   padding: 0;
   background-color: transparent;
@@ -111,6 +136,10 @@ export const CommentResponse = styled.button`
 
   text-decoration-line: underline;
   color: ${props => props.theme.colors.btnColor};
+
+  @media screen and (max-width: 479.98px) {
+    margin-bottom: 12px;
+  }
 `;
 
 export const CommentText = styled.p`
@@ -123,7 +152,7 @@ export const CommentText = styled.p`
 `;
 
 export const DetailBtn = styled.button`
-  dispay: inline-block;
+  display: inline-block;
   border: none;
   padding: 0;
   background-color: transparent;
