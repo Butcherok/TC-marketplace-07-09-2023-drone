@@ -4,6 +4,8 @@ import {
   PaymentTitle,
   PaymentList,
   PaymentItem,
+  FlexContainer,
+  PaymentType,
   CommissionText,
   PaymentText,
 } from './Payment.styled';
@@ -14,40 +16,73 @@ const Payment = () => {
       <PaymentTitle>Оплата</PaymentTitle>
       <PaymentList>
         <PaymentItem>
-          <svg width={24} height={24} style={{ fill: 'palevioletred' }}>
-            {/* <use href={`${icon}#icon-privat`}></use> */}
-            <rect width={24} height={24} />
-          </svg>
-          <CommissionText>Комісія 2%</CommissionText>
-          <p></p>
+          <FlexContainer>
+            <svg width={24} height={24} style={{ fill: 'palevioletred' }}>
+              {/* <use href={`${icon}#icon-privat`}></use> */}
+              <rect width={24} height={24} />
+            </svg>
+
+            <div>
+              <PaymentType>Приват 24</PaymentType>
+              <CommissionText>Комісія 2%</CommissionText>
+            </div>
+          </FlexContainer>
         </PaymentItem>
+
         <PaymentItem>
-          <svg width={24} height={24} style={{ fill: 'palevioletred' }}>
-            {/* <use href={`${icon}#icon-mastercard`}></use> */}
-            <rect width={24} height={24} />
-          </svg>
-          <CommissionText>Комісія 2%</CommissionText>
+          <FlexContainer>
+            <svg width={24} height={24} style={{ fill: 'palevioletred' }}>
+              {/* <use href={`${icon}#icon-mastercard`}></use> */}
+              <rect width={24} height={24} />
+            </svg>
+
+            <div>
+              <PaymentType>Visa</PaymentType>
+              <CommissionText>Комісія 2%</CommissionText>
+            </div>
+          </FlexContainer>
         </PaymentItem>
+
         <PaymentItem>
-          <svg width={24} height={24} style={{ fill: 'palevioletred' }}>
-            {/* <use href={`${icon}#icon-paypal`}></use> */}
-            <rect width={24} height={24} />
-          </svg>
-          <CommissionText>Комісія 2%</CommissionText>
+          <FlexContainer>
+            <svg width={24} height={24} style={{ fill: 'palevioletred' }}>
+              {/* <use href={`${icon}#icon-paypal`}></use> */}
+              <rect width={24} height={24} />
+            </svg>
+
+            <div>
+              <PaymentType>MasterCard</PaymentType>
+              <CommissionText>Комісія 2%</CommissionText>
+            </div>
+          </FlexContainer>
         </PaymentItem>
+
         <PaymentItem>
-          <svg width={24} height={24} style={{ fill: 'palevioletred' }}>
-            {/* <use href={`${icon}#icon-visa`}></use> */}
-            <rect width={24} height={24} />
-          </svg>
-          <CommissionText>Комісія 2%</CommissionText>
+          <FlexContainer>
+            <svg width={24} height={24} style={{ fill: 'palevioletred' }}>
+              {/* <use href={`${icon}#icon-visa`}></use> */}
+              <rect width={24} height={24} />
+            </svg>
+
+            <div>
+              <PaymentType>LiqPay</PaymentType>
+              <CommissionText>Комісія 2%</CommissionText>
+            </div>
+          </FlexContainer>
         </PaymentItem>
+
         <PaymentItem>
-          <svg width={24} height={24} style={{ fill: 'palevioletred' }}>
-            {/* <use href={`${icon}#icon-liqpay`}></use> */}
-            <rect width={24} height={24} />
-          </svg>
-          <CommissionText>Комісія 2%</CommissionText>
+          <FlexContainer>
+            <svg width={24} height={24} style={{ fill: 'palevioletred' }}>
+              {/* <use href={`${icon}#icon-liqpay`}></use> */}
+              <rect width={24} height={24} />
+            </svg>
+
+            <div>
+              <PaymentType>PayPal</PaymentType>
+              <CommissionText>Комісія 2%</CommissionText>
+            </div>
+          </FlexContainer>
         </PaymentItem>
       </PaymentList>
 

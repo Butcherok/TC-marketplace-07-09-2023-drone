@@ -2,18 +2,15 @@ import styled from 'styled-components';
 
 export const Background = styled.section`
   width: 100%;
-  //    border-radius: ${props => props.theme.fontSizes.xxs};
-  //    background: #fafcff;
-
-  //    box-shadow: 3px 4px 40px 0px rgba(187, 194, 221, 0.3);
 
   @media screen and (min-width: 1440px) {
-    // width: 100%;
+    display: flex;
+    flex-direction: column;
+
     padding: 50px 24px;
     margin-bottom: 40px;
     background: #fafcff;
     border-radius: 0px 0px 8px 8px;
-    // box-shadow: 3px 4px 40px 0px rgba(187, 194, 221, 0.3);
   }
 `;
 
@@ -22,6 +19,10 @@ export const FlexConrainer2 = styled.div`
     display: flex;
     justify-content: space-between;
     margin-bottom: 24px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    display: none;
   }
 `;
 
@@ -54,7 +55,9 @@ export const ViewAllBtn = styled.button`
   }
 `;
 export const CommentList = styled.ul`
-  margin-bottom: 24px;
+  @media screen and (max-width: 1439.98px) {
+    margin-bottom: 24px;
+  }
 `;
 
 export const CommentItem = styled.li`
@@ -180,4 +183,11 @@ export const AddCommentBtn = styled.button`
   border-radius: 4px;
   background-color: ${props => props.theme.colors.btnColor};
   color: ${props => props.theme.colors.background};
+
+  @media screen and (min-width: 1440px) {
+    margin-bottom: 24px;
+    margin-right: 0;
+    margin-left: auto;
+    order: -1;
+  }
 `;

@@ -29,6 +29,10 @@ export const DeliveryTitle = styled.h2`
   line-height: ${props => props.theme.lineHeights.section};
 
   color: ${props => props.theme.colors.logo};
+
+  @media screen and (min-width: 1440px) {
+    display: none;
+  }
 `;
 
 export const DeliveryList = styled.ul`

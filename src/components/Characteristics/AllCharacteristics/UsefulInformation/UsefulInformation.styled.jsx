@@ -53,6 +53,10 @@ export const List = styled.ul`
   @media screen and (min-width: 1000px) {
     gap: 62px 48px;
   }
+
+  @media screen and (min-width: 1440px) {
+    gap: 24px 62px;
+  }
 `;
 
 export const Item = styled.li``;
