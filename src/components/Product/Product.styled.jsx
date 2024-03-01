@@ -113,7 +113,7 @@ export const BottomContainer = styled.div`
 `;
 
 export const FlexContainer = styled.div`
-  @media screen and (min-width: 768px) and (max-width: 1440px) {
+  @media screen and (min-width: 768px) and (max-width: 1439.98px) {
     display: flex;
     gap: 24px;
   }
