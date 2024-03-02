@@ -4,6 +4,7 @@ import Characteristics from 'components/Characteristics/Characteristics';
 import OtherProducts from 'components/OtherProducts/OtherProducts';
 import Payment from 'components/Payment/Payment';
 import Delivery from 'components/Delivery/Delivery';
+import ProductVideo from 'components/ProductVideo/ProductVideo';
 // import { useApi } from '../contexts/ApiContext/ApiContext';
 
 const ProductPage = () => {
@@ -23,6 +24,7 @@ const ProductPage = () => {
       {window.innerWidth < 1440 && <Payment />}
       {window.innerWidth < 1440 && <Delivery />}
       <Characteristics />
+      <ProductVideo />
       <OtherProducts />
     </>
   );

@@ -100,7 +100,7 @@ const Characteristics = () => {
         </BtnMore>
       </CharacteristicsBackground>
 
-      {window.innerWidth < 1440 && (
+      {window.innerWidth < 1440 && open && (
         <AllCharacteristics open={open} setOpen={setOpen} />
       )}
     </>
