@@ -5,6 +5,7 @@ import {
   PaymentList,
   PaymentItem,
   FlexContainer,
+  PaymentIcon,
   PaymentType,
   CommissionText,
   PaymentText,
@@ -17,10 +18,10 @@ const Payment = () => {
       <PaymentList>
         <PaymentItem>
           <FlexContainer>
-            <svg width={24} height={24} style={{ fill: 'palevioletred' }}>
+            <PaymentIcon>
               {/* <use href={`${icon}#icon-privat`}></use> */}
               <rect width={24} height={24} />
-            </svg>
+            </PaymentIcon>
 
             <div>
               <PaymentType>Приват 24</PaymentType>
@@ -31,10 +32,10 @@ const Payment = () => {
 
         <PaymentItem>
           <FlexContainer>
-            <svg width={24} height={24} style={{ fill: 'palevioletred' }}>
+            <PaymentIcon>
               {/* <use href={`${icon}#icon-mastercard`}></use> */}
               <rect width={24} height={24} />
-            </svg>
+            </PaymentIcon>
 
             <div>
               <PaymentType>Visa</PaymentType>
@@ -45,10 +46,10 @@ const Payment = () => {
 
         <PaymentItem>
           <FlexContainer>
-            <svg width={24} height={24} style={{ fill: 'palevioletred' }}>
+            <PaymentIcon>
               {/* <use href={`${icon}#icon-paypal`}></use> */}
               <rect width={24} height={24} />
-            </svg>
+            </PaymentIcon>
 
             <div>
               <PaymentType>MasterCard</PaymentType>
@@ -59,10 +60,10 @@ const Payment = () => {
 
         <PaymentItem>
           <FlexContainer>
-            <svg width={24} height={24} style={{ fill: 'palevioletred' }}>
+            <PaymentIcon>
               {/* <use href={`${icon}#icon-visa`}></use> */}
               <rect width={24} height={24} />
-            </svg>
+            </PaymentIcon>
 
             <div>
               <PaymentType>LiqPay</PaymentType>
@@ -73,10 +74,10 @@ const Payment = () => {
 
         <PaymentItem>
           <FlexContainer>
-            <svg width={24} height={24} style={{ fill: 'palevioletred' }}>
+            <PaymentIcon>
               {/* <use href={`${icon}#icon-liqpay`}></use> */}
               <rect width={24} height={24} />
-            </svg>
+            </PaymentIcon>
 
             <div>
               <PaymentType>PayPal</PaymentType>

@@ -38,35 +38,51 @@ export const App = () => {
 
               <Route path="drones" element={<Products />} />
               <Route path="drones/:dronId" element={<ProductPage />}>
-                <Route index element={<DescriptionCharacteristics />} />
-                <Route path="useful" element={<UsefulInformation />} />
-                <Route path="payment" element={<Payment />} />
-                <Route path="delivery" element={<Delivery />} />
-                <Route path="comments" element={<Comments />} />
+                {window.innerWidth >= 1440 && (
+                  <>
+                    <Route index element={<DescriptionCharacteristics />} />
+                    <Route path="useful" element={<UsefulInformation />} />
+                    <Route path="payment" element={<Payment />} />
+                    <Route path="delivery" element={<Delivery />} />
+                    <Route path="comments" element={<Comments />} />
+                  </>
+                )}
               </Route>
               <Route path="accessories" element={<Products />} />
               <Route path="accessories/:accessoryId" element={<ProductPage />}>
-                <Route index element={<DescriptionCharacteristics />} />
-                <Route path="useful" element={<UsefulInformation />} />
-                <Route path="payment" element={<Payment />} />
-                <Route path="delivery" element={<Delivery />} />
-                <Route path="comments" element={<Comments />} />
+                {window.innerWidth >= 1440 && (
+                  <>
+                    <Route index element={<DescriptionCharacteristics />} />
+                    <Route path="useful" element={<UsefulInformation />} />
+                    <Route path="payment" element={<Payment />} />
+                    <Route path="delivery" element={<Delivery />} />
+                    <Route path="comments" element={<Comments />} />
+                  </>
+                )}
               </Route>
               <Route path="parts" element={<Products />} />
               <Route path="parts/:partId" element={<ProductPage />}>
-                <Route index element={<DescriptionCharacteristics />} />
-                <Route path="useful" element={<UsefulInformation />} />
-                <Route path="payment" element={<Payment />} />
-                <Route path="delivery" element={<Delivery />} />
-                <Route path="comments" element={<Comments />} />
+                {window.innerWidth >= 1440 && (
+                  <>
+                    <Route index element={<DescriptionCharacteristics />} />
+                    <Route path="useful" element={<UsefulInformation />} />
+                    <Route path="payment" element={<Payment />} />
+                    <Route path="delivery" element={<Delivery />} />
+                    <Route path="comments" element={<Comments />} />
+                  </>
+                )}
               </Route>
               <Route path="sets" element={<Products />} />
               <Route path="sets/:setId" element={<ProductPage />}>
-                <Route index element={<DescriptionCharacteristics />} />
-                <Route path="useful" element={<UsefulInformation />} />
-                <Route path="payment" element={<Payment />} />
-                <Route path="delivery" element={<Delivery />} />
-                <Route path="comments" element={<Comments />} />
+                {window.innerWidth >= 1440 && (
+                  <>
+                    <Route index element={<DescriptionCharacteristics />} />
+                    <Route path="useful" element={<UsefulInformation />} />
+                    <Route path="payment" element={<Payment />} />
+                    <Route path="delivery" element={<Delivery />} />
+                    <Route path="comments" element={<Comments />} />
+                  </>
+                )}
               </Route>
 
               <Route path="about-us" element={<div>Про нас</div>} />

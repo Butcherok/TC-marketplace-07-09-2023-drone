@@ -1,5 +1,6 @@
 import {
   AllCharacteristicsBackground,
+  IconCrossBtn,
   IconCross,
   Title,
 } from './AllCharacteristics.styled';
@@ -19,9 +20,11 @@ const AllCharacteristics = ({ open, setOpen }) => {
       <AllCharacteristicsBackground
         className={open ? 'modal-move-up' : 'modal-move-down'}
       >
-        <IconCross onClick={() => onClose()}>
-          <use href={`${icon}#icon-cross`}></use>
-        </IconCross>
+        <IconCrossBtn type="button">
+          <IconCross onClick={() => onClose()}>
+            <use href={`${icon}#icon-cross`}></use>
+          </IconCross>
+        </IconCrossBtn>
         <Title>Характеристики та опис</Title>
 
         <DescriptionCharacteristics />

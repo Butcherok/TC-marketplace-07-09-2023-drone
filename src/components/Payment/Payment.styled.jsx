@@ -11,12 +11,8 @@ export const PaymentBackground = styled.section`
   // box-shadow: 3px 4px 40px 0px rgba(187, 194, 221, 0.3);
 
   @media screen and (min-width: 1440px) {
-    // width: 100%;
     padding: 50px 24px;
-    // margin-bottom: 40px;
-    // background: #fafcff;
     border-radius: 0px 0px 8px 8px;
-    // box-shadow: 3px 4px 40px 0px rgba(187, 194, 221, 0.3);
   }
 `;
 
@@ -49,22 +45,33 @@ export const PaymentList = styled.ul`
   }
 `;
 
-export const PaymentItem = styled.li`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
+export const PaymentItem = styled.li``;
 
 export const FlexContainer = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 16px;
-  padding: 24px;
 
-  border-radius: 4px;
-  border: 1px solid #f2f2f2;
-  background: #fafcff;
-  box-shadow: 3px 4px 40px 0px rgba(207, 217, 232, 0.3);
+  @media screen and (min-width: 1440px) {
+    flex-direction: row;
+    gap: 16px;
+    padding: 24px;
+
+    border-radius: 4px;
+    border: 1px solid #f2f2f2;
+    background: #fafcff;
+    box-shadow: 3px 4px 40px 0px rgba(207, 217, 232, 0.3);
+  }
+`;
+
+export const PaymentIcon = styled.svg`
+  width: 24px;
+  height: 24px;
+  fill: palevioletred;
+
+  @media screen and (max-width: 1439.98px) {
+    margin-bottom: 10px;
+  }
 `;
 
 export const PaymentType = styled.h3`
@@ -97,9 +104,9 @@ export const PaymentText = styled.p`
 
   color: ${props => props.theme.colors.greyDark};
 
-  //   &:not(:last-child){
-
-  //   }
+  &:not(:last-child) {
+    margin-bottom: 12px;
+  }
 
   @media screen and (min-width: 1440px) {
     color: ${props => props.theme.colors.logospan};
