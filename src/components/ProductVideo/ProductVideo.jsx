@@ -1,14 +1,14 @@
+import ReactPlayer from 'react-player/lazy';
+import video from './mavic.mp4';
+import { VideoBackground } from './ProductVideo.styled';
+
 const ProductVideo = () => {
+  ReactPlayer.removeCustomPlayers();
   return (
     <>
-      <video
-        controls
-        width="620"
-        src="https://www.youtube.com/watch?v=IwoyGb-NWDs"
-        // autoplay
-        // loop
-        // preload="auto"
-      ></video>
+      <VideoBackground>
+        <ReactPlayer url={video} controls={true} />
+      </VideoBackground>
     </>
   );
 };
