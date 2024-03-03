@@ -1,7 +1,22 @@
 {
   "files": {
     "main.css": "/TC-marketplace-07-09-2023-drone/static/css/main.8dad466f.css",
-    "main.js": "/TC-marketplace-07-09-2023-drone/static/js/main.48d3d47c.js",
+    "main.js": "/TC-marketplace-07-09-2023-drone/static/js/main.1e97b7c0.js",
+    "reactPlayerYouTube.js": "/TC-marketplace-07-09-2023-drone/static/js/reactPlayerYouTube.79cae598.chunk.js",
+    "reactPlayerSoundCloud.js": "/TC-marketplace-07-09-2023-drone/static/js/reactPlayerSoundCloud.394b48f8.chunk.js",
+    "reactPlayerVimeo.js": "/TC-marketplace-07-09-2023-drone/static/js/reactPlayerVimeo.e657d533.chunk.js",
+    "reactPlayerMux.js": "/TC-marketplace-07-09-2023-drone/static/js/reactPlayerMux.c67e0b24.chunk.js",
+    "reactPlayerFacebook.js": "/TC-marketplace-07-09-2023-drone/static/js/reactPlayerFacebook.96303ab9.chunk.js",
+    "reactPlayerStreamable.js": "/TC-marketplace-07-09-2023-drone/static/js/reactPlayerStreamable.44cad794.chunk.js",
+    "reactPlayerWistia.js": "/TC-marketplace-07-09-2023-drone/static/js/reactPlayerWistia.77d7872b.chunk.js",
+    "reactPlayerTwitch.js": "/TC-marketplace-07-09-2023-drone/static/js/reactPlayerTwitch.6ff6c4ab.chunk.js",
+    "reactPlayerDailyMotion.js": "/TC-marketplace-07-09-2023-drone/static/js/reactPlayerDailyMotion.437bd452.chunk.js",
+    "reactPlayerMixcloud.js": "/TC-marketplace-07-09-2023-drone/static/js/reactPlayerMixcloud.d83c2448.chunk.js",
+    "reactPlayerVidyard.js": "/TC-marketplace-07-09-2023-drone/static/js/reactPlayerVidyard.d3b53704.chunk.js",
+    "reactPlayerKaltura.js": "/TC-marketplace-07-09-2023-drone/static/js/reactPlayerKaltura.126f7dde.chunk.js",
+    "reactPlayerFilePlayer.js": "/TC-marketplace-07-09-2023-drone/static/js/reactPlayerFilePlayer.2149cd3a.chunk.js",
+    "reactPlayerPreview.js": "/TC-marketplace-07-09-2023-drone/static/js/reactPlayerPreview.bca8d7d6.chunk.js",
+    "static/media/mavic.mp4": "/TC-marketplace-07-09-2023-drone/static/media/mavic.52ed53b25df7059ad609.mp4",
     "static/media/sets.webp": "/TC-marketplace-07-09-2023-drone/static/media/sets.d17996106e2c5fb335ba.webp",
     "static/media/drones.webp": "/TC-marketplace-07-09-2023-drone/static/media/drones.24cd479c51bcff7ce481.webp",
     "static/media/accessories.webp": "/TC-marketplace-07-09-2023-drone/static/media/accessories.a5f856fc3374fae11b3e.webp",
@@ -20,10 +35,24 @@
     "static/media/slick.woff": "/TC-marketplace-07-09-2023-drone/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/TC-marketplace-07-09-2023-drone/index.html",
     "main.8dad466f.css.map": "/TC-marketplace-07-09-2023-drone/static/css/main.8dad466f.css.map",
-    "main.48d3d47c.js.map": "/TC-marketplace-07-09-2023-drone/static/js/main.48d3d47c.js.map"
+    "main.1e97b7c0.js.map": "/TC-marketplace-07-09-2023-drone/static/js/main.1e97b7c0.js.map",
+    "reactPlayerYouTube.79cae598.chunk.js.map": "/TC-marketplace-07-09-2023-drone/static/js/reactPlayerYouTube.79cae598.chunk.js.map",
+    "reactPlayerSoundCloud.394b48f8.chunk.js.map": "/TC-marketplace-07-09-2023-drone/static/js/reactPlayerSoundCloud.394b48f8.chunk.js.map",
+    "reactPlayerVimeo.e657d533.chunk.js.map": "/TC-marketplace-07-09-2023-drone/static/js/reactPlayerVimeo.e657d533.chunk.js.map",
+    "reactPlayerMux.c67e0b24.chunk.js.map": "/TC-marketplace-07-09-2023-drone/static/js/reactPlayerMux.c67e0b24.chunk.js.map",
+    "reactPlayerFacebook.96303ab9.chunk.js.map": "/TC-marketplace-07-09-2023-drone/static/js/reactPlayerFacebook.96303ab9.chunk.js.map",
+    "reactPlayerStreamable.44cad794.chunk.js.map": "/TC-marketplace-07-09-2023-drone/static/js/reactPlayerStreamable.44cad794.chunk.js.map",
+    "reactPlayerWistia.77d7872b.chunk.js.map": "/TC-marketplace-07-09-2023-drone/static/js/reactPlayerWistia.77d7872b.chunk.js.map",
+    "reactPlayerTwitch.6ff6c4ab.chunk.js.map": "/TC-marketplace-07-09-2023-drone/static/js/reactPlayerTwitch.6ff6c4ab.chunk.js.map",
+    "reactPlayerDailyMotion.437bd452.chunk.js.map": "/TC-marketplace-07-09-2023-drone/static/js/reactPlayerDailyMotion.437bd452.chunk.js.map",
+    "reactPlayerMixcloud.d83c2448.chunk.js.map": "/TC-marketplace-07-09-2023-drone/static/js/reactPlayerMixcloud.d83c2448.chunk.js.map",
+    "reactPlayerVidyard.d3b53704.chunk.js.map": "/TC-marketplace-07-09-2023-drone/static/js/reactPlayerVidyard.d3b53704.chunk.js.map",
+    "reactPlayerKaltura.126f7dde.chunk.js.map": "/TC-marketplace-07-09-2023-drone/static/js/reactPlayerKaltura.126f7dde.chunk.js.map",
+    "reactPlayerFilePlayer.2149cd3a.chunk.js.map": "/TC-marketplace-07-09-2023-drone/static/js/reactPlayerFilePlayer.2149cd3a.chunk.js.map",
+    "reactPlayerPreview.bca8d7d6.chunk.js.map": "/TC-marketplace-07-09-2023-drone/static/js/reactPlayerPreview.bca8d7d6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8dad466f.css",
-    "static/js/main.48d3d47c.js"
+    "static/js/main.1e97b7c0.js"
   ]
 }
