@@ -4,7 +4,7 @@ import {
   SellerTitle,
   SellerResponse,
 } from './SellerContainer.styled';
-import sellerImg from '../../seller.jpg';
+import sellerImg from '../../../../assets/seller.jpg';
 
 export const SellerContainer = () => {
   return (
