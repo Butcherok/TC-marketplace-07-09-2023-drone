@@ -203,12 +203,3 @@
     </pattern>
   </defs>
 </symbol>
-
-<symbol id="icon-triangle"   viewBox="0 0 28 32">
-<path fill="#f2f2f2" style="fill: var(--color1, #f2f2f2)" d="M27.765 16l-27.529-15.894v31.788l27.529-15.894z"></path>
-</symbol>
-
-  <!-- <svg id="icon-triangle" xmlns="http://www.w3.org/2000/svg" width="30" height="34" viewBox="0 0 30 34" fill="none">
-    <path d="M29.5 17L0.25 0.112503V33.8875L29.5 17Z" fill="#F2F2F2"/>
-  </svg> -->
-</svg>

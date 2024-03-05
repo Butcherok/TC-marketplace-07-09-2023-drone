@@ -15,7 +15,7 @@ import {
 } from './Product.styled';
 import { ResponseContainer } from './ProductComponents/ResponseContainer/ResponseContainer';
 import { AddContainer } from './ProductComponents/AddContainer/AddContainer';
-import droneImg from './drone.jpg';
+import droneImg from '../../assets/drone.jpg';
 import { SellerContainer } from './ProductComponents/SellerContainer/SellerContainer';
 import { BuyContainer } from './ProductComponents/BuyContainer/BuyContainer';
 
