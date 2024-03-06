@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/TC-marketplace-07-09-2023-drone/static/css/main.8dad466f.css",
-    "main.js": "/TC-marketplace-07-09-2023-drone/static/js/main.da9ca068.js",
+    "main.js": "/TC-marketplace-07-09-2023-drone/static/js/main.649acefb.js",
     "reactPlayerYouTube.js": "/TC-marketplace-07-09-2023-drone/static/js/reactPlayerYouTube.79cae598.chunk.js",
     "reactPlayerSoundCloud.js": "/TC-marketplace-07-09-2023-drone/static/js/reactPlayerSoundCloud.394b48f8.chunk.js",
     "reactPlayerVimeo.js": "/TC-marketplace-07-09-2023-drone/static/js/reactPlayerVimeo.e657d533.chunk.js",
@@ -34,7 +34,7 @@
     "static/media/slick.woff": "/TC-marketplace-07-09-2023-drone/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/TC-marketplace-07-09-2023-drone/index.html",
     "main.8dad466f.css.map": "/TC-marketplace-07-09-2023-drone/static/css/main.8dad466f.css.map",
-    "main.da9ca068.js.map": "/TC-marketplace-07-09-2023-drone/static/js/main.da9ca068.js.map",
+    "main.649acefb.js.map": "/TC-marketplace-07-09-2023-drone/static/js/main.649acefb.js.map",
     "reactPlayerYouTube.79cae598.chunk.js.map": "/TC-marketplace-07-09-2023-drone/static/js/reactPlayerYouTube.79cae598.chunk.js.map",
     "reactPlayerSoundCloud.394b48f8.chunk.js.map": "/TC-marketplace-07-09-2023-drone/static/js/reactPlayerSoundCloud.394b48f8.chunk.js.map",
     "reactPlayerVimeo.e657d533.chunk.js.map": "/TC-marketplace-07-09-2023-drone/static/js/reactPlayerVimeo.e657d533.chunk.js.map",
@@ -52,6 +52,6 @@
   },
   "entrypoints": [
     "static/css/main.8dad466f.css",
-    "static/js/main.da9ca068.js"
+    "static/js/main.649acefb.js"
   ]
 }
