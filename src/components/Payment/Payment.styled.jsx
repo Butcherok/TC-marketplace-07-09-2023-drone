@@ -64,15 +64,7 @@ export const FlexContainer = styled.div`
   }
 `;
 
-export const PaymentIcon = styled.svg`
-  width: 24px;
-  height: 24px;
-  fill: palevioletred;
-
-  @media screen and (max-width: 1439.98px) {
-    margin-bottom: 10px;
-  }
-`;
+export const PaymentIcon = styled.svg``;
 
 export const PaymentType = styled.h3`
   font-family: ${props => props.theme.fonts.main};

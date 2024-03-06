@@ -6,8 +6,11 @@ import Payment from 'components/Payment/Payment';
 import Delivery from 'components/Delivery/Delivery';
 import ProductVideo from 'components/ProductVideo/ProductVideo';
 // import { useApi } from '../contexts/ApiContext/ApiContext';
+import { useCategory } from 'contexts/CategoryContext/CategoryContext';
 
 const ProductPage = () => {
+  const { currentPage } = useCategory();
+
   // const { query } = useApi();
 
   //   console.log(query);
@@ -19,7 +22,10 @@ const ProductPage = () => {
 
   return (
     <>
-      <Breadcrumbs />
+      <Breadcrumbs
+        currentPage={currentPage}
+        // currentPage={currentProduct}
+      />
       <Product />
       {window.innerWidth < 1440 && <Payment />}
       {window.innerWidth < 1440 && <Delivery />}

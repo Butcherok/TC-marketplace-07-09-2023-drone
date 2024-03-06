@@ -3,9 +3,11 @@ import {
   DeliveryTitle,
   DeliveryList,
   DeliveryItem,
+  DeliveryIcon,
   DeliveryMethod,
   DeliveryDescription,
 } from './Delivery.styled';
+import icon from '../../assets/icons/sprite.svg';
 
 const Delivery = () => {
   return (
@@ -13,9 +15,9 @@ const Delivery = () => {
       <DeliveryTitle>Доставка</DeliveryTitle>
       <DeliveryList>
         <DeliveryItem>
-          <svg width={32} height={32} style={{ fill: 'paleturquoise' }}>
-            <rect width={32} height={32} />
-          </svg>
+          <DeliveryIcon>
+            <use href={`${icon}#icon-package`}></use>
+          </DeliveryIcon>
           <div>
             <DeliveryMethod>Самовивіз</DeliveryMethod>
             <DeliveryDescription>Безкоштовно</DeliveryDescription>
@@ -23,9 +25,9 @@ const Delivery = () => {
         </DeliveryItem>
 
         <DeliveryItem>
-          <svg width={32} height={32} style={{ fill: 'paleturquoise' }}>
-            <rect width={32} height={32} />
-          </svg>
+          <DeliveryIcon>
+            <use href={`${icon}#icon-rozetka`}></use>
+          </DeliveryIcon>
           <div>
             <DeliveryMethod>Rozetka</DeliveryMethod>
             <DeliveryDescription>Безкоштовно</DeliveryDescription>
@@ -37,9 +39,9 @@ const Delivery = () => {
         </DeliveryItem>
 
         <DeliveryItem>
-          <svg width={32} height={32} style={{ fill: 'paleturquoise' }}>
-            <rect width={32} height={32} />
-          </svg>
+          <DeliveryIcon>
+            <use href={`${icon}#icon-nova-poshta`}></use>
+          </DeliveryIcon>
           <div>
             <DeliveryMethod>Нова Пошта</DeliveryMethod>
             <DeliveryDescription>За 60 ₴ у додатку</DeliveryDescription>
@@ -50,9 +52,9 @@ const Delivery = () => {
         </DeliveryItem>
 
         <DeliveryItem>
-          <svg width={32} height={32} style={{ fill: 'paleturquoise' }}>
-            <rect width={32} height={32} />
-          </svg>
+          <DeliveryIcon style={{ borderRadius: '50%' }}>
+            <use href={`${icon}#icon-ukr-poshta`}></use>
+          </DeliveryIcon>
           <div>
             <DeliveryMethod>Укрпошта</DeliveryMethod>
             <DeliveryDescription>За 60 ₴ у додатку</DeliveryDescription>

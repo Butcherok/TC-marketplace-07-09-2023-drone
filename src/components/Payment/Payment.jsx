@@ -1,4 +1,4 @@
-// import icon from '../../assets/icons/sprite.svg';
+import icon from '../../assets/icons/sprite.svg';
 import {
   PaymentBackground,
   PaymentTitle,
@@ -18,9 +18,8 @@ const Payment = () => {
       <PaymentList>
         <PaymentItem>
           <FlexContainer>
-            <PaymentIcon>
-              {/* <use href={`${icon}#icon-privat`}></use> */}
-              <rect width={24} height={24} />
+            <PaymentIcon style={{ width: 44, height: 44, padding: 10 }}>
+              <use href={`${icon}#icon-privat`}></use>
             </PaymentIcon>
 
             <div>
@@ -32,9 +31,15 @@ const Payment = () => {
 
         <PaymentItem>
           <FlexContainer>
-            <PaymentIcon>
-              {/* <use href={`${icon}#icon-mastercard`}></use> */}
-              <rect width={24} height={24} />
+            <PaymentIcon
+              style={{
+                fill: '#222357',
+                width: 45,
+                height: 44,
+                padding: '17px 6px',
+              }}
+            >
+              <use href={`${icon}#icon-visa`}></use>
             </PaymentIcon>
 
             <div>
@@ -46,9 +51,10 @@ const Payment = () => {
 
         <PaymentItem>
           <FlexContainer>
-            <PaymentIcon>
-              {/* <use href={`${icon}#icon-paypal`}></use> */}
-              <rect width={24} height={24} />
+            <PaymentIcon
+              style={{ width: 44, height: 44, padding: '12.5px 10px' }}
+            >
+              <use href={`${icon}#icon-mastercard`}></use>
             </PaymentIcon>
 
             <div>
@@ -60,9 +66,10 @@ const Payment = () => {
 
         <PaymentItem>
           <FlexContainer>
-            <PaymentIcon>
-              {/* <use href={`${icon}#icon-visa`}></use> */}
-              <rect width={24} height={24} />
+            <PaymentIcon
+              style={{ width: 40, height: 44, padding: '18.5px 3px' }}
+            >
+              <use href={`${icon}#icon-liqpay`}></use>
             </PaymentIcon>
 
             <div>
@@ -74,9 +81,10 @@ const Payment = () => {
 
         <PaymentItem>
           <FlexContainer>
-            <PaymentIcon>
-              {/* <use href={`${icon}#icon-liqpay`}></use> */}
-              <rect width={24} height={24} />
+            <PaymentIcon
+              style={{ width: 44, height: 44, padding: '10.5px 12px' }}
+            >
+              <use href={`${icon}#icon-paypal`}></use>
             </PaymentIcon>
 
             <div>
