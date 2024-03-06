@@ -22,6 +22,41 @@ const OtherProducts = () => {
     speed: 500,
     variableWidth: true,
     arrows: false,
+
+    slidesToShow: 6,
+
+    responsive: [
+      {
+        breakpoint: 320,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 790,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 4,
+        },
+      },
+      {
+        breakpoint: 1300,
+        settings: {
+          slidesToShow: 5,
+        },
+      },
+    ],
   };
 
   const cardWidth = '196px';
@@ -33,7 +68,7 @@ const OtherProducts = () => {
         <Title>Разом з цим купують</Title>
         <Slider {...settings}>
           {query.map((item, index) => (
-            <Link to={`drones/${item._id}`} key={index}>
+            <Link to={`/drones/${item._id}`} key={index}>
               <ProductCard
                 key={index}
                 title={item.title}
@@ -53,7 +88,7 @@ const OtherProducts = () => {
         <Title>Інші товари від цього продавця</Title>
         <Slider {...settings}>
           {query.map((item, index) => (
-            <Link to={`drones/${item._id}`} key={index}>
+            <Link to={`/drones/${item._id}`} key={index}>
               <ProductCard
                 key={index}
                 title={item.title}

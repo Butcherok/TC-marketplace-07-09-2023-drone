@@ -55,6 +55,11 @@ export const DeliveryItem = styled.li`
   }
 `;
 
+export const DeliveryIcon = styled.svg`
+  width: 32px;
+  height: 32px;
+`;
+
 export const DeliveryMethod = styled.h3`
   margin-bottom: 12px;
 
