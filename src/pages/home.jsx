@@ -5,6 +5,7 @@ import Catalog from 'components/Catalog/Catalog';
 import NewProducts from 'components/NewProducts/NewProducts';
 import Popular from 'components/Popular/Popular';
 import Discounts from 'components/Discounts/Discounts';
+import InfoBanner from 'components/InfoBanner/InfoBanner';
 import { useCategory } from 'contexts/CategoryContext/CategoryContext';
 
 const HomePage = () => {
@@ -20,6 +21,7 @@ const HomePage = () => {
       <Discounts />
       <NewProducts />
       <Popular />
+      <InfoBanner />
     </>
   );
 };
