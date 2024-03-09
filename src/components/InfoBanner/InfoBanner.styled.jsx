@@ -5,23 +5,30 @@ export const StyledInfoBanner = styled.section`
   width: 100%;
   border-radius: 4px;
   padding-top: 40px;
-  overflow: hiddeh;
+  overflow: hidden;
+
+  @media ${props => props.theme.media.tablet} {
+    height: 514px;
+  }
 `;
 
 export const InfoBannerContainer = styled.div`
   width: 100%;
+  
   margin: 0 auto;
   display: flex;
   flex-direction: column;
 
   @media ${props => props.theme.media.tablet} {
     flex-direction: row;
+    height: 100%;
   }
 `;
 
 export const InfoBannerImg = styled.div`
   img {
     border-radius: 4px 4px 0 0;
+    
   }
 
   @media ${props => props.theme.media.tablet} {
@@ -30,6 +37,7 @@ export const InfoBannerImg = styled.div`
 
     img {
       border-radius: 0 4px 4px 0;
+      height: 100%;
     }
   }
 `;
