@@ -7,8 +7,9 @@ import Popular from 'components/Popular/Popular';
 import Discounts from 'components/Discounts/Discounts';
 import InfoBanner from 'components/InfoBanner/InfoBanner';
 import FPVDrones from 'components/FPVDrones/FPVDrones';
-import { useCategory } from 'contexts/CategoryContext/CategoryContext';
 import DronesScouts from 'components/DronesScouts/DronesScouts';
+import ReadySets from 'components/ReadySets/ReadySets';
+import { useCategory } from 'contexts/CategoryContext/CategoryContext';
 
 const HomePage = () => {
   // const [selectedCategory, setSelectedCategory] = useState('');
@@ -26,6 +27,7 @@ const HomePage = () => {
       <InfoBanner />
       <FPVDrones />
       <DronesScouts />
+      <ReadySets />
     </>
   );
 };
