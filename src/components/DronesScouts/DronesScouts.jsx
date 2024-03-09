@@ -6,13 +6,13 @@ import { useApi } from '../../contexts/ApiContext/ApiContext';
 
 import ProductCard from '../UI/ProductCard/ProductCard';
 import {
-  PopularContainer,
-  PopularTitle,
-  StyledPopular,
-} from './Popular.styled';
+  DronesScoutsContainer,
+  DronesScoutsTitle,
+  StyledDronesScouts,
+} from './DronesScouts.styled';
 import { Link } from 'react-router-dom';
 
-const Popular = () => {
+const DronesScouts = () => {
   const { query } = useApi();
 
   const settings = {
@@ -27,9 +27,9 @@ const Popular = () => {
   const cardHeight = '248px';
 
   return (
-    <StyledPopular className="popular">
-      <PopularContainer>
-        <PopularTitle>Найпопулярніші</PopularTitle>
+    <StyledDronesScouts className="drones-scouts">
+      <DronesScoutsContainer>
+        <DronesScoutsTitle>Дрони-розвідники</DronesScoutsTitle>
         <Slider {...settings}>
           {query.map((item, index) => (
             <Link to={`drones/${item._id}`} key={index}>
@@ -48,9 +48,9 @@ const Popular = () => {
             </Link>
           ))}
         </Slider>
-      </PopularContainer>
-    </StyledPopular>
+      </DronesScoutsContainer>
+    </StyledDronesScouts>
   );
 };
 
-export default Popular;
+export default DronesScouts;
