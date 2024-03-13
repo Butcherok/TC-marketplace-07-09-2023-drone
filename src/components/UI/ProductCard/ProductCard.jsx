@@ -2,7 +2,8 @@ import { Card, CartBtn } from './ProductCard.styled';
 import { useApi } from '../../../contexts/ApiContext/ApiContext';
 import Heart from '../Icon/Icon';
 import Cart from '../Icon/Icon';
-import Drone from './drone.png';
+// import Drone from './drone.png';
+import SetImg from './set.jpg';
 
 const ProductCard = ({
   width,
@@ -36,7 +37,7 @@ const ProductCard = ({
         <Heart id="heart" />
       </div>
       <div className="card-content">
-        <img src={Drone} alt="ddd" />
+        <img src={SetImg} alt="ddd" />
         <h3>{title}</h3>
         <p className={sale ? 'sale-price' : ''}>
           {sale ? (

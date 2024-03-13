@@ -100,7 +100,7 @@ const FilterProducts = ({ selectedCategory }) => {
                       price={item.price}
                       _id={item._id}
                       width="100%"
-                      height="280px"
+                      height="333px"
                       showButton={true}
                       sale={item.sale}
                       discount={item.discount}

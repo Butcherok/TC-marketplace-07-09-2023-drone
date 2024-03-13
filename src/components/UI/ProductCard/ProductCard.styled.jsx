@@ -22,7 +22,6 @@ export const Card = styled.div`
     margin-right: 8px;
     margin-left: auto;
     margin-top: 8px;
-    margin-bottom: 20px;
     background-color: ${props => props.theme.colors.white};
 
     & svg {
@@ -72,16 +71,18 @@ export const Card = styled.div`
 
     & img {
       align-self: center;
-      margin-bottom: 36px;
+      margin-bottom: 16px;
     }
 
     & h3 {
       font-size: ${props => props.theme.fontSizes.s};
       line-height: ${props => props.theme.lineHeights.title};
       font-weight: ${props => props.theme.fontWeights.normal};
-      align-self: start;
+      // align-self: start;
       flex-grow: 1;
       color: ${props => props.theme.colors.logospan};
+      word-wrap: break-word;
+      overflow-wrap: break-word;
     }
 
     & p {

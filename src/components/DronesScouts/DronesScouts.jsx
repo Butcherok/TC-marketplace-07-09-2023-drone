@@ -24,7 +24,7 @@ const DronesScouts = () => {
   };
 
   const cardWidth = '196px';
-  const cardHeight = '248px';
+  const cardHeight = '333px';
 
   return (
     <StyledDronesScouts className="drones-scouts">

@@ -24,7 +24,7 @@ const ReadySets = () => {
   };
 
   const cardWidth = '196px';
-  const cardHeight = '304px';
+  const cardHeight = '333px';
 
   return (
     <StyledReadySets className="ready-sets">

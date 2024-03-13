@@ -6,7 +6,8 @@ import {
   CartBtn,
 } from './ProductCardList.styled';
 import { useApi } from '../../../contexts/ApiContext/ApiContext';
-import Drone from './drone.png';
+// import Drone from './drone.png';
+import SetImg from './set.jpg';
 import Heart from '../Icon/Icon';
 import Cart from '../Icon/Icon';
 import CheckMark from '../Icon/Icon';
@@ -36,11 +37,11 @@ const ProductCardList = ({
         {/* </div> */}
         <div className="photos">
           <div className="main-photo">
-            <img src={Drone} alt="Drone" />
+            <img src={SetImg} alt="Drone" />
           </div>
           <div className="small-photos">
-            <img src={Drone} alt="Drone" />
-            <img src={Drone} alt="Drone" />
+            <img src={SetImg} alt="Drone" />
+            <img src={SetImg} alt="Drone" />
           </div>
         </div>
         <CardPrice className="price-photos">
