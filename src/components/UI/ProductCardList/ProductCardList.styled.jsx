@@ -6,7 +6,7 @@ export const Card = styled.div`
 
   @media ${props => props.theme.media.tablet} {
     width: 100%;
-    height: 340px;
+    // height: 340px;
     display: flex;
     background-color: #fafcff;
     border-radius: 8px;
@@ -15,7 +15,7 @@ export const Card = styled.div`
   }
 
   @media ${props => props.theme.media.desktop} {
-    height: 289px;
+    // height: 289px;
   }
 `;
 
@@ -42,7 +42,7 @@ export const CardPhotos = styled.div`
     height: 24px;
     position: absolute;
     right: -6px;
-    top: -10px;
+    top: -4px;
     stroke: ${props =>
       props.favorite ? props.theme.colors.red : props.theme.colors.logo};
     fill: ${props => (props.favorite ? props.theme.colors.red : 'transparent')};
@@ -52,7 +52,7 @@ export const CardPhotos = styled.div`
     display: flex;
     flex-direction: column;
     flex: 1;
-    padding-top: 20px;
+    padding-top: 10px;
 
     @media ${props => props.theme.media.desktop} {
       justify-content: space-around;
@@ -130,6 +130,7 @@ export const CardPrice = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 16px;
 
     @media ${props => props.theme.media.desktop} {
       display: none;
