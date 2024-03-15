@@ -11,10 +11,10 @@ import {
 } from './BuyContainer.styled';
 import icon from '../../../../assets/icons/sprite.svg';
 
-export const BuyContainer = () => {
+export const BuyContainer = ({ classNamePrices, classNameWrapper }) => {
   return (
-    <FlexWrapper>
-      <FlexContainer>
+    <FlexWrapper className={classNameWrapper}>
+      <FlexContainer className={classNamePrices}>
         <CountContainer>
           <Icon>-</Icon>
           <span>1</span>

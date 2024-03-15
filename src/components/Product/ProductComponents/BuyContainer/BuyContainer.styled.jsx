@@ -9,8 +9,9 @@ export const FlexWrapper = styled.div`
 `;
 
 export const FlexContainer = styled.div`
+  display: flex;
+  flex-direction: column;
   @media screen and (min-width: 480px) {
-    display: flex;
     flex-direction: row-reverse;
     justify-content: flex-end;
     gap: 40px;
