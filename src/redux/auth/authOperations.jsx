@@ -81,17 +81,17 @@ export const updateUser = createAsyncThunk(
   }
 );
 
-export const subscribeUser = createAsyncThunk(
-  'auth/subscribeUser',
-  async (credentials, thunkAPI) => {
-    try {
-      const res = await axios.post('/users/subscribe', credentials);
-      console.log(res.data);
-      return res.data;
-    } catch (error) {
-      // toast.error(error.response.data.message);
-      console.log(error(error.response.data.message));
-      return thunkAPI.rejectWithValue(error.response.data.message);
-    }
-  }
-);
+// export const subscribeUser = createAsyncThunk(
+//   'auth/subscribeUser',
+//   async (credentials, thunkAPI) => {
+//     try {
+//       const res = await axios.post('/users/subscribe', credentials);
+//       console.log(res.data);
+//       return res.data;
+//     } catch (error) {
+//       // toast.error(error.response.data.message);
+//       console.log(error(error.response.data.message));
+//       return thunkAPI.rejectWithValue(error.response.data.message);
+//     }
+//   }
+// );

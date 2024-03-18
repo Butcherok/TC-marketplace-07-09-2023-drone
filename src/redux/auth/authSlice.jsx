@@ -7,16 +7,16 @@ import {
   signoutUser,
   refreshUser,
   updateUser,
-  subscribeUser,
+  // subscribeUser,
 } from './authOperations';
 
 const initialState = {
   user: {
     name: '',
-    birthdate: null,
+    // birthdate: null,
     email: null,
-    avatarURL: '',
-    subscription: '',
+    // avatarURL: '',
+    // subscription: '',
   },
   token: null,
   isLoggedIn: false,
@@ -119,23 +119,23 @@ const authSlice = createSlice({
     },
 
     // subscribeUser
-    [subscribeUser.pending](state, _) {
-      state.isRefreshing = true;
-      state.isLoading = true;
-    },
+    // [subscribeUser.pending](state, _) {
+    //   state.isRefreshing = true;
+    //   state.isLoading = true;
+    // },
 
-    [subscribeUser.fulfilled](state, action) {
-      state.user.subscription = action.payload.subscription;
-      state.isRefreshing = false;
-      state.isLoading = false;
-      state.error = null;
-    },
+    // [subscribeUser.fulfilled](state, action) {
+    //   state.user.subscription = action.payload.subscription;
+    //   state.isRefreshing = false;
+    //   state.isLoading = false;
+    //   state.error = null;
+    // },
 
-    [subscribeUser.rejected](state, action) {
-      state.error = action.payload;
-      state.isRefreshing = false;
-      state.isLoading = false;
-    },
+    // [subscribeUser.rejected](state, action) {
+    //   state.error = action.payload;
+    //   state.isRefreshing = false;
+    //   state.isLoading = false;
+    // },
   },
 });
 
