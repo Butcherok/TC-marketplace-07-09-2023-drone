@@ -1,6 +1,8 @@
 import React from 'react';
 
-import { useAuth } from '../../../../contexts/AuthContext/AuthContext';
+// import { useAuth } from '../../../../contexts/AuthContext/AuthContext';
+import { useAuth } from 'useAuth';
+
 import {
   Link,
   Nav,
@@ -11,13 +13,17 @@ import {
 import Icon from 'components/UI/Icon/Icon';
 
 const UserNav = () => {
-  const { state } = useAuth();
+  // const { state } = useAuth();
+  const {
+    // isLoading,
+    isLoggedIn,
+  } = useAuth();
 
   return (
     <Nav>
       <NavList>
         <NavItem>
-          <Link to={state.isAuthenticated ? '/user' : '/login'}>
+          <Link to={isLoggedIn ? '/user' : '/login'}>
             <Icon id="user" />
           </Link>
         </NavItem>

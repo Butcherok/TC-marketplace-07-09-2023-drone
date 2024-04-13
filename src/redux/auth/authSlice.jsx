@@ -2,9 +2,9 @@ import { createSlice } from '@reduxjs/toolkit';
 import storage from 'redux-persist/lib/storage';
 import { persistReducer } from 'redux-persist';
 import {
-  signupUser,
-  signinUser,
-  signoutUser,
+  registerUser,
+  loginUser,
+  logoutUser,
   refreshUser,
   updateUser,
   // subscribeUser,
@@ -29,14 +29,14 @@ const authSlice = createSlice({
   name: 'auth',
   initialState,
   extraReducers: {
-    // signUser
+    // registerUser
 
-    [signupUser.pending](state, _) {
+    [registerUser.pending](state, _) {
       state.isRefreshing = true;
       state.isLoading = true;
     },
 
-    [signupUser.fulfilled](state, action) {
+    [registerUser.fulfilled](state, action) {
       state.user = action.payload.user;
       state.token = action.payload.token;
       state.isLoggedIn = true;
@@ -45,21 +45,21 @@ const authSlice = createSlice({
       state.error = null;
     },
 
-    [signupUser.rejected](state, action) {
+    [registerUser.rejected](state, action) {
       state.error = action.payload;
       state.isLoading = false;
     },
 
     // loginUser
 
-    [signinUser.fulfilled](state, action) {
+    [loginUser.fulfilled](state, action) {
       state.user = action.payload.user;
       state.token = action.payload.token;
       state.isLoggedIn = true;
       state.error = null;
     },
 
-    [signinUser.rejected](state, action) {
+    [loginUser.rejected](state, action) {
       state.error = action.payload;
     },
 
@@ -68,14 +68,14 @@ const authSlice = createSlice({
       state.isLoading = true;
     },
 
-    [signoutUser.fulfilled](state) {
+    [logoutUser.fulfilled](state) {
       state.user = { name: null, birthdate: null, email: null };
       state.token = null;
       state.isLoggedIn = false;
       state.error = null;
     },
 
-    [signoutUser.rejected](state, action) {
+    [logoutUser.rejected](state, action) {
       state.error = action.payload;
     },
 
@@ -117,25 +117,6 @@ const authSlice = createSlice({
       state.isRefreshing = false;
       state.isLoading = false;
     },
-
-    // subscribeUser
-    // [subscribeUser.pending](state, _) {
-    //   state.isRefreshing = true;
-    //   state.isLoading = true;
-    // },
-
-    // [subscribeUser.fulfilled](state, action) {
-    //   state.user.subscription = action.payload.subscription;
-    //   state.isRefreshing = false;
-    //   state.isLoading = false;
-    //   state.error = null;
-    // },
-
-    // [subscribeUser.rejected](state, action) {
-    //   state.error = action.payload;
-    //   state.isRefreshing = false;
-    //   state.isLoading = false;
-    // },
   },
 });
 

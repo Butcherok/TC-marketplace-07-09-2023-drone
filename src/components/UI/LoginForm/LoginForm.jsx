@@ -10,7 +10,8 @@ import {
   Message,
   LoginLink,
 } from './LoginForm.styled';
-import { useAuth } from '../../../contexts/AuthContext/AuthContext';
+// import { useAuth } from '../../../contexts/AuthContext/AuthContext';
+import { useAuth } from 'useAuth';
 
 const LoginForm = () => {
   const { dispatch } = useAuth();
@@ -26,7 +27,7 @@ const LoginForm = () => {
       ...formData,
       [e.target.name]: e.target.value,
     });
-    console.log(formData);
+    // console.log(formData);
   };
 
   const handleFormSubmit = async e => {
@@ -49,7 +50,7 @@ const LoginForm = () => {
       const userData = response.data.user.email;
       const token = response.data.token;
 
-      console.log(response.data);
+      // console.log(response.data);
       console.log('Token:', token);
       dispatch({
         type: 'LOGIN',

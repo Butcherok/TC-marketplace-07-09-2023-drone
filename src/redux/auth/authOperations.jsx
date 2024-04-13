@@ -4,7 +4,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 // import { toast } from 'react-hot-toast';
 
 export const registerUser = createAsyncThunk(
-  'users/registerUser',
+  'auth/registerUser',
   async (credentials, thunkAPI) => {
     try {
       const res = await axios.post('/users/register', credentials);
@@ -20,7 +20,7 @@ export const registerUser = createAsyncThunk(
 );
 
 export const loginUser = createAsyncThunk(
-  'users/loginUser',
+  'auth/loginUser',
   async (credentials, thunkAPI) => {
     try {
       const res = await axios.post('/users/login', credentials);
@@ -35,7 +35,7 @@ export const loginUser = createAsyncThunk(
 );
 
 export const logoutUser = createAsyncThunk(
-  'users/logoutUser',
+  'auth/logoutUser',
   async (_, thunkAPI) => {
     try {
       const res = await axios.post('/users/logout');
@@ -48,7 +48,7 @@ export const logoutUser = createAsyncThunk(
 );
 
 export const refreshUser = createAsyncThunk(
-  'users/refreshUser',
+  'auth/refreshUser',
   async (_, thunkAPI) => {
     const state = thunkAPI.getState();
     const persistedToken = state.auth.token;
@@ -80,18 +80,3 @@ export const updateUser = createAsyncThunk(
     }
   }
 );
-
-// export const subscribeUser = createAsyncThunk(
-//   'auth/subscribeUser',
-//   async (credentials, thunkAPI) => {
-//     try {
-//       const res = await axios.post('/users/subscribe', credentials);
-//       console.log(res.data);
-//       return res.data;
-//     } catch (error) {
-//       // toast.error(error.response.data.message);
-//       console.log(error(error.response.data.message));
-//       return thunkAPI.rejectWithValue(error.response.data.message);
-//     }
-//   }
-// );

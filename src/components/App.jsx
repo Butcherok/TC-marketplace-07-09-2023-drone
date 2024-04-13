@@ -2,7 +2,8 @@ import { Route, Routes } from 'react-router-dom';
 
 import { ApiProvider } from '../contexts/ApiContext/ApiContext';
 import { CategoryProvider } from '../contexts/CategoryContext/CategoryContext';
-import { useAuth } from '../contexts/AuthContext/AuthContext';
+// import { useAuth } from '../contexts/AuthContext/AuthContext';
+import { useAuth } from 'useAuth';
 import Layout from '../components/Layout/Layout';
 import NotFound from '../pages/notFound';
 import HomePage from '../pages/home';
@@ -18,7 +19,12 @@ import Delivery from './Delivery/Delivery';
 import Comments from './Characteristics/AllCharacteristics/Comments/Comments';
 
 export const App = () => {
-  const { state } = useAuth();
+  // const { state } = useAuth();
+  const {
+    // isLoading,
+    isLoggedIn,
+  } = useAuth();
+
   return (
     <>
       <ApiProvider>
@@ -31,7 +37,8 @@ export const App = () => {
               <Route path="manufacturers" element={<div>Виробники</div>} />
               <Route
                 path="user"
-                element={state.isAuthenticated ? <UserPage /> : <LoginPage />}
+                // element={state.isAuthenticated ? <UserPage /> : <LoginPage />}
+                element={isLoggedIn ? <UserPage /> : <LoginPage />}
               />
               <Route path="favorites" element={<div>Перелік улюбленних</div>} />
               <Route path="cart" element={<div>Кошик</div>} />
