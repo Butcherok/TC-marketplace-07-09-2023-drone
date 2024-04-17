@@ -1,8 +1,6 @@
-import { useState } from 'react';
-import axios from 'axios';
-
 import Input from '../Input/Input';
-import { useAuth } from '../../../contexts/AuthContext/AuthContext';
+import { useFormik } from 'formik';
+import * as yup from 'yup';
 import {
   StyledRegisterForm,
   BtnSubmit,
@@ -10,96 +8,106 @@ import {
   Message,
   LoginLink,
 } from './RegisterForm.styled';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { registerUser } from 'redux/auth/authOperations';
+
+const validationSchema = yup.object().shape({
+  name: yup
+    .string()
+    .min(2, ({ min }) => `The name must be at least ${min} characters`)
+    .max(16, ({ max }) => `The name must be no more than ${max} characters`)
+    .required('Name is required')
+    .label('Name'),
+  email: yup
+    .string()
+    .email('Please enter valid email')
+    .required('Email address is required'),
+  password: yup
+    .string()
+    .min(6, ({ min }) => `The password must be at least ${min} characters`)
+    .max(16, ({ max }) => `The password must be no more than ${max} characters`)
+    .required('Password is required'),
+});
 
 const RegisterForm = () => {
-  const { dispatch } = useAuth();
-  const [formData, setFormData] = useState({
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const initialValues = {
     name: '',
     email: '',
     password: '',
-  });
+  };
 
-  const handleInputChange = e => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
+  const resetForm = () => {
+    formik.resetForm({
+      values: initialValues,
     });
-    console.log(formData);
   };
 
-  const handleFormSubmit = async e => {
-    e.preventDefault();
+  const onSubmit = values => {
+    dispatch(
+      registerUser({
+        ...values,
+      })
+    );
 
-    try {
-      const response = await axios.post(
-        'https://dr-one-marketplace.onrender.com/users/register',
-        formData,
-        {
-          auth: {
-            username: 'admin',
-            password: '123456',
-          },
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        }
-      );
-      
-
-      dispatch({
-        type: 'LOGIN',
-        payload: {
-          user: response.data.user,
-          token: response.data.token,
-        },
-      });
-    } catch (error) {
-      if (error.response) {
-        console.error(
-          'Помилка реєстрації',
-          error.response.status,
-          error.response.data
-        );
-      } else if (error.request) {
-        console.error('Помилка реєстрації', 'Не отримано відповіді');
-      } else {
-        console.error('Помилка реєстрації', error.message);
-      }
-    }
+    resetForm();
+    navigate('/', { replace: true });
   };
+
+  const formik = useFormik({
+    initialValues,
+    onSubmit,
+    validationSchema,
+    validateOnSubmit: true,
+  });
 
   return (
     <>
       <Title>Реєстрація</Title>
-      <StyledRegisterForm onSubmit={handleFormSubmit}>
+      <StyledRegisterForm onSubmit={formik.handleSubmit}>
         <Input
-          type="text"
+          id="name"
           name="name"
+          type="text"
           placeholder={`Введіть ім'я`}
-          // value={formData.name}
-          onChange={handleInputChange}
-        />{' '}
+          onChange={formik.handleChange}
+          value={formik.values.name}
+        />
+        {formik.touched.name && formik.errors.name ? (
+          <div>{formik.errors.name}</div>
+        ) : null}
         {/* <Input type="text" placeholder="Введіть прізвище" /> */}
         {/* <Input type="tel" placeholder="Введіть номер телефону" /> */}
         <Input
-          type="email"
+          id="email"
           name="email"
+          type="email"
+          onChange={formik.handleChange}
+          value={formik.values.email}
           placeholder="Введіть email"
-          // value={formData.email}
-          onChange={handleInputChange}
         />
+        {formik.touched.email && formik.errors.email ? (
+          <div>{formik.errors.email}</div>
+        ) : null}
         <Input
+          id="password"
           type="password"
           name="password"
+          onChange={formik.handleChange}
+          value={formik.values.password}
           placeholder="Введіть пароль"
-          // value={formData.password}
-          onChange={handleInputChange}
         />
+        {formik.touched.password && formik.errors.password ? (
+          <div>{formik.errors.password}</div>
+        ) : null}
         {/* <Input type="password" placeholder="Повторіть пароль" /> */}
         <BtnSubmit type="submit">Зареєструватися</BtnSubmit>
       </StyledRegisterForm>
       <Message>
-        Якщо ви вже зареєстровані, перейдіть на{' '}
+        Якщо ви вже зареєстровані, перейдіть на
         <LoginLink to="/login">сторінку авторізації</LoginLink>.
       </Message>
     </>
