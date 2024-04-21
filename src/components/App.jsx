@@ -8,7 +8,7 @@ import Layout from '../components/Layout/Layout';
 import NotFound from '../pages/notFound';
 import HomePage from '../pages/home';
 import LoginPage from '../pages/login';
-import RegisterPage from '../pages/register';
+// import RegisterPage from '../pages/register';
 import UserPage from '../pages/user';
 import Products from '../pages/products';
 import ProductPage from 'pages/productPage';
@@ -17,6 +17,7 @@ import UsefulInformation from './Characteristics/AllCharacteristics/UsefulInform
 import Payment from './Payment/Payment';
 import Delivery from './Delivery/Delivery';
 import Comments from './Characteristics/AllCharacteristics/Comments/Comments';
+import RegisterForm from './UI/RegisterForm/RegisterForm';
 
 export const App = () => {
   // const { state } = useAuth();
@@ -123,7 +124,7 @@ export const App = () => {
               />
               <Route path="offer" element={<div>Офетра</div>} />
 
-              <Route path="register" element={<RegisterPage />} />
+              <Route path="register" element={<RegisterForm />} />
               <Route path="login" element={<LoginPage />} />
             </Route>
             <Route path="*" element={<NotFound />} />

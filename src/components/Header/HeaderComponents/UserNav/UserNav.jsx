@@ -23,7 +23,10 @@ const UserNav = () => {
     <Nav>
       <NavList>
         <NavItem>
-          <Link to={isLoggedIn ? '/user' : '/login'}>
+          <Link
+            to={isLoggedIn ? '/user' : '/login'}
+            // onClick={openModal}
+          >
             <Icon id="user" />
           </Link>
         </NavItem>
