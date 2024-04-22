@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledInput = styled.input`
+  width: 344px;
   padding: 14px 12px;
   border-radius: 4px;
   border: 0.8px solid #f2f2f2;
@@ -11,6 +12,10 @@ export const StyledInput = styled.input`
   line-height: ${props => props.theme.lineHeights.button};
 
   background: ${props => props.theme.colors.background};
-  color: ${props => props.theme.colors.greyLight};
+  color: ${props => props.theme.colors.greyDark};
   outline: transparent;
+
+  &::placeholder {
+    color: ${props => props.theme.colors.greyLight};
+  }
 `;

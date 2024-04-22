@@ -2,11 +2,14 @@ import Input from '../Input/Input';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 import {
+  RegisterFormContainer,
   StyledRegisterForm,
   BtnSubmit,
   Title,
   UserBtnContainer,
   UserBtn,
+  StyledLabel,
+  InputList,
   // Message,
   // LoginLink,
 } from './RegisterForm.styled';
@@ -40,6 +43,7 @@ const RegisterForm = () => {
     name: '',
     email: '',
     password: '',
+    passwordRepeat: '',
   };
 
   const resetForm = () => {
@@ -67,7 +71,7 @@ const RegisterForm = () => {
   });
 
   return (
-    <>
+    <RegisterFormContainer>
       <Title>Реєстрація</Title>
 
       <UserBtnContainer>
@@ -76,42 +80,63 @@ const RegisterForm = () => {
       </UserBtnContainer>
 
       <StyledRegisterForm onSubmit={formik.handleSubmit}>
-        <Input
-          id="name"
-          name="name"
-          type="text"
-          placeholder={`Ваше ім'я`}
-          onChange={formik.handleChange}
-          value={formik.values.name}
-        />
-        {formik.touched.name && formik.errors.name ? (
-          <div>{formik.errors.name}</div>
-        ) : null}
-
-        <Input
-          id="email"
-          name="email"
-          type="email"
-          onChange={formik.handleChange}
-          value={formik.values.email}
-          placeholder="Введіть email"
-        />
-        {formik.touched.email && formik.errors.email ? (
-          <div>{formik.errors.email}</div>
-        ) : null}
-
-        <Input
-          id="password"
-          type="password"
-          name="password"
-          onChange={formik.handleChange}
-          value={formik.values.password}
-          placeholder="Введіть пароль"
-        />
-        {formik.touched.password && formik.errors.password ? (
-          <div>{formik.errors.password}</div>
-        ) : null}
-        {/* <Input type="password" placeholder="Повторіть пароль" /> */}
+        <InputList>
+          <li>
+            <StyledLabel htmlFor="name">Ім'я*</StyledLabel>
+            <Input
+              id="name"
+              name="name"
+              type="text"
+              placeholder={`Ваше ім'я`}
+              onChange={formik.handleChange}
+              value={formik.values.name}
+            />
+            {formik.touched.name && formik.errors.name ? (
+              <div>{formik.errors.name}</div>
+            ) : null}
+          </li>
+          <li>
+            <StyledLabel htmlFor="email">Електронна пошта*</StyledLabel>
+            <Input
+              id="email"
+              name="email"
+              type="email"
+              onChange={formik.handleChange}
+              value={formik.values.email}
+              placeholder="email@example.com"
+            />
+            {formik.touched.email && formik.errors.email ? (
+              <div>{formik.errors.email}</div>
+            ) : null}
+          </li>
+          <li>
+            <StyledLabel htmlFor="password">Пароль*</StyledLabel>
+            <Input
+              id="password"
+              type="password"
+              name="password"
+              onChange={formik.handleChange}
+              value={formik.values.password}
+              placeholder="********"
+            />
+            {formik.touched.password && formik.errors.password ? (
+              <div>{formik.errors.password}</div>
+            ) : null}
+          </li>
+          <li>
+            <StyledLabel htmlFor="password-repeat">
+              Повторіть пароль*
+            </StyledLabel>
+            <Input
+              id="password-repeat"
+              type="password"
+              name="password"
+              onChange={formik.handleChange}
+              value={formik.values.passwordRepeat}
+              placeholder="********"
+            />
+          </li>
+        </InputList>
 
         <BtnSubmit type="submit">Зареєструватись</BtnSubmit>
       </StyledRegisterForm>
@@ -119,7 +144,7 @@ const RegisterForm = () => {
         Якщо ви вже зареєстровані, перейдіть на
         <LoginLink to="/login">сторінку авторізації</LoginLink>.
       </Message> */}
-    </>
+    </RegisterFormContainer>
   );
 };
 

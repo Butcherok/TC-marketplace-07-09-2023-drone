@@ -1,6 +1,10 @@
 import { NavLink } from 'react-router-dom';
-import { Button } from 'react-bootstrap';
+// import { Button } from 'react-bootstrap';
 import styled from 'styled-components';
+
+export const RegisterFormContainer = styled.div`
+  width: 728px;
+`;
 
 export const Title = styled.h3`
   margin-bottom: 32px;
@@ -10,6 +14,7 @@ export const Title = styled.h3`
   font-size: 20px;
   font-weight: ${props => props.theme.fontWeights.bold};
   line-height: ${props => props.theme.lineHeights.section};
+  text-align: center;
 `;
 
 export const UserBtnContainer = styled.div`
@@ -34,14 +39,26 @@ export const UserBtn = styled.button`
   line-height: ${props => props.theme.lineHeights.title};
 `;
 
-export const StyledRegisterForm = styled.form`
+export const StyledRegisterForm = styled.form``;
+
+export const InputList = styled.ul`
   display: flex;
-  flex-direction: column;
-  width: 400px;
+  flex-wrap: wrap;
+  gap: 16px;
+`;
+
+export const StyledLabel = styled.label`
+  display: block;
+  color: ${props => props.theme.colors.greyDark};
+  font-family: ${props => props.theme.fonts.main};
+  font-size: ${props => props.theme.fontSizes.xs};
+  font-weight: ${props => props.theme.fontWeights.normal};
+  line-height: ${props => props.theme.lineHeights.button};
 `;
 
 export const BtnSubmit = styled.button`
   width: 704px;
+  display: block;
   padding: 10px 10px 10px 20px;
   border-radius: 4px;
   border: none;
