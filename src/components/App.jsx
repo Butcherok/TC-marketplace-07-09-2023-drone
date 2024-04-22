@@ -7,7 +7,7 @@ import { useAuth } from 'useAuth';
 import Layout from '../components/Layout/Layout';
 import NotFound from '../pages/notFound';
 import HomePage from '../pages/home';
-import LoginPage from '../pages/login';
+// import LoginPage from '../pages/login';
 // import RegisterPage from '../pages/register';
 import UserPage from '../pages/user';
 import Products from '../pages/products';
@@ -18,6 +18,7 @@ import Payment from './Payment/Payment';
 import Delivery from './Delivery/Delivery';
 import Comments from './Characteristics/AllCharacteristics/Comments/Comments';
 import RegisterForm from './UI/RegisterForm/RegisterForm';
+import LoginForm from './UI/LoginForm/LoginForm';
 
 export const App = () => {
   // const { state } = useAuth();
@@ -39,7 +40,7 @@ export const App = () => {
               <Route
                 path="user"
                 // element={state.isAuthenticated ? <UserPage /> : <LoginPage />}
-                element={isLoggedIn ? <UserPage /> : <LoginPage />}
+                element={isLoggedIn ? <UserPage /> : <LoginForm />}
               />
               <Route path="favorites" element={<div>Перелік улюбленних</div>} />
               <Route path="cart" element={<div>Кошик</div>} />
@@ -125,7 +126,7 @@ export const App = () => {
               <Route path="offer" element={<div>Офетра</div>} />
 
               <Route path="register" element={<RegisterForm />} />
-              <Route path="login" element={<LoginPage />} />
+              <Route path="login" element={<LoginForm />} />
             </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>
