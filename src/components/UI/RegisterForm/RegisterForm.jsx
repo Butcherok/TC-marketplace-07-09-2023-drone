@@ -2,20 +2,23 @@ import Input from '../Input/Input';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 import {
-  RegisterFormContainer,
   StyledRegisterForm,
   BtnSubmit,
   Title,
-  UserBtnContainer,
-  UserBtn,
   StyledLabel,
   InputList,
+  StyledModal,
+  StyledBtnList,
+  StyledBtnItem,
+  StyledBtn,
+  StyledBtnIcon,
   // Message,
   // LoginLink,
 } from './RegisterForm.styled';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { registerUser } from 'redux/auth/authOperations';
+import icon from '../../../assets/icons/sprite.svg';
 
 const validationSchema = yup.object().shape({
   name: yup
@@ -35,7 +38,7 @@ const validationSchema = yup.object().shape({
     .required('Password is required'),
 });
 
-const RegisterForm = () => {
+const RegisterForm = ({ modalIsOpen, closeModal }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -71,13 +74,17 @@ const RegisterForm = () => {
   });
 
   return (
-    <RegisterFormContainer>
+    <StyledModal
+      isOpen={modalIsOpen}
+      onRequestClose={closeModal}
+      bodyOpenClassName={'ReactModal__Body--open'}
+      style={{
+        overlay: {
+          zIndex: 1010,
+        },
+      }}
+    >
       <Title>Реєстрація</Title>
-
-      <UserBtnContainer>
-        <UserBtn>Я покупець</UserBtn>
-        <UserBtn>Я продавець</UserBtn>
-      </UserBtnContainer>
 
       <StyledRegisterForm onSubmit={formik.handleSubmit}>
         <InputList>
@@ -138,13 +145,32 @@ const RegisterForm = () => {
           </li>
         </InputList>
 
+        <StyledBtnList>
+          <StyledBtnItem>
+            <StyledBtn>
+              <StyledBtnIcon>
+                <use href={`${icon}#icon-facebook`}></use>
+              </StyledBtnIcon>
+              Facebook
+            </StyledBtn>
+          </StyledBtnItem>
+          <StyledBtnItem>
+            <StyledBtn>
+              <StyledBtnIcon>
+                <use href={`${icon}#icon-google`}></use>
+              </StyledBtnIcon>
+              Google
+            </StyledBtn>
+          </StyledBtnItem>
+        </StyledBtnList>
+
         <BtnSubmit type="submit">Зареєструватись</BtnSubmit>
       </StyledRegisterForm>
       {/* <Message>
         Якщо ви вже зареєстровані, перейдіть на
         <LoginLink to="/login">сторінку авторізації</LoginLink>.
       </Message> */}
-    </RegisterFormContainer>
+    </StyledModal>
   );
 };
 
