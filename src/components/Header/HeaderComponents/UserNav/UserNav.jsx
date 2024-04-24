@@ -5,7 +5,7 @@ import { useAuth } from 'useAuth';
 // import Modal from 'react-modal';
 import { useState } from 'react';
 import RegisterForm from 'components/UI/RegisterForm/RegisterForm';
-import LoginForm from 'components/UI/LoginForm/LoginForm';
+// import LoginForm from 'components/UI/LoginForm/LoginForm';
 
 import {
   Link,
@@ -27,10 +27,12 @@ const UserNav = () => {
 
   function openModal() {
     setIsOpen(true);
+    document.body.style.overflow = 'hidden';
   }
 
   function closeModal() {
     setIsOpen(false);
+    document.body.style.overflow = 'auto';
   }
 
   return (

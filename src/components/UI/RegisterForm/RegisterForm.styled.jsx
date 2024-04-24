@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import Modal from 'react-modal';
 // import { Button } from 'react-bootstrap';
-import { styled, createGlobalStyle } from 'styled-components';
+import { styled } from 'styled-components';
 
 export const StyledModal = styled(Modal)`
   position: absolute;
@@ -31,12 +31,6 @@ export const StyledModal = styled(Modal)`
 
   @media screen and (min-width: 728px) {
     width: 728px;
-  }
-`;
-
-createGlobalStyle`
-  .ReactModal__Body--open {
-    overflow: hidden;
   }
 `;
 
@@ -72,6 +66,24 @@ export const StyledLabel = styled.label`
   font-size: ${props => props.theme.fontSizes.xs};
   font-weight: ${props => props.theme.fontWeights.normal};
   line-height: ${props => props.theme.lineHeights.button};
+`;
+
+export const InputContainer = styled.div`
+  position: relative;
+`;
+
+export const InputBtn = styled.button`
+  position: relative;
+`;
+
+export const StyledInputIcon = styled.svg`
+  width: 22px;
+  height: 15px;
+
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
 `;
 
 export const StyledBtnList = styled.ul`

@@ -12,6 +12,9 @@ import {
   StyledBtnItem,
   StyledBtn,
   StyledBtnIcon,
+  StyledInputIcon,
+  InputContainer,
+  InputBtn,
   // Message,
   // LoginLink,
 } from './RegisterForm.styled';
@@ -77,7 +80,7 @@ const RegisterForm = ({ modalIsOpen, closeModal }) => {
     <StyledModal
       isOpen={modalIsOpen}
       onRequestClose={closeModal}
-      bodyOpenClassName={'ReactModal__Body--open'}
+      // bodyOpenClassName={'ReactModal__Body--open'}
       style={{
         overlay: {
           zIndex: 1010,
@@ -118,14 +121,20 @@ const RegisterForm = ({ modalIsOpen, closeModal }) => {
           </li>
           <li>
             <StyledLabel htmlFor="password">Пароль*</StyledLabel>
-            <Input
-              id="password"
-              type="password"
-              name="password"
-              onChange={formik.handleChange}
-              value={formik.values.password}
-              placeholder="********"
-            />
+            <InputContainer>
+              <Input
+                id="password"
+                type="password"
+                name="password"
+                onChange={formik.handleChange}
+                value={formik.values.password}
+                placeholder="********"
+              />
+              <StyledInputIcon>
+                <use href={`${icon}#icon-closed-eye`}></use>
+              </StyledInputIcon>
+            </InputContainer>
+
             {formik.touched.password && formik.errors.password ? (
               <div>{formik.errors.password}</div>
             ) : null}
@@ -134,14 +143,23 @@ const RegisterForm = ({ modalIsOpen, closeModal }) => {
             <StyledLabel htmlFor="password-repeat">
               Повторіть пароль*
             </StyledLabel>
-            <Input
-              id="password-repeat"
-              type="password"
-              name="password"
-              onChange={formik.handleChange}
-              value={formik.values.passwordRepeat}
-              placeholder="********"
-            />
+
+            <InputContainer>
+              <Input
+                id="password-repeat"
+                type="password"
+                name="password"
+                onChange={formik.handleChange}
+                value={formik.values.passwordRepeat}
+                placeholder="********"
+              />
+
+              <InputBtn>
+                <StyledInputIcon>
+                  <use href={`${icon}#icon-closed-eye`}></use>
+                </StyledInputIcon>
+              </InputBtn>
+            </InputContainer>
           </li>
         </InputList>
 
