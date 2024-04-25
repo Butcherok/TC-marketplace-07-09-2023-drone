@@ -57,6 +57,16 @@ export const InputList = styled.ul`
   }
 `;
 
+export const InputItem = styled.li`
+  @media screen and (max-width: 727.98px) {
+    margin-bottom: 16px;
+  }
+
+  @media screen and (min-width: 728px) {
+    width: 344px;
+  }
+`;
+
 export const StyledLabel = styled.label`
   display: block;
   margin-bottom: 8px;
@@ -73,17 +83,23 @@ export const InputContainer = styled.div`
 `;
 
 export const InputBtn = styled.button`
-  position: relative;
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  padding: 0;
 `;
 
 export const StyledInputIcon = styled.svg`
   width: 22px;
   height: 15px;
 
-  position: absolute;
-  top: 50%;
-  right: 12px;
-  transform: translateY(-50%);
+  // position: absolute;
+  // top: 50%;
+  // right: 12px;
+  // transform: translateY(-50%);
 `;
 
 export const StyledBtnList = styled.ul`
@@ -118,6 +134,11 @@ export const StyledBtn = styled.a`
   font-weight: ${props => props.theme.fontWeights.bold};
   line-height: ${props => props.theme.lineHeights.title};
   text-align: center;
+  cursor: pointer;
+
+  @media screen and (min-width: 728px) {
+    width: 342px;
+  }
 `;
 
 export const StyledBtnIcon = styled.svg`
@@ -142,6 +163,15 @@ export const BtnSubmit = styled.button`
   text-align: center;
 `;
 
-export const Message = styled.p``;
+export const ErrorMessage = styled.p`
+  margin-top: 8px;
+
+  font-family: ${props => props.theme.fonts.main};
+  font-size: ${props => props.theme.fontSizes.xs};
+  font-weight: ${props => props.theme.fontWeights.normal};
+  line-height: ${props => props.theme.lineHeights.title};
+
+  color: ${props => props.theme.colors.red};
+`;
 
 export const LoginLink = styled(NavLink)``;

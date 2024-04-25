@@ -15,12 +15,12 @@ export const StyledInput = styled.input`
   color: ${props => props.theme.colors.greyDark};
   outline: transparent;
 
-  @media screen and (max-width: 727.98px) {
-    margin-bottom: 16px;
-  }
-  @media screen and (min-width: 728px) {
-    width: 344px;
-  }
+  // @media screen and (max-width: 727.98px) {
+  //   margin-bottom: 16px;
+  // }
+  // @media screen and (min-width: 728px) {
+  //   width: 344px;
+  // }
 
   &::placeholder {
     color: ${props => props.theme.colors.greyLight};

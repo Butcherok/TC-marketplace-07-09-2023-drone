@@ -7,6 +7,7 @@ import {
   Title,
   StyledLabel,
   InputList,
+  InputItem,
   StyledModal,
   StyledBtnList,
   StyledBtnItem,
@@ -15,6 +16,7 @@ import {
   StyledInputIcon,
   InputContainer,
   InputBtn,
+  ErrorMessage,
   // Message,
   // LoginLink,
 } from './RegisterForm.styled';
@@ -28,22 +30,29 @@ const validationSchema = yup.object().shape({
     .string()
     .min(2, ({ min }) => `The name must be at least ${min} characters`)
     .max(16, ({ max }) => `The name must be no more than ${max} characters`)
-    .required('Name is required')
+    .required('Укажіть ваше ім’я.')
     .label('Name'),
   email: yup
     .string()
     .email('Please enter valid email')
-    .required('Email address is required'),
+    .required(
+      'Укажіть свою електрону пошту / на цю електронну пошту вже зареєстровано аккаунт.'
+    ),
   password: yup
     .string()
     .min(6, ({ min }) => `The password must be at least ${min} characters`)
     .max(16, ({ max }) => `The password must be no more than ${max} characters`)
-    .required('Password is required'),
+    .required(
+      'Пароль має містити не менше 8 символів хоча б одну літеру у верхньому та нижньому регістрі.'
+    ),
+  passwordRepeat: yup.string().required('Невірний пароль.'),
 });
 
 const RegisterForm = ({ modalIsOpen, closeModal }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  // const { state = {} } = location;
+  // const { modal } = state;
 
   const initialValues = {
     name: '',
@@ -80,7 +89,7 @@ const RegisterForm = ({ modalIsOpen, closeModal }) => {
     <StyledModal
       isOpen={modalIsOpen}
       onRequestClose={closeModal}
-      // bodyOpenClassName={'ReactModal__Body--open'}
+      ariaHideApp={false}
       style={{
         overlay: {
           zIndex: 1010,
@@ -91,7 +100,7 @@ const RegisterForm = ({ modalIsOpen, closeModal }) => {
 
       <StyledRegisterForm onSubmit={formik.handleSubmit}>
         <InputList>
-          <li>
+          <InputItem>
             <StyledLabel htmlFor="name">Ім'я*</StyledLabel>
             <Input
               id="name"
@@ -102,10 +111,10 @@ const RegisterForm = ({ modalIsOpen, closeModal }) => {
               value={formik.values.name}
             />
             {formik.touched.name && formik.errors.name ? (
-              <div>{formik.errors.name}</div>
+              <ErrorMessage>{formik.errors.name}</ErrorMessage>
             ) : null}
-          </li>
-          <li>
+          </InputItem>
+          <InputItem>
             <StyledLabel htmlFor="email">Електронна пошта*</StyledLabel>
             <Input
               id="email"
@@ -116,10 +125,10 @@ const RegisterForm = ({ modalIsOpen, closeModal }) => {
               placeholder="email@example.com"
             />
             {formik.touched.email && formik.errors.email ? (
-              <div>{formik.errors.email}</div>
+              <ErrorMessage>{formik.errors.email}</ErrorMessage>
             ) : null}
-          </li>
-          <li>
+          </InputItem>
+          <InputItem>
             <StyledLabel htmlFor="password">Пароль*</StyledLabel>
             <InputContainer>
               <Input
@@ -130,16 +139,18 @@ const RegisterForm = ({ modalIsOpen, closeModal }) => {
                 value={formik.values.password}
                 placeholder="********"
               />
-              <StyledInputIcon>
-                <use href={`${icon}#icon-closed-eye`}></use>
-              </StyledInputIcon>
+              <InputBtn>
+                <StyledInputIcon>
+                  <use href={`${icon}#icon-closed-eye`}></use>
+                </StyledInputIcon>
+              </InputBtn>
             </InputContainer>
 
             {formik.touched.password && formik.errors.password ? (
-              <div>{formik.errors.password}</div>
+              <ErrorMessage>{formik.errors.password}</ErrorMessage>
             ) : null}
-          </li>
-          <li>
+          </InputItem>
+          <InputItem>
             <StyledLabel htmlFor="password-repeat">
               Повторіть пароль*
             </StyledLabel>
@@ -152,6 +163,7 @@ const RegisterForm = ({ modalIsOpen, closeModal }) => {
                 onChange={formik.handleChange}
                 value={formik.values.passwordRepeat}
                 placeholder="********"
+                // style={{ webkitTextSecurity: '*' }}
               />
 
               <InputBtn>
@@ -160,7 +172,11 @@ const RegisterForm = ({ modalIsOpen, closeModal }) => {
                 </StyledInputIcon>
               </InputBtn>
             </InputContainer>
-          </li>
+
+            {formik.touched.password && formik.errors.password ? (
+              <ErrorMessage>{formik.errors.passwordRepeat}</ErrorMessage>
+            ) : null}
+          </InputItem>
         </InputList>
 
         <StyledBtnList>
@@ -182,7 +198,9 @@ const RegisterForm = ({ modalIsOpen, closeModal }) => {
           </StyledBtnItem>
         </StyledBtnList>
 
-        <BtnSubmit type="submit">Зареєструватись</BtnSubmit>
+        <BtnSubmit type="submit" onSubmit={onSubmit}>
+          Зареєструватись
+        </BtnSubmit>
       </StyledRegisterForm>
       {/* <Message>
         Якщо ви вже зареєстровані, перейдіть на

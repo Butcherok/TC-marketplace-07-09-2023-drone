@@ -1,7 +1,6 @@
 import React from 'react';
 
-// import { useAuth } from '../../../../contexts/AuthContext/AuthContext';
-import { useAuth } from 'useAuth';
+// import { useAuth } from 'useAuth';
 // import Modal from 'react-modal';
 import { useState } from 'react';
 import RegisterForm from 'components/UI/RegisterForm/RegisterForm';
@@ -17,11 +16,10 @@ import {
 import Icon from 'components/UI/Icon/Icon';
 
 const UserNav = () => {
-  // const { state } = useAuth();
-  const {
-    // isLoading,
-    isLoggedIn,
-  } = useAuth();
+  // const {
+  // isLoading,
+  //   isLoggedIn,
+  // } = useAuth();
 
   const [modalIsOpen, setIsOpen] = useState(false);
 
@@ -41,11 +39,13 @@ const UserNav = () => {
         <NavList>
           <NavItem>
             <Link
-              to={
-                isLoggedIn
-                  ? '/user'
-                  : { path: '/login', state: { modal: true } }
-              }
+              // to={
+              //   isLoggedIn
+              //     ? '/user'
+              //     : { path: '/login', state: { modal: true } }
+              // }
+              // to={{ path: '/login', state: { modal: true } }}
+              to={{ path: '/register', state: { modal: true } }}
               onClick={openModal}
             >
               <Icon id="user" />
