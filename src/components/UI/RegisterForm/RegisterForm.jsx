@@ -95,6 +95,7 @@ const RegisterForm = ({ modalIsOpen, closeModal }) => {
   const closeAndResetModal = () => {
     closeModal();
     resetForm();
+    navigate(-1, { replace: true });
   };
 
   return (

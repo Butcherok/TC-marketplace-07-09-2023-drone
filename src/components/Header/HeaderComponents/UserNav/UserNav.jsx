@@ -3,8 +3,8 @@ import React from 'react';
 // import { useAuth } from 'useAuth';
 // import Modal from 'react-modal';
 import { useState } from 'react';
-import RegisterForm from 'components/UI/RegisterForm/RegisterForm';
-// import LoginForm from 'components/UI/LoginForm/LoginForm';
+// import RegisterForm from 'components/UI/RegisterForm/RegisterForm';
+import LoginForm from 'components/UI/LoginForm/LoginForm';
 
 import {
   Link,
@@ -14,6 +14,7 @@ import {
   // StyledUserNavIcon,
 } from './UserNav.styled';
 import Icon from 'components/UI/Icon/Icon';
+// import { useLocation } from 'react-router-dom';
 
 const UserNav = () => {
   // const {
@@ -38,14 +39,29 @@ const UserNav = () => {
       <Nav>
         <NavList>
           <NavItem>
+            {/* <Link
+              // to={
+              //   isLoggedIn
+              //     ? '/user'
+              //     : { path: '/login', state: { modal: true } }
+              // }
+              to={{
+                pathname: '/register',
+                // state: { modal: true }
+              }}
+              onClick={openModal}
+            > */}
+
             <Link
               // to={
               //   isLoggedIn
               //     ? '/user'
               //     : { path: '/login', state: { modal: true } }
               // }
-              // to={{ path: '/login', state: { modal: true } }}
-              to={{ path: '/register', state: { modal: true } }}
+              to={{
+                pathname: '/login',
+                // state: { modal: true }
+              }}
               onClick={openModal}
             >
               <Icon id="user" />
@@ -64,8 +80,8 @@ const UserNav = () => {
         </NavList>
       </Nav>
 
-      <RegisterForm modalIsOpen={modalIsOpen} closeModal={closeModal} />
-      {/* <LoginForm modalIsOpen={modalIsOpen} closeModal={closeModal} /> */}
+      {/* <RegisterForm modalIsOpen={modalIsOpen} closeModal={closeModal} /> */}
+      <LoginForm modalIsOpen={modalIsOpen} closeModal={closeModal} />
     </>
   );
 };

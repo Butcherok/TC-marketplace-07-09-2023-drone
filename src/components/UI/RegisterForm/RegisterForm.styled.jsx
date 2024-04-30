@@ -15,18 +15,14 @@ export const StyledModal = styled(Modal)`
   border-radius: 8px;
 
   background: #fafcff;
-
   transform: translate(-50%, -50%);
-  overflow-y: scroll;
   box-shadow: 3px 4px 40px 0px rgba(187, 194, 221, 0.3);
-
-  // &.ReactModal__Body--open {
-  //   overflow: hidden;
-  // }
 
   @media screen and (max-width: 727.98px) {
     width: 100%;
     height: 100%;
+
+    overflow-y: scroll;
   }
 
   @media screen and (min-width: 728px) {
