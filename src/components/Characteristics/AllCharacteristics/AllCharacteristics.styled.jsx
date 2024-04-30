@@ -40,9 +40,6 @@ export const IconCrossBtn = styled.button`
   margin-right: 0;
   margin-left: auto;
   margin-bottom: 16px;
-  border: none;
-  padding: 0;
-  background-color: transparent;
   width: 18px;
   height: 18px;
 `;

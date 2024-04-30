@@ -79,9 +79,6 @@ export const SearchBtn = styled.button`
   width: 32px;
   height: 32px;
   stroke: #1d1f36;
-  border: none;
-  background-color: transparent;
-  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -123,9 +120,7 @@ export const SearchBtn = styled.button`
 
 export const ResetBtn = styled.button`
   stroke: #1d1f36;
-  border: none;
-  background-color: transparent;
-  padding: 0;
+
   display: flex;
   justify-content: center;
   align-items: center;

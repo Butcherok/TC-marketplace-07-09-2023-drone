@@ -40,14 +40,11 @@ export const Title = styled.h2`
 `;
 
 export const ViewAllBtn = styled.button`
-  padding: 0;
-  border: none;
   font-family: ${props => props.theme.fonts.main};
   font-size: 16px;
   font-weight: ${props => props.theme.fontWeights.normal};
   line-height: ${props => props.theme.lineHeights.title};
 
-  background-color: transparent;
   color: ${props => props.theme.colors.greyDark};
 
   @media screen and (max-width: 479.98px) {
@@ -129,9 +126,6 @@ export const Star = styled.svg`
 `;
 
 export const CommentResponse = styled.button`
-  border: none;
-  padding: 0;
-  background-color: transparent;
   font-family: ${props => props.theme.fonts.main};
   font-size: ${props => props.theme.fontSizes.s};
   font-weight: ${props => props.theme.fontWeights.normal};
@@ -156,9 +150,6 @@ export const CommentText = styled.p`
 
 export const DetailBtn = styled.button`
   display: inline-block;
-  border: none;
-  padding: 0;
-  background-color: transparent;
   font-family: ${props => props.theme.fonts.main};
   font-size: 16px;
   font-weight: ${props => props.theme.fontWeights.normal};
