@@ -12,13 +12,26 @@ import {
 } from './LoginForm.styled';
 // import { useAuth } from '../../../contexts/AuthContext/AuthContext';
 import { useAuth } from 'useAuth';
+import Modal from 'react-modal';
 
-const LoginForm = () => {
+const LoginForm = ({ modalIsOpen, closeModal }) => {
   const { dispatch } = useAuth();
   const [formData, setFormData] = useState({
     email: '',
     password: '',
   });
+
+  const customStyles = {
+    content: {
+      top: '50%',
+      left: '50%',
+      right: 'auto',
+      bottom: 'auto',
+      marginRight: '-50%',
+      padding: '40px 12px',
+      transform: 'translate(-50%, -50%)',
+    },
+  };
 
   const navigate = useNavigate();
 
@@ -70,26 +83,32 @@ const LoginForm = () => {
 
   return (
     <>
-      <Title>Авторізація</Title>
-      <StyledLoginForm onSubmit={handleFormSubmit}>
-        <Input
-          type="email"
-          name="email"
-          placeholder="Введіть email"
-          onChange={handleInputChange}
-        />
-        <Input
-          type="password"
-          name="password"
-          placeholder="Введіть пароль"
-          onChange={handleInputChange}
-        />
-        <BtnSubmit type="submit">Увійти</BtnSubmit>
-      </StyledLoginForm>
-      <Message>
-        Якщо ви ще не зареєстровані, перейдіть на{' '}
-        <LoginLink to="/register">сторінку реєстрації</LoginLink>.
-      </Message>
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        style={customStyles}
+      >
+        <Title>Авторізація</Title>
+        <StyledLoginForm onSubmit={handleFormSubmit}>
+          <Input
+            type="email"
+            name="email"
+            placeholder="Введіть email"
+            onChange={handleInputChange}
+          />
+          <Input
+            type="password"
+            name="password"
+            placeholder="Введіть пароль"
+            onChange={handleInputChange}
+          />
+          <BtnSubmit type="submit">Увійти</BtnSubmit>
+        </StyledLoginForm>
+        <Message>
+          Якщо ви ще не зареєстровані, перейдіть на{' '}
+          <LoginLink to="/register">сторінку реєстрації</LoginLink>.
+        </Message>
+      </Modal>
     </>
   );
 };

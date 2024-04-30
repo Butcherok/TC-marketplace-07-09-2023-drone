@@ -1,16 +1,28 @@
 import styled from 'styled-components';
 
 export const StyledInput = styled.input`
-  padding: 8px;
-  margin-bottom: 10px;
-  border: 1px solid #aaabb9;
-  border-radius: 8px;
+  width: 100%;
+  padding: 14px 12px;
+  border-radius: 4px;
+  border: 0.8px solid #f2f2f2;
+
+  font-family: ${props => props.theme.fonts.main};
+  font-size: ${props => props.theme.fontSizes.xs};
+  font-weight: ${props => props.theme.fontWeights.normal};
+  line-height: ${props => props.theme.lineHeights.button};
+
+  background: ${props => props.theme.colors.background};
+  color: ${props => props.theme.colors.greyDark};
   outline: transparent;
-  background: transparent;
-  box-shadow: 3px 1px 40px 0px rgba(187, 194, 221, 0.1);
-  color: #1d1f36;
-  font-family: Inter;
-  font-size: 12px;
-  font-weight: 400;
-  letter-spacing: 0.56px;
+
+  // @media screen and (max-width: 727.98px) {
+  //   margin-bottom: 16px;
+  // }
+  // @media screen and (min-width: 728px) {
+  //   width: 344px;
+  // }
+
+  &::placeholder {
+    color: ${props => props.theme.colors.greyLight};
+  }
 `;

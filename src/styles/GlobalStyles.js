@@ -51,7 +51,9 @@ export const GlobalStyles = createGlobalStyle`
   button {
     cursor: pointer;
     font-family: ${props => props.theme.fonts.main};
-
+    border: none;
+    background: transparent;
+    padding: 0;
 }
 
 svg{
