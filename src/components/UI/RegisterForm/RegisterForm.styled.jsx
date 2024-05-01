@@ -1,6 +1,5 @@
 import { NavLink } from 'react-router-dom';
 import Modal from 'react-modal';
-// import { Button } from 'react-bootstrap';
 import { styled } from 'styled-components';
 
 export const StyledModal = styled(Modal)`

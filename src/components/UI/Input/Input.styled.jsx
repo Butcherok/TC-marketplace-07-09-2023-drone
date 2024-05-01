@@ -4,7 +4,7 @@ export const StyledInput = styled.input`
   width: 100%;
   padding: 14px 12px;
   border-radius: 4px;
-  border: 0.8px solid #f2f2f2;
+  border: ${props => props.border || '0.8px solid #f2f2f2'};
 
   font-family: ${props => props.theme.fonts.main};
   font-size: ${props => props.theme.fontSizes.xs};
@@ -14,13 +14,6 @@ export const StyledInput = styled.input`
   background: ${props => props.theme.colors.background};
   color: ${props => props.theme.colors.greyDark};
   outline: transparent;
-
-  // @media screen and (max-width: 727.98px) {
-  //   margin-bottom: 16px;
-  // }
-  // @media screen and (min-width: 728px) {
-  //   width: 344px;
-  // }
 
   &::placeholder {
     color: ${props => props.theme.colors.greyLight};

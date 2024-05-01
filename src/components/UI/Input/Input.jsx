@@ -1,6 +1,16 @@
 import { StyledInput } from '../Input/Input.styled';
 
-const Input = ({ id, type, placeholder, value, onChange, className, name }) => {
+const Input = ({
+  id,
+  type,
+  placeholder,
+  value,
+  onChange,
+  className,
+  name,
+  border,
+  onBlur,
+}) => {
   return (
     <StyledInput
       id={id}
@@ -10,6 +20,8 @@ const Input = ({ id, type, placeholder, value, onChange, className, name }) => {
       onChange={onChange}
       className={className}
       name={name}
+      border={border}
+      onBlur={onBlur}
     />
   );
 };
