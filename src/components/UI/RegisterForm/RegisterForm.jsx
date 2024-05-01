@@ -128,6 +128,12 @@ const RegisterForm = ({ modalIsOpen, closeModal }) => {
               name="name"
               type="text"
               placeholder={`Ваше ім'я`}
+              onBlur={formik.handleBlur}
+              border={
+                formik.touched.name &&
+                formik.errors.name &&
+                '0.8px solid #f33f33'
+              }
               onChange={formik.handleChange}
               value={formik.values.name}
             />
@@ -142,9 +148,15 @@ const RegisterForm = ({ modalIsOpen, closeModal }) => {
               id="email"
               name="email"
               type="email"
+              placeholder="email@example.com"
+              onBlur={formik.handleBlur}
+              border={
+                formik.touched.email &&
+                formik.errors.email &&
+                '0.8px solid #f33f33'
+              }
               onChange={formik.handleChange}
               value={formik.values.email}
-              placeholder="email@example.com"
             />
             {formik.touched.email && formik.errors.email ? (
               <ErrorMessage>{formik.errors.email}</ErrorMessage>
@@ -157,9 +169,15 @@ const RegisterForm = ({ modalIsOpen, closeModal }) => {
                 id="password"
                 type={showPassword ? 'text' : 'password'}
                 name="password"
+                placeholder="********"
+                onBlur={formik.handleBlur}
+                border={
+                  formik.touched.password &&
+                  formik.errors.password &&
+                  '0.8px solid #f33f33'
+                }
                 onChange={formik.handleChange}
                 value={formik.values.password}
-                placeholder="********"
               />
 
               <InputBtn type="button">
@@ -194,9 +212,15 @@ const RegisterForm = ({ modalIsOpen, closeModal }) => {
                 id="passwordRepeat"
                 type={showPasswordRepeat ? 'text' : 'password'}
                 name="passwordRepeat"
+                placeholder="********"
+                onBlur={formik.handleBlur}
+                border={
+                  formik.touched.passwordRepeat &&
+                  formik.errors.passwordRepeat &&
+                  '0.8px solid #f33f33'
+                }
                 onChange={formik.handleChange}
                 value={formik.values.passwordRepeat}
-                placeholder="********"
                 // style={{ webkitTextSecurity: '*' }}
               />
 
@@ -217,7 +241,7 @@ const RegisterForm = ({ modalIsOpen, closeModal }) => {
               </InputBtn>
             </InputContainer>
 
-            {formik.touched.password && formik.errors.password ? (
+            {formik.touched.passwordRepeat && formik.errors.passwordRepeat ? (
               <ErrorMessage>{formik.errors.passwordRepeat}</ErrorMessage>
             ) : null}
           </InputItem>

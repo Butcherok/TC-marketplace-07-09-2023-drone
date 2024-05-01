@@ -1,114 +1,207 @@
-import axios from 'axios';
+// import axios from 'axios';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import * as yup from 'yup';
 
 import Input from '../Input/Input';
 import {
+  StyledModal,
+  RetunBtn,
+  ReturnIcon,
   StyledLoginForm,
   BtnSubmit,
   Title,
+  InputList,
+  InputContainer,
+  InputBtn,
+  StyledInputIcon,
+  InputItem,
+  StyledLabel,
+  StyledBtnList,
+  StyledBtnItem,
+  StyledBtn,
+  StyledBtnIcon,
+  ErrorMessage,
+  MessageContainer,
   Message,
-  LoginLink,
+  RegisterLink,
 } from './LoginForm.styled';
-// import { useAuth } from '../../../contexts/AuthContext/AuthContext';
-import { useAuth } from 'useAuth';
-import Modal from 'react-modal';
+// import { useAuth } from 'useAuth';
+import icon from '../../../assets/icons/sprite.svg';
+import { useDispatch } from 'react-redux';
+import { loginUser } from 'redux/auth/authOperations';
+import { useFormik } from 'formik';
+
+const validationSchema = yup.object().shape({
+  email: yup
+    .string()
+    .email('Please enter valid email')
+    .required('Невірна електронна пошта.'),
+  password: yup
+    .string()
+    .min(6, ({ min }) => `The password must be at least ${min} characters`)
+    .max(16, ({ max }) => `The password must be no more than ${max} characters`)
+    .required('Невірний пароль.'),
+});
 
 const LoginForm = ({ modalIsOpen, closeModal }) => {
-  const { dispatch } = useAuth();
-  const [formData, setFormData] = useState({
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const [showPassword, setShowPassword] = useState(false);
+
+  const initialValues = {
     email: '',
     password: '',
+  };
+
+  const resetForm = () => {
+    formik.resetForm({
+      values: initialValues,
+    });
+  };
+
+  const onSubmit = values => {
+    dispatch(
+      loginUser({
+        ...values,
+      })
+    );
+
+    resetForm();
+    navigate('/', { replace: true });
+  };
+
+  const formik = useFormik({
+    initialValues,
+    onSubmit,
+    validationSchema,
+    validateOnSubmit: true,
   });
 
-  const customStyles = {
-    content: {
-      top: '50%',
-      left: '50%',
-      right: 'auto',
-      bottom: 'auto',
-      marginRight: '-50%',
-      padding: '40px 12px',
-      transform: 'translate(-50%, -50%)',
-    },
-  };
-
-  const navigate = useNavigate();
-
-  const handleInputChange = e => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-    // console.log(formData);
-  };
-
-  const handleFormSubmit = async e => {
-    e.preventDefault();
-
-    try {
-      const response = await axios.post(
-        'https://dr-one-marketplace.onrender.com/users/login',
-        formData,
-        {
-          auth: {
-            username: 'admin',
-            password: '123456',
-          },
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        }
-      );
-      const userData = response.data.user.email;
-      const token = response.data.token;
-
-      // console.log(response.data);
-      console.log('Token:', token);
-      dispatch({
-        type: 'LOGIN',
-        payload: {
-          isAuthenticated: true,
-          user: userData,
-          token: token,
-        },
-      });
-      navigate('/user');
-      console.log('Ви авторизувались');
-      // console.log(state.isAuthenticated);
-    } catch (error) {
-      console.error('Помилка авторизації', error);
-    }
+  const closeAndResetModal = () => {
+    closeModal();
+    resetForm();
+    navigate(-1, { replace: true });
   };
 
   return (
     <>
-      <Modal
+      <StyledModal
         isOpen={modalIsOpen}
-        onRequestClose={closeModal}
-        style={customStyles}
+        onRequestClose={closeAndResetModal}
+        ariaHideApp={false}
+        style={{
+          overlay: {
+            zIndex: 1010,
+          },
+        }}
       >
-        <Title>Авторізація</Title>
-        <StyledLoginForm onSubmit={handleFormSubmit}>
-          <Input
-            type="email"
-            name="email"
-            placeholder="Введіть email"
-            onChange={handleInputChange}
-          />
-          <Input
-            type="password"
-            name="password"
-            placeholder="Введіть пароль"
-            onChange={handleInputChange}
-          />
-          <BtnSubmit type="submit">Увійти</BtnSubmit>
+        {window.innerWidth < 1440 && (
+          <RetunBtn type="button">
+            <ReturnIcon onClick={closeAndResetModal}>
+              <use href={`${icon}#icon-arrow-left`}></use>
+            </ReturnIcon>
+          </RetunBtn>
+        )}
+        <Title>Вхід</Title>
+        <StyledLoginForm onSubmit={formik.handleSubmit}>
+          <InputList>
+            <InputItem>
+              <StyledLabel htmlFor="email">Пошта</StyledLabel>
+              <Input
+                id="email"
+                type="email"
+                name="email"
+                placeholder="email@example.com"
+                onBlur={formik.handleBlur}
+                border={
+                  formik.touched.email &&
+                  formik.errors.email &&
+                  '0.8px solid #f33f33'
+                }
+                onChange={formik.handleChange}
+                value={formik.values.email}
+              />
+
+              {formik.touched.email && formik.errors.email ? (
+                <ErrorMessage>{formik.errors.email}</ErrorMessage>
+              ) : null}
+            </InputItem>
+
+            <InputItem>
+              <StyledLabel htmlFor="password">Пароль</StyledLabel>
+
+              <InputContainer>
+                <Input
+                  id="password"
+                  type={showPassword ? 'text' : 'password'}
+                  name="password"
+                  placeholder="********"
+                  onBlur={formik.handleBlur}
+                  border={
+                    formik.touched.password &&
+                    formik.errors.password &&
+                    '0.8px solid #f33f33'
+                  }
+                  onChange={formik.handleChange}
+                  value={formik.values.password}
+                />
+
+                <InputBtn type="button">
+                  {showPassword ? (
+                    <StyledInputIcon
+                      onClick={() => setShowPassword(!showPassword)}
+                    >
+                      <use href={`${icon}#icon-opened-eye`}></use>
+                    </StyledInputIcon>
+                  ) : (
+                    <StyledInputIcon
+                      onClick={() => setShowPassword(!showPassword)}
+                    >
+                      <use href={`${icon}#icon-closed-eye`}></use>
+                    </StyledInputIcon>
+                  )}
+                </InputBtn>
+              </InputContainer>
+              {formik.touched.password && formik.errors.password ? (
+                <ErrorMessage>{formik.errors.password}</ErrorMessage>
+              ) : null}
+            </InputItem>
+          </InputList>
+
+          <StyledBtnList>
+            <StyledBtnItem>
+              <StyledBtn>
+                <StyledBtnIcon>
+                  <use href={`${icon}#icon-facebook`}></use>
+                </StyledBtnIcon>
+                Facebook
+              </StyledBtn>
+            </StyledBtnItem>
+
+            <StyledBtnItem>
+              <StyledBtn>
+                <StyledBtnIcon>
+                  <use href={`${icon}#icon-google`}></use>
+                </StyledBtnIcon>
+                Google
+              </StyledBtn>
+            </StyledBtnItem>
+          </StyledBtnList>
+
+          <BtnSubmit type="submit" onSubmit={onSubmit}>
+            Увійти
+          </BtnSubmit>
         </StyledLoginForm>
-        <Message>
-          Якщо ви ще не зареєстровані, перейдіть на{' '}
-          <LoginLink to="/register">сторінку реєстрації</LoginLink>.
-        </Message>
-      </Modal>
+
+        <MessageContainer>
+          <Message>
+            Створіть аккаунт для легкої купівлі та продажу прямо зараз!
+          </Message>
+          <RegisterLink to="/register">Зареєструватись</RegisterLink>
+        </MessageContainer>
+      </StyledModal>
     </>
   );
 };
