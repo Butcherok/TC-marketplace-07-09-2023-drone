@@ -7,13 +7,19 @@ export const registerUser = createAsyncThunk(
   'auth/registerUser',
   async (credentials, thunkAPI) => {
     try {
-      const res = await axios.post('/users/register', credentials);
+      const { data } = await axios.post('/users/register', credentials, {
+        auth: {
+          username: 'admin',
+          password: '123456',
+        },
+      });
 
-      setAuthHeader(res.data.token);
-      return res.data;
+      // console.log('Res data:', data);
+      setAuthHeader(data.token);
+      return data;
     } catch (error) {
       // toast.error(error.response.data.message);
-      console.log(error(error.response.data.message));
+      console.log(error);
       return thunkAPI.rejectWithValue(error.response.data.message);
     }
   }
@@ -23,12 +29,18 @@ export const loginUser = createAsyncThunk(
   'auth/loginUser',
   async (credentials, thunkAPI) => {
     try {
-      const res = await axios.post('/users/login', credentials);
-      setAuthHeader(res.data.token);
-      return res.data;
+      const { data } = await axios.post('/users/login', credentials, {
+        auth: {
+          username: 'admin',
+          password: '123456',
+        },
+      });
+      setAuthHeader(data.token);
+      return data;
     } catch (error) {
       // toast.error(error.response.data.message);
-      console.log(error(error.response.data.message));
+      console.log(error);
+
       return thunkAPI.rejectWithValue(error.response.data.message);
     }
   }

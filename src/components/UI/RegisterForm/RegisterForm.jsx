@@ -30,7 +30,7 @@ import icon from '../../../assets/icons/sprite.svg';
 import { useState } from 'react';
 
 const validationSchema = yup.object().shape({
-  name: yup
+  firstName: yup
     .string()
     .min(2, ({ min }) => `The name must be at least ${min} characters`)
     .max(16, ({ max }) => `The name must be no more than ${max} characters`)
@@ -49,7 +49,7 @@ const validationSchema = yup.object().shape({
     .required(
       'Пароль має містити не менше 8 символів хоча б одну літеру у верхньому та нижньому регістрі.'
     ),
-  passwordRepeat: yup.string().required('Невірний пароль.'),
+  // passwordRepeat: yup.string().required('Невірний пароль.'),
 });
 
 const RegisterForm = ({ modalIsOpen, closeModal }) => {
@@ -62,7 +62,7 @@ const RegisterForm = ({ modalIsOpen, closeModal }) => {
   // const { modal } = state;
 
   const initialValues = {
-    name: '',
+    firstName: '',
     email: '',
     password: '',
     passwordRepeat: '',
@@ -119,26 +119,29 @@ const RegisterForm = ({ modalIsOpen, closeModal }) => {
 
       <Title>Реєстрація</Title>
 
-      <StyledRegisterForm onSubmit={formik.handleSubmit}>
+      <StyledRegisterForm
+        // зфіі
+        onSubmit={formik.handleSubmit}
+      >
         <InputList>
           <InputItem>
-            <StyledLabel htmlFor="name">Ім'я*</StyledLabel>
+            <StyledLabel htmlFor="firstName">Ім'я*</StyledLabel>
             <Input
-              id="name"
-              name="name"
+              id="firstName"
+              name="firstName"
               type="text"
               placeholder={`Ваше ім'я`}
               onBlur={formik.handleBlur}
               border={
-                formik.touched.name &&
-                formik.errors.name &&
+                formik.touched.firstName &&
+                formik.errors.firstName &&
                 '0.8px solid #f33f33'
               }
               onChange={formik.handleChange}
-              value={formik.values.name}
+              value={formik.values.firstName}
             />
-            {formik.touched.name && formik.errors.name ? (
-              <ErrorMessage>{formik.errors.name}</ErrorMessage>
+            {formik.touched.firstName && formik.errors.firstName ? (
+              <ErrorMessage>{formik.errors.firstName}</ErrorMessage>
             ) : null}
           </InputItem>
 
@@ -266,9 +269,7 @@ const RegisterForm = ({ modalIsOpen, closeModal }) => {
           </StyledBtnItem>
         </StyledBtnList>
 
-        <BtnSubmit type="submit" onSubmit={onSubmit}>
-          Зареєструватись
-        </BtnSubmit>
+        <BtnSubmit type="submit">Зареєструватись</BtnSubmit>
       </StyledRegisterForm>
 
       <MessageContainer>

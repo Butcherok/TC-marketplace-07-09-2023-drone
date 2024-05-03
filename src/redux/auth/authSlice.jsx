@@ -12,11 +12,10 @@ import {
 
 const initialState = {
   user: {
-    name: '',
-    // birthdate: null,
+    firstName: '',
+    lastName: '',
     email: null,
-    // avatarURL: '',
-    // subscription: '',
+    avatarUrl: '',
   },
   token: null,
   isLoggedIn: false,
@@ -69,7 +68,7 @@ const authSlice = createSlice({
     },
 
     [logoutUser.fulfilled](state) {
-      state.user = { name: null, birthdate: null, email: null };
+      state.user = { firstName: null, lastName: null, email: null };
       state.token = null;
       state.isLoggedIn = false;
       state.error = null;
@@ -105,8 +104,9 @@ const authSlice = createSlice({
     },
 
     [updateUser.fulfilled](state, action) {
-      state.user.name = action.payload.name;
-      state.user.avatarURL = action.payload.avatarURL;
+      state.user.firstName = action.payload.firstName;
+      state.user.lastName = action.payload.lastName;
+      state.user.avatarUrl = action.payload.avatarUrl;
       state.isRefreshing = false;
       state.isLoading = false;
       state.error = null;

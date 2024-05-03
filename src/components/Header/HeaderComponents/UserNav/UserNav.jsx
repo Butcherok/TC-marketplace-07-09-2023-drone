@@ -3,8 +3,8 @@ import React from 'react';
 // import { useAuth } from 'useAuth';
 // import Modal from 'react-modal';
 import { useState } from 'react';
-// import RegisterForm from 'components/UI/RegisterForm/RegisterForm';
-import LoginForm from 'components/UI/LoginForm/LoginForm';
+import RegisterForm from 'components/UI/RegisterForm/RegisterForm';
+// import LoginForm from 'components/UI/LoginForm/LoginForm';
 
 import {
   Link,
@@ -23,6 +23,8 @@ const UserNav = () => {
   // } = useAuth();
 
   const [modalIsOpen, setIsOpen] = useState(false);
+  // let location = useLocation();
+  // let background = location.state && location.state.background;
 
   function openModal() {
     setIsOpen(true);
@@ -60,7 +62,7 @@ const UserNav = () => {
               // }
               to={{
                 pathname: '/login',
-                // state: { modal: true }
+                // state: { background: location },
               }}
               onClick={openModal}
             >
@@ -80,8 +82,8 @@ const UserNav = () => {
         </NavList>
       </Nav>
 
-      {/* <RegisterForm modalIsOpen={modalIsOpen} closeModal={closeModal} /> */}
-      <LoginForm modalIsOpen={modalIsOpen} closeModal={closeModal} />
+      <RegisterForm modalIsOpen={modalIsOpen} closeModal={closeModal} />
+      {/* <LoginForm modalIsOpen={modalIsOpen} closeModal={closeModal} /> */}
     </>
   );
 };
