@@ -61,7 +61,7 @@ const UserNav = () => {
               //     : { path: '/login', state: { modal: true } }
               // }
               to={{
-                pathname: '/login',
+                pathname: '/register',
                 // state: { background: location },
               }}
               onClick={openModal}

@@ -3,18 +3,23 @@ import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 // import { toast } from 'react-hot-toast';
 
+const swaggerAuth = {
+  auth: {
+    username: 'admin',
+    password: '123456',
+  },
+};
+
 export const registerUser = createAsyncThunk(
   'auth/registerUser',
   async (credentials, thunkAPI) => {
     try {
-      const { data } = await axios.post('/users/register', credentials, {
-        auth: {
-          username: 'admin',
-          password: '123456',
-        },
-      });
+      const { data } = await axios.post(
+        '/users/register',
+        credentials,
+        swaggerAuth
+      );
 
-      // console.log('Res data:', data);
       setAuthHeader(data.token);
       return data;
     } catch (error) {
@@ -29,12 +34,11 @@ export const loginUser = createAsyncThunk(
   'auth/loginUser',
   async (credentials, thunkAPI) => {
     try {
-      const { data } = await axios.post('/users/login', credentials, {
-        auth: {
-          username: 'admin',
-          password: '123456',
-        },
-      });
+      const { data } = await axios.post(
+        '/users/login',
+        credentials,
+        swaggerAuth
+      );
       setAuthHeader(data.token);
       return data;
     } catch (error) {

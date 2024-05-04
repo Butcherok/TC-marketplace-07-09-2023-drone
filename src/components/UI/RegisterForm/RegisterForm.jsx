@@ -49,7 +49,11 @@ const validationSchema = yup.object().shape({
     .required(
       'Пароль має містити не менше 8 символів хоча б одну літеру у верхньому та нижньому регістрі.'
     ),
-  // passwordRepeat: yup.string().required('Невірний пароль.'),
+  passwordRepeat: yup
+    .string()
+    .required('Невірний пароль.')
+    .oneOf([yup.ref('password')], 'Невірний пароль.'),
+  // .required('Невірний пароль.'),
 });
 
 const RegisterForm = ({ modalIsOpen, closeModal }) => {
@@ -75,14 +79,29 @@ const RegisterForm = ({ modalIsOpen, closeModal }) => {
   };
 
   const onSubmit = values => {
+    // if (formik.values.password === formik.values.passwordRepeat) {
+
+    function pick(obj, ...props) {
+      return props.reduce(function (result, prop) {
+        result[prop] = obj[prop];
+        return result;
+      }, {});
+    }
+
+    const formValues = pick(values, 'firstName', 'email', 'password');
+
     dispatch(
       registerUser({
-        ...values,
+        // ...values,
+        ...formValues,
       })
     );
+    // console.log(values.passwordRepeat, values);
+    console.log(formValues);
 
     resetForm();
     navigate('/', { replace: true });
+    // }
   };
 
   const formik = useFormik({
@@ -97,6 +116,9 @@ const RegisterForm = ({ modalIsOpen, closeModal }) => {
     resetForm();
     navigate(-1, { replace: true });
   };
+
+  console.log();
+  // console.log(formik.handleSubmit);
 
   return (
     <StyledModal
@@ -119,10 +141,7 @@ const RegisterForm = ({ modalIsOpen, closeModal }) => {
 
       <Title>Реєстрація</Title>
 
-      <StyledRegisterForm
-        // зфіі
-        onSubmit={formik.handleSubmit}
-      >
+      <StyledRegisterForm onSubmit={formik.handleSubmit}>
         <InputList>
           <InputItem>
             <StyledLabel htmlFor="firstName">Ім'я*</StyledLabel>
