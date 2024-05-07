@@ -3,17 +3,28 @@ import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 // import { toast } from 'react-hot-toast';
 
+const swaggerAuth = {
+  auth: {
+    username: 'admin',
+    password: '123456',
+  },
+};
+
 export const registerUser = createAsyncThunk(
   'auth/registerUser',
   async (credentials, thunkAPI) => {
     try {
-      const res = await axios.post('/users/register', credentials);
+      const { data } = await axios.post(
+        '/users/register',
+        credentials,
+        swaggerAuth
+      );
 
-      setAuthHeader(res.data.token);
-      return res.data;
+      setAuthHeader(data.token);
+      return data;
     } catch (error) {
       // toast.error(error.response.data.message);
-      console.log(error(error.response.data.message));
+      console.log(error);
       return thunkAPI.rejectWithValue(error.response.data.message);
     }
   }
@@ -23,12 +34,17 @@ export const loginUser = createAsyncThunk(
   'auth/loginUser',
   async (credentials, thunkAPI) => {
     try {
-      const res = await axios.post('/users/login', credentials);
-      setAuthHeader(res.data.token);
-      return res.data;
+      const { data } = await axios.post(
+        '/users/login',
+        credentials,
+        swaggerAuth
+      );
+      setAuthHeader(data.token);
+      return data;
     } catch (error) {
       // toast.error(error.response.data.message);
-      console.log(error(error.response.data.message));
+      console.log(error);
+
       return thunkAPI.rejectWithValue(error.response.data.message);
     }
   }

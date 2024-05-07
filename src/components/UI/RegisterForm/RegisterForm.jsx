@@ -30,7 +30,7 @@ import icon from '../../../assets/icons/sprite.svg';
 import { useState } from 'react';
 
 const validationSchema = yup.object().shape({
-  name: yup
+  firstName: yup
     .string()
     .min(2, ({ min }) => `The name must be at least ${min} characters`)
     .max(16, ({ max }) => `The name must be no more than ${max} characters`)
@@ -49,20 +49,24 @@ const validationSchema = yup.object().shape({
     .required(
       'Пароль має містити не менше 8 символів хоча б одну літеру у верхньому та нижньому регістрі.'
     ),
-  passwordRepeat: yup.string().required('Невірний пароль.'),
+  passwordRepeat: yup
+    .string()
+    .required('Невірний пароль.')
+    .oneOf([yup.ref('password')], 'Невірний пароль.'),
+  // .required('Невірний пароль.'),
 });
 
-const RegisterForm = ({ modalIsOpen, closeModal }) => {
+const RegisterForm = ({ isModalOpen, closeModal, changeModalValue }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const [showPassword, setShowPassword] = useState(false);
   const [showPasswordRepeat, setShowPasswordRepeat] = useState(false);
-  // const { state = {} } = location;
-  // const { modal } = state;
+
+  // return <>{state.isAuthenticated ? <UserPage /> : <RegisterForm />}</>;
 
   const initialValues = {
-    name: '',
+    firstName: '',
     email: '',
     password: '',
     passwordRepeat: '',
@@ -75,14 +79,24 @@ const RegisterForm = ({ modalIsOpen, closeModal }) => {
   };
 
   const onSubmit = values => {
+    function pick(obj, ...props) {
+      return props.reduce(function (result, prop) {
+        result[prop] = obj[prop];
+        return result;
+      }, {});
+    }
+
+    const formValues = pick(values, 'firstName', 'email', 'password');
+
     dispatch(
       registerUser({
-        ...values,
+        ...formValues,
       })
     );
 
     resetForm();
     navigate('/', { replace: true });
+    closeModal();
   };
 
   const formik = useFormik({
@@ -95,12 +109,13 @@ const RegisterForm = ({ modalIsOpen, closeModal }) => {
   const closeAndResetModal = () => {
     closeModal();
     resetForm();
-    navigate(-1, { replace: true });
+    navigate('/', { replace: true });
+    // navigate(-1);
   };
 
   return (
     <StyledModal
-      isOpen={modalIsOpen}
+      isOpen={isModalOpen}
       onRequestClose={closeAndResetModal}
       ariaHideApp={false}
       style={{
@@ -122,23 +137,23 @@ const RegisterForm = ({ modalIsOpen, closeModal }) => {
       <StyledRegisterForm onSubmit={formik.handleSubmit}>
         <InputList>
           <InputItem>
-            <StyledLabel htmlFor="name">Ім'я*</StyledLabel>
+            <StyledLabel htmlFor="firstName">Ім'я*</StyledLabel>
             <Input
-              id="name"
-              name="name"
+              id="firstName"
+              name="firstName"
               type="text"
               placeholder={`Ваше ім'я`}
               onBlur={formik.handleBlur}
               border={
-                formik.touched.name &&
-                formik.errors.name &&
+                formik.touched.firstName &&
+                formik.errors.firstName &&
                 '0.8px solid #f33f33'
               }
               onChange={formik.handleChange}
-              value={formik.values.name}
+              value={formik.values.firstName}
             />
-            {formik.touched.name && formik.errors.name ? (
-              <ErrorMessage>{formik.errors.name}</ErrorMessage>
+            {formik.touched.firstName && formik.errors.firstName ? (
+              <ErrorMessage>{formik.errors.firstName}</ErrorMessage>
             ) : null}
           </InputItem>
 
@@ -149,6 +164,7 @@ const RegisterForm = ({ modalIsOpen, closeModal }) => {
               name="email"
               type="email"
               placeholder="email@example.com"
+              autoComplete="username"
               onBlur={formik.handleBlur}
               border={
                 formik.touched.email &&
@@ -170,6 +186,7 @@ const RegisterForm = ({ modalIsOpen, closeModal }) => {
                 type={showPassword ? 'text' : 'password'}
                 name="password"
                 placeholder="********"
+                autoComplete="new-password"
                 onBlur={formik.handleBlur}
                 border={
                   formik.touched.password &&
@@ -203,7 +220,7 @@ const RegisterForm = ({ modalIsOpen, closeModal }) => {
           </InputItem>
 
           <InputItem>
-            <StyledLabel htmlFor="password-repeat">
+            <StyledLabel htmlFor="passwordRepeat">
               Повторіть пароль*
             </StyledLabel>
 
@@ -213,6 +230,7 @@ const RegisterForm = ({ modalIsOpen, closeModal }) => {
                 type={showPasswordRepeat ? 'text' : 'password'}
                 name="passwordRepeat"
                 placeholder="********"
+                autoComplete="new-password"
                 onBlur={formik.handleBlur}
                 border={
                   formik.touched.passwordRepeat &&
@@ -221,7 +239,6 @@ const RegisterForm = ({ modalIsOpen, closeModal }) => {
                 }
                 onChange={formik.handleChange}
                 value={formik.values.passwordRepeat}
-                // style={{ webkitTextSecurity: '*' }}
               />
 
               <InputBtn type="button">
@@ -266,14 +283,14 @@ const RegisterForm = ({ modalIsOpen, closeModal }) => {
           </StyledBtnItem>
         </StyledBtnList>
 
-        <BtnSubmit type="submit" onSubmit={onSubmit}>
-          Зареєструватись
-        </BtnSubmit>
+        <BtnSubmit type="submit">Зареєструватись</BtnSubmit>
       </StyledRegisterForm>
 
       <MessageContainer>
         <Message>Вже маєте аккаунт?</Message>
-        <LoginLink to="/login">Увійти</LoginLink>
+        <LoginLink to="/login" onClick={changeModalValue}>
+          Увійти
+        </LoginLink>
       </MessageContainer>
     </StyledModal>
   );
