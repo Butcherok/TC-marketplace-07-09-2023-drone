@@ -2,13 +2,10 @@ import { Route, Routes } from 'react-router-dom';
 
 import { ApiProvider } from '../contexts/ApiContext/ApiContext';
 import { CategoryProvider } from '../contexts/CategoryContext/CategoryContext';
-// import { useAuth } from '../contexts/AuthContext/AuthContext';
 import { useAuth } from 'useAuth';
 import Layout from '../components/Layout/Layout';
 import NotFound from '../pages/notFound';
 import HomePage from '../pages/home';
-// import LoginPage from '../pages/login';
-// import RegisterPage from '../pages/register';
 import UserPage from '../pages/user';
 import Products from '../pages/products';
 import ProductPage from 'pages/productPage';
@@ -21,7 +18,6 @@ import RegisterForm from './UI/RegisterForm/RegisterForm';
 import LoginForm from './UI/LoginForm/LoginForm';
 
 export const App = () => {
-  // const { state } = useAuth();
   const {
     // isLoading,
     isLoggedIn,
@@ -124,7 +120,6 @@ export const App = () => {
                 element={<div>Політика конфіденційності</div>}
               />
               <Route path="offer" element={<div>Офетра</div>} />
-
               <Route path="register" element={<RegisterForm />} />
               <Route path="login" element={<LoginForm />} />
             </Route>

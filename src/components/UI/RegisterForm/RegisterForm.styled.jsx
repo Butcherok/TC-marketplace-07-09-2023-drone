@@ -1,5 +1,5 @@
-import { NavLink } from 'react-router-dom';
 import Modal from 'react-modal';
+import { Link } from 'react-router-dom';
 import { styled } from 'styled-components';
 
 export const StyledModal = styled(Modal)`
@@ -198,7 +198,7 @@ export const Message = styled.p`
   text-align: center;
 `;
 
-export const LoginLink = styled(NavLink)`
+export const LoginLink = styled(Link)`
   font-family: ${props => props.theme.fonts.main};
   font-size: ${props => props.theme.fontSizes.m};
   font-weight: ${props => props.theme.fontWeights.normal};

@@ -10,6 +10,7 @@ const Input = ({
   name,
   border,
   onBlur,
+  autoComplete,
 }) => {
   return (
     <StyledInput
@@ -20,8 +21,9 @@ const Input = ({
       onChange={onChange}
       className={className}
       name={name}
-      border={border}
+      $border={border}
       onBlur={onBlur}
+      autoComplete={autoComplete}
     />
   );
 };

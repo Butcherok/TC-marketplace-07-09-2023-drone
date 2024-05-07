@@ -1,4 +1,3 @@
-// import axios from 'axios';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as yup from 'yup';
@@ -26,7 +25,6 @@ import {
   Message,
   RegisterLink,
 } from './LoginForm.styled';
-// import { useAuth } from 'useAuth';
 import icon from '../../../assets/icons/sprite.svg';
 import { useDispatch } from 'react-redux';
 import { loginUser } from 'redux/auth/authOperations';
@@ -44,7 +42,7 @@ const validationSchema = yup.object().shape({
     .required('Невірний пароль.'),
 });
 
-const LoginForm = ({ modalIsOpen, closeModal }) => {
+const LoginForm = ({ isModalOpen, closeModal, changeModalValue }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -82,13 +80,13 @@ const LoginForm = ({ modalIsOpen, closeModal }) => {
   const closeAndResetModal = () => {
     closeModal();
     resetForm();
-    navigate(-1, { replace: true });
+    navigate('/', { replace: true });
   };
 
   return (
     <>
       <StyledModal
-        isOpen={modalIsOpen}
+        isOpen={isModalOpen}
         onRequestClose={closeAndResetModal}
         ariaHideApp={false}
         style={{
@@ -114,6 +112,7 @@ const LoginForm = ({ modalIsOpen, closeModal }) => {
                 type="email"
                 name="email"
                 placeholder="email@example.com"
+                autoComplete="username"
                 onBlur={formik.handleBlur}
                 border={
                   formik.touched.email &&
@@ -138,6 +137,7 @@ const LoginForm = ({ modalIsOpen, closeModal }) => {
                   type={showPassword ? 'text' : 'password'}
                   name="password"
                   placeholder="********"
+                  autoComplete="current-password"
                   onBlur={formik.handleBlur}
                   border={
                     formik.touched.password &&
@@ -199,7 +199,10 @@ const LoginForm = ({ modalIsOpen, closeModal }) => {
           <Message>
             Створіть аккаунт для легкої купівлі та продажу прямо зараз!
           </Message>
-          <RegisterLink to="/register">Зареєструватись</RegisterLink>
+
+          <RegisterLink to="/register" onClick={changeModalValue}>
+            Зареєструватись
+          </RegisterLink>
         </MessageContainer>
       </StyledModal>
     </>

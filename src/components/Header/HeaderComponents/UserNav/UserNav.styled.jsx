@@ -20,7 +20,7 @@ export const NavItem = styled.li`
   padding: 8px;
 `;
 
-export const Link = styled(NavLink)`
+export const StyledNavLink = styled(NavLink)`
   list-style: none;
   text-decoration: none;
   cursor: pointer;

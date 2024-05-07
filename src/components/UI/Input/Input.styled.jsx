@@ -4,7 +4,7 @@ export const StyledInput = styled.input`
   width: 100%;
   padding: 14px 12px;
   border-radius: 4px;
-  border: ${props => props.border || '0.8px solid #f2f2f2'};
+  border: ${props => props.$border || '0.8px solid #f2f2f2'};
 
   font-family: ${props => props.theme.fonts.main};
   font-size: ${props => props.theme.fontSizes.xs};
