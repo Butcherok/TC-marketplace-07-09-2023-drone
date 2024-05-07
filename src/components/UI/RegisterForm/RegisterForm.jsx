@@ -32,28 +32,29 @@ import { useState } from 'react';
 const validationSchema = yup.object().shape({
   firstName: yup
     .string()
-    .min(2, ({ min }) => `The name must be at least ${min} characters`)
-    .max(16, ({ max }) => `The name must be no more than ${max} characters`)
+    .min(2, ({ min }) => `Ім'я має містити не менше ${min} символів.`)
+    .max(16, ({ max }) => `Ім'я має містити не більше ${max} символів.`)
     .required('Укажіть ваше ім’я.')
     .label('Name'),
   email: yup
     .string()
-    .email('Please enter valid email')
+    .email('Укажіть свою електрону пошту.')
     .required(
       'Укажіть свою електрону пошту / на цю електронну пошту вже зареєстровано аккаунт.'
     ),
   password: yup
     .string()
-    .min(6, ({ min }) => `The password must be at least ${min} characters`)
-    .max(16, ({ max }) => `The password must be no more than ${max} characters`)
-    .required(
-      'Пароль має містити не менше 8 символів хоча б одну літеру у верхньому та нижньому регістрі.'
-    ),
+    .min(6, ({ min }) => `Пароль має містити не менше ${min} символів.`)
+    .max(16, ({ max }) => `Пароль має містити не більше ${max} символів.`)
+    .matches(
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d@$!%*?&]{6,}$/,
+      'Пароль має містити не менше 6 символів хоча б одну літеру у верхньому, одну літеру у нижньому регістрі та одну літеру.'
+    )
+    .required('Введіть пароль.'),
   passwordRepeat: yup
     .string()
     .required('Невірний пароль.')
     .oneOf([yup.ref('password')], 'Невірний пароль.'),
-  // .required('Невірний пароль.'),
 });
 
 const RegisterForm = ({ isModalOpen, closeModal, changeModalValue }) => {

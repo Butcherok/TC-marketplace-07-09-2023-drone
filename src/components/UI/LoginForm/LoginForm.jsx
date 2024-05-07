@@ -33,12 +33,16 @@ import { useFormik } from 'formik';
 const validationSchema = yup.object().shape({
   email: yup
     .string()
-    .email('Please enter valid email')
+    .email('Будь ласка введіть валідну пошту.')
     .required('Невірна електронна пошта.'),
   password: yup
     .string()
-    .min(6, ({ min }) => `The password must be at least ${min} characters`)
-    .max(16, ({ max }) => `The password must be no more than ${max} characters`)
+    .min(6, ({ min }) => `Пароль має містити не менше ${min} символів.`)
+    .max(16, ({ max }) => `Пароль має містити не більше ${max} символів.`)
+    .matches(
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d@$!%*?&]{6,}$/,
+      'Пароль має містити не менше 6 символів хоча б одну літеру у верхньому, одну літеру у нижньому регістрі та одну літеру.'
+    )
     .required('Невірний пароль.'),
 });
 
