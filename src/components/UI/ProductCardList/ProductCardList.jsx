@@ -5,7 +5,7 @@ import {
   CardPrice,
   CartBtn,
 } from './ProductCardList.styled';
-import { useApi } from '../../../contexts/ApiContext/ApiContext';
+// import { useApi } from '../../../contexts/ApiContext/ApiContext';
 // import Drone from './drone.png';
 import SetImg from './set.jpg';
 import Heart from '../Icon/Icon';
@@ -22,27 +22,33 @@ const ProductCardList = ({
   properties,
   stock,
 }) => {
-  const { toggleFavorite } = useApi();
+  // const { toggleFavorite } = useApi();
 
   const discountPrice = price - (price / 100) * discount;
 
-  const handleFavoriteClick = () => {
-    toggleFavorite(_id);
+  const handleFavoriteClick = e => {
+    e.stopPropagation();
+
+    e.preventDefault();
+
+    console.log('Add To Favorite');
+    // toggleFavorite(_id);
   };
+
+  const addToCart = e => {
+    e.stopPropagation();
+
+    e.preventDefault();
+
+    console.log('Add To Cart');
+    // toggleFavorite(_id);
+  };
+
   return (
     <Card>
       <CardPhotos>
-        {/* <div className="heart-wrapper" onClick={handleFavoriteClick}> */}
-        <Heart className="heart" id="heart" onClick={handleFavoriteClick} />
-        {/* </div> */}
-        <div className="photos">
-          <div className="main-photo">
-            <img src={SetImg} alt="Drone" />
-          </div>
-          <div className="small-photos">
-            <img src={SetImg} alt="Drone" />
-            <img src={SetImg} alt="Drone" />
-          </div>
+        <div className="main-photo">
+          <img src={SetImg} alt="Drone" />
         </div>
         <CardPrice className="price-photos">
           <p className="sale-price">
@@ -62,7 +68,16 @@ const ProductCardList = ({
         </CardPrice>
       </CardPhotos>
       <CardText>
-        <h3>{title}</h3>
+        <div className="title-container">
+          <h3>{title}</h3>
+          <button
+            type="button"
+            className="heart-wrapper"
+            onClick={handleFavoriteClick}
+          >
+            <Heart className="heart" id="heart" />
+          </button>
+        </div>
         <div className="rating-block">
           <p className="in-stock">
             <CheckMark id="check-mark" />{' '}
@@ -128,7 +143,7 @@ const ProductCardList = ({
               <span className="current-price">{price} грн.</span>
             )}
           </p>
-          <CartBtn>
+          <CartBtn type="button" onClick={addToCart}>
             <span>У кошик</span>
             <Cart id="shopping-cart" />
           </CartBtn>
