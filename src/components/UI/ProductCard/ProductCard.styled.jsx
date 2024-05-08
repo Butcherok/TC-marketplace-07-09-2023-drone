@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Button } from 'react-bootstrap';
+// import { Button } from 'react-bootstrap';
 
 export const Card = styled.div`
   // padding: 0 0 24px;
@@ -16,13 +16,9 @@ export const Card = styled.div`
   box-shadow: 3px 4px 40px 0px rgba(187, 194, 221, 0.1);
 
   & .heart-wrapper {
-    // width: 100%;
-    // display: flex;
-    // justify-content: flex-end;
-    margin-right: 8px;
-    margin-left: auto;
-    margin-top: 8px;
-    background-color: ${props => props.theme.colors.white};
+    position: absolute;
+    right: 8px;
+    top: 8px;
 
     & svg {
       width: 24px;
@@ -32,16 +28,18 @@ export const Card = styled.div`
       fill: ${props =>
         props.favorite ? props.theme.colors.red : 'transparent'};
 
-      // @media ${props => props.theme.desktop} {
-      //   position: relative;
-      //   left: 16px;
-      // }
+      transition: fill 0.2s ease-out, stroke 0.2s ease-out;
+
+      &:hover{
+      fill: #FF3333;
+      stroke: #FF3333;
+      }
     }
   }
 
 
   & .card-content {
-    padding: 0 16px 24px;
+    padding: 48px 16px 24px;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -95,7 +93,7 @@ export const Card = styled.div`
   }
 `;
 
-export const CartBtn = styled(Button)`
+export const CartBtn = styled.button`
   width: 40px;
   height: 40px;
   position: absolute;
@@ -106,12 +104,26 @@ export const CartBtn = styled(Button)`
   align-items: center;
   justify-content: center;
 
+  border-radius: 4px;
   background-color: ${props => props.theme.colors.btnColor};
   border-color: ${props => props.theme.colors.btnColor};
+
+  transition: background-color 0.2s ease-out, border-color 0.2s ease-out;
 
   & svg {
     width: 30px;
     height: 30px;
     stroke: ${props => props.theme.colors.background};
+  }
+
+  &:hover,
+  &:focus {
+    background-color: ${props => props.theme.colors.btnColorHover};
+    border-color: ${props => props.theme.colors.btnColorHover};
+  }
+
+  &:active {
+    background-color: ${props => props.theme.colors.btnColorActive};
+    border-color: ${props => props.theme.colors.btnColorActive};
   }
 `;

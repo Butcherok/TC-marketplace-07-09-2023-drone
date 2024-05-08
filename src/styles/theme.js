@@ -15,6 +15,8 @@ export const theme = {
     greyDark: '#7B7B89',
     greyLight: '#DBDCE6',
     btnColor: '#314EB6',
+    btnColorHover: '#2269D2',
+    btnColorActive: '#1656B6',
   },
 
   fonts: {

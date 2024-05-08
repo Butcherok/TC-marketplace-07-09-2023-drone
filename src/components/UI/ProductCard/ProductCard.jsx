@@ -1,5 +1,5 @@
 import { Card, CartBtn } from './ProductCard.styled';
-import { useApi } from '../../../contexts/ApiContext/ApiContext';
+// import { useApi } from '../../../contexts/ApiContext/ApiContext';
 import Heart from '../Icon/Icon';
 import Cart from '../Icon/Icon';
 // import Drone from './drone.png';
@@ -18,10 +18,24 @@ const ProductCard = ({
   sale,
   discount,
 }) => {
-  const { toggleFavorite } = useApi();
+  // const { toggleFavorite } = useApi();
 
-  const handleFavoriteClick = () => {
-    toggleFavorite(_id);
+  const handleFavoriteClick = e => {
+    e.stopPropagation();
+
+    e.preventDefault();
+
+    console.log('Add To Favorite');
+    // toggleFavorite(_id);
+  };
+
+  const addToCart = e => {
+    e.stopPropagation();
+
+    e.preventDefault();
+
+    console.log('Add To Cart');
+    // toggleFavorite(_id);
   };
 
   const discountPrice = price - (price / 100) * discount;
@@ -33,9 +47,13 @@ const ProductCard = ({
       height={height}
       className={`${className}`}
     >
-      <div className="heart-wrapper" onClick={handleFavoriteClick}>
+      <button
+        type="button"
+        className="heart-wrapper"
+        onClick={handleFavoriteClick}
+      >
         <Heart id="heart" />
-      </div>
+      </button>
       <div className="card-content">
         <img src={SetImg} alt="ddd" />
         <h3>{title}</h3>
@@ -50,7 +68,7 @@ const ProductCard = ({
           )}
         </p>
         {showButton && (
-          <CartBtn>
+          <CartBtn type="button" onClick={addToCart}>
             <Cart id="shopping-cart" />
           </CartBtn>
         )}
