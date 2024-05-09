@@ -80,7 +80,7 @@ const ProductCardList = ({
         </div>
         <div className="rating-block">
           <p className="in-stock">
-            <CheckMark id="check-mark" />{' '}
+            <CheckMark id="check" />{' '}
             {stock ? 'в наявності' : 'немає в наявності'}
           </p>
           <div className="rating">
