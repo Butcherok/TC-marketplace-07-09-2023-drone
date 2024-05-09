@@ -22,7 +22,7 @@ export const CardPhotos = styled.div`
   width: 35%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 10px 8px 20px;
   margin-right: 40px;
@@ -69,14 +69,14 @@ export const CardPrice = styled.div`
     }
 
     & .discounted-price {
-      font-size: ${props => props.theme.fontSizes.m};
+      font-size: 20px;
       line-height: ${props => props.theme.lineHeights.title};
       font-weight: ${props => props.theme.fontWeights.bold};
       color: ${props => props.theme.colors.red};
     }   
     
     & .current-price {
-      font-size: ${props => props.theme.fontSizes.m};
+      font-size: 20px;
       line-height: ${props => props.theme.lineHeights.title};
       font-weight: ${props => props.theme.fontWeights.bold};
       color: ${props => props.theme.colors.logospan};
@@ -147,16 +147,17 @@ export const CardText = styled.div`
     }
 
     .title-container {
-      margin-bottom: 8px;
+      margin-bottom: 12px;
     }
   }
 
   .in-stock {
+    font-size: 14px;
     color: ${props => props.theme.colors.green};
 
     svg {
-      width: 11px;
-      height: 13px;
+      width: 18px;
+      height: 18px;
       stroke: ${props => props.theme.colors.green};
     }
   }
@@ -185,7 +186,9 @@ export const CardText = styled.div`
   .characteristics {
     display: flex;
     flex-direction: column;
+    gap: 60px;
     row-gap: 9px;
+    margin-bottom: 24px;
 
     @media ${props => props.theme.media.desktop} {
       flex-direction: row;
@@ -206,13 +209,14 @@ export const CardText = styled.div`
     .row-characteristic {
       display: flex;
       justify-content: space-between;
+      gap: 14px;
       width: 100%;
       font-size: ${props => props.theme.fontSizes.m};
       line-height: ${props => props.theme.lineHeights.title};
       font-weight: ${props => props.theme.fontWeights.normal};
 
       .characteristic-key {
-        width: 55%;
+        width: 65%;
         color: ${props => props.theme.colors.greyDark};
       }
 

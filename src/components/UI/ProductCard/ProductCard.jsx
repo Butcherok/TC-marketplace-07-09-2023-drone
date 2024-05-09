@@ -4,6 +4,7 @@ import Heart from '../Icon/Icon';
 import Cart from '../Icon/Icon';
 // import Drone from './drone.png';
 import SetImg from './set.jpg';
+import { useEffect, useState } from 'react';
 
 const ProductCard = ({
   width,
@@ -19,6 +20,21 @@ const ProductCard = ({
   discount,
 }) => {
   // const { toggleFavorite } = useApi();
+  const [shortTitle, setShortTitle] = useState('');
+
+  useEffect(() => {
+    if (title.length >= 37) {
+      const titleLetters = title.length - 34;
+      const titleArr = [];
+
+      titleArr.push(...title);
+      titleArr.splice(34, titleLetters, '...');
+
+      const cutTitle = titleArr.join('');
+
+      setShortTitle(cutTitle);
+    }
+  }, [title]);
 
   const handleFavoriteClick = e => {
     e.stopPropagation();
@@ -56,22 +72,29 @@ const ProductCard = ({
       </button>
       <div className="card-content">
         <img src={SetImg} alt="ddd" />
-        <h3>{title}</h3>
-        <p className={sale ? 'sale-price' : ''}>
-          {sale ? (
-            <>
-              <span className="old-price">{price} грн.</span>
-              <span className="discounted-price">{discountPrice} грн.</span>
-            </>
-          ) : (
-            <span className="price">{price} грн.</span>
-          )}
-        </p>
-        {showButton && (
-          <CartBtn type="button" onClick={addToCart}>
-            <Cart id="shopping-cart" />
-          </CartBtn>
+        {title.length >= 37 ? (
+          <h3 className="card-title">{shortTitle}</h3>
+        ) : (
+          <h3 className="card-title">{title}</h3>
         )}
+
+        <div className="buy-container">
+          <p className={sale ? 'sale-price' : ''}>
+            {sale ? (
+              <>
+                <span className="old-price">{price} грн.</span>
+                <span className="discounted-price">{discountPrice} грн.</span>
+              </>
+            ) : (
+              <span className="price">{price} грн.</span>
+            )}
+          </p>
+          {showButton && (
+            <CartBtn type="button" onClick={addToCart}>
+              <Cart id="shopping-cart" />
+            </CartBtn>
+          )}
+        </div>
       </div>
     </Card>
   );

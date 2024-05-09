@@ -44,32 +44,42 @@ export const Card = styled.div`
     flex-direction: column;
     flex-grow: 1;
     background-color: ${props => props.theme.colors.white};
+ 
+    & .buy-container{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      }
 
-    & .sale-price {
+     & .card-title{
+      margin-bottom: 12px;
+     }
+
+
+      & .sale-price {
       display: flex;
       flex-direction: column;
-
-
-      & .old-price {
-        text-decoration: line-through;
-        font-size: ${props => props.theme.fontSizes.s};
-        font-weight: ${props => props.theme.fontWeights.normal};
-        line-height; ${props => props.theme.lineHeights.title};
-        color: ${props => props.theme.colors.secondary};
       }
 
-      & .discounted-price {
-        font-size: ${props => props.theme.fontSizes.m};
-        line-height: ${props => props.theme.lineHeights.title};
-        font-weight: ${props => props.theme.fontWeights.bold};
-        color: ${props => props.theme.colors.red};
-      }
-      
-    }
+        & .old-price {
+          text-decoration: line-through;
+          font-size: ${props => props.theme.fontSizes.s};
+          font-weight: ${props => props.theme.fontWeights.normal};
+          line-height; ${props => props.theme.lineHeights.title};
+          color: ${props => props.theme.colors.secondary};
+        }
+
+        & .discounted-price {
+          font-size: ${props => props.theme.fontSizes.m};
+          line-height: ${props => props.theme.lineHeights.title};
+          font-weight: ${props => props.theme.fontWeights.bold};
+          color: ${props => props.theme.colors.red};
+        }
+
 
     & img {
       align-self: center;
-      margin-bottom: 16px;
+      margin-bottom: 36px;
     }
 
     & h3 {
@@ -84,22 +94,23 @@ export const Card = styled.div`
     }
 
     & p {
-      align-self: start;
+      // align-self: start;
       font-size: ${props => props.theme.fontSizes.m};
       line-height: ${props => props.theme.lineHeights.price};
       font-weight: ${props => props.theme.fontWeights.bold};
       color: ${props => props.theme.colors.logo};
     }
+ 
   }
 `;
 
 export const CartBtn = styled.button`
   width: 40px;
   height: 40px;
-  position: absolute;
+  // position: absolute;
   padding: 8px;
-  bottom: 16px;
-  right: 16px;
+  // bottom: 24px;
+  // right: 16px;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -40,7 +40,7 @@ const Discounts = () => {
   };
 
   // const cardWidth = 146;
-  const cardHeight = '333px';
+  const cardHeight = '344px';
 
   const groupedQuery = [];
   for (let i = 0; i < query.length; i += 2) {
