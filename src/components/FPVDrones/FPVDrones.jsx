@@ -24,7 +24,7 @@ const FPVDrones = () => {
   };
 
   const cardWidth = '196px';
-  const cardHeight = '333px';
+  const cardHeight = '344px';
 
   return (
     <StyledFPVDrones className="fpv-drones">

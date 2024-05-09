@@ -92,19 +92,22 @@ const FilterProducts = ({ selectedCategory }) => {
                     />
                   </Link>
                 ) : (
-                  <Link to={`${item._id}`} key={index} className="product-card">
+                  <Link
+                    to={`${item._id}`}
+                    key={index}
+                    className="product-card-link"
+                  >
                     <ProductCard
                       key={index}
                       title={item.title}
                       img={item.img}
                       price={item.price}
                       _id={item._id}
-                      width="100%"
-                      height="333px"
                       showButton={true}
                       sale={item.sale}
                       discount={item.discount}
                       category={item.category}
+                      className="product-card"
                       // onClick={onClick(item._id)}
                     />
                   </Link>

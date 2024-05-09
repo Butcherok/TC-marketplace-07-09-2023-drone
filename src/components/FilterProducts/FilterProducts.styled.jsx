@@ -65,16 +65,9 @@ export const FilterProductsContent = styled.div`
     flex-wrap: wrap;
   }
 
-  .product-card {
-
-    & img {
-      width: 80%;
-    }
+  .product-card-link {
     @media ${props => props.theme.media.bigMobile} {
       width: calc(50% - 10px);
-
-      & img {
-        width: 100%;
     }
 
     @media ${props => props.theme.media.tablet} {
@@ -87,6 +80,31 @@ export const FilterProductsContent = styled.div`
 
     @media ${props => props.theme.media.desktop} {
       width: calc(20% - 12px);
+    }
+  }
+
+  .product-card {
+    & img {
+      width: 134px;
+    }
+
+    @media screen and (min-width: 480px) {
+      width: 100%;
+      height: 360px;
+    }
+
+    @media screen and (min-width: 1440px) {
+      & img {
+        width: 164px;
+      }
+    }
+
+    span {
+      font-size: 14px;
+    }
+
+    span.discounted-price {
+      font-size: 14px;
     }
   }
 `;

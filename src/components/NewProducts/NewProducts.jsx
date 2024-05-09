@@ -24,7 +24,7 @@ const NewProducts = () => {
   };
 
   const cardWidth = '196px';
-  const cardHeight = '333px';
+  const cardHeight = '344px';
 
   return (
     <StyledNewProducts className="new-products">

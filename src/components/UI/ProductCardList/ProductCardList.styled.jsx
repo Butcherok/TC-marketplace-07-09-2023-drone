@@ -147,7 +147,7 @@ export const CardText = styled.div`
     }
 
     .title-container {
-      margin-bottom: 8px;
+      margin-bottom: 12px;
     }
   }
 
