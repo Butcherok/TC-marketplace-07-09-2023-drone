@@ -54,6 +54,10 @@ const ProductCard = ({
     // toggleFavorite(_id);
   };
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const discountPrice = price - (price / 100) * discount;
 
   return (

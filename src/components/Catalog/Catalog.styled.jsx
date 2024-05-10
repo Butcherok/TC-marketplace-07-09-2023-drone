@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const StyledCatalog = styled.section`
   width: 100%;
-  padding-top: 40px;
+  padding-top: 20px;
 `;
 
 export const CatalogContainer = styled.div`
