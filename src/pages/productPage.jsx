@@ -23,6 +23,7 @@ const ProductPage = () => {
   return (
     <>
       <Breadcrumbs
+        style={{ marginBottom: '16px' }}
         currentPage={currentPage}
         // currentPage={currentProduct}
       />

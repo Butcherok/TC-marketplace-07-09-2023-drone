@@ -6,7 +6,7 @@ export const BreadcrumbsStyled = styled.div`
   justify-content: start;
   align-items: center;
   width: 100%;
-  padding: 20px 4px;
+  // padding: 20px 4px;
 
   & svg {
     width: 16px;

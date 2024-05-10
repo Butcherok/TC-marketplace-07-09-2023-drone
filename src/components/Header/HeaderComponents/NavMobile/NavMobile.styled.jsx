@@ -5,7 +5,7 @@ export const NavMenu = styled.nav`
   width: 100%;
   margin: 0 auto;
   display: flex;
-  padding-bottom: 24px;
+  padding-bottom: 12px;
 `;
 
 export const NavMobileList = styled.ul`

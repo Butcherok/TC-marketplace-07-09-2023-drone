@@ -5,9 +5,9 @@ import {
 } from './Breadcrumbs.styled';
 import Right from '../Icon/Icon';
 
-const Breadcrumbs = ({ currentPage, currentProduct }) => {
+const Breadcrumbs = ({ currentPage, currentProduct, style }) => {
   return (
-    <BreadcrumbsStyled>
+    <BreadcrumbsStyled style={style}>
       <BreadcrumbsContainer>
         <Link to="/">Головна сторінка</Link>
         <Right id="chevron-right" />

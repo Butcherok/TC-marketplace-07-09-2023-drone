@@ -1,12 +1,11 @@
 import styled from 'styled-components';
 
-export const StyledHero = styled.section` 
-
-
+export const StyledHero = styled.section`
   @media ${props => props.theme.media.desktop} {
     min-width: 1280px;
     max-width: 1440px;
-    padding: 24px 0;    
+    padding-bottom: 20px;
+    // padding: 24px 0;
   }
 `;
 

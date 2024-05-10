@@ -16,14 +16,21 @@ import Delivery from './Delivery/Delivery';
 import Comments from './Characteristics/AllCharacteristics/Comments/Comments';
 import RegisterForm from './UI/RegisterForm/RegisterForm';
 import LoginForm from './UI/LoginForm/LoginForm';
+// import { useEffect } from 'react';
+// import { useDispatch } from 'react-redux';
+// import { refreshUser } from 'redux/auth/authOperations';
 
 export const App = () => {
-  const {
-    // isLoading,
-    isLoggedIn,
-  } = useAuth();
+  // const dispatch = useDispatch();
+  const { isLoading, isLoggedIn } = useAuth();
 
-  return (
+  // useEffect(() => {
+  //   dispatch(refreshUser());
+  // }, [dispatch]);
+
+  return isLoading ? (
+    <span>Loading...</span>
+  ) : (
     <>
       <ApiProvider>
         <CategoryProvider>
@@ -33,14 +40,14 @@ export const App = () => {
               {/* <Route path="drones" element={<Products />} /> */}
               <Route path="articles" element={<div>Статті</div>} />
               <Route path="manufacturers" element={<div>Виробники</div>} />
-              <Route
-                path="user"
-                // element={state.isAuthenticated ? <UserPage /> : <LoginPage />}
-                element={isLoggedIn ? <UserPage /> : <LoginForm />}
-              />
+
+              {isLoggedIn ? (
+                <Route path="user" element={<UserPage />} />
+              ) : (
+                <Route path="login" element={<LoginForm />} />
+              )}
               <Route path="favorites" element={<div>Перелік улюбленних</div>} />
               <Route path="cart" element={<div>Кошик</div>} />
-
               <Route path="drones" element={<Products />} />
               <Route path="drones/:dronId" element={<ProductPage />}>
                 {window.innerWidth >= 1440 && (
@@ -89,12 +96,10 @@ export const App = () => {
                   </>
                 )}
               </Route>
-
               <Route path="about-us" element={<div>Про нас</div>} />
               <Route path="delivery" element={<div>Доставка і оплата</div>} />
               <Route path="returns" element={<div>Повернення та обмін</div>} />
               <Route path="contacts" element={<div>Контакти</div>} />
-
               <Route
                 path="sellers"
                 element={<div>Довідка про продавців</div>}
@@ -106,15 +111,12 @@ export const App = () => {
               />
               <Route path="agreement" element={<div>Угода користувача</div>} />
               <Route path="begin" element={<div>Стати продавцем</div>} />
-
               <Route path="faq" element={<div>Найчастіші запитання</div>} />
               <Route path="support" element={<div>Підтримка</div>} />
               <Route path="contact-us" element={<div>Зв'язатися з нами</div>} />
-
               {/* <Route path="faq" element={<div>Найчастіші запитання</div>} />
             <Route path="support" element={<div>Підтримка</div>} />
             <Route path="contact-us" element={<div>Зв'язатися з нами</div>} /> */}
-
               <Route
                 path="legal"
                 element={<div>Політика конфіденційності</div>}
