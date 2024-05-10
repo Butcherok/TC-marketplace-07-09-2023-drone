@@ -16,6 +16,7 @@ import Delivery from './Delivery/Delivery';
 import Comments from './Characteristics/AllCharacteristics/Comments/Comments';
 import RegisterForm from './UI/RegisterForm/RegisterForm';
 import LoginForm from './UI/LoginForm/LoginForm';
+import CartPage from 'pages/cart';
 // import { useEffect } from 'react';
 // import { useDispatch } from 'react-redux';
 // import { refreshUser } from 'redux/auth/authOperations';
@@ -47,7 +48,7 @@ export const App = () => {
                 <Route path="login" element={<LoginForm />} />
               )}
               <Route path="favorites" element={<div>Перелік улюбленних</div>} />
-              <Route path="cart" element={<div>Кошик</div>} />
+              <Route path="cart" element={<CartPage />} />
               <Route path="drones" element={<Products />} />
               <Route path="drones/:dronId" element={<ProductPage />}>
                 {window.innerWidth >= 1440 && (
