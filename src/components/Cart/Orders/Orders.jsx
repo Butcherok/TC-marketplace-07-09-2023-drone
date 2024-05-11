@@ -20,15 +20,18 @@ import {
   ContinueBuyBtn,
   CheckoutPriceContainer,
   CheckoutTitle,
+  ProductItem,
+  OrderList,
+  ButtonContainer,
 } from './Orders.styled';
 
 const Orders = () => {
   return (
-    <ul>
+    <OrderList>
       <OrderItemContainer>
+        <OrderNumTitle>Замовлення № 1</OrderNumTitle>
         <ProductList>
-          <OrderNumTitle>Замовлення № 1</OrderNumTitle>
-          <li>
+          <ProductItem>
             <OrderContainer>
               <TopContainer>
                 <OrderImg src={set} alt="drone" />
@@ -55,9 +58,9 @@ const Orders = () => {
                 </div>
               </BottomContainer>
             </OrderContainer>
-          </li>
+          </ProductItem>
 
-          <li>
+          <ProductItem>
             <OrderContainer>
               <TopContainer>
                 <OrderImg src={set} alt="drone" />
@@ -84,28 +87,32 @@ const Orders = () => {
                 </div>
               </BottomContainer>
             </OrderContainer>
-          </li>
+          </ProductItem>
         </ProductList>
 
         <CheckoutPriceContainer>
           <CheckoutTitle>До сплати без доставки</CheckoutTitle>
-          <OldPrice>25 495 грн.</OldPrice>
-          <CurrentPrice>23 495 грн.</CurrentPrice>
+          <div>
+            <OldPrice>25 495 грн.</OldPrice>
+            <CurrentPrice>23 495 грн.</CurrentPrice>
+          </div>
         </CheckoutPriceContainer>
-        <BuyBtn type="button">
-          Оформити замовлення
-          <IconCart>
-            <use href={`${icon}#icon-cart`}></use>
-          </IconCart>
-        </BuyBtn>
-        <ContinueBuyBtn type="button">Продовжити покупки</ContinueBuyBtn>
+
+        <ButtonContainer>
+          <BuyBtn type="button">
+            Оформити замовлення
+            <IconCart>
+              <use href={`${icon}#icon-cart`}></use>
+            </IconCart>
+          </BuyBtn>
+          <ContinueBuyBtn type="button">Продовжити покупки</ContinueBuyBtn>
+        </ButtonContainer>
       </OrderItemContainer>
 
       <OrderItemContainer>
-        <ul>
-          <li>
-            <OrderNumTitle>Замовлення № 1</OrderNumTitle>
-
+        <ProductList>
+          <OrderNumTitle>Замовлення № 1</OrderNumTitle>
+          <ProductItem>
             <OrderContainer>
               <TopContainer>
                 <OrderImg src={set} alt="drone" />
@@ -132,10 +139,28 @@ const Orders = () => {
                 </div>
               </BottomContainer>
             </OrderContainer>
-          </li>
-        </ul>
+          </ProductItem>
+        </ProductList>
+
+        <CheckoutPriceContainer>
+          <CheckoutTitle>До сплати без доставки</CheckoutTitle>
+          <div>
+            <OldPrice>25 495 грн.</OldPrice>
+            <CurrentPrice>23 495 грн.</CurrentPrice>
+          </div>
+        </CheckoutPriceContainer>
+
+        <ButtonContainer>
+          <BuyBtn type="button">
+            Оформити замовлення
+            <IconCart>
+              <use href={`${icon}#icon-cart`}></use>
+            </IconCart>
+          </BuyBtn>
+          <ContinueBuyBtn type="button">Продовжити покупки</ContinueBuyBtn>
+        </ButtonContainer>
       </OrderItemContainer>
-    </ul>
+    </OrderList>
   );
 };
 
