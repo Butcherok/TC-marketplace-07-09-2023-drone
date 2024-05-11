@@ -8,9 +8,15 @@ const CartTitle = () => {
         <Title>Корзина</Title>
 
         <button type="button">
-          <ReturnIcon>
-            <use href={`${icon}#icon-arrow-left`}></use>
-          </ReturnIcon>
+          {window.innerWidth >= 1280 ? (
+            <ReturnIcon>
+              <use href={`${icon}#icon-cross`}></use>
+            </ReturnIcon>
+          ) : (
+            <ReturnIcon>
+              <use href={`${icon}#icon-arrow-left`}></use>
+            </ReturnIcon>
+          )}
         </button>
       </CartTitleContainer>
     </>

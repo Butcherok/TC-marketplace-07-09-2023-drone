@@ -14,6 +14,10 @@ export const Title = styled.h2`
   line-height: ${props => props.theme.lineHeights.section};
 
   color: ${props => props.theme.colors.logospan};
+
+  @media screen and (min-width: 1280px) {
+    font-size: ${props => props.theme.fontSizes.xl};
+  }
 `;
 
 export const ReturnIcon = styled.svg`

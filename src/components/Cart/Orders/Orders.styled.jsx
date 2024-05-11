@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+export const OrderList = styled.ul`
+  width: 100%;
+`;
+
 export const OrderItemContainer = styled.li`
   padding: 24px 8px;
   border-radius: 8px;
@@ -7,17 +11,54 @@ export const OrderItemContainer = styled.li`
 
   box-shadow: 3px 4px 40px 0px rgba(187, 194, 221, 0.3);
 
-  &:not(:last-child) {
-    margin-bottom: 24px;
+  //   &:not(:last-child) {
+  margin-bottom: 24px;
+
+  @media screen and (min-width: 1280px) {
+    margin-bottom: 64px;
+  }
+  //   }
+
+  @media screen and (min-width: 480px) {
+    padding: 24px 20px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    padding: 40px 44px;
   }
 `;
 
 export const ProductList = styled.ul`
   margin-bottom: 32px;
+
+  @media screen and (min-width: 480px) {
+    margin-bottom: 48px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    margin-bottom: 64px;
+  }
+`;
+
+export const ProductItem = styled.li`
+  &:not(:last-child) {
+    margin-bottom: 40px;
+
+    @media screen and (min-width: 480px) {
+      margin-bottom: 48px;
+    }
+
+    @media screen and (min-width: 1280px) {
+      margin-bottom: 24px;
+    }
+  }
 `;
 
 export const OrderContainer = styled.div`
-  padding: 16px 0;
+  @media screen and (min-width: 1280px) {
+    display: flex;
+    justify-content: space-between;
+  }
 `;
 
 export const OrderNumTitle = styled.h3`
@@ -27,11 +68,23 @@ export const OrderNumTitle = styled.h3`
   line-height: ${props => props.theme.lineHeights.title};
 
   color: ${props => props.theme.colors.logospan};
+
+  @media screen and (min-width: 480px) {
+    margin-bottom: 48px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    margin-bottom: 24px;
+  }
 `;
 
 export const TopContainer = styled.div`
   margin-bottom: 24px;
   display: flex;
+
+  @media screen and (min-width: 1280px) {
+    margin-bottom: 0px;
+  }
 `;
 
 export const OrderImg = styled.img`
@@ -40,18 +93,41 @@ export const OrderImg = styled.img`
   height: 100px;
 
   border-radius: 4px;
+
+  @media screen and (min-width: 480px) {
+    margin-right: 20px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    margin-right: 32px;
+  }
 `;
 
 export const OrderTitle = styled.p`
   font-size: 16px;
-  line-height: ${props => props.theme.lineHeights.title}
+  line-height: ${props => props.theme.lineHeights.title};
 
   color: ${props => props.theme.colors.logospan};
+
+  @media screen and (min-width: 480px) {
+    margin-right: 10px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    margin-right: 0;
+  }
 `;
 
 export const CrossBtn = styled.button`
+  margin-left: auto;
   width: 24px;
   height: 24px;
+
+  @media screen and (min-width: 1280px) {
+    align-self: center;
+    margin-right: 60px;
+    order: -1;
+  }
 `;
 
 export const IconCross = styled.svg`
@@ -65,6 +141,11 @@ export const BottomContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media screen and (min-width: 728px) {
+    justify-content: flex-start;
+    gap: 80px;
+  }
 `;
 
 export const CountContainer = styled.div`
@@ -102,16 +183,24 @@ export const CurrentPrice = styled.p`
   line-height: ${props => props.theme.lineHeights.section};
 
   color: ${props => props.theme.colors.logospan};
+
+  @media screen and (min-width: 1280px) {
+    font-size: ${props => props.theme.fontSizes.l};
+  }
 `;
 
 export const CheckoutPriceContainer = styled.div`
   margin-bottom: 16px;
 
-  font-size: 20px;
-  font-weight: ${props => props.theme.fontWeights.bold};
-  line-height: ${props => props.theme.lineHeights.section};
+  @media screen and (min-width: 1280px) {
+    margin-bottom: 28px;
+    margin-right: 40px;
 
-  color: ${props => props.theme.colors.logospan};
+    display: flex;
+    align-items: center;
+    gap: 67px;
+    justify-content: flex-end;
+  }
 `;
 
 export const CheckoutTitle = styled.h3`
@@ -122,6 +211,16 @@ export const CheckoutTitle = styled.h3`
   line-height: ${props => props.theme.lineHeights.section};
 
   color: ${props => props.theme.colors.logospan};
+
+  @media screen and (min-width: 1280px) {
+    font-size: ${props => props.theme.fontSizes.l};
+  }
+`;
+
+export const ButtonContainer = styled.div`
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 24px;
 `;
 
 export const BuyBtn = styled.button`
@@ -130,7 +229,6 @@ export const BuyBtn = styled.button`
   align-items: center;
   gap: 10px;
 
-  margin-bottom: 12px;
   padding: 10px 10px 10px 20px;
 
   width: 100%;
@@ -144,6 +242,27 @@ export const BuyBtn = styled.button`
   line-height: ${props => props.theme.lineHeights.title};
 
   color: ${props => props.theme.colors.background};
+
+  transition: background-color 0.2s ease-out, border-color 0.2s ease-out;
+
+  &:hover,
+  &:focus {
+    background-color: ${props => props.theme.colors.btnColorHover};
+    border-color: ${props => props.theme.colors.btnColorHover};
+  }
+
+  &:active {
+    background-color: ${props => props.theme.colors.btnColorActive};
+    border-color: ${props => props.theme.colors.btnColorActive};
+  }
+
+  @media screen and (max-width: 1279.98px) {
+    margin-bottom: 12px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 254px;
+  }
 `;
 
 export const IconCart = styled.svg`
@@ -165,4 +284,8 @@ export const ContinueBuyBtn = styled.button`
   line-height: ${props => props.theme.lineHeights.title};
 
   color: ${props => props.theme.colors.logospan};
+
+  @media screen and (min-width: 1280px) {
+    width: 254px;
+  }
 `;
