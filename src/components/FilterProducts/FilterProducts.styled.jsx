@@ -90,14 +90,14 @@ export const FilterProductsContent = styled.div`
 
     @media screen and (min-width: 480px) {
       width: 100%;
-      height: 360px;
+      height: 323px;
     }
 
-    @media screen and (min-width: 1440px) {
-      & img {
-        width: 164px;
-      }
-    }
+    // @media screen and (min-width: 1440px) {
+    //   & img {
+    //     width: 164px;
+    //   }
+    // }
 
     span {
       font-size: 14px;

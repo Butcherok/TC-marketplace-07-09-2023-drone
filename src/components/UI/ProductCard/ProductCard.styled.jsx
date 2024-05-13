@@ -39,7 +39,7 @@ export const Card = styled.div`
 
 
   & .card-content {
-    padding: 48px 16px 24px;
+    padding: 40px 16px 24px;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
