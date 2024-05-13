@@ -23,12 +23,12 @@ const ProductCard = ({
   const [shortTitle, setShortTitle] = useState('');
 
   useEffect(() => {
-    if (title.length >= 37) {
-      const titleLetters = title.length - 34;
+    if (title.length >= 33) {
+      const titleLetters = title.length - 30;
       const titleArr = [];
 
       titleArr.push(...title);
-      titleArr.splice(34, titleLetters, '...');
+      titleArr.splice(30, titleLetters, '...');
 
       const cutTitle = titleArr.join('');
 
@@ -76,7 +76,7 @@ const ProductCard = ({
       </button>
       <div className="card-content">
         <img src={SetImg} alt="ddd" />
-        {title.length >= 37 ? (
+        {title.length >= 33 ? (
           <h3 className="card-title">{shortTitle}</h3>
         ) : (
           <h3 className="card-title">{title}</h3>

@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+export const OrderSection = styled.section`
+  width: 100%;
+`;
+
 export const OrderList = styled.ul`
   width: 100%;
 `;
@@ -218,9 +222,11 @@ export const CheckoutTitle = styled.h3`
 `;
 
 export const ButtonContainer = styled.div`
-  display: flex;
-  flex-direction: row-reverse;
-  gap: 24px;
+  @media screen and (min-width: 1280px) {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 24px;
+  }
 `;
 
 export const BuyBtn = styled.button`
