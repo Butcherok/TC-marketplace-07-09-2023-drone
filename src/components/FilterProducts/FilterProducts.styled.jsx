@@ -83,6 +83,12 @@ export const FilterProductsContent = styled.div`
     }
   }
 
+  & .card-content {
+    @media screen and (max-width: 1439.98px) {
+      padding: 52px 16px 16px;
+    }
+  }
+
   .product-card {
     & img {
       width: 134px;
@@ -90,14 +96,18 @@ export const FilterProductsContent = styled.div`
 
     @media screen and (min-width: 480px) {
       width: 100%;
-      height: 323px;
+      height: 327px;
     }
 
-    // @media screen and (min-width: 1440px) {
-    //   & img {
-    //     width: 164px;
-    //   }
-    // }
+    @media screen and (min-width: 1440px) {
+      height: 352px;
+    }
+
+    @media screen and (min-width: 1440px) {
+      & img {
+        width: 164px;
+      }
+    }
 
     span {
       font-size: 14px;

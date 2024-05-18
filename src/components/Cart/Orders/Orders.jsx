@@ -2,6 +2,7 @@ import set from '../../../assets/set.jpg';
 import icon from '../../../assets/icons/sprite.svg';
 import {
   CountContainer,
+  NumberInput,
   Icon,
   IconCross,
   OrderItemContainer,
@@ -25,8 +26,23 @@ import {
   ButtonContainer,
   OrderSection,
 } from './Orders.styled';
+import { useState } from 'react';
 
 const Orders = () => {
+  const [orderNumber, setOrderNumber] = useState(1);
+
+  const plusButtonHandler = () => {
+    if (orderNumber < 99) {
+      setOrderNumber(orderNumber + 1);
+    }
+  };
+
+  const minusButtonHandler = () => {
+    if (orderNumber > 1) {
+      setOrderNumber(orderNumber - 1);
+    }
+  };
+
   return (
     <OrderSection>
       <OrderList>
@@ -49,9 +65,9 @@ const Orders = () => {
 
                 <BottomContainer>
                   <CountContainer>
-                    <Icon>-</Icon>
-                    <span>1</span>
-                    <Icon>+</Icon>
+                    <Icon onClick={minusButtonHandler}>-</Icon>
+                    <NumberInput>{orderNumber}</NumberInput>
+                    <Icon onClick={plusButtonHandler}>+</Icon>
                   </CountContainer>
 
                   <div>
@@ -78,9 +94,9 @@ const Orders = () => {
 
                 <BottomContainer>
                   <CountContainer>
-                    <Icon>-</Icon>
-                    <span>1</span>
-                    <Icon>+</Icon>
+                    <Icon onClick={minusButtonHandler}>-</Icon>
+                    <NumberInput>{orderNumber}</NumberInput>
+                    <Icon onClick={plusButtonHandler}>+</Icon>
                   </CountContainer>
 
                   <div>
@@ -130,9 +146,9 @@ const Orders = () => {
 
                 <BottomContainer>
                   <CountContainer>
-                    <Icon>-</Icon>
-                    <span>1</span>
-                    <Icon>+</Icon>
+                    <Icon onClick={minusButtonHandler}>-</Icon>
+                    <NumberInput>{orderNumber}</NumberInput>
+                    <Icon onClick={plusButtonHandler}>+</Icon>
                   </CountContainer>
 
                   <div>
