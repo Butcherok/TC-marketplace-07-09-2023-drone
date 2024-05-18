@@ -50,7 +50,7 @@ export const CurrentPrice = styled.h2`
 export const CountContainer = styled.div`
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 10px;
 
   @media screen and (max-width: 1439.98px) {
     margin-bottom: 24px;
@@ -70,6 +70,22 @@ export const Icon = styled.button`
   background: #fafcff;
 
   box-shadow: 3px 4px 40px 0px rgba(187, 194, 221, 0.3);
+
+  transition: border-color 0.2s ease-out;
+
+  &:hover,
+  &:focus {
+    border-color: ${props => props.theme.colors.btnColorHover};
+  }
+
+  &:active {
+    border-color: ${props => props.theme.colors.btnColorActive};
+  }
+`;
+
+export const NumberInput = styled.p`
+  text-align: center;
+  width: 22px;
 `;
 
 export const ButtonBuy = styled.button`
@@ -91,6 +107,19 @@ export const ButtonBuy = styled.button`
   line-height: ${props => props.theme.lineHeights.title};
 
   color: ${props => props.theme.colors.background};
+
+  transition: background-color 0.2s ease-out, border-color 0.2s ease-out;
+
+  &:hover,
+  &:focus {
+    background-color: ${props => props.theme.colors.btnColorHover};
+    border-color: ${props => props.theme.colors.btnColorHover};
+  }
+
+  &:active {
+    background-color: ${props => props.theme.colors.btnColorActive};
+    border-color: ${props => props.theme.colors.btnColorActive};
+  }
 
   @media screen and (min-width: 1440px) {
     width: 164px;

@@ -4,21 +4,37 @@ import {
   InititalPrice,
   CurrentPrice,
   CountContainer,
+  NumberInput,
   Icon,
   ButtonBuy,
   CartIcon,
   FlexContainer,
 } from './BuyContainer.styled';
 import icon from '../../../../assets/icons/sprite.svg';
+import { useState } from 'react';
 
 export const BuyContainer = ({ classNamePrices, classNameWrapper }) => {
+  const [orderNumber, setOrderNumber] = useState(1);
+
+  const plusButtonHandler = () => {
+    if (orderNumber < 99) {
+      setOrderNumber(orderNumber + 1);
+    }
+  };
+
+  const minusButtonHandler = () => {
+    if (orderNumber > 1) {
+      setOrderNumber(orderNumber - 1);
+    }
+  };
+
   return (
     <FlexWrapper className={classNameWrapper}>
       <FlexContainer className={classNamePrices}>
         <CountContainer>
-          <Icon>-</Icon>
-          <span>1</span>
-          <Icon>+</Icon>
+          <Icon onClick={minusButtonHandler}>-</Icon>
+          <NumberInput>{orderNumber}</NumberInput>
+          <Icon onClick={plusButtonHandler}>+</Icon>
         </CountContainer>
 
         <Prices>

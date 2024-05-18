@@ -155,7 +155,7 @@ export const BottomContainer = styled.div`
 export const CountContainer = styled.div`
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 10px;
 `;
 
 export const Icon = styled.button`
@@ -171,6 +171,22 @@ export const Icon = styled.button`
   background: #fafcff;
 
   box-shadow: 3px 4px 40px 0px rgba(187, 194, 221, 0.3);
+
+  transition: border-color 0.2s ease-out;
+
+  &:hover,
+  &:focus {
+    border-color: ${props => props.theme.colors.btnColorHover};
+  }
+
+  &:active {
+    border-color: ${props => props.theme.colors.btnColorActive};
+  }
+`;
+
+export const NumberInput = styled.p`
+  text-align: center;
+  width: 22px;
 `;
 
 export const OldPrice = styled.p`
