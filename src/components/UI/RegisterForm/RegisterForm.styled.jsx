@@ -168,6 +168,19 @@ export const BtnSubmit = styled.button`
   font-weight: ${props => props.theme.fontWeights.bold};
   line-height: ${props => props.theme.lineHeights.title};
   text-align: center;
+
+  transition: background-color 0.2s ease-out, border-color 0.2s ease-out;
+
+  &:hover,
+  &:focus {
+    background-color: ${props => props.theme.colors.btnColorHover};
+    border-color: ${props => props.theme.colors.btnColorHover};
+  }
+
+  &:active {
+    background-color: ${props => props.theme.colors.btnColorActive};
+    border-color: ${props => props.theme.colors.btnColorActive};
+  }
 `;
 
 export const ErrorMessage = styled.p`

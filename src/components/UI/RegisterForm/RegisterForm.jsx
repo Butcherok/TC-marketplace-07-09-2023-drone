@@ -65,7 +65,8 @@ const RegisterForm = ({ isModalOpen, closeModal, changeModalValue }) => {
   const [showPasswordRepeat, setShowPasswordRepeat] = useState(false);
 
   // return <>{state.isAuthenticated ? <UserPage /> : <RegisterForm />}</>;
-
+  // const location = useLocation();
+  // console.log(location);
   const initialValues = {
     firstName: '',
     email: '',
@@ -96,7 +97,7 @@ const RegisterForm = ({ isModalOpen, closeModal, changeModalValue }) => {
     );
 
     resetForm();
-    navigate('/', { replace: true });
+    navigate(-1);
     closeModal();
   };
 
@@ -110,7 +111,7 @@ const RegisterForm = ({ isModalOpen, closeModal, changeModalValue }) => {
   const closeAndResetModal = () => {
     closeModal();
     resetForm();
-    navigate('/', { replace: true });
+    navigate(-1);
     // navigate(-1);
   };
 

@@ -4,15 +4,29 @@ import { Container } from 'styles';
 import { StyledMain } from './Layout.styled';
 import { Outlet } from 'react-router-dom';
 import Footer from 'components/Footer/Footer';
+import ModalWrapper from 'components/ModalWrapper/ModalWrapper';
 
-const Layout = props => {
+const Layout = ({
+  props,
+  openModal,
+  closeModal,
+  isModalOpen,
+  changeModalValue,
+  modalRegister,
+}) => {
   return (
     <>
-      <Header />
+      <Header openModal={openModal} />
       <StyledMain>
         <Suspense fallback={null}>
           <Container>
             <Outlet />
+            <ModalWrapper
+              isModalOpen={isModalOpen}
+              closeModal={closeModal}
+              changeModalValue={changeModalValue}
+              modalRegister={modalRegister}
+            />
           </Container>
         </Suspense>
       </StyledMain>

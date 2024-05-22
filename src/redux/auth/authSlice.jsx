@@ -28,7 +28,7 @@ const initialState = {
 const authSlice = createSlice({
   name: 'auth',
   initialState,
-  extraReducers: {
+  reducers: {
     // registerUser
 
     [registerUser.pending](state, _) {
