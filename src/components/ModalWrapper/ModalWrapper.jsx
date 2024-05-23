@@ -1,6 +1,6 @@
 import LoginForm from 'components/UI/LoginForm/LoginForm';
 import RegisterForm from 'components/UI/RegisterForm/RegisterForm';
-import { Outlet, useLocation } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 
 const ModalWrapper = ({
   closeModal,
@@ -9,11 +9,11 @@ const ModalWrapper = ({
   changeModalValue,
   modalRegister,
 }) => {
-  const location = useLocation();
-  const backgroundLocation = location.state?.backgroundLocation;
+  //   const location = useLocation();
+  //   const backgroundLocation = location.state?.backgroundLocation;
 
-  console.log('backgroundLocation', backgroundLocation);
-  console.log('location', location);
+  //   console.log('backgroundLocation', backgroundLocation);
+  //   console.log('location', location);
 
   return (
     <>

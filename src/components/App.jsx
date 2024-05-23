@@ -27,25 +27,32 @@ export const App = () => {
   // const dispatch = useDispatch();
   const { isLoading, isLoggedIn } = useAuth();
 
-  console.log(isLoggedIn);
+  // console.log(isLoggedIn);
 
   // useEffect(() => {
   //   dispatch(refreshUser());
   // }, [dispatch]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalRegister, setModalRegister] = useState(true);
+  const [backgroundLocation, setBackgroundLocation] = useState(null);
 
   const location = useLocation();
-  const backgroundLocation = location.state?.backgroundLocation || location;
+
+  // console.log({
+  //   backgroundRoute: backgroundRoute,
+  //   location: location,
+  // });
 
   const openModal = () => {
     setIsModalOpen(true);
     document.body.style.overflow = 'hidden';
+    setBackgroundLocation(location);
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
     document.body.style.overflow = 'auto';
+    setBackgroundLocation(null);
   };
 
   function changeModalValue() {

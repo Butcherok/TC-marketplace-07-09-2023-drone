@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import * as yup from 'yup';
 
 import Input from '../Input/Input';
@@ -49,6 +49,7 @@ const validationSchema = yup.object().shape({
 const LoginForm = ({ isModalOpen, closeModal, changeModalValue }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const location = useLocation();
 
   const [showPassword, setShowPassword] = useState(false);
 
@@ -72,7 +73,7 @@ const LoginForm = ({ isModalOpen, closeModal, changeModalValue }) => {
 
     resetForm();
     // navigate('/', { replace: true });
-    navigate(-1);
+    navigate(location, { replace: true });
   };
 
   const formik = useFormik({
@@ -86,7 +87,7 @@ const LoginForm = ({ isModalOpen, closeModal, changeModalValue }) => {
     closeModal();
     resetForm();
     // navigate('/', { replace: true });
-    navigate(-1);
+    navigate(location, { replace: true });
   };
 
   return (
