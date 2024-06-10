@@ -3,22 +3,11 @@ import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 // import { toast } from 'react-hot-toast';
 
-const swaggerAuth = {
-  auth: {
-    username: 'admin',
-    password: '123456',
-  },
-};
-
 export const registerUser = createAsyncThunk(
   'auth/registerUser',
   async (credentials, thunkAPI) => {
     try {
-      const { data } = await axios.post(
-        '/users/register',
-        credentials,
-        swaggerAuth
-      );
+      const { data } = await axios.post('/users/register', credentials);
 
       setAuthHeader(data.token);
       return data;
@@ -34,11 +23,7 @@ export const loginUser = createAsyncThunk(
   'auth/loginUser',
   async (credentials, thunkAPI) => {
     try {
-      const { data } = await axios.post(
-        '/users/login',
-        credentials,
-        swaggerAuth
-      );
+      const { data } = await axios.post('/users/login', credentials);
       setAuthHeader(data.token);
       return data;
     } catch (error) {
@@ -54,9 +39,10 @@ export const logoutUser = createAsyncThunk(
   'auth/logoutUser',
   async (_, thunkAPI) => {
     try {
-      const res = await axios.post('/users/logout', swaggerAuth);
+      // const res =
+      await axios.post('/users/logout');
       clearAuthHeader();
-      return res.data;
+      // return res.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.response.data.message);
     }
@@ -73,7 +59,7 @@ export const currentUser = createAsyncThunk(
     }
     setAuthHeader(persistedToken);
     try {
-      const res = await axios.get('/users/current', swaggerAuth);
+      const res = await axios.get('/users/current');
       return res.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.response.data.message);
@@ -91,7 +77,7 @@ export const refreshUser = createAsyncThunk(
     }
     setAuthHeader(persistedToken);
     try {
-      const res = await axios.post('/users/refresh', swaggerAuth);
+      const res = await axios.post('/users/refresh');
       return res.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.response.data.message);
@@ -103,7 +89,7 @@ export const updateUser = createAsyncThunk(
   'auth/updateUser',
   async (formData, thunkAPI) => {
     try {
-      const res = await axios.patch('/users/update', formData, swaggerAuth, {
+      const res = await axios.patch('/users/update', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

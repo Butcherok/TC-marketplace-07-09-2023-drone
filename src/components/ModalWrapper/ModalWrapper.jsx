@@ -1,6 +1,6 @@
 import LoginForm from 'components/UI/LoginForm/LoginForm';
 import RegisterForm from 'components/UI/RegisterForm/RegisterForm';
-import { Outlet } from 'react-router-dom';
+// import { Outlet } from 'react-router-dom';
 
 const ModalWrapper = ({
   closeModal,
@@ -17,7 +17,6 @@ const ModalWrapper = ({
 
   return (
     <>
-      <Outlet />
       {isModalOpen && modalRegister === true ? (
         <RegisterForm
           isModalOpen={isModalOpen}

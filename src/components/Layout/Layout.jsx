@@ -7,7 +7,6 @@ import Footer from 'components/Footer/Footer';
 import ModalWrapper from 'components/ModalWrapper/ModalWrapper';
 
 const Layout = ({
-  props,
   openModal,
   closeModal,
   isModalOpen,

@@ -71,9 +71,11 @@ const LoginForm = ({ isModalOpen, closeModal, changeModalValue }) => {
       })
     );
 
-    resetForm();
+    closeAndResetModal();
+
+    // resetForm();
+    // navigate(location, { replace: true });
     // navigate('/', { replace: true });
-    navigate(location, { replace: true });
   };
 
   const formik = useFormik({
@@ -212,7 +214,7 @@ const LoginForm = ({ isModalOpen, closeModal, changeModalValue }) => {
 
           <Message>
             Забули пароль?
-            <ModalLink>Відновити</ModalLink>
+            <ModalLink to="/recovery">Відновити</ModalLink>
           </Message>
         </MessageContainer>
       </StyledModal>

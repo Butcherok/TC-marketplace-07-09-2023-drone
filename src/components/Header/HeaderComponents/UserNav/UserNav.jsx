@@ -6,12 +6,15 @@ import React from 'react';
 import { StyledNavLink, Nav, NavItem, NavList } from './UserNav.styled';
 import Icon from 'components/UI/Icon/Icon';
 import { useLocation } from 'react-router-dom';
+import { useAuth } from 'useAuth';
 
 const UserNav = ({ openModal }) => {
   // const {
   // isLoading,
   //   isLoggedIn,
   // } = useAuth();
+
+  const { isLoggedIn } = useAuth();
 
   // const [isModalOpen, setIsOpen] = useState(false);
   // const [modalRegister, setModalRegister] = useState(true);
@@ -37,15 +40,12 @@ const UserNav = ({ openModal }) => {
         <NavList>
           <NavItem>
             {/* <StyledNavLink
-              to={
-                modalRegister === true
-                  ? { pathname: '/register', state: { modal: true } }
-                  : { pathname: '/login', state: { modal: true } }
-              }
+
               onClick={openModal}
             > */}
             <StyledNavLink
-              to={'/register'}
+              // to={'/register'}
+              to={isLoggedIn ? '/user' : '/register'}
               state={{ backgroundLocation: location }}
               onClick={openModal}
             >

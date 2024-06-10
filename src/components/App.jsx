@@ -27,7 +27,7 @@ export const App = () => {
   // const dispatch = useDispatch();
   const { isLoading, isLoggedIn } = useAuth();
 
-  // console.log(isLoggedIn);
+  console.log(isLoggedIn);
 
   // useEffect(() => {
   //   dispatch(refreshUser());
@@ -44,9 +44,11 @@ export const App = () => {
   // });
 
   const openModal = () => {
-    setIsModalOpen(true);
-    document.body.style.overflow = 'hidden';
-    setBackgroundLocation(location);
+    if (!isLoggedIn) {
+      setIsModalOpen(true);
+      document.body.style.overflow = 'hidden';
+      setBackgroundLocation(location);
+    }
   };
 
   const closeModal = () => {
@@ -83,11 +85,9 @@ export const App = () => {
               <Route path="articles" element={<div>Статті</div>} />
               <Route path="manufacturers" element={<div>Виробники</div>} />
 
-              {isLoggedIn ? (
-                <Route path="user" element={<UserPage />} />
-              ) : (
-                <Route path="login" element={<LoginForm />} />
-              )}
+              <Route path="user" element={<UserPage />} />
+              <Route path="register" element={<RegisterForm />} />
+              <Route path="login" element={<LoginForm />} />
               <Route path="favorites" element={<div>Перелік улюбленних</div>} />
               <Route path="cart" element={<CartPage />} />
               <Route path="drones" element={<Products />} />
@@ -164,19 +164,6 @@ export const App = () => {
                 element={<div>Політика конфіденційності</div>}
               />
               <Route path="offer" element={<div>Офетра</div>} />
-              <Route
-                path="register"
-                element={<RegisterForm />}
-                // element={
-                //   <ModalWrapper
-                //     component={RegisterForm}
-                //     openModal={openModal}
-                //     closeModal={closeModal}
-                //     isModalOpen={isModalOpen}
-                //   />
-                // }
-              />
-              <Route path="login" element={<LoginForm />} />
             </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>
