@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import * as yup from 'yup';
 
 import Input from '../Input/Input';
@@ -23,7 +23,7 @@ import {
   ErrorMessage,
   MessageContainer,
   Message,
-  RegisterLink,
+  ModalLink,
 } from './LoginForm.styled';
 import icon from '../../../assets/icons/sprite.svg';
 import { useDispatch } from 'react-redux';
@@ -49,6 +49,7 @@ const validationSchema = yup.object().shape({
 const LoginForm = ({ isModalOpen, closeModal, changeModalValue }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const location = useLocation();
 
   const [showPassword, setShowPassword] = useState(false);
 
@@ -70,8 +71,11 @@ const LoginForm = ({ isModalOpen, closeModal, changeModalValue }) => {
       })
     );
 
-    resetForm();
-    navigate('/', { replace: true });
+    closeAndResetModal();
+
+    // resetForm();
+    // navigate(location, { replace: true });
+    // navigate('/', { replace: true });
   };
 
   const formik = useFormik({
@@ -84,7 +88,8 @@ const LoginForm = ({ isModalOpen, closeModal, changeModalValue }) => {
   const closeAndResetModal = () => {
     closeModal();
     resetForm();
-    navigate('/', { replace: true });
+    // navigate('/', { replace: true });
+    navigate(location, { replace: true });
   };
 
   return (
@@ -202,11 +207,15 @@ const LoginForm = ({ isModalOpen, closeModal, changeModalValue }) => {
         <MessageContainer>
           <Message>
             Створіть аккаунт для легкої купівлі та продажу прямо зараз!
+            <ModalLink to="/register" onClick={changeModalValue}>
+              Зареєструватись
+            </ModalLink>
           </Message>
 
-          <RegisterLink to="/register" onClick={changeModalValue}>
-            Зареєструватись
-          </RegisterLink>
+          <Message>
+            Забули пароль?
+            <ModalLink to="/recovery">Відновити</ModalLink>
+          </Message>
         </MessageContainer>
       </StyledModal>
     </>

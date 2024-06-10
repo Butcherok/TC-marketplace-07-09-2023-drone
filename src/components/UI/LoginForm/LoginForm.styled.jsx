@@ -11,9 +11,9 @@ export const StyledModal = styled(Modal)`
 
   margin-right: -50%;
   padding: 40px 12px;
-  border-radius: 8px;
 
   background: #fafcff;
+  border-radius: 8px;
   transform: translate(-50%, -50%);
   box-shadow: 3px 4px 40px 0px rgba(187, 194, 221, 0.3);
 
@@ -47,13 +47,13 @@ export const ReturnIcon = styled.svg`
 
 export const Title = styled.h3`
   margin-bottom: 32px;
-  color: #000000;
 
   font-family: ${props => props.theme.fonts.main};
   font-size: 20px;
   font-weight: ${props => props.theme.fontWeights.bold};
   line-height: ${props => props.theme.lineHeights.section};
   text-align: center;
+  color: #000000;
 `;
 
 export const StyledLoginForm = styled.form`
@@ -83,11 +83,11 @@ export const StyledLabel = styled.label`
   display: block;
   margin-bottom: 8px;
 
-  color: ${props => props.theme.colors.greyDark};
   font-family: ${props => props.theme.fonts.main};
   font-size: ${props => props.theme.fontSizes.xs};
   font-weight: ${props => props.theme.fontWeights.normal};
   line-height: ${props => props.theme.lineHeights.button};
+  color: ${props => props.theme.colors.greyDark};
 `;
 
 export const InputContainer = styled.div`
@@ -110,7 +110,6 @@ export const StyledInputIcon = styled.svg`
 
 export const StyledBtnList = styled.ul`
   margin-bottom: 32px;
-
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -126,20 +125,18 @@ export const StyledBtn = styled.a`
   align-items: center;
   justify-content: center;
   gap: 8px;
-
   padding: 12px;
   border: 1px solid ${props => props.theme.colors.btnColor};
-  border-radius: 4px;
-
-  background: ${props => props.theme.colors.background};
-
-  color: ${props => props.theme.colors.btnColor};
 
   font-family: ${props => props.theme.fonts.main};
   font-size: 12px;
   font-weight: ${props => props.theme.fontWeights.bold};
   line-height: ${props => props.theme.lineHeights.title};
   text-align: center;
+  color: ${props => props.theme.colors.btnColor};
+
+  border-radius: 4px;
+  background: ${props => props.theme.colors.background};
   cursor: pointer;
 
   @media screen and (min-width: 728px) {
@@ -159,14 +156,26 @@ export const BtnSubmit = styled.button`
   border-radius: 4px;
   border: none;
 
-  background: ${props => props.theme.colors.btnColor};
-  color: ${props => props.theme.colors.background};
-
   font-family: ${props => props.theme.fonts.main};
   font-size: ${props => props.theme.fontSizes.s};
   font-weight: ${props => props.theme.fontWeights.bold};
   line-height: ${props => props.theme.lineHeights.title};
   text-align: center;
+  color: ${props => props.theme.colors.background};
+
+  background: ${props => props.theme.colors.btnColor};
+  transition: background-color 0.2s ease-out, border-color 0.2s ease-out;
+
+  &:hover,
+  &:focus {
+    background-color: ${props => props.theme.colors.btnColorHover};
+    border-color: ${props => props.theme.colors.btnColorHover};
+  }
+
+  &:active {
+    background-color: ${props => props.theme.colors.btnColorActive};
+    border-color: ${props => props.theme.colors.btnColorActive};
+  }
 `;
 
 export const ErrorMessage = styled.p`
@@ -176,7 +185,6 @@ export const ErrorMessage = styled.p`
   font-size: ${props => props.theme.fontSizes.xs};
   font-weight: ${props => props.theme.fontWeights.normal};
   line-height: ${props => props.theme.lineHeights.title};
-
   color: ${props => props.theme.colors.red};
 `;
 
@@ -186,23 +194,28 @@ export const MessageContainer = styled.div`
 
 export const Message = styled.p`
   display: inline-block;
-  margin-right: 6px;
 
   font-family: ${props => props.theme.fonts.main};
   font-size: ${props => props.theme.fontSizes.m};
   font-weight: ${props => props.theme.fontWeights.normal};
   line-height: ${props => props.theme.lineHeights.title};
-
   color: ${props => props.theme.colors.greyDark};
+
   text-align: center;
+
+  &:not(:last-child) {
+    margin-bottom: 32px;
+  }
 `;
 
-export const RegisterLink = styled(Link)`
+export const ModalLink = styled(Link)`
+  margin-left: 6px;
+
   font-family: ${props => props.theme.fonts.main};
   font-size: ${props => props.theme.fontSizes.m};
   font-weight: ${props => props.theme.fontWeights.normal};
   line-height: ${props => props.theme.lineHeights.title};
-
   color: var(--Grey-Dark, #7b7b89);
+
   text-decoration: underline;
 `;

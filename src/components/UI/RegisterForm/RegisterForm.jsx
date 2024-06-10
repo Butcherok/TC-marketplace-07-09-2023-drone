@@ -23,7 +23,7 @@ import {
   Message,
   LoginLink,
 } from './RegisterForm.styled';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { registerUser } from 'redux/auth/authOperations';
 import icon from '../../../assets/icons/sprite.svg';
@@ -65,7 +65,8 @@ const RegisterForm = ({ isModalOpen, closeModal, changeModalValue }) => {
   const [showPasswordRepeat, setShowPasswordRepeat] = useState(false);
 
   // return <>{state.isAuthenticated ? <UserPage /> : <RegisterForm />}</>;
-
+  const location = useLocation();
+  // console.log(location);
   const initialValues = {
     firstName: '',
     email: '',
@@ -96,6 +97,8 @@ const RegisterForm = ({ isModalOpen, closeModal, changeModalValue }) => {
     );
 
     resetForm();
+    // navigate(-1);
+    // navigate(location, { replace: true });
     navigate('/', { replace: true });
     closeModal();
   };
@@ -110,7 +113,8 @@ const RegisterForm = ({ isModalOpen, closeModal, changeModalValue }) => {
   const closeAndResetModal = () => {
     closeModal();
     resetForm();
-    navigate('/', { replace: true });
+
+    navigate(location, { replace: true });
     // navigate(-1);
   };
 

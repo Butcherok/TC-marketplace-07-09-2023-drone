@@ -13,13 +13,7 @@ export const ApiProvider = ({ children }) => {
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        'https://dr-one-marketplace.onrender.com/notices',
-        {
-          auth: {
-            username: 'admin',
-            password: '123456',
-          },
-        }
+        'https://dr-one-marketplace.onrender.com/notices'
       );
       setQuery(response.data.data.notices);
     } catch (error) {

@@ -9,7 +9,7 @@ import NavBar from './HeaderComponents/Nav/Nav';
 import Burger from './HeaderComponents/Burger/Burger';
 import SearchBarMobile from './HeaderComponents/SearchBarMobile/SearchBarMobile';
 
-const Header = () => {
+const Header = ({openModal}) => {
   const [isShowMobileSearch, setIsShowMobileSearch] = useState(false);
   const { selectedCategory, handleCategoryChange } = useCategory();
 
@@ -27,7 +27,7 @@ const Header = () => {
           onCategoryChange={handleCategoryChange}
         />
         <SearchBar onClick={handleSearchClick} />
-        <UserNav />
+        <UserNav openModal={openModal}/>
         {isShowMobileSearch && (
           <SearchBarMobile isShowMobileSearch={isShowMobileSearch} />
         )}

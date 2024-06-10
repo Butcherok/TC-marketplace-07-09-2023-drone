@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 
 import { ApiProvider } from '../contexts/ApiContext/ApiContext';
 import { CategoryProvider } from '../contexts/CategoryContext/CategoryContext';
@@ -17,6 +17,8 @@ import Comments from './Characteristics/AllCharacteristics/Comments/Comments';
 import RegisterForm from './UI/RegisterForm/RegisterForm';
 import LoginForm from './UI/LoginForm/LoginForm';
 import CartPage from 'pages/cart';
+// import ModalWrapper from './ModalWrapper/ModalWrapper';
+import { useState } from 'react';
 // import { useEffect } from 'react';
 // import { useDispatch } from 'react-redux';
 // import { refreshUser } from 'redux/auth/authOperations';
@@ -25,9 +27,39 @@ export const App = () => {
   // const dispatch = useDispatch();
   const { isLoading, isLoggedIn } = useAuth();
 
+  console.log(isLoggedIn);
+
   // useEffect(() => {
   //   dispatch(refreshUser());
   // }, [dispatch]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalRegister, setModalRegister] = useState(true);
+  const [backgroundLocation, setBackgroundLocation] = useState(null);
+
+  const location = useLocation();
+
+  // console.log({
+  //   backgroundRoute: backgroundRoute,
+  //   location: location,
+  // });
+
+  const openModal = () => {
+    if (!isLoggedIn) {
+      setIsModalOpen(true);
+      document.body.style.overflow = 'hidden';
+      setBackgroundLocation(location);
+    }
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    document.body.style.overflow = 'auto';
+    setBackgroundLocation(null);
+  };
+
+  function changeModalValue() {
+    setModalRegister(!modalRegister);
+  }
 
   return isLoading ? (
     <span>Loading...</span>
@@ -35,18 +67,27 @@ export const App = () => {
     <>
       <ApiProvider>
         <CategoryProvider>
-          <Routes>
-            <Route path="/" element={<Layout />}>
+          <Routes location={backgroundLocation}>
+            <Route
+              path="/"
+              element={
+                <Layout
+                  openModal={openModal}
+                  closeModal={closeModal}
+                  isModalOpen={isModalOpen}
+                  changeModalValue={changeModalValue}
+                  modalRegister={modalRegister}
+                />
+              }
+            >
               <Route index element={<HomePage />} />
               {/* <Route path="drones" element={<Products />} /> */}
               <Route path="articles" element={<div>Статті</div>} />
               <Route path="manufacturers" element={<div>Виробники</div>} />
 
-              {isLoggedIn ? (
-                <Route path="user" element={<UserPage />} />
-              ) : (
-                <Route path="login" element={<LoginForm />} />
-              )}
+              <Route path="user" element={<UserPage />} />
+              <Route path="register" element={<RegisterForm />} />
+              <Route path="login" element={<LoginForm />} />
               <Route path="favorites" element={<div>Перелік улюбленних</div>} />
               <Route path="cart" element={<CartPage />} />
               <Route path="drones" element={<Products />} />
@@ -123,8 +164,6 @@ export const App = () => {
                 element={<div>Політика конфіденційності</div>}
               />
               <Route path="offer" element={<div>Офетра</div>} />
-              <Route path="register" element={<RegisterForm />} />
-              <Route path="login" element={<LoginForm />} />
             </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>

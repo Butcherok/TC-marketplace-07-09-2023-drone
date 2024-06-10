@@ -1,50 +1,52 @@
 import React from 'react';
-import { useState } from 'react';
-import RegisterForm from 'components/UI/RegisterForm/RegisterForm';
-import LoginForm from 'components/UI/LoginForm/LoginForm';
+// import { useState } from 'react';
+// import RegisterForm from 'components/UI/RegisterForm/RegisterForm';
+// import LoginForm from 'components/UI/LoginForm/LoginForm';
 
-import {
-  StyledNavLink,
-  Nav,
-  NavItem,
-  NavList,
-} from './UserNav.styled';
+import { StyledNavLink, Nav, NavItem, NavList } from './UserNav.styled';
 import Icon from 'components/UI/Icon/Icon';
+import { useLocation } from 'react-router-dom';
+import { useAuth } from 'useAuth';
 
-const UserNav = () => {
+const UserNav = ({ openModal }) => {
   // const {
   // isLoading,
   //   isLoggedIn,
   // } = useAuth();
 
-  const [isModalOpen, setIsOpen] = useState(false);
-  const [modalRegister, setModalRegister] = useState(true);
+  const { isLoggedIn } = useAuth();
 
-  function openModal() {
-    setIsOpen(true);
-    document.body.style.overflow = 'hidden';
-  }
+  // const [isModalOpen, setIsOpen] = useState(false);
+  // const [modalRegister, setModalRegister] = useState(true);
+  const location = useLocation();
+  // console.log(location);
+  // function openModal() {
+  //   setIsOpen(true);
+  //   document.body.style.overflow = 'hidden';
+  // }
 
-  function closeModal() {
-    setIsOpen(false);
-    document.body.style.overflow = 'auto';
-  }
+  // function closeModal() {
+  //   setIsOpen(false);
+  //   document.body.style.overflow = 'auto';
+  // }
 
-  function changeModalValue() {
-    setModalRegister(!modalRegister);
-  }
+  // function changeModalValue() {
+  //   setModalRegister(!modalRegister);
+  // }
 
   return (
     <>
       <Nav>
         <NavList>
           <NavItem>
+            {/* <StyledNavLink
+
+              onClick={openModal}
+            > */}
             <StyledNavLink
-              to={
-                modalRegister === true
-                  ? { pathname: '/register', state: { modal: true } }
-                  : { pathname: '/login', state: { modal: true } }
-              }
+              // to={'/register'}
+              to={isLoggedIn ? '/user' : '/register'}
+              state={{ backgroundLocation: location }}
               onClick={openModal}
             >
               <Icon id="user" />
@@ -63,7 +65,7 @@ const UserNav = () => {
         </NavList>
       </Nav>
 
-      {modalRegister === true ? (
+      {/* {modalRegister === true ? (
         <RegisterForm
           isModalOpen={isModalOpen}
           closeModal={closeModal}
@@ -75,7 +77,7 @@ const UserNav = () => {
           closeModal={closeModal}
           changeModalValue={changeModalValue}
         />
-      )}
+      )} */}
     </>
   );
 };

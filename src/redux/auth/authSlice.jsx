@@ -57,6 +57,7 @@ const authSlice = createSlice({
       state.token = action.payload.token;
       state.isLoggedIn = true;
       state.error = null;
+      console.log(state.isLoggedIn);
     },
 
     [loginUser.rejected](state, action) {
@@ -99,6 +100,7 @@ const authSlice = createSlice({
       state.error = action.payload;
       state.isLoading = false;
     },
+
     // updateUser
     [updateUser.pending](state, _) {
       state.isRefreshing = true;
