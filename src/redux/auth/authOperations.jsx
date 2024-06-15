@@ -49,29 +49,13 @@ export const logoutUser = createAsyncThunk(
   }
 );
 
-export const currentUser = createAsyncThunk(
-  'auth/currentUser',
-  async (_, thunkAPI) => {
-    const state = thunkAPI.getState();
-    const persistedToken = state.auth.token;
-    if (persistedToken === null) {
-      return thunkAPI.rejectWithValue('No valid token');
-    }
-    setAuthHeader(persistedToken);
-    try {
-      const res = await axios.get('/users/current');
-      return res.data;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error.response.data.message);
-    }
-  }
-);
-
 export const refreshUser = createAsyncThunk(
   'auth/refreshUser',
   async (_, thunkAPI) => {
     const state = thunkAPI.getState();
-    const persistedToken = state.auth.token;
+    const persistedToken = state.auth.refreshToken;
+    // console.log(state);
+
     if (persistedToken === null) {
       return thunkAPI.rejectWithValue('No valid token');
     }
@@ -80,10 +64,30 @@ export const refreshUser = createAsyncThunk(
       const res = await axios.post('/users/refresh');
       return res.data;
     } catch (error) {
+      console.log(error);
       return thunkAPI.rejectWithValue(error.response.data.message);
     }
   }
 );
+
+// export const currentUser = createAsyncThunk(
+//   'auth/currentUser',
+//   async (_, thunkAPI) => {
+//     const state = thunkAPI.getState();
+//     const persistedToken = state.auth.token;
+//     console.log(persistedToken);
+//     if (persistedToken === null) {
+//       return thunkAPI.rejectWithValue('No valid token');
+//     }
+//     setAuthHeader(persistedToken);
+//     try {
+//       const res = await axios.get('/users/current');
+//       return res.data;
+//     } catch (error) {
+//       return thunkAPI.rejectWithValue(error.response.data.message);
+//     }
+//   }
+// );
 
 export const updateUser = createAsyncThunk(
   'auth/updateUser',

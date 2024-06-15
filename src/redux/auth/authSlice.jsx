@@ -22,7 +22,7 @@ const initialState = {
   isRefreshing: false,
   isLoading: false,
   error: null,
-  // refreshToken: null,
+  refreshToken: null,
 };
 
 const authSlice = createSlice({
@@ -39,6 +39,7 @@ const authSlice = createSlice({
     [registerUser.fulfilled](state, action) {
       state.user = action.payload.user;
       state.token = action.payload.token;
+      state.refreshToken = action.payload.token;
       state.isLoggedIn = true;
       state.isRefreshing = false;
       state.isLoading = false;
@@ -55,13 +56,19 @@ const authSlice = createSlice({
     [loginUser.fulfilled](state, action) {
       state.user = action.payload.user;
       state.token = action.payload.token;
+      state.refreshToken = action.payload.token;
       state.isLoggedIn = true;
+      state.isLoading = false;
       state.error = null;
-      console.log(state.isLoggedIn);
+    },
+
+    [loginUser.pending](state, _) {
+      state.isLoading = true;
     },
 
     [loginUser.rejected](state, action) {
       state.error = action.payload;
+      state.isLoading = false;
     },
 
     // logoutUser
@@ -72,6 +79,7 @@ const authSlice = createSlice({
     [logoutUser.fulfilled](state) {
       state.user = { firstName: null, lastName: null, email: null };
       state.token = null;
+      state.refreshToken = null;
       state.isLoggedIn = false;
       state.error = null;
     },
@@ -89,7 +97,6 @@ const authSlice = createSlice({
 
     [refreshUser.fulfilled](state, action) {
       state.user = action.payload;
-      // state.token = action.payload.token;
       state.isLoggedIn = true;
       state.isRefreshing = false;
       state.isLoading = false;
@@ -127,7 +134,7 @@ const authSlice = createSlice({
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['token'],
+  whitelist: ['refreshToken'],
 };
 
 export const persistedUsersReducer = persistReducer(

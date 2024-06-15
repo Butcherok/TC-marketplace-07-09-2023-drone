@@ -19,29 +19,25 @@ import LoginForm from './UI/LoginForm/LoginForm';
 import CartPage from 'pages/cart';
 // import ModalWrapper from './ModalWrapper/ModalWrapper';
 import { useState } from 'react';
-// import { useEffect } from 'react';
-// import { useDispatch } from 'react-redux';
-// import { refreshUser } from 'redux/auth/authOperations';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { refreshUser } from 'redux/auth/authOperations';
 
 export const App = () => {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const { isLoading, isLoggedIn } = useAuth();
 
-  console.log(isLoggedIn);
+  // console.log(isLoggedIn);
 
-  // useEffect(() => {
-  //   dispatch(refreshUser());
-  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalRegister, setModalRegister] = useState(true);
   const [backgroundLocation, setBackgroundLocation] = useState(null);
 
   const location = useLocation();
-
-  // console.log({
-  //   backgroundRoute: backgroundRoute,
-  //   location: location,
-  // });
 
   const openModal = () => {
     if (!isLoggedIn) {
