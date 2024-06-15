@@ -5,10 +5,6 @@ const ApiContext = createContext();
 
 export const ApiProvider = ({ children }) => {
   const [query, setQuery] = useState([]);
-  // const [loginData, setLoginData] = useState({
-  //   username: 'admin',
-  //   password: '123456',
-  // });
 
   const fetchData = async () => {
     try {
