@@ -13,6 +13,13 @@ export const GlobalStyles = createGlobalStyle`
     min-height: 100vh;
   }
 
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+}
+
   body { 
     font-family: ${props => props.theme.fonts.main};
     background-color: ${props => props.theme.colors.background};
@@ -36,27 +43,34 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
   }
-
-
-  a {
-    text-decoration: none;   
-  } 
+  
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
 
   img {
     display: block;
     width: 100%;
     height: auto;
+    margin: 0;
   }
 
   button {
     cursor: pointer;
     font-family: ${props => props.theme.fonts.main};
     border: none;
-    background: transparent;
+    background: none;
     padding: 0;
 }
 
 svg{
   fill: none;
+}
+
+input {
+  font-family: inherit;
+  outline: none;
 }
 `;

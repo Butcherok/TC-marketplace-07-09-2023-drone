@@ -43,8 +43,9 @@ export const RadioButtonPresentation = styled(ToggleButton)`
   cursor: pointer;
 
   svg {
-    width: 40px;
-    height: 40px;
+    padding: 10px;
+    width: 38px;
+    height: 38px;
     fill: #dbdce6;
     margin: 0;
   }

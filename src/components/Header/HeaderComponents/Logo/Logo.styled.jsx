@@ -10,6 +10,7 @@ export const LogoContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 4px;
 `;
 
 export const LogoTextContainer = styled.div`
@@ -50,10 +51,10 @@ export const LogoNoteText = styled.p`
   }
 `;
 
-export const LogoIcon = styled.img`
-  display: inline-block;
+export const LogoIcon = styled.svg`
   width: 32px;
   height: 32px;
+  stroke: ${props => props.theme.colors.logo};
 
   @media ${props => props.theme.media.desktop} {
     width: 40px;

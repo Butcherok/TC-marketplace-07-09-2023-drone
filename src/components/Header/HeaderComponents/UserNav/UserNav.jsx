@@ -54,7 +54,7 @@ const UserNav = ({ openModal }) => {
           </NavItem>
           <NavItem>
             <StyledNavLink to={'/favorites'}>
-              <Icon id="favorite" />
+              <Icon id="heart" />
             </StyledNavLink>
           </NavItem>
           <NavItem>

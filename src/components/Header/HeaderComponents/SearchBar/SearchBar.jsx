@@ -51,7 +51,7 @@ const SearchBar = ({ onClick }) => {
         <BtnsWrap>
           {searchText && (
             <ResetBtn type="button" onClick={handleResetClick}>
-              <Icon id="reset" />
+              <Icon id="cross" />
             </ResetBtn>
           )}
           <SearchBtn type="button" onClick={onClick}>

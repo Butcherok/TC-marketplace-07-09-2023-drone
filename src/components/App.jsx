@@ -22,12 +22,11 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { refreshUser } from 'redux/auth/authOperations';
+import ArticlesPage from 'pages/articles';
 
 export const App = () => {
   const dispatch = useDispatch();
   const { isLoading, isLoggedIn } = useAuth();
-
-  // console.log(isLoggedIn);
 
   useEffect(() => {
     dispatch(refreshUser());
@@ -78,7 +77,7 @@ export const App = () => {
             >
               <Route index element={<HomePage />} />
               {/* <Route path="drones" element={<Products />} /> */}
-              <Route path="articles" element={<div>Статті</div>} />
+              <Route path="articles" element={<ArticlesPage/>} />
               <Route path="manufacturers" element={<div>Виробники</div>} />
 
               <Route path="user" element={<UserPage />} />

@@ -5,6 +5,7 @@ export const StyledBurger = styled.div`
     width: 32px;
     height: 32px;
     cursor: pointer;
+    stroke: ${props => props.theme.colors.logospan};
   }
 
   @media ${props => props.theme.media.desktop} {
