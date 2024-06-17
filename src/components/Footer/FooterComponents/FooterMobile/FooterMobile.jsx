@@ -6,7 +6,7 @@ const FooterMobile = () => {
   const icons = [
     { id: 'home', alt: 'Home', link: '' },
     { id: 'user', alt: 'User', link: 'user' },
-    { id: 'favorite', alt: 'Favorite', link: 'favorites' },
+    { id: 'heart', alt: 'Favorite', link: 'favorites' },
     { id: 'cart', alt: 'Cart', link: 'cart' },
   ];
 

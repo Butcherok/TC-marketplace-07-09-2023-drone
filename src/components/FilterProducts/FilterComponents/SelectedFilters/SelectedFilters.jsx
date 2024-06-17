@@ -21,7 +21,7 @@ const SelectedFilters = ({ selectedFilters, setSelectedFilters }) => {
           <div key={index} className="selected-filter">
             {filter}
             <Reset
-              id="reset"
+              id="cross"
               onClick={
                 filter === 'Очистити все'
                   ? removeAllFilters

@@ -15,12 +15,11 @@ export const SocialsList = styled.ul`
 
 export const SocialsItem = styled.li``;
 
-export const LogoSocial = styled.img`
-  display: inline-block;
+export const SocialIcon = styled.svg`
   width: 24px;
   height: 24px;
+  fill: ${props => props.theme.colors.logo};
 `;
-
 
 export const SocialsReserved = styled.p`
   font-size: ${props => props.theme.fontSizes.xs};

@@ -6,14 +6,14 @@ import Recommendation from 'components/Cart/Recommendation/Recommendation';
 const CartPage = () => {
   return (
     <>
-      {window.innerWidth < 1280 && (
-        <>
-          <CartTitle />
-          <Orders />
-          <Recommendation />
-          <Favorite />
-        </>
-      )}
+      {/* {window.innerWidth < 1280 && ( */}
+      <>
+        <CartTitle />
+        <Orders />
+        <Recommendation />
+        <Favorite />
+      </>
+      {/* )} */}
     </>
   );
 };

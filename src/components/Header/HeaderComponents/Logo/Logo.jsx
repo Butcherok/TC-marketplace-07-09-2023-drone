@@ -3,19 +3,22 @@ import { Link } from 'react-router-dom';
 import {
   LogoWrapper,
   LogoContainer,
-  LogoIcon,
   LogoMainText,
   LogoNoteText,
   LogoTextContainer,
+  LogoIcon,
 } from './Logo.styled';
-import logoIcon from '../../../../assets/icons/logo-icon.svg';
+import icon from '../../../../assets/icons/sprite.svg';
 
-const Logo = ({className, onClick}) => {
+const Logo = ({ className, onClick }) => {
   return (
     <LogoWrapper className={className} onClick={onClick}>
       <Link to="/">
         <LogoContainer>
-          <LogoIcon src={logoIcon} alt="logo" />
+          {/* <LogoIcon src={logoIcon} alt="logo" /> */}
+          <LogoIcon>
+            <use href={`${icon}#icon-logo`}></use>
+          </LogoIcon>
           <LogoTextContainer>
             <LogoMainText>
               DR.<span>ONE</span>

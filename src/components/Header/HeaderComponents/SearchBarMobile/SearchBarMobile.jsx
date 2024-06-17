@@ -44,7 +44,7 @@ const SearchBarMobile = ({ isShowMobileSearch }) => {
           ref={inputRef}
         />
         <BtnsWrap>
-          {searchText && <Icon id="reset" onClick={handleResetClick} />}
+          {searchText && <Icon id="cross" onClick={handleResetClick} />}
           <Icon id="arrow-right" />
         </BtnsWrap>
       </Form>

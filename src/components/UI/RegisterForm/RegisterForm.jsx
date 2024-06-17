@@ -273,7 +273,7 @@ const RegisterForm = ({ isModalOpen, closeModal, changeModalValue }) => {
           <StyledBtnItem>
             <StyledBtn>
               <StyledBtnIcon>
-                <use href={`${icon}#icon-facebook`}></use>
+                <use href={`${icon}#icon-facebook-register`}></use>
               </StyledBtnIcon>
               Facebook
             </StyledBtn>
