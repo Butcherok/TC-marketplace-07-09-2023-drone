@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const OrderSection = styled.section`
@@ -245,7 +246,7 @@ export const ButtonContainer = styled.div`
   }
 `;
 
-export const BuyBtn = styled.button`
+export const BuyBtn = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
