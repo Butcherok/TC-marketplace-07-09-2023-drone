@@ -1,12 +1,23 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const BlogList = styled.ul`
   margin-bottom: 32px;
+
+  @media screen and (min-width: 1440px) {
+    margin-bottom: 64px;
+  }
 `;
 
 export const BlogItem = styled.li`
   &:not(:last-child) {
     margin-bottom: 20px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
   }
 `;
 
@@ -16,13 +27,26 @@ export const BlogBackground = styled.div`
 
   border-radius: 8px;
   background: #fafcff;
-
   box-shadow: 3px 4px 40px 0px rgba(187, 194, 221, 0.3);
+
+  @media screen and (min-width: 1440px) {
+    display: flex;
+    gap: 20px;
+  }
 `;
 
 export const BlogImage = styled.img`
-  margin-bottom: 20px;
+  @media screen and (max-width: 1439.98px) {
+    margin-bottom: 20px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: 412px;
+    height: 257px;
+  }
 `;
+
+export const TextContainer = styled.div``;
 
 export const BlogTitle = styled.h2`
   margin-bottom: 16px;
@@ -44,7 +68,7 @@ export const BlogText = styled.p`
   line-height: 130%;
 `;
 
-export const BtnMore = styled.button`
+export const BtnMore = styled(Link)`
   display: flex;
 
   color: ${props => props.theme.colors.secondary};
@@ -57,4 +81,6 @@ export const BtnMore = styled.button`
 export const IconMore = styled.svg`
   width: 18px;
   height: 18px;
+
+  stroke: #aaabb9;
 `;

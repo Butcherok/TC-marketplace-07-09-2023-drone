@@ -23,6 +23,8 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { refreshUser } from 'redux/auth/authOperations';
 import ArticlesPage from 'pages/articles';
+import Article from './Article/Article';
+import Checkout from './Checkout/Checkout';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -76,8 +78,8 @@ export const App = () => {
               }
             >
               <Route index element={<HomePage />} />
-              {/* <Route path="drones" element={<Products />} /> */}
-              <Route path="articles" element={<ArticlesPage/>} />
+              <Route path="articles" element={<ArticlesPage />} />
+              <Route path="articles/:articleId" element={<Article />} />
               <Route path="manufacturers" element={<div>Виробники</div>} />
 
               <Route path="user" element={<UserPage />} />
@@ -85,6 +87,7 @@ export const App = () => {
               <Route path="login" element={<LoginForm />} />
               <Route path="favorites" element={<div>Перелік улюбленних</div>} />
               <Route path="cart" element={<CartPage />} />
+              <Route path="checkout" element={<Checkout />} />
               <Route path="drones" element={<Products />} />
               <Route path="drones/:dronId" element={<ProductPage />}>
                 {window.innerWidth >= 1440 && (
