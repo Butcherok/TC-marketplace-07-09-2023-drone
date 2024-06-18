@@ -23,6 +23,7 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { refreshUser } from 'redux/auth/authOperations';
 import ArticlesPage from 'pages/articles';
+import Article from './Article/Article';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -77,7 +78,8 @@ export const App = () => {
             >
               <Route index element={<HomePage />} />
               {/* <Route path="drones" element={<Products />} /> */}
-              <Route path="articles" element={<ArticlesPage/>} />
+              <Route path="articles" element={<ArticlesPage />} />
+              <Route path="articles/:articleId" element={<Article />} />
               <Route path="manufacturers" element={<div>Виробники</div>} />
 
               <Route path="user" element={<UserPage />} />

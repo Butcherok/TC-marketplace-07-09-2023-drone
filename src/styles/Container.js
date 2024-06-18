@@ -3,11 +3,11 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
   width: 100%;
   //min-height: 100vh;
   margin: 0 auto;
-  // padding: 20px 20px 0; 
+  // padding: 20px 20px 0;
 
   @media ${props => props.theme.media.mobile} {
     //max-width: 480px;

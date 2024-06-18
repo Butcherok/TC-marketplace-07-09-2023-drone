@@ -34,13 +34,13 @@
 </symbol>
 
 <symbol id="icon-chevron-left" viewBox="0 0 32 32">
-<path fill="#fafcff" style="fill: var(--color2, #fafcff)" d="M5.333 0.185h21.333c2.678 0 4.849 2.171 4.849 4.848v21.333c0 2.678-2.171 4.849-4.849 4.849h-21.333c-2.678 0-4.848-2.171-4.848-4.849v-21.333c0-2.678 2.171-4.848 4.848-4.848z"></path>
-<path fill="none" stroke="#aaabb9" style="stroke: var(--color3, #aaabb9)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.9394" d="M20.849 25.397l-9.697-9.697 9.697-9.697"></path>
+<path stroke="none" d="M5.333 0.185h21.333c2.678 0 4.849 2.171 4.849 4.848v21.333c0 2.678-2.171 4.849-4.849 4.849h-21.333c-2.678 0-4.848-2.171-4.848-4.849v-21.333c0-2.678 2.171-4.848 4.848-4.848z"></path>
+<path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.9394" d="M20.849 25.397l-9.697-9.697 9.697-9.697"></path>
 </symbol>
 
 <symbol id="icon-chevron-right" viewBox="0 0 32 32">
-<path fill="#fafcff" style="fill: var(--color2, #fafcff)" d="M5.333 0.185h21.333c2.678 0 4.849 2.171 4.849 4.848v21.333c0 2.678-2.171 4.849-4.849 4.849h-21.333c-2.678 0-4.848-2.171-4.848-4.849v-21.333c0-2.678 2.171-4.848 4.848-4.848z"></path>
-<path fill="none" stroke="#aaabb9" style="stroke: var(--color3, #aaabb9)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.9394" d="M11.152 6.003l9.697 9.697-9.697 9.697"></path>
+<path stroke="none" d="M5.333 0.185h21.333c2.678 0 4.849 2.171 4.849 4.848v21.333c0 2.678-2.171 4.849-4.849 4.849h-21.333c-2.678 0-4.848-2.171-4.848-4.849v-21.333c0-2.678 2.171-4.848 4.848-4.848z"></path>
+<path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.9394" d="M11.152 6.003l9.697 9.697-9.697 9.697"></path>
 </symbol>
 
 <symbol id="icon-burger" viewBox="0 0 32 32">

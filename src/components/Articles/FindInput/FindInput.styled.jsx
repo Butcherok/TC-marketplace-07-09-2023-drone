@@ -1,5 +1,17 @@
 import styled from 'styled-components';
 
+export const InputContainer = styled.div`
+  position: relative;
+
+  width: 100%;
+  margin-bottom: 16px;
+
+  @media screen and (min-width: 1440px) {
+    width: 280px;
+    margin-bottom: 32px;
+  }
+`;
+
 export const Input = styled.input`
   width: 100%;
   height: 36px;
@@ -23,13 +35,6 @@ export const Input = styled.input`
     font-weight: 400;
     line-height: calc(16 / 12);
   }
-`;
-
-export const InputContainer = styled.div`
-  position: relative;
-
-  width: 100%;
-  margin-bottom: 16px;
 `;
 
 export const SearchBtn = styled.button`

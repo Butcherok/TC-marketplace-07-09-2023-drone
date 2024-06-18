@@ -11,7 +11,7 @@ export const BreadcrumbsStyled = styled.div`
   & svg {
     width: 16px;
     height: 16px;
-    fill: ${props => props.theme.colors.secondary};
+    stroke: ${props => props.theme.colors.secondary};
   }
 
   & span {
