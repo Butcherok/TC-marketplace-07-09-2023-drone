@@ -117,7 +117,7 @@ const Orders = () => {
           </CheckoutPriceContainer>
 
           <ButtonContainer>
-            <BuyBtn to="checkout">
+            <BuyBtn to="/checkout">
               Оформити замовлення
               <IconCart>
                 <use href={`${icon}#icon-cart`}></use>
@@ -169,7 +169,7 @@ const Orders = () => {
           </CheckoutPriceContainer>
 
           <ButtonContainer>
-            <BuyBtn to="checkout">
+            <BuyBtn to="/checkout">
               Оформити замовлення
               <IconCart>
                 <use href={`${icon}#icon-cart`}></use>

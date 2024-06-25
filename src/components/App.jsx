@@ -88,6 +88,7 @@ export const App = () => {
               <Route path="favorites" element={<div>Перелік улюбленних</div>} />
               <Route path="cart" element={<CartPage />} />
               <Route path="checkout" element={<Checkout />} />
+
               <Route path="drones" element={<Products />} />
               <Route path="drones/:dronId" element={<ProductPage />}>
                 {window.innerWidth >= 1440 && (
