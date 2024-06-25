@@ -9,30 +9,9 @@ import { useLocation } from 'react-router-dom';
 import { useAuth } from 'useAuth';
 
 const UserNav = ({ openModal }) => {
-  // const {
-  // isLoading,
-  //   isLoggedIn,
-  // } = useAuth();
-
   const { isLoggedIn } = useAuth();
 
-  // const [isModalOpen, setIsOpen] = useState(false);
-  // const [modalRegister, setModalRegister] = useState(true);
   const location = useLocation();
-  // console.log(location);
-  // function openModal() {
-  //   setIsOpen(true);
-  //   document.body.style.overflow = 'hidden';
-  // }
-
-  // function closeModal() {
-  //   setIsOpen(false);
-  //   document.body.style.overflow = 'auto';
-  // }
-
-  // function changeModalValue() {
-  //   setModalRegister(!modalRegister);
-  // }
 
   return (
     <>
