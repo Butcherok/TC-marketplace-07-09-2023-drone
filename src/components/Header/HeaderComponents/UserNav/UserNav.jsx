@@ -43,20 +43,6 @@ const UserNav = ({ openModal }) => {
           </NavItem>
         </NavList>
       </Nav>
-
-      {/* {modalRegister === true ? (
-        <RegisterForm
-          isModalOpen={isModalOpen}
-          closeModal={closeModal}
-          changeModalValue={changeModalValue}
-        />
-      ) : (
-        <LoginForm
-          isModalOpen={isModalOpen}
-          closeModal={closeModal}
-          changeModalValue={changeModalValue}
-        />
-      )} */}
     </>
   );
 };

@@ -57,7 +57,7 @@ const validationSchema = yup.object().shape({
     .oneOf([yup.ref('password')], 'Невірний пароль.'),
 });
 
-const RegisterForm = ({ isModalOpen, closeModal, changeModalValue }) => {
+const RegisterForm = ({ isModalOpen, closeModal, setModalType }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -293,7 +293,7 @@ const RegisterForm = ({ isModalOpen, closeModal, changeModalValue }) => {
 
       <MessageContainer>
         <Message>Вже маєте аккаунт?</Message>
-        <LoginLink to="/login" onClick={changeModalValue}>
+        <LoginLink to="/login" onClick={() => setModalType('login')}>
           Увійти
         </LoginLink>
       </MessageContainer>
