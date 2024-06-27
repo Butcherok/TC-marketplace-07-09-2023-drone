@@ -18,11 +18,12 @@ const initialState = {
     avatarUrl: '',
   },
   token: null,
+  tokenLifeTime: null,
+  refreshToken: null,
   isLoggedIn: false,
   isRefreshing: false,
   isLoading: false,
   error: null,
-  refreshToken: null,
 };
 
 const authSlice = createSlice({
@@ -134,7 +135,7 @@ const authSlice = createSlice({
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['refreshToken'],
+  whitelist: ['token', 'refreshToken'],
 };
 
 export const persistedUsersReducer = persistReducer(

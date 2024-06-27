@@ -9,7 +9,7 @@ export const StyledModal = styled(Modal)`
   bottom: auto;
 
   margin-right: -50%;
-  padding: 40px 12px;
+  padding: 20px 12px 40px;
   border-radius: 8px;
 
   background: #fafcff;
@@ -30,9 +30,9 @@ export const StyledModal = styled(Modal)`
 
 export const RetunBtn = styled.button`
   display: block;
-  margin-right: 0;
+  margin-right: auto;
   margin-bottom: 32px;
-  margin-left: auto;
+  margin-left: 0;
 
   cursor: pointer;
 `;
@@ -75,6 +75,7 @@ export const BtnSubmit = styled.button`
   padding: 10px 10px 10px 20px;
   border-radius: 4px;
   border: none;
+  margin-top: 10px;
 
   background: ${props => props.theme.colors.btnColor};
   color: ${props => props.theme.colors.background};

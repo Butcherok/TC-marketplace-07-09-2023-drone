@@ -9,7 +9,10 @@ export const registerUser = createAsyncThunk(
     try {
       const { data } = await axios.post('/users/register', credentials);
 
-      setAuthHeader(data.token);
+// const tokenLifetime = data.expires_in * 1000; // Convert seconds to milliseconds
+// const expirationTime = Date.now() + tokenLifetime;
+
+      setAuthHeader(data.token);  
       return data;
     } catch (error) {
       // toast.error(error.response.data.message);

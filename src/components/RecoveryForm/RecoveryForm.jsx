@@ -1,4 +1,4 @@
-import { ErrorMessage, useFormik } from 'formik';
+import { useFormik } from 'formik';
 import {
   BtnSubmit,
   RetunBtn,
@@ -7,31 +7,45 @@ import {
   StyledModal,
   Text,
   Title,
+  ErrorMessage,
 } from './RecoveryForm.styled';
 import Input from 'components/UI/Input/Input';
 import icon from '../../assets/icons/sprite.svg';
 import * as yup from 'yup';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const validationSchema = yup.object().shape({
-  email: yup
+  contact: yup
     .string()
-    .email('Будь ласка введіть валідну пошту.')
-    .required('Невірна електронна пошта.'),
-  password: yup
-    .string()
-    .min(6, ({ min }) => `Пароль має містити не менше ${min} символів.`)
-    .max(16, ({ max }) => `Пароль має містити не більше ${max} символів.`)
-    .matches(
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d@$!%*?&]{6,}$/,
-      'Пароль має містити не менше 6 символів хоча б одну літеру у верхньому, одну літеру у нижньому регістрі та одну літеру.'
-    )
-    .required('Невірний пароль.'),
+    .test('contact-validation', 'Invalid email or phone number', value => {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const phoneRegex = /^[0-9]{10}$/;
+      return emailRegex.test(value) || phoneRegex.test(value);
+    })
+    .required('Невірна пошта або номер телефону'),
 });
 
-const RecoveryForm = ({ isModalOpen, onSubmit, closeAndResetModal }) => {
+const RecoveryForm = ({ isModalOpen, closeModal, setModalType }) => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const initialValues = {
-    email: '',
-    password: '',
+    contact: '',
+  };
+
+  const resetForm = () => {
+    formik.resetForm({
+      values: initialValues,
+    });
+  };
+
+  const onSubmit = values => {
+    //   dispatch(
+    //     loginUser({
+    //       ...values,
+    //     })
+    //   );
+    console.log(values);
   };
 
   const formik = useFormik({
@@ -41,9 +55,23 @@ const RecoveryForm = ({ isModalOpen, onSubmit, closeAndResetModal }) => {
     validateOnSubmit: true,
   });
 
+  const closeAndResetModal = () => {
+    closeModal();
+    resetForm();
+    // navigate('/', { replace: true });
+    navigate(location, { replace: true });
+    setModalType('register');
+  };
+
+  const goBackModal = () => {
+    navigate(-1, { replace: true });
+    // setModalType('register');
+  };
+
   return (
     <StyledModal
       isOpen={isModalOpen}
+      onRequestClose={closeAndResetModal}
       ariaHideApp={false}
       style={{
         overlay: {
@@ -51,14 +79,12 @@ const RecoveryForm = ({ isModalOpen, onSubmit, closeAndResetModal }) => {
         },
       }}
     >
-      {window.innerWidth < 1440 && (
-        <RetunBtn type="button">
-          <ReturnIcon onClick={closeAndResetModal}>
-            <use href={`${icon}#icon-arrow-left`}></use>
-          </ReturnIcon>
-        </RetunBtn>
-          )}
-          
+      <RetunBtn type="button">
+        <ReturnIcon onClick={goBackModal}>
+          <use href={`${icon}#icon-arrow-left`}></use>
+        </ReturnIcon>
+      </RetunBtn>
+
       <Title>Відновлення паролю</Title>
       <Text>
         Введіть електронну пошту або номер телефона на який зареєстрований
@@ -67,21 +93,23 @@ const RecoveryForm = ({ isModalOpen, onSubmit, closeAndResetModal }) => {
 
       <StyledForm onSubmit={formik.handleSubmit}>
         <Input
-          id="email"
-          type="email"
-          name="email"
-          placeholder="email@example.com"
-          autoComplete="username"
+          id="contact"
+          type="text"
+          name="contact"
+          placeholder="Пошта або номер телефону"
+          //   autoComplete="username"
           onBlur={formik.handleBlur}
           border={
-            formik.touched.email && formik.errors.email && '0.8px solid #f33f33'
+            formik.touched.contact &&
+            formik.errors.contact &&
+            '0.8px solid #f33f33'
           }
           onChange={formik.handleChange}
-          value={formik.values.email}
+          value={formik.values.contact}
         />
 
-        {formik.touched.email && formik.errors.email ? (
-          <ErrorMessage>{formik.errors.email}</ErrorMessage>
+        {formik.touched.contact && formik.errors.contact ? (
+          <ErrorMessage>{formik.errors.contact}</ErrorMessage>
         ) : null}
 
         <BtnSubmit type="submit" onSubmit={onSubmit}>
