@@ -46,7 +46,7 @@ const validationSchema = yup.object().shape({
     .required('Невірний пароль.'),
 });
 
-const LoginForm = ({ isModalOpen, closeModal, changeModalValue }) => {
+const LoginForm = ({ isModalOpen, closeModal, setModalType }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const location = useLocation();
@@ -207,14 +207,16 @@ const LoginForm = ({ isModalOpen, closeModal, changeModalValue }) => {
         <MessageContainer>
           <Message>
             Створіть аккаунт для легкої купівлі та продажу прямо зараз!
-            <ModalLink to="/register" onClick={changeModalValue}>
+            <ModalLink to="/register" onClick={() => setModalType('register')}>
               Зареєструватись
             </ModalLink>
           </Message>
 
           <Message>
             Забули пароль?
-            <ModalLink to="/recovery">Відновити</ModalLink>
+            <ModalLink to="/recovery" onClick={() => setModalType('recovery')}>
+              Відновити
+            </ModalLink>
           </Message>
         </MessageContainer>
       </StyledModal>

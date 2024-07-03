@@ -10,8 +10,9 @@ const Layout = ({
   openModal,
   closeModal,
   isModalOpen,
-  changeModalValue,
-  modalRegister,
+  // changeModalValue,
+  setModalType,
+  modalType,
 }) => {
   return (
     <>
@@ -23,8 +24,9 @@ const Layout = ({
             <ModalWrapper
               isModalOpen={isModalOpen}
               closeModal={closeModal}
-              changeModalValue={changeModalValue}
-              modalRegister={modalRegister}
+              // changeModalValue={changeModalValue}
+              setModalType={setModalType}
+              modalType={modalType}
             />
           </Container>
         </Suspense>

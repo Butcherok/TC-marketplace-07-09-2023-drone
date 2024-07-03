@@ -25,6 +25,7 @@ import { refreshUser } from 'redux/auth/authOperations';
 import ArticlesPage from 'pages/articles';
 import Article from './Article/Article';
 import Checkout from './Checkout/Checkout';
+import RecoveryForm from './RecoveryForm/RecoveryForm';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -35,7 +36,7 @@ export const App = () => {
   }, [dispatch]);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [modalRegister, setModalRegister] = useState(true);
+  const [modalType, setModalType] = useState('register');
   const [backgroundLocation, setBackgroundLocation] = useState(null);
 
   const location = useLocation();
@@ -54,10 +55,6 @@ export const App = () => {
     setBackgroundLocation(null);
   };
 
-  function changeModalValue() {
-    setModalRegister(!modalRegister);
-  }
-
   return isLoading ? (
     <span>Loading...</span>
   ) : (
@@ -72,19 +69,22 @@ export const App = () => {
                   openModal={openModal}
                   closeModal={closeModal}
                   isModalOpen={isModalOpen}
-                  changeModalValue={changeModalValue}
-                  modalRegister={modalRegister}
+                  // changeModalValue={changeModalValue}
+                  setModalType={setModalType}
+                  modalType={modalType}
                 />
               }
             >
               <Route index element={<HomePage />} />
               <Route path="articles" element={<ArticlesPage />} />
               <Route path="articles/:articleId" element={<Article />} />
+              {/* <Route path="manufacturers" element={<div>Виробники</div>} /> */}
               <Route path="manufacturers" element={<div>Виробники</div>} />
 
               <Route path="user" element={<UserPage />} />
               <Route path="register" element={<RegisterForm />} />
               <Route path="login" element={<LoginForm />} />
+              <Route path="recovery" element={<RecoveryForm />} />
               <Route path="favorites" element={<div>Перелік улюбленних</div>} />
               <Route path="cart" element={<CartPage />} />
               <Route path="checkout" element={<Checkout />} />

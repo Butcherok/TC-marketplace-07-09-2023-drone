@@ -122,7 +122,7 @@ export const StyledBtnList = styled.ul`
 `;
 export const StyledBtnItem = styled.li``;
 
-export const StyledBtn = styled.a`
+export const StyledBtn = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -145,6 +145,32 @@ export const StyledBtn = styled.a`
 
   @media screen and (min-width: 728px) {
     width: 342px;
+  }
+
+  &#googleButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 12px;
+    border: 1px solid ${props => props.theme.colors.btnColor};
+    border-radius: 4px;
+
+    background: ${props => props.theme.colors.background};
+
+    color: ${props => props.theme.colors.btnColor};
+
+    font-family: ${props => props.theme.fonts.main};
+    font-size: 12px;
+    font-weight: ${props => props.theme.fontWeights.bold};
+    line-height: ${props => props.theme.lineHeights.title};
+    text-align: center;
+    cursor: pointer;
+
+    @media screen and (min-width: 728px) {
+      width: 342px;
+    }
   }
 `;
 
