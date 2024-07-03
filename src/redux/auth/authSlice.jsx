@@ -40,7 +40,8 @@ const authSlice = createSlice({
     [registerUser.fulfilled](state, action) {
       state.user = action.payload.user;
       state.token = action.payload.token;
-      state.refreshToken = action.payload.token;
+      state.tokenLifeTime = action.payload.tokenLifeTime;
+      state.refreshToken = action.payload.refreshToken;
       state.isLoggedIn = true;
       state.isRefreshing = false;
       state.isLoading = false;
@@ -57,7 +58,8 @@ const authSlice = createSlice({
     [loginUser.fulfilled](state, action) {
       state.user = action.payload.user;
       state.token = action.payload.token;
-      state.refreshToken = action.payload.token;
+      state.tokenLifeTime = action.payload.tokenLifeTime;
+      state.refreshToken = action.payload.refreshToken;
       state.isLoggedIn = true;
       state.isLoading = false;
       state.error = null;
@@ -81,6 +83,7 @@ const authSlice = createSlice({
       state.user = { firstName: null, lastName: null, email: null };
       state.token = null;
       state.refreshToken = null;
+      state.tokenLifeTime = null;
       state.isLoggedIn = false;
       state.error = null;
     },
@@ -98,6 +101,9 @@ const authSlice = createSlice({
 
     [refreshUser.fulfilled](state, action) {
       state.user = action.payload;
+      state.token = action.payload.token;
+      state.refreshToken = action.payload.refreshToken;
+      state.tokenLifeTime = action.payload.tokenLifeTime;
       state.isLoggedIn = true;
       state.isRefreshing = false;
       state.isLoading = false;
@@ -135,7 +141,7 @@ const authSlice = createSlice({
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['token', 'refreshToken'],
+  whitelist: ['token', 'tokenLifeTime', 'refreshToken'],
 };
 
 export const persistedUsersReducer = persistReducer(

@@ -8,10 +8,10 @@ export const ApiProvider = ({ children }) => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get(
-        'https://dr-one-marketplace.onrender.com/notices'
-      );
-      setQuery(response.data.data.notices);
+      // const response = await axios.get(
+      //   'https://dr-one-marketplace.onrender.com/notices'
+      // );
+      // setQuery(response.data.data.notices);
     } catch (error) {
       console.error(error);
     }

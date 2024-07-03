@@ -29,6 +29,9 @@ import { registerUser } from 'redux/auth/authOperations';
 import icon from '../../../assets/icons/sprite.svg';
 import { useState } from 'react';
 
+import { useEffect } from 'react';
+import { jwtDecode } from 'jwt-decode';
+
 const validationSchema = yup.object().shape({
   firstName: yup
     .string()
@@ -116,6 +119,45 @@ const RegisterForm = ({ isModalOpen, closeModal, setModalType }) => {
 
     navigate(location, { replace: true });
     // navigate(-1);
+  };
+
+  //
+
+  //
+
+  //
+
+  //
+
+  //
+
+  //
+
+  function handleCallbackResponse(response) {
+    var userObj = jwtDecode(response.credential);
+    console.log(userObj);
+  }
+
+  useEffect(() => {
+    /*global google */
+
+    google.accounts.id.initialize({
+      client_id:
+        '992100039711-ah048v4t8153hqdp245vrlqi667nparo.apps.googleusercontent.com',
+      callback: handleCallbackResponse,
+    });
+
+    console.log(google.accounts.id);
+
+    google.accounts.id.renderButton(document.getElementById('googleButton'), {
+      theme: 'outline',
+      size: 'large',
+    });
+  }, []);
+
+  const handleGoogleSignIn = () => {
+    // Trigger the hidden Google sign-in button click
+    document.getElementById('googleButton').click();
   };
 
   return (
@@ -279,7 +321,9 @@ const RegisterForm = ({ isModalOpen, closeModal, setModalType }) => {
             </StyledBtn>
           </StyledBtnItem>
           <StyledBtnItem>
-            <StyledBtn>
+            {/* <StyledBtn id="googleButton"></StyledBtn> */}
+            <StyledBtn onClick={handleGoogleSignIn}>
+              <div id="googleButton"></div>
               <StyledBtnIcon>
                 <use href={`${icon}#icon-google`}></use>
               </StyledBtnIcon>

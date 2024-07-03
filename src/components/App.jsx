@@ -78,6 +78,7 @@ export const App = () => {
               <Route index element={<HomePage />} />
               <Route path="articles" element={<ArticlesPage />} />
               <Route path="articles/:articleId" element={<Article />} />
+              {/* <Route path="manufacturers" element={<div>Виробники</div>} /> */}
               <Route path="manufacturers" element={<div>Виробники</div>} />
 
               <Route path="user" element={<UserPage />} />
